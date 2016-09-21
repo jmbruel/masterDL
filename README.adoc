@@ -1,0 +1,14 @@
+:jmb: mailto:jbruel@gmail.com[J.-M. Bruel]
+:numbered:
+:toc:
+= Initiation à l'Ingénierie Système
+{jmb}, v.0.8
+
+== Contexte
+
+Cours collaboratif du http://www.master-developpement-logiciel.fr/[Master DL]
+
+== Contributeurs
+
+- {jmb} since 21/09/2016
+- [add your name here] since [JJ/MM/YYY]
