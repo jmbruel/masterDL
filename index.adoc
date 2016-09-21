@@ -17,7 +17,7 @@ image::customLogo.gif[]
 :numbered!:
 == Avant-Propos
 
-Ce site est le résultat de la collaboration des étudiants du {mdl} dans Copyright (c) cours d'
+Ce site est le résultat de la collaboration des étudiants du {mdl} dans ce cours d'
 ingénierie système ({refmodule}).
 
 WARNING: Site under construction!!
@@ -32,8 +32,8 @@ Les sections avec l'icône icon:graduation-cap[] sont plus théoriques (définit
 
 === Contributeurs
 
-- {jmb} since 21/09/2016
-- [add your name here] since [JJ/MM/YYY]
+- {jmb} depuis le 21/09/2016
+- [ajouter votre nom ici] depuis le [JJ/MM/YYY]
 
 :numbered:
 == icon:star-o[] Exemple de section
@@ -44,6 +44,7 @@ Les sections avec l'icône icon:graduation-cap[] sont plus théoriques (définit
 Ceci est une note...
 =====
 
+:numbered!:
 == icon:cogs[] Contributions welcome!
 
 N'hésitez pas à contribuer en participant au projet icon:github[] https://github.com/jmbruel/masterDL2016.
