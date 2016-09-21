@@ -1,0 +1,49 @@
+= Initiation à l'Ingénierie Système
+J.-M. Bruel <jbruel@gmail.com>
+V1.0, {localdate}
+:toc-title: Table des matières
+:toc: left
+:numbered:
+:icons: font
+:imagesdir: images
+:website: https://jmbruel.github.io/masterDL2016/
+//------------------------- définitions ---------------------
+:mdl: http://www.master-developpement-logiciel.fr/[Master DL]
+:jmb: mailto:jbruel@gmail.com[J.-M. Bruel]
+//------------------------- définitions ---------------------
+
+image::customLogo.gif[]
+
+:numbered!:
+== Avant-Propos
+
+Ce site est le résultat de la collaboration des étudiants du {mdl} dans Copyright (c) cours d'
+ingénierie système ({refmodule}).
+
+WARNING: Site under construction!!
+
+=== Conventions
+
+Niveau de difficulté::
+Les sections qui suivent sont évaluées de facile/débutant (icon:star-o[]) à avancé (icon:star[])
+
+Théorie/Pratique::
+Les sections avec l'icône icon:graduation-cap[] sont plus théoriques (définitions, etc.) que ceux avec l'icône icon:cogs[].
+
+=== Contributeurs
+
+- {jmb} since 21/09/2016
+- [add your name here] since [JJ/MM/YYY]
+
+:numbered:
+== icon:star-o[] Exemple de section
+
+[NOTE]
+.Exemple de note
+=====
+Ceci est une note...
+=====
+
+== icon:cogs[] Contributions welcome!
+
+N'hésitez pas à contribuer en participant au projet icon:github[] https://github.com/jmbruel/masterDL2016.
