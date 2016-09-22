@@ -1,0 +1,350 @@
+//---------------------------------
+// Cours sur Git
+// (c) JMB - 2014
+//---------------------------------
+= icon:star-half[] Introduction à l'*IS*
+
+//------------------------------------ variables de configuration
+:linkcss:
+:git-version: 2.9.2
+:icons: font
+:experimental:
+:toc-title: Table des matières
+:toc: left
+:numbered:
+:status:
+:imagesdir: images
+:siteurl: http://jmbhome.github.io/masterDL2016.html
+//------------------------------------ Slides uniquement
+ifdef::slides[]
+//--------------------- dzslides slides
+ifdef::dzslides[]
+:dzslides-style: tomorrow
+//:dzslides-style: stormy, watermelon, tomorrow, truffle, statement, default
+:dzslides-transition: fade
+:dzslides-fonts: family=Yanone+Kaffeesatz:400,700,200,300&family=Cedarville+Cursive
+//:dzslides-highlight: asciidoctor
+:dzslides-highlight: monokai
+:source-highlighter: highlightjs
+:dzslides-status:
+:topic: .topic
+:intro: .topic.intro
+:statement: .topic.statement
+:incremental: .incremental
+:source: .topic.source
+endif::dzslides[]
+//----------- deck.js --------------
+ifdef::deckjs-slides[]
+:viewport: width=1024, user-scalable=no
+//:backend: deckjs # Should be used in the asciidoctor command (asciidoctor -b deckjs)
+// swiss, neon, beamer, web-2.0
+:deckjs_theme: swiss
+//fade, horizontal-slide, vertical-slide
+//:deckjs_transition: fade
+:goto:
+:menu:
+//:navigation:
+:status:
+:sectids!:
+endif::deckjs-slides[]
+endif::slides[]
+//------------------------------------ HTML uniquement
+ifndef::slides[]
+:topic:
+:intro:
+:statement:
+:incremental: %step
+:source:
+endif::slides[]
+
+//------------------------- définitions ---------------------
+:afis: https://www.afis.fr
+:cherbonneau: mailto:Bernard.Cherbonneau@irit.fr[Bernard Cherbonneau]
+:git: link:http://git-scm.com/[Git]
+:jmb: mailto:jbruel@gmail.com[J.-M. Bruel]
+:mdlurl: http://www.master-developpement-logiciel.fr
+:mdl: {mdlurl}/[Master DL]
+:models: http://www.modelsconference.org/[MODELS]
+:sosym: http://www.sosym.org/[SoSyM]
+:sysmlfrance: http://www.sysml-france.fr[SysML-France]indexterm:[SysML-France]
+// ajouter ici les variables manquantes
+//------------------------- définitions ---------------------
+
+ifdef::slides[]
+// ------------------------------------------ disclaimer
+:numbered!:
+[{intro}]
+== Avant-propos
+
+
+[{topic}]
+== Who am I ?
+
+[.incremental]
+- Professor image:logo-iut-blagnac.png[width=20%]
+- Editorial board of _{sosym}_ image:sosym.png[width=10%,link="http://www.sosym.org/"]
+- ACM/IEEE {models} image:models2016.png[width=30%,link="http://www.modelsconference.org/"]
+- Cyber-Physical/Ambient Systems image:logo-irit.png[width=30%,link="http://www.irit.fr/"]
+- Co-founder of {sysmlfrance}
+image:LogoSysML-France.png[width="15%",role="align-center"]
+- Contact : icon:envelope-o[] bruel@irit.fr, icon:twitter[] @jmbruel
+
+
+[{topic}]
+== Pour suivre en live... icon:mobile[] icon:tablet[] icon:laptop[]
+
+[{statement}]
+{siteurl}
+
+[{intro}]
+== Stop!
+
+image::ineedyou.jpg[width=100%]
+
+{siteurl}
+
+[{topic}]
+== Brainstorming collaboratifs
+
+[{incremental}]
+- icon:git[] des spécialistes {git}
+- icon:file[] des volontaires pour prendre des notes
+- icon:cloud[] des spécialistes de "cloudword"
+- icon:home[] des spécialistes du web
+- icon:camera[] des photographes
+
+{siteurl}
+
+ifdef::slides[== !]
+
+Voici les mots clefs du support de cours de l'an dernier
+(réalisé par {cherbonneau}) :
+
+.Nuages des mots du support 2015
+image::canvas.png[]
+
+endif::slides[]
+
+[{topic}]
+== Rendons à César...
+
+Modeste successeur de {cherbonneau} (responsable du module jusqu'en 2015)
+
+ifndef::slides[.Bernard Cherbonneau, le "papa" de ce cours (@bernardcherbonn)]
+image::bernard.jpeg[width=40%]
+ifdef::slides[NOTE: [detail]#Bernard Cherbonneau, le "papa" de ce cours (icon:twitter[] @bernardcherbonn)#]
+
+[{topic}]
+== Discipline _relativement_ nouvelle
+
+[{incremental}]
+- un peu + de dix ans
+- abordée dans des écoles d'ingénieurs (INSA, ISAE, ...)
+- spécificité du {mdl} à l'UPS
+
+[{topic}]
+== Intérêt
+
+Pouvoir intégrer :
+
+[{incremental}]
+- des grands projets (programmes) de type : avion, satellite, suite de logiciels, ...
+- des projets faisant intervenir
+différents métiers : informaticien, chimiste, mécanicien, ... [details]#où chacun a ses propres habitudes, manières de travailler#
+
+[{topic}]
+== L'Ingénierie Système
+
+[{incremental}]
+* approche *globale*
+* démarche *méthodologique* générale
+* permet, pour un système, de le :
+[{incremental}]
+** définir
+** concevoir
+** faire évoluer
+** vérifier
+
+ifdef::slides[]
+[{topic}]
+== L'Ingénierie Système (suite)
+endif::slides[]
+
+En :
+
+- apportant une solution *économique et performante* aux besoins d'un
+client
+- satisfaisant l'ensemble des parties prenantes
+- cherchant à équilibrer et optimiser l'économie globale de la solution
+
+NOTE: Et ce, durant tout le cycle de vie du système : étude, réalisation, déploiement,
+production/exploitation, retrait, etc.
+
+
+[{topic}]
+== Pour la Maîtrise d'OuvrAge (MOA)
+
+et les parties prenantes qu'elle représente :
+
+* utilisatrices (directes ou indirectes : pilotes, passagers, personnel
+naviguant, ...)
+* exploitantes
+
+L'<<IS>> a pour objectif d'assurer l'adéquation de la solution aux besoins sous
+tous les aspects (fonctionnalité, performances, économie, sécurité) pour
+toutes les situations d'exploitation (routine, retard, panne).
+
+[{topic}]
+== Pour la Maîtrise d'OEuvre (MOE)
+
+et les parties prenantes réalisatrices qu'elle représente :
+
+L'IS a pour objectif de conduire à un bon compromis entre :
+
+- les enjeux
+- les contraintes
+
+sur la solution technique (le *produit*) et le *projet* (besoins, attentes,
+performances, contraintes techniques et industrielles, coûts, délais et
+risques).
+
+
+[{topic}]
+== Le système et sa définition
+
+[quote,Définition intuitive]
+Un système est une *construction* qui répond à une *finalité* dans un
+*environnement*.
+
+ifdef::slides[== Un peu d'histoire]
+
+Changement de "paradigme" entre approche cartésienne et systémique.
+
+ifdef::slides[== Approche *cartésienne*]
+
+.Approche *cartésienne*
+[quote,René Descartes, Discours de la Méthode, Deuxième partie]
+...diviser chacune des difficultés que j'examinerais, en autant de parcelles qu'il se pourrait et qu'il serait requis pour les mieux résoudre.
+
+ifdef::slides[== Approche *systémique*]
+
+.Approche *systémique*
+[quote,Aristote]
+Le tout est plus que la somme de ses parties.
+
+=> en IS, un système sera décrit comme un *ensemble d'éléments en interaction* entre eux.
+
+ifdef::slides[== Vue *boîte noire*]
+
+:thisref: http://bat-team.e-monsite.com/album/voiture-dessiner-depuis-catia.html
+ifndef::slides[.Un système en vue "boîte noire" ({thisref})]
+image::voiture-catia.jpg[width=70%,link="{thisref}"]
+ifdef::slides[NOTE: [detail]#{thisref}#]
+
+ifdef::slides[== Vue *boîte blanche*]
+
+:thisref: http://bat-team.e-monsite.com/album/voiture-dessiner-depuis-catia.html
+ifndef::slides[.Un système en vue "boîte blanche" ({thisref})]
+image::voiture-catia-blanche.jpg[width=70%,link="{thisref}"]
+ifdef::slides[NOTE: [detail]#{thisref}#]
+
+ifdef::slides[== Vue *boîte noire*]
+
+En IS, la définition du système comporte :
+
+[{incremental}]
+- celle de ses *sous-systèmes* et constituants [detail]#(matériels, logiciels, organisations et compétences humaines) et de leurs interfaces (sièges des interactions recherchées)#
+- celles des *processus* [detail]#de leurs cycles de vie#
+
+ifdef::slides[== !]
+
+:thisref: https://fr.wikipedia.org/wiki/Airbus_A380
+ifndef::slides[.C'est bien de concevoir un système... ({thisref})]
+image::A380.jpg[width=40%,link="{thisref}"]
+ifdef::slides[NOTE: [detail]#{thisref}#]
+
+:thisref: https://fr.wikipedia.org/wiki/Airbus_A380
+ifndef::slides[.Mais il faut aussi prévoir toutes les étapes! ({thisref})]
+image::A380-pont.jpg[width=40%,link="{thisref}"]
+ifdef::slides[NOTE: [detail]#{thisref}#]
+
+ifndef::slides[]
+Cette définition induit une démarche descendante d'ingénierie s'appuyant sur une
+*décomposition itérative* du système en blocs constitutifs dont elle définit les constituants avec
+leurs interfaces ainsi que les produits contributeurs à leur cycle de vie.
+endif::slides[]
+
+ifdef::slides[== !]
+
+:thisref: {afis}
+ifndef::slides[.Décomposition d'un système vu de l'IS ({thisref})]
+image::ingsys.png[width=90%,link="{thisref}"]
+ifdef::slides[NOTE: [detail]#{thisref}#]
+
+ifndef::slides[]
+.(source {afis})
+[NOTE]
+=====
+Cette démarche descendante se combine avec une démarche *ascendante* à partir de ce que
+l'on sait ou peut réaliser ainsi que des constituants pré-existants :
+
+- intégration de COTS (_Components On The Shelves_, composants sur
+étagères)
+- intégration de systèmes non prévus initialement pour inter-opérer, conduisant
+à la notion de système de systèmes (coopération d'armées par exemple
+pour mener une opération militaire)
+=====
+endif::slides[]
+
+
+[{topic}]
+== Les parties prenantes et l’interdisciplinarité
+
+
+:thisref: {afis}
+ifndef::slides[.Intégrer les disciplines pour converger vers un bon compromis entre enjeux et contraintes des parties prenantes ({thisref})]
+image::ingsys3.png[width=90%,link="{thisref}"]
+ifdef::slides[NOTE: [detail]#{thisref}#]
+
+[{topic}]
+== La démarche de conception en IS
+
+:thisref: {afis}
+ifndef::slides[.Schématisation de la démarche technique d'ingénierie ({thisref})]
+image::ingsys4.png[width=90%,link="{thisref}"]
+ifdef::slides[NOTE: [detail]#{thisref}#]
+
+[{topic}]
+== La mise en oeuvre de l'IS
+
+:thisref: {afis}
+ifndef::slides[.La mise en oeuvre de l'Ingénierie Système ({thisref})]
+image::ingsys5.png[width=90%,link="{thisref}"]
+ifdef::slides[NOTE: [detail]#{thisref}#]
+
+[{topic}]
+== Les enjeux de l'IS
+
+[{incremental}]
+- meilleure maîtrise de la *complexité*
+- amélioration de l'*adéquation aux besoins*
+- meilleure *anticipation des problèmes*
+- *raccourcissement des temps* de développement
+- meilleure maîtrise des *coûts*
+- meilleure *transdisciplinarité* et coopération
+- accroissement de la *satisfaction*
+- meilleure optimisation du *compromis global* enjeux/contraintes
+
+NOTE: Autrement dit : une amélioration de la *compétitivité* des entreprises!!
+
+[{topic}]
+== Les domaines d’applications de l'IS
+
+- Tous les domaines complexes
+- Grande tendance du moment : <<MBSE>> (_Model-Based System Engineering_)
+
+[{topic}]
+== Et la suite?
+
+- Plan du module
+- Maintient du site (je compte sur vous!)

@@ -10,9 +10,11 @@ V1.0, {localdate}
 :websitegh: https://github.com/jmbruel/masterDL2016
 
 //------------------------- définitions ---------------------
+:cherbonneau: mailto:Bernard.Cherbonneau@irit.fr[Bernard Cherbonneau]
+:jmb: mailto:jbruel@gmail.com[J.-M. Bruel]
 :mdlurl: http://www.master-developpement-logiciel.fr
 :mdl: {mdlurl}/[Master DL]
-:jmb: mailto:jbruel@gmail.com[J.-M. Bruel]
+:refmodule: EIINL3AM
 // ajouter ici les variables manquantes
 //------------------------- définitions ---------------------
 
@@ -43,17 +45,12 @@ Les sections avec l'icône icon:graduation-cap[] sont plus théoriques (définit
 // (en laissant celle-ci intacte pour les suivants ;-)
 
 :numbered:
-//---------------------------- Section template -------------------------
-== icon:star-o[] Exemple de section
-
-[NOTE]
-.Exemple de note
-=====
-Ceci est une note...
-=====
 
 //---------------------------- Organisation -------------------------
 include::organisation.adoc[]
+
+//---------------------------- Intro by JMB -------------------------
+include::introduction.adoc[leveloffset=+1]
 
 //---------------------------- Liens utiles -------------------------
 == icon:star-o[] Liens utiles

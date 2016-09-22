@@ -418,6 +418,71 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 .show-for-print{display:inherit!important}}
 </style>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+<style>
+.listingblock .pygments .hll { background-color: #ffffcc }
+.listingblock .pygments  { background: #f8f8f8; }
+.listingblock .pygments .tok-c { color: #408080; font-style: italic } /* Comment */
+.listingblock .pygments .tok-err { border: 1px solid #FF0000 } /* Error */
+.listingblock .pygments .tok-k { color: #008000; font-weight: bold } /* Keyword */
+.listingblock .pygments .tok-o { color: #666666 } /* Operator */
+.listingblock .pygments .tok-cm { color: #408080; font-style: italic } /* Comment.Multiline */
+.listingblock .pygments .tok-cp { color: #BC7A00 } /* Comment.Preproc */
+.listingblock .pygments .tok-c1 { color: #408080; font-style: italic } /* Comment.Single */
+.listingblock .pygments .tok-cs { color: #408080; font-style: italic } /* Comment.Special */
+.listingblock .pygments .tok-gd { color: #A00000 } /* Generic.Deleted */
+.listingblock .pygments .tok-ge { font-style: italic } /* Generic.Emph */
+.listingblock .pygments .tok-gr { color: #FF0000 } /* Generic.Error */
+.listingblock .pygments .tok-gh { color: #000080; font-weight: bold } /* Generic.Heading */
+.listingblock .pygments .tok-gi { color: #00A000 } /* Generic.Inserted */
+.listingblock .pygments .tok-go { color: #888888 } /* Generic.Output */
+.listingblock .pygments .tok-gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+.listingblock .pygments .tok-gs { font-weight: bold } /* Generic.Strong */
+.listingblock .pygments .tok-gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+.listingblock .pygments .tok-gt { color: #0044DD } /* Generic.Traceback */
+.listingblock .pygments .tok-kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+.listingblock .pygments .tok-kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+.listingblock .pygments .tok-kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+.listingblock .pygments .tok-kp { color: #008000 } /* Keyword.Pseudo */
+.listingblock .pygments .tok-kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+.listingblock .pygments .tok-kt { color: #B00040 } /* Keyword.Type */
+.listingblock .pygments .tok-m { color: #666666 } /* Literal.Number */
+.listingblock .pygments .tok-s { color: #BA2121 } /* Literal.String */
+.listingblock .pygments .tok-na { color: #7D9029 } /* Name.Attribute */
+.listingblock .pygments .tok-nb { color: #008000 } /* Name.Builtin */
+.listingblock .pygments .tok-nc { color: #0000FF; font-weight: bold } /* Name.Class */
+.listingblock .pygments .tok-no { color: #880000 } /* Name.Constant */
+.listingblock .pygments .tok-nd { color: #AA22FF } /* Name.Decorator */
+.listingblock .pygments .tok-ni { color: #999999; font-weight: bold } /* Name.Entity */
+.listingblock .pygments .tok-ne { color: #D2413A; font-weight: bold } /* Name.Exception */
+.listingblock .pygments .tok-nf { color: #0000FF } /* Name.Function */
+.listingblock .pygments .tok-nl { color: #A0A000 } /* Name.Label */
+.listingblock .pygments .tok-nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+.listingblock .pygments .tok-nt { color: #008000; font-weight: bold } /* Name.Tag */
+.listingblock .pygments .tok-nv { color: #19177C } /* Name.Variable */
+.listingblock .pygments .tok-ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+.listingblock .pygments .tok-w { color: #bbbbbb } /* Text.Whitespace */
+.listingblock .pygments .tok-mb { color: #666666 } /* Literal.Number.Bin */
+.listingblock .pygments .tok-mf { color: #666666 } /* Literal.Number.Float */
+.listingblock .pygments .tok-mh { color: #666666 } /* Literal.Number.Hex */
+.listingblock .pygments .tok-mi { color: #666666 } /* Literal.Number.Integer */
+.listingblock .pygments .tok-mo { color: #666666 } /* Literal.Number.Oct */
+.listingblock .pygments .tok-sb { color: #BA2121 } /* Literal.String.Backtick */
+.listingblock .pygments .tok-sc { color: #BA2121 } /* Literal.String.Char */
+.listingblock .pygments .tok-sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+.listingblock .pygments .tok-s2 { color: #BA2121 } /* Literal.String.Double */
+.listingblock .pygments .tok-se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
+.listingblock .pygments .tok-sh { color: #BA2121 } /* Literal.String.Heredoc */
+.listingblock .pygments .tok-si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
+.listingblock .pygments .tok-sx { color: #008000 } /* Literal.String.Other */
+.listingblock .pygments .tok-sr { color: #BB6688 } /* Literal.String.Regex */
+.listingblock .pygments .tok-s1 { color: #BA2121 } /* Literal.String.Single */
+.listingblock .pygments .tok-ss { color: #19177C } /* Literal.String.Symbol */
+.listingblock .pygments .tok-bp { color: #008000 } /* Name.Builtin.Pseudo */
+.listingblock .pygments .tok-vc { color: #19177C } /* Name.Variable.Class */
+.listingblock .pygments .tok-vg { color: #19177C } /* Name.Variable.Global */
+.listingblock .pygments .tok-vi { color: #19177C } /* Name.Variable.Instance */
+.listingblock .pygments .tok-il { color: #666666 } /* Literal.Number.Integer.Long */
+</style>
 </head>
 <body class="article toc2 toc-left">
 <div id="header">
@@ -437,8 +502,24 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_contributeurs">Contributeurs</a></li>
 </ul>
 </li>
-<li><a href="#__span_class_icon_i_class_fa_fa_star_o_i_span_exemple_de_section">1. <span class="icon"><i class="fa fa-star-o"></i></span> Exemple de section</a></li>
-<li><a href="#__span_class_icon_i_class_fa_fa_star_o_i_span_organisation_du_module_refmodule">2. <span class="icon"><i class="fa fa-star-o"></i></span> Organisation du module {refmodule}</a></li>
+<li><a href="#__span_class_icon_i_class_fa_fa_star_o_i_span_organisation_du_module_eiinl3am">1. <span class="icon"><i class="fa fa-star-o"></i></span> Organisation du module EIINL3AM</a></li>
+<li><a href="#__span_class_icon_i_class_fa_fa_star_half_i_span_introduction_à_l_strong_is_strong">2. <span class="icon"><i class="fa fa-star-half"></i></span> Introduction à l'<strong>IS</strong></a>
+<ul class="sectlevel2">
+<li><a href="#_rendons_à_césar">2.1. Rendons à César&#8230;&#8203;</a></li>
+<li><a href="#_discipline_em_relativement_em_nouvelle">2.2. Discipline <em>relativement</em> nouvelle</a></li>
+<li><a href="#_intérêt">2.3. Intérêt</a></li>
+<li><a href="#_l_ingénierie_système">2.4. L&#8217;Ingénierie Système</a></li>
+<li><a href="#_pour_la_maîtrise_d_ouvrage_moa">2.5. Pour la Maîtrise d&#8217;OuvrAge (MOA)</a></li>
+<li><a href="#_pour_la_maîtrise_d_oeuvre_moe">2.6. Pour la Maîtrise d&#8217;OEuvre (MOE)</a></li>
+<li><a href="#_le_système_et_sa_définition">2.7. Le système et sa définition</a></li>
+<li><a href="#_les_parties_prenantes_et_l_interdisciplinarité">2.8. Les parties prenantes et l’interdisciplinarité</a></li>
+<li><a href="#_la_démarche_de_conception_en_is">2.9. La démarche de conception en IS</a></li>
+<li><a href="#_la_mise_en_oeuvre_de_l_is">2.10. La mise en oeuvre de l&#8217;IS</a></li>
+<li><a href="#_les_enjeux_de_l_is">2.11. Les enjeux de l&#8217;IS</a></li>
+<li><a href="#_les_domaines_d_applications_de_l_is">2.12. Les domaines d’applications de l&#8217;IS</a></li>
+<li><a href="#_et_la_suite">2.13. Et la suite?</a></li>
+</ul>
+</li>
 <li><a href="#__span_class_icon_i_class_fa_fa_star_o_i_span_liens_utiles">3. <span class="icon"><i class="fa fa-star-o"></i></span> Liens utiles</a></li>
 <li><a href="#__span_class_icon_i_class_fa_fa_star_o_i_span_faq">4. <span class="icon"><i class="fa fa-star-o"></i></span> FAQ</a>
 <ul class="sectlevel2">
@@ -465,7 +546,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="sectionbody">
 <div class="paragraph">
 <p>Ce site est le résultat de la collaboration des étudiants du <a href="http://www.master-developpement-logiciel.fr/">Master DL</a> dans ce cours d'
-ingénierie système ({refmodule}).</p>
+ingénierie système (EIINL3AM).</p>
 </div>
 <div class="admonitionblock warning">
 <table>
@@ -507,27 +588,7 @@ Site under construction!!
 </div>
 </div>
 <div class="sect1">
-<h2 id="__span_class_icon_i_class_fa_fa_star_o_i_span_exemple_de_section">1. <span class="icon"><i class="fa fa-star-o"></i></span> Exemple de section</h2>
-<div class="sectionbody">
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-<div class="title">Exemple de note</div>
-<div class="paragraph">
-<p>Ceci est une note&#8230;&#8203;</p>
-</div>
-</td>
-</tr>
-</table>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="__span_class_icon_i_class_fa_fa_star_o_i_span_organisation_du_module_refmodule">2. <span class="icon"><i class="fa fa-star-o"></i></span> Organisation du module {refmodule}</h2>
+<h2 id="__span_class_icon_i_class_fa_fa_star_o_i_span_organisation_du_module_eiinl3am">1. <span class="icon"><i class="fa fa-star-o"></i></span> Organisation du module EIINL3AM</h2>
 <div class="sectionbody">
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
@@ -561,6 +622,374 @@ Liens et coordonnées des intervenants à compléter au fur et à mesure&#8230;&
 </td>
 </tr>
 </table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="__span_class_icon_i_class_fa_fa_star_half_i_span_introduction_à_l_strong_is_strong">2. <span class="icon"><i class="fa fa-star-half"></i></span> Introduction à l'<strong>IS</strong></h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_rendons_à_césar">2.1. Rendons à César&#8230;&#8203;</h3>
+<div class="paragraph">
+<p>Modeste successeur de <a href="mailto:Bernard.Cherbonneau@irit.fr">Bernard Cherbonneau</a> (responsable du module jusqu&#8217;en 2015)</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/bernard.jpeg" alt="bernard" width="40%">
+</div>
+<div class="title">Figure 1. Bernard Cherbonneau, le "papa" de ce cours (@bernardcherbonn)</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_discipline_em_relativement_em_nouvelle">2.2. Discipline <em>relativement</em> nouvelle</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>un peu + de dix ans</p>
+</li>
+<li>
+<p>abordée dans des écoles d&#8217;ingénieurs (INSA, ISAE, &#8230;&#8203;)</p>
+</li>
+<li>
+<p>spécificité du <a href="http://www.master-developpement-logiciel.fr/">Master DL</a> à l&#8217;UPS</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_intérêt">2.3. Intérêt</h3>
+<div class="paragraph">
+<p>Pouvoir intégrer :</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>des grands projets (programmes) de type : avion, satellite, suite de logiciels, &#8230;&#8203;</p>
+</li>
+<li>
+<p>des projets faisant intervenir
+différents métiers : informaticien, chimiste, mécanicien, &#8230;&#8203; <span class="details">où chacun a ses propres habitudes, manières de travailler</span></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_l_ingénierie_système">2.4. L&#8217;Ingénierie Système</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>approche <strong>globale</strong></p>
+</li>
+<li>
+<p>démarche <strong>méthodologique</strong> générale</p>
+</li>
+<li>
+<p>permet, pour un système, de le :</p>
+<div class="ulist">
+<ul>
+<li>
+<p>définir</p>
+</li>
+<li>
+<p>concevoir</p>
+</li>
+<li>
+<p>faire évoluer</p>
+</li>
+<li>
+<p>vérifier</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>En :</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>apportant une solution <strong>économique et performante</strong> aux besoins d&#8217;un
+client</p>
+</li>
+<li>
+<p>satisfaisant l&#8217;ensemble des parties prenantes</p>
+</li>
+<li>
+<p>cherchant à équilibrer et optimiser l&#8217;économie globale de la solution</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Et ce, durant tout le cycle de vie du système : étude, réalisation, déploiement,
+production/exploitation, retrait, etc.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_pour_la_maîtrise_d_ouvrage_moa">2.5. Pour la Maîtrise d&#8217;OuvrAge (MOA)</h3>
+<div class="paragraph">
+<p>et les parties prenantes qu&#8217;elle représente :</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>utilisatrices (directes ou indirectes : pilotes, passagers, personnel
+naviguant, &#8230;&#8203;)</p>
+</li>
+<li>
+<p>exploitantes</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>L'<a href="#IS">[IS]</a> a pour objectif d&#8217;assurer l&#8217;adéquation de la solution aux besoins sous
+tous les aspects (fonctionnalité, performances, économie, sécurité) pour
+toutes les situations d&#8217;exploitation (routine, retard, panne).</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_pour_la_maîtrise_d_oeuvre_moe">2.6. Pour la Maîtrise d&#8217;OEuvre (MOE)</h3>
+<div class="paragraph">
+<p>et les parties prenantes réalisatrices qu&#8217;elle représente :</p>
+</div>
+<div class="paragraph">
+<p>L&#8217;IS a pour objectif de conduire à un bon compromis entre :</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>les enjeux</p>
+</li>
+<li>
+<p>les contraintes</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>sur la solution technique (le <strong>produit</strong>) et le <strong>projet</strong> (besoins, attentes,
+performances, contraintes techniques et industrielles, coûts, délais et
+risques).</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_le_système_et_sa_définition">2.7. Le système et sa définition</h3>
+<div class="quoteblock">
+<blockquote>
+Un système est une <strong>construction</strong> qui répond à une <strong>finalité</strong> dans un
+<strong>environnement</strong>.
+</blockquote>
+<div class="attribution">
+&#8212; Définition intuitive
+</div>
+</div>
+<div class="paragraph">
+<p>Changement de "paradigme" entre approche cartésienne et systémique.</p>
+</div>
+<div class="quoteblock">
+<div class="title">Approche <strong>cartésienne</strong></div>
+<blockquote>
+&#8230;&#8203;diviser chacune des difficultés que j&#8217;examinerais, en autant de parcelles qu&#8217;il se pourrait et qu&#8217;il serait requis pour les mieux résoudre.
+</blockquote>
+<div class="attribution">
+&#8212; René Descartes<br>
+<cite>Discours de la Méthode</cite>
+</div>
+</div>
+<div class="quoteblock">
+<div class="title">Approche <strong>systémique</strong></div>
+<blockquote>
+Le tout est plus que la somme de ses parties.
+</blockquote>
+<div class="attribution">
+&#8212; Aristote
+</div>
+</div>
+<div class="paragraph">
+<p>&#8658; en IS, un système sera décrit comme un <strong>ensemble d&#8217;éléments en interaction</strong> entre eux.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<a class="image" href="http://bat-team.e-monsite.com/album/voiture-dessiner-depuis-catia.html"><img src="images/voiture-catia.jpg" alt="voiture catia" width="70%"></a>
+</div>
+<div class="title">Figure 2. Un système en vue "boîte noire" (http://bat-team.e-monsite.com/album/voiture-dessiner-depuis-catia.html)</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<a class="image" href="http://bat-team.e-monsite.com/album/voiture-dessiner-depuis-catia.html"><img src="images/voiture-catia-blanche.jpg" alt="voiture catia blanche" width="70%"></a>
+</div>
+<div class="title">Figure 3. Un système en vue "boîte blanche" (http://bat-team.e-monsite.com/album/voiture-dessiner-depuis-catia.html)</div>
+</div>
+<div class="paragraph">
+<p>En IS, la définition du système comporte :</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>celle de ses <strong>sous-systèmes</strong> et constituants <span class="detail">(matériels, logiciels, organisations et compétences humaines) et de leurs interfaces (sièges des interactions recherchées)</span></p>
+</li>
+<li>
+<p>celles des <strong>processus</strong> <span class="detail">de leurs cycles de vie</span></p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<a class="image" href="https://fr.wikipedia.org/wiki/Airbus_A380"><img src="images/A380.jpg" alt="A380" width="40%"></a>
+</div>
+<div class="title">Figure 4. C&#8217;est bien de concevoir un système&#8230;&#8203; (https://fr.wikipedia.org/wiki/Airbus_A380)</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<a class="image" href="https://fr.wikipedia.org/wiki/Airbus_A380"><img src="images/A380-pont.jpg" alt="A380 pont" width="40%"></a>
+</div>
+<div class="title">Figure 5. Mais il faut aussi prévoir toutes les étapes! (https://fr.wikipedia.org/wiki/Airbus_A380)</div>
+</div>
+<div class="paragraph">
+<p>Cette définition induit une démarche descendante d&#8217;ingénierie s&#8217;appuyant sur une
+<strong>décomposition itérative</strong> du système en blocs constitutifs dont elle définit les constituants avec
+leurs interfaces ainsi que les produits contributeurs à leur cycle de vie.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<a class="image" href="https://www.afis.fr"><img src="images/ingsys.png" alt="ingsys" width="90%"></a>
+</div>
+<div class="title">Figure 6. Décomposition d&#8217;un système vu de l&#8217;IS (https://www.afis.fr)</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="title">(source https://www.afis.fr)</div>
+<div class="paragraph">
+<p>Cette démarche descendante se combine avec une démarche <strong>ascendante</strong> à partir de ce que
+l&#8217;on sait ou peut réaliser ainsi que des constituants pré-existants :</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>intégration de COTS (<em>Components On The Shelves</em>, composants sur
+étagères)</p>
+</li>
+<li>
+<p>intégration de systèmes non prévus initialement pour inter-opérer, conduisant
+à la notion de système de systèmes (coopération d&#8217;armées par exemple
+pour mener une opération militaire)</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_les_parties_prenantes_et_l_interdisciplinarité">2.8. Les parties prenantes et l’interdisciplinarité</h3>
+<div class="imageblock">
+<div class="content">
+<a class="image" href="https://www.afis.fr"><img src="images/ingsys3.png" alt="ingsys3" width="90%"></a>
+</div>
+<div class="title">Figure 7. Intégrer les disciplines pour converger vers un bon compromis entre enjeux et contraintes des parties prenantes (https://www.afis.fr)</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_la_démarche_de_conception_en_is">2.9. La démarche de conception en IS</h3>
+<div class="imageblock">
+<div class="content">
+<a class="image" href="https://www.afis.fr"><img src="images/ingsys4.png" alt="ingsys4" width="90%"></a>
+</div>
+<div class="title">Figure 8. Schématisation de la démarche technique d&#8217;ingénierie (https://www.afis.fr)</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_la_mise_en_oeuvre_de_l_is">2.10. La mise en oeuvre de l&#8217;IS</h3>
+<div class="imageblock">
+<div class="content">
+<a class="image" href="https://www.afis.fr"><img src="images/ingsys5.png" alt="ingsys5" width="90%"></a>
+</div>
+<div class="title">Figure 9. La mise en oeuvre de l&#8217;Ingénierie Système (https://www.afis.fr)</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_les_enjeux_de_l_is">2.11. Les enjeux de l&#8217;IS</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>meilleure maîtrise de la <strong>complexité</strong></p>
+</li>
+<li>
+<p>amélioration de l'<strong>adéquation aux besoins</strong></p>
+</li>
+<li>
+<p>meilleure <strong>anticipation des problèmes</strong></p>
+</li>
+<li>
+<p><strong>raccourcissement des temps</strong> de développement</p>
+</li>
+<li>
+<p>meilleure maîtrise des <strong>coûts</strong></p>
+</li>
+<li>
+<p>meilleure <strong>transdisciplinarité</strong> et coopération</p>
+</li>
+<li>
+<p>accroissement de la <strong>satisfaction</strong></p>
+</li>
+<li>
+<p>meilleure optimisation du <strong>compromis global</strong> enjeux/contraintes</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Autrement dit : une amélioration de la <strong>compétitivité</strong> des entreprises!!
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_les_domaines_d_applications_de_l_is">2.12. Les domaines d’applications de l&#8217;IS</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Tous les domaines complexes</p>
+</li>
+<li>
+<p>Grande tendance du moment : <a href="#MBSE">[MBSE]</a> (<em>Model-Based System Engineering</em>)</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_et_la_suite">2.13. Et la suite?</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Plan du module</p>
+</li>
+<li>
+<p>Maintient du site (je compte sur vous!)</p>
+</li>
+</ul>
+</div>
 </div>
 </div>
 </div>
@@ -670,6 +1099,10 @@ Ces définitions seront enrichies au fur et à mesure du cours.
 <dd>
 <p><strong>A</strong>ssociation <strong>F</strong>rançaise d'<strong>I</strong>ngénierie <strong>S</strong>ystème (<a href="https://www.afis.fr" class="bare">https://www.afis.fr</a>)</p>
 </dd>
+<dt class="hdlist1"><a id="CMMI"></a>[CMMI]</dt>
+<dd>
+<p>CMMI</p>
+</dd>
 <dt class="hdlist1"><a id="IEEE"></a>[IEEE]</dt>
 <dd>
 <p>IEEE</p>
@@ -677,6 +1110,18 @@ Ces définitions seront enrichies au fur et à mesure du cours.
 <dt class="hdlist1"><a id="INCOSE"></a>[INCOSE]</dt>
 <dd>
 <p>INCOSE</p>
+</dd>
+<dt class="hdlist1"><a id="IS"></a>[IS]</dt>
+<dd>
+<p><strong>I</strong>ngénierie <strong>S</strong>ystème (abbréviation)</p>
+</dd>
+<dt class="hdlist1"><a id="MOA"></a>[MOA]</dt>
+<dd>
+<p>MOA</p>
+</dd>
+<dt class="hdlist1"><a id="MOE"></a>[MOE]</dt>
+<dd>
+<p>MOE</p>
 </dd>
 </dl>
 </div>
@@ -704,7 +1149,7 @@ Ces définitions seront enrichies au fur et à mesure du cours.
 <div id="footer">
 <div id="footer-text">
 Version 1.0<br>
-Last updated 2016-09-22 11:33:15 CEST
+Last updated 2016-09-22 16:44:21 CEST
 </div>
 </div>
 </body>
