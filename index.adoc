@@ -8,6 +8,7 @@ V1.0, {localdate}
 :imagesdir: images
 :website: https://jmbruel.github.io/masterDL2016/
 :websitegh: https://github.com/jmbruel/masterDL2016
+:jmbtopic: //for sections integration...
 
 //------------------------- définitions ---------------------
 :cherbonneau: mailto:Bernard.Cherbonneau@irit.fr[Bernard Cherbonneau]

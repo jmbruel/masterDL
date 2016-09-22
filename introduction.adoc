@@ -3,7 +3,7 @@
 // (c) JMB - 2014
 //---------------------------------
 = icon:star-half[] Introduction à l'*IS*
-
+ifndef::jmbtopic[J.-M. Bruel -- 23/09/2016]
 //------------------------------------ variables de configuration
 :linkcss:
 :git-version: 2.9.2
