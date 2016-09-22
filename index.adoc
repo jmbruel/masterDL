@@ -8,14 +8,20 @@ V1.0, {localdate}
 :imagesdir: images
 :website: https://jmbruel.github.io/masterDL2016/
 :websitegh: https://github.com/jmbruel/masterDL2016
+
 //------------------------- définitions ---------------------
-:mdl: http://www.master-developpement-logiciel.fr/[Master DL]
+:cherbonneau: mailto:Bernard.Cherbonneau@irit.fr[Bernard Cherbonneau]
 :jmb: mailto:jbruel@gmail.com[J.-M. Bruel]
+:mdlurl: http://www.master-developpement-logiciel.fr
+:mdl: {mdlurl}/[Master DL]
+:refmodule: EIINL3AM
+// ajouter ici les variables manquantes
 //------------------------- définitions ---------------------
 
-image::customLogo.gif[]
+image::customLogo.gif[width=100%,link={mdlurl}]
 
 :numbered!:
+//---------------------------- Avant-propos -------------------------
 == Avant-Propos
 
 Ce site est le résultat de la collaboration des étudiants du {mdl} dans ce cours d'
@@ -39,16 +45,14 @@ Les sections avec l'icône icon:graduation-cap[] sont plus théoriques (définit
 // (en laissant celle-ci intacte pour les suivants ;-)
 
 :numbered:
-== icon:star-o[] Exemple de section
 
-[NOTE]
-.Exemple de note
-=====
-Ceci est une note...
-=====
-
+//---------------------------- Organisation -------------------------
 include::organisation.adoc[]
 
+//---------------------------- Intro by JMB -------------------------
+include::introduction.adoc[leveloffset=+1]
+
+//---------------------------- Liens utiles -------------------------
 == icon:star-o[] Liens utiles
 
 * Généralités
@@ -58,6 +62,7 @@ include::organisation.adoc[]
 ** AFIS
 ** INCOSE
 
+//---------------------------- FAQ -------------------------
 == icon:star-o[] FAQ
 
 Dans ce qui suit, les logos qui accompagnent les réponses aux questions signifient :
@@ -71,10 +76,13 @@ include::afis.adoc[leveloffset=+1]
 //include::myContribution.adoc[leveloffset=+1]
 
 
-//---------------------------- Glossaire
+//---------------------------- Glossaire -------------------------
 include::glossaire.adoc[]
 
 :numbered!:
 == icon:cogs[] Contributions welcome!
 
 N'hésitez pas à contribuer au projet icon:github[] qui héberge ce site ({websitegh}) en lisant https://github.com/jmbruel/masterDL2016/blob/master/CONTRIBUTING.adoc[ces consignes].
+
+//---------------------------- À propos... -------------------------
+include::about.asc[]
