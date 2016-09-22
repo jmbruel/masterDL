@@ -47,6 +47,8 @@ Les sections avec l'icône icon:graduation-cap[] sont plus théoriques (définit
 Ceci est une note...
 =====
 
+include::organisation.adoc[]
+
 == icon:star-o[] Liens utiles
 
 * Généralités
@@ -65,6 +67,9 @@ Dans ce qui suit, les logos qui accompagnent les réponses aux questions signifi
 - image:icons/appbar.weather.thunder.png[] => réponse non validée
 
 include::afis.adoc[leveloffset=+1]
+
+//include::myContribution.adoc[leveloffset=+1]
+
 
 //---------------------------- Glossaire
 include::glossaire.adoc[]
