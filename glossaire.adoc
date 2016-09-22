@@ -6,8 +6,20 @@ WARNING: Ces définitions seront enrichies au fur et à mesure du cours.
 [[[AFIS]]]::
 **A**ssociation **F**rançaise d'**I**ngénierie **S**ystème (https://www.afis.fr)
 
+[[[CMMI]]]::
+CMMI
+
 [[[IEEE]]]::
 IEEE
 
 [[[INCOSE]]]::
 INCOSE
+
+[[[IS]]]::
+**I**ngénierie **S**ystème (abbréviation)
+
+[[[MOA]]]::
+MOA
+
+[[[MOE]]]::
+MOE
