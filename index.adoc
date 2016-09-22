@@ -33,7 +33,9 @@ Les sections avec l'icône icon:graduation-cap[] sont plus théoriques (définit
 === Contributeurs
 
 - {jmb} depuis le 21/09/2016
-- [ajouter votre nom ici] depuis le [JJ/MM/YYY]
+//- [ajouter votre nom ici] depuis le [JJ/MM/YYY]
+// copier et decommenter la phrase ci-dessus
+// (en laissant celle-ci intacte pour les suivants ;-)
 
 :numbered:
 == icon:star-o[] Exemple de section
@@ -47,4 +49,4 @@ Ceci est une note...
 :numbered!:
 == icon:cogs[] Contributions welcome!
 
-N'hésitez pas à contribuer en participant au projet icon:github[] https://github.com/jmbruel/masterDL2016.
+N'hésitez pas à contribuer en lisant link:CONTRIBUTING.adoc[].
