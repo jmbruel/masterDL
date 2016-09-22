@@ -1,14 +1,18 @@
 :jmb: mailto:jbruel@gmail.com[J.-M. Bruel]
+:website: https://jmbruel.github.io/masterDL2016/
+:websitegh: https://github.com/jmbruel/masterDL2016
 :numbered:
-:toc:
 = Initiation à l'Ingénierie Système
 {jmb}, v.0.8
 
 == Contexte
 
-Cours collaboratif du http://www.master-developpement-logiciel.fr/[Master DL]
+Cours collaboratif du http://www.master-developpement-logiciel.fr/[Master DL].
+La version web de ce site est accessible ici : {website}
 
 == Contributeurs
 
 - {jmb} since 21/09/2016
 - [add your name here] since [JJ/MM/YYY]
+
+N'hésitez pas à contribuer en lisant les consignes (link:CONTRIBUTING.adoc).

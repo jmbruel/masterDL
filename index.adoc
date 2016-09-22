@@ -7,6 +7,7 @@ V1.0, {localdate}
 :icons: font
 :imagesdir: images
 :website: https://jmbruel.github.io/masterDL2016/
+:websitegh: https://github.com/jmbruel/masterDL2016
 //------------------------- définitions ---------------------
 :mdl: http://www.master-developpement-logiciel.fr/[Master DL]
 :jmb: mailto:jbruel@gmail.com[J.-M. Bruel]
@@ -49,4 +50,4 @@ Ceci est une note...
 :numbered!:
 == icon:cogs[] Contributions welcome!
 
-N'hésitez pas à contribuer en lisant link:CONTRIBUTING.adoc[].
+N'hésitez pas à contribuer au projet icon:github[] qui héberge ce site ({websitegh}) en lisant link:CONTRIBUTING.adoc[].
