@@ -1,0 +1,16 @@
+== icon:star-o[] Organisation du module {refmodule}
+
+
+[cols="3*", options="header"]
+|===
+|Quoi
+|Qui
+|Combien
+
+|{jmb}
+|{website}[Introduction]
+|2h Cours
+
+|===
+
+NOTE: Liens et coordonnées des intervenants à compléter au fur et à mesure...
