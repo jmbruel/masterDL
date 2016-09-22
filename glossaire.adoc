@@ -1,0 +1,13 @@
+[glossary]
+== Glossaire et définition
+
+WARNING: Ces définitions seront enrichies au fur et à mesure du cours.
+
+[[[AFIS]]]::
+**A**ssociation **F**rançaise d'**I**ngénierie **S**ystème (https://www.afis.fr)
+
+[[[IEEE]]]::
+IEEE
+
+[[[INCOSE]]]::
+INCOSE

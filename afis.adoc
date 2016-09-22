@@ -1,0 +1,20 @@
+== Qui compose l'AFIS ?
+// proposé par {jmb} le 22/09/2016
+:status: icons/appbar.weather.sun.png
+//:status: icons/appbar.weather.overcast.png
+//:status: icons/appbar.weather.thunder.png
+
+Qui sont les gens qui adhèrent et pilotent l'<<AFIS>>?
+
+.Réponse (source https://www.afis.fr/SitePages/AFIS%20et%20IS.aspx)
+[NOTE]
+====
+image::{status}[]
+
+Les membres sont des personnes individuelles (principalement des ingénieurs),
+des institutions (comme l'ENAC), des grandes entreprises (Airbus, Thalès, ...),
+des consultants, etc.
+
+Le pilotage est collégial avec des membres élus, des commissions diverses
+et des responsables thématiques.
+====

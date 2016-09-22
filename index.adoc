@@ -47,6 +47,28 @@ Les sections avec l'icône icon:graduation-cap[] sont plus théoriques (définit
 Ceci est une note...
 =====
 
+== icon:star-o[] Liens utiles
+
+* Généralités
+** https://fr.wikipedia.org/wiki/Ing%C3%A9nierie_des_syst%C3%A8mes[Wikipedia]
+
+* Organismes
+** AFIS
+** INCOSE
+
+== icon:star-o[] FAQ
+
+Dans ce qui suit, les logos qui accompagnent les réponses aux questions signifient :
+
+- image:icons/appbar.weather.sun.png[] => réponse validée par le prof
+- image:icons/appbar.weather.overcast.png[] => réponse avec référence/citation
+- image:icons/appbar.weather.thunder.png[] => réponse non validée
+
+include::afis.adoc[leveloffset=+1]
+
+//---------------------------- Glossaire
+include::glossaire.adoc[]
+
 :numbered!:
 == icon:cogs[] Contributions welcome!
 
