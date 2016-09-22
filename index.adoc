@@ -50,4 +50,4 @@ Ceci est une note...
 :numbered!:
 == icon:cogs[] Contributions welcome!
 
-N'hésitez pas à contribuer au projet icon:github[] qui héberge ce site ({websitegh}) en lisant link:CONTRIBUTING.adoc[].
+N'hésitez pas à contribuer au projet icon:github[] qui héberge ce site ({websitegh}) en lisant https://github.com/jmbruel/masterDL2016/blob/master/CONTRIBUTING.adoc[ces consignes].
