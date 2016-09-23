@@ -14,7 +14,7 @@ ifndef::jmbtopic[J.-M. Bruel -- 23/09/2016]
 :numbered:
 :status:
 :imagesdir: images
-:siteurl: http://jmbhome.github.io/masterDL2016.html
+:siteurl: https://jmbruel.github.io/masterDL2016/
 //------------------------------------ Slides uniquement
 ifdef::slides[]
 //--------------------- dzslides slides
@@ -115,13 +115,13 @@ image::ineedyou.jpg[width=100%]
 
 {siteurl}
 
-ifdef::slides[== !]
+== !
 
 Voici les mots clefs du support de cours de l'an dernier
 (réalisé par {cherbonneau}) :
 
-.Nuages des mots du support 2015
-image::canvas.png[]
+image::canvas.png[width=80%]
+ifdef::slides[NOTE: [detail]#Nuages des mots du support 2015#]
 
 endif::slides[]
 
