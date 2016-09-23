@@ -117,13 +117,21 @@ image::ineedyou.jpg[width=100%]
 
 == !
 
+endif::slides[]
+
 Voici les mots clefs du support de cours de l'an dernier
 (réalisé par {cherbonneau}) :
 
+ifndef::slides[.Nuages des mots du support 2015 (@bernardcherbonn)]
 image::canvas.png[width=80%]
 ifdef::slides[NOTE: [detail]#Nuages des mots du support 2015#]
 
-endif::slides[]
+Voici la _mind map_ réalisée par les étudiants de la promo 2016 :
+
+ifndef::slides[.MindMap 2016 (résultat du brainstorming collectif)]
+image::IS.svg[width=80%]
+ifdef::slides[NOTE: [detail]#MindMap 2016 (résultat du brainstorming collectif)#]
+
 
 [{topic}]
 == Rendons à César...
