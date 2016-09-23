@@ -1,5 +1,5 @@
 == icon:star-o[] Organisation du module {refmodule}
-
+:perroud: Antoine Perroud
 
 [cols="3*", options="header"]
 |===
@@ -15,7 +15,7 @@
 |Ingénierie des exigences
 |12h Cours
 
-|Mirepoix & Soutiras
+|{Perroud} & Soutiras
 |DOORS
 |6h TP
 
@@ -23,17 +23,13 @@
 |SysML
 |10h Cours/TD + 6h TP
 
-|Guermouche
-|BPMN
-|6h Cours/TD
-
 |Bodeveix & Chaudet
 |AADL
 |6h Cours/TD + 6h TP
 
 |Lugagne
 |Ligne de produit
-|8h Cours/TD
+|2h Cours/TD
 
 |===
 
