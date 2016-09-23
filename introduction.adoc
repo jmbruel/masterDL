@@ -137,11 +137,14 @@ ifdef::slides[NOTE: [detail]#MindMap 2016 (résultat du brainstorming collectif)
 [{topic}]
 == Rendons à César...
 
-Modeste successeur de {cherbonneau} (responsable du module jusqu'en 2015)
+Je ne suis que le modeste successeur de {cherbonneau} (responsable du module jusqu'en 2015).
 
 ifndef::slides[.Bernard Cherbonneau, le "papa" de ce cours (@bernardcherbonn)]
 image::bernard.jpeg[width=40%]
 ifdef::slides[NOTE: [detail]#Bernard Cherbonneau, le "papa" de ce cours (icon:twitter[] @bernardcherbonn)#]
+
+WARNING: J'ai enlevé `Ingénierie` et `Système` qui était sur-représentés bien sûr
+(d'au moins un facteur 4 sur le 3ème mot le plus fréquent).
 
 [{topic}]
 == Discipline _relativement_ nouvelle
