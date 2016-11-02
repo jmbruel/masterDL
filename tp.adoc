@@ -1,0 +1,126 @@
+:title: TP SysML
+:doctype: article
+:Author: Jean-Michel Bruel & Christelle Chaudet
+:Email: {bruel,christelle.chaudet}@irit.fr
+:Revision: 1.1 - {localdate}
+:Date: {LOCALDATE}
+:toc_title: Organisation
+:incremental:
+:slideshowlocation: [UPS]
+:copyright: {date={localdate}}, {slideshowlocation} *** {author} ***
+:imagedir: images
+:numbered:
+:experimental:
+
+// raccourcis sites
+:moodle: http://webetud.iut-blagnac.fr[Moodle]
+
+include::/Users/bruel/Dropbox/dev/definitions.txt[]
+
+//---------------- Définitions
+:tool: {papyrus}
+:toolname: Papyrus
+:toolversion: 1.1.2
+:toolversionlast: 2.0.1
+:daniel: mailto:damyot@uottawa.ca[Daniel Amyiot]
+:depotgithub: https://github.com/IUT-Blagnac/M2DL2015.git
+:doors: https://fr.wikipedia.org/wiki/DOORS[DOORS]
+:eclipse: https://www.eclipse.org/[Eclipse]
+:egit: http://wiki.eclipse.org/EGit[EGit]
+:emfcompare: https://www.eclipse.org/emf/compare/[EMFCompare]
+:exigences: https://docs.google.com/spreadsheets/d/1-yaW8fZHG9i6r7vJ7NOU9-66-hnDYY66Vd9cmZTYs2A/edit?usp=sharing
+:jucmnav: http://jucmnav.softwareengineering.ca/ucm/bin/view/ProjetSEG/WebHome[jUCMNav]
+:masterdl: http://www.master-developpement-logiciel.fr/[Master DL]
+:miburl: http://mi.iut-blagnac.fr/
+:mib: {miburl}[MIB]
+:papyrus: https://www.eclipse.org/papyrus/[Papyrus]
+:urn: https://www.itu.int/rec/T-REC-Z.151-201210-I/en[URN]
+//------------------------------
+
+= {title}
+
+Nous allons utiliser dans ce TP l'outil {tool} version `{toolversion}`.
+Vous allez devoir utiliser cet outil pour écrire les modèles travaillés en cours/TD.
+
+NOTE: La version récente de {tool} est la `{toolversionlast}`, qui devrait
+parfaitement fonctionner, mais nous indiquons ici la version que nous avons
+utilisé et dont sont issues les éventuelles captures d'écran et instructions.
+
+== Contexte
+
+On souhaite dans ce projet réaliser la modélisation {sysml} de la
+{MIB}.
+
+image::mib.png[alt="MIB"]
+
+Les spécifications initiales du système sont ici :
+
+*    {miburl}
+*    {exigences}[Fichier excel] des exigences initiales
+
+== Outillage
+
+Vérifiez que vous possédez bien sur votre machine : {tool} {toolversion}
+(ou une version supérieur).
+
+image::mars1.png[width=50%,alt="Mars1"]
+
+NOTE: si ce n'est pas encore fait, suivez le
+https://www.eclipse.org/papyrus/updates/index.php[guide d’installation du site de Papyrus].
+
+Vous allez devoir travailler en mode collaboratif. Suivez les instructions qui
+se trouvent sur le dépôt GitHub : {depotgithub}.
+
+NOTE: Vérifiez la présence de {egit} et de {emfcompare} sur votre {eclipse}.
+
+=== Let's start
+
+Vous travaillerez de préférence en binôme.
+
+- Choisissez dans la liste des sous-sytèmes que nous avons listé https://docs.google.com/spreadsheets/d/1-yaW8fZHG9i6r7vJ7NOU9-66-hnDYY66Vd9cmZTYs2A/edit?usp=sharing[ici] celui qui vous inspire
+(et qui est encore libre). Si vous trouvez une autre idée, n'hésitez pas à valider auprès de nous.
+- Ouvrez un nouveau projet (en pensant à le définir du type `SysML`)
+- Ajoutez votre propre organisation (en utilisant les `packages` comme vu en cours) si besoin (menu:right[click>add>])
+
+.Exemple d'organisation
+image::pkg-organisation.png["organization",height="300",link="pkg-organisation.png"]
+
+
+=== Avant d'aller trop loin dans les diagrammes
+
+- Faites valider votre organisation (par l'enseignant)
+- Travaillez un document-type pour votre rapport (qui servira d'évaluation à
+votre projet).
+
+[NOTE]
+====
+Vous pouvez tester la génération automatique de documents,
+mais n'attendez pas le dernier moment si vous vous lancez dans cette aventure!
+====
+
+
+== Contexte du système à modéliser
+
+Définition::
+	La {mib} est un appartement permettant la supervision de patient
+	à domicile.
+
+Les informations concernant le cahier des charges sont disponibles ici :
+{miburl}.
+
+
+== Exigences
+
+Nous avons travaillé aux exigences en TD. Elles sont {exigences}[ici].
+
+include::evaluation.asc[leveloffset=+1]
+
+ifdef::correction[]
+include::correction.txt[]
+endif::correction[]
+
+== About...
+
+Document generated with {asciidoctorlink} `{asciidoctor-version}` from `Dan Allen` by mailto:{email}[{author}].
+image:http://i.creativecommons.org/l/by-sa/3.0/88x31.png["Licence Creative Commons",style="border-width:0",link="http://creativecommons.org/licenses/by-sa/3.0/"]
+http://creativecommons.org/licenses/by-sa/3.0/[licence Creative Commons Paternité - Partage à l&#39;Identique 3.0 non transposé].
