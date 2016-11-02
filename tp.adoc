@@ -11,6 +11,8 @@
 :imagedir: images
 :numbered:
 :experimental:
+:icons: font
+:imagesdir: images
 
 // raccourcis sites
 :moodle: http://webetud.iut-blagnac.fr[Moodle]
@@ -77,7 +79,7 @@ NOTE: Vérifiez la présence de {egit} et de {emfcompare} sur votre {eclipse}.
 
 Vous travaillerez de préférence en binôme.
 
-- Choisissez dans la liste des sous-sytèmes que nous avons listé https://docs.google.com/spreadsheets/d/1-yaW8fZHG9i6r7vJ7NOU9-66-hnDYY66Vd9cmZTYs2A/edit?usp=sharing[ici] celui qui vous inspire
+- Choisissez dans la liste des sous-sytèmes que nous avons listé https://docs.google.com/spreadsheets/d/1n1Z4d2AWP74DZObQgbV5SWXr0Iu1uMny1quY2AKFbRk/edit?usp=sharing[ici] celui qui vous inspire
 (et qui est encore libre). Si vous trouvez une autre idée, n'hésitez pas à valider auprès de nous.
 - Ouvrez un nouveau projet (en pensant à le définir du type `SysML`)
 - Ajoutez votre propre organisation (en utilisant les `packages` comme vu en cours) si besoin (menu:right[click>add>])
