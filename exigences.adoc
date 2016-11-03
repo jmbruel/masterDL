@@ -1,0 +1,865 @@
+//---------------------------------
+// Introduction à l'IS ("chapeau")
+// (c) JMB - 2016
+//---------------------------------
+[[Exigences]]
+= icon:star-half[] Les *exigences* et SysML
+ifndef::jmbtopic[J.-M. Bruel -- 04/11/2016]
+//------------------------------------ variables de configuration
+:linkcss:
+:icons: font
+:experimental:
+:toc-title: Table des matières
+:toc: left
+:numbered:
+:status:
+:imagesdir: images
+:siteurl: https://jmbruel.github.io/masterDL2016/
+//------------------------------------ Slides uniquement
+ifdef::slides[]
+//--------------------- dzslides slides
+ifdef::dzslides[]
+:dzslides-style: tomorrow
+//:dzslides-style: stormy, watermelon, tomorrow, truffle, statement, default
+:dzslides-transition: fade
+:dzslides-fonts: family=Yanone+Kaffeesatz:400,700,200,300&family=Cedarville+Cursive
+//:dzslides-highlight: asciidoctor
+:dzslides-highlight: asciidoctor
+:source-highlighter: asciidoctor
+:dzslides-status:
+:topic: .topic
+:intro: .topic.intro
+:statement: .topic.statement
+:incremental: .incremental
+:source: .topic.source
+endif::dzslides[]
+//----------- deck.js --------------
+ifdef::deckjs-slides[]
+:viewport: width=1024, user-scalable=no
+//:backend: deckjs # Should be used in the asciidoctor command (asciidoctor -b deckjs)
+// swiss, neon, beamer, web-2.0
+:deckjs_theme: swiss
+//fade, horizontal-slide, vertical-slide
+//:deckjs_transition: fade
+:goto:
+:menu:
+//:navigation:
+:status:
+:sectids!:
+endif::deckjs-slides[]
+endif::slides[]
+//------------------------------------ HTML uniquement
+ifndef::slides[]
+:topic:
+:intro:
+:statement:
+:incremental: %step
+:source:
+endif::slides[]
+
+//------------------------- définitions ---------------------
+:afis: https://www.afis.fr
+:cherbonneau: mailto:Bernard.Cherbonneau@irit.fr[Bernard Cherbonneau]
+:git: link:http://git-scm.com/[Git]
+:jmb: mailto:jbruel@gmail.com[J.-M. Bruel]
+:mdlurl: http://www.master-developpement-logiciel.fr
+:mdl: {mdlurl}/[Master DL]
+:models: http://www.modelsconference.org/[MODELS]
+:sosym: http://www.sosym.org/[SoSyM]
+:sysmlfrance: http://www.sysml-france.fr[SysML-France]indexterm:[SysML-France]
+// ajouter ici les variables manquantes
+//------------------------- définitions ---------------------
+
+include::../definitions.txt[]
+
+:Requirements: Exigences
+
+[{topic}]
+== Introduction
+
+La matrice qui nous servira de "carte de base" pour placer les activités
+ou les modèles, sera celle-ci :
+
+image::mamatrice.png[width=100%]
+
+ifndef::slides[]
+
+Cette matrice permet de situer les différents éléments qui seront vus dans ce cours dans un cadre
+utile pour comparer ces éléments les uns aux autres.
+Je vous conseille de vous faire votre propre matrice.
+L'essentiel est de toujours bien se représenter les différents éléments qu'on aborde
+dans une carte mentale précise. Cela permet une meilleure mémorisation.
+
+endif::slides[]
+
+
+ifdef::slides[:leveloffset: -1]
+
+=== Points de vue
+
+Dans un axe horizontal, j'ai différencié quatre grands points de vue :
+
+ifdef::slides[]
+
+- {Requirements}
+- {Structure}
+- {Behavior}
+- {Crosscutting}
+
+endif::slides[]
+
+ifdef::slides[=== Points de vue ({Requirements})]
+
+ifndef::slides[{Requirements}::]
+Les exigences et leur prises en compte sont un éléments critique pour le
+  succès du développement de tout système.
+  Sans explorer l'ensemble des activités d'ingénierie système (ce qui
+  nécessiterait tout un volume du type de <<reqs>>) nous insisterons sur cet aspect.
+
+
+ifdef::slides[=== Points de vue ({Structure})]
+
+ifndef::slides[{Structure}::]
+La description de l'architecture et des éléments constitutifs du système,
+avec les blocs, leurs relations, organisations internes, etc. constituera un point de vue important.
+C'est souvent la partie de modélisation qui pose le moins de problème aux débutants.
+
+ifdef::slides[=== Points de vue ({Behavior})]
+
+ifndef::slides[{Behavior}::]
+Le comportement d'un système est du point de vue de l'utilisateur final beaucoup plus important que la structure elle-même. C'est la partie
+	qu'il est la plus à même d'exprimer, de comprendre (vos modèles) et de valider.
+
+ifdef::slides[=== Points de vue ({Crosscutting})]
+
+ifndef::slides[{Crosscutting}::]
+Un certains nombre de concepts sont transverses aux trois points de vue précédents. Il s'agira principalement de parler de cohérence ou de traçabilité entre
+	les phases de développement ou entre les points de vue.
+
+ifndef::slides[]
+
+Ces différents points de vue ne doivent pas être confondus avec les différentes phases de développement (cf. paragraphe suivant).
+ Ils sont plutôt à rapprocher de la notion de préoccupation. C'est ainsi que j'ai choisi de distinguer trois points de vue
+qui se retrouvent souvent en modélisation : le point de vue des exigences qui permet de se focaliser sur les besoins des clients ;
+le point de vue structurel qui permet de se focaliser sur les différents composants du système ;
+et le point de vue comportemental qui permet de se focaliser sur le comportement du système.
+Ces trois points de vue n'étant pas indépendants les uns des autres, j'ai intégré un quatrième point de vue transversal.
+
+endif::slides[]
+
+=== Phase de développement
+
+Dans un axe vertical, j'ai différencié quatre grandes phases du cycle de vie du développement :
+
+ifdef::slides[]
+
+- {organisation}
+- {analysis}
+- {design}
+- {implementation}
+
+endif::slides[]
+
+ifdef::slides[=== Phase de développement ({organisation})]
+
+
+ifndef::slides[{organisation}::]
+Une étape indépendante du type de cycle de développement envisagé (en V, agile, etc.) mais qui concerne la mise en place
+	d'un cadre de travail qui permette un développement de qualité (outils, éditeurs, gestionnaire de version, de tâches, etc.).
+
+[NOTE]
+====
+On pourrait rapprocher cette étape du "cycle 0" de {scrum}.
+====
+
+ifdef::slides[=== Phase de développement ({analysis})]
+
+ifndef::slides[{analysis}::]
+Cette phase vise plutôt à examiner le domaine du problème. Elle se focalise sur les cahiers des charges et les exigences.
+	L'analyse débouche sur un dossier d'analyse qui décrit les grandes lignes (cas d'utilisation, architecture principale) du système.
+
+ifdef::slides[=== Phase de développement ({design})]
+
+ifndef::slides[{design}::]
+Cette phase vise plutôt à examiner le domaine de la solution. Elle débouche sur un dossier de conception qui décrit les détails
+	conceptuels de la solution envisagée (structure détaillée, comportement, etc.)
+
+ifdef::slides[=== Phase de développement ({implementation})]
+
+ifndef::slides[{implementation}::]
+Cette phase traite des développements finaux (construction ou approvisionnement en matériel, développement de codes, etc.).
+
+ifndef::slides[]
+
+Il s'agit ici classiquement des grandes étapes de développement d'un système.
+ On pourrait être surpris par l'étape que j'ai appelé « organisation ».
+C'est une étape que je considère importante, particulièrement pour l'enseignement.
+Avant toute activité de modélisation ou de même de développement, il convient en effet
+de s'organiser en termes de choix d'outils, choix d'environnement, etc.
+Cette étape est souvent négligée par les étudiants.
+C'est pour cela que j'ai décidé de faire figurer cette étape de manière explicite.
+Bien sûr dans une organisation existante cette étape sera contrainte par les habitudes
+« maison ».
+
+endif::slides[]
+
+
+=== {revisions}
+
+Associez les diagrammes suivants avec leurs acronymes ({sd}, {dc}, {uc}, {pkg}, {dss}{nbsp}) :
+
+- Diagramme de Paquetages
+- Diagramme des Cas d'Utilisation
+- Diagramme de Séquences Système
+- Diagramme de Classes
+- Diagramme de Séquences
+
+
+ifdef::slides[=== Révisions (suite)]
+
+Placez dans la matrice ci-dessous les différents diagrammes {uml} que vous
+connaissez déjà ({sd}, {dc}, {uc}, {pkg}, {dss}{nbsp}).
+
+image::mamatrice.png[width=100%]
+
+ifdef::slides[=== Révisions (suite)]
+
+ifdef::correction[]
+
+Éléments de correction :
+
+image::acronymes-cor.png[width=100%]
+
+ifndef::slides[]
+
+ifdef::book[[align="center",cols="h,4*",options="header"]]
+ifndef::book[[align="center",cols="h,4*",options="header",width="50%"]]
+|======================
+|					| {Requirements} 	| {Structure}	| {Behavior} 	| {Crosscutting}
+| {organisation}	|					|        {pkg}	|				|
+| {analysis}		|		{uc}		|       {dc}	|	{dss}		|
+| {design}			|					|       {dc}	|	{sd}		|
+| {implementation}	|					|        		|				|
+|======================
+
+endif::slides[]
+
+endif::correction[]
+
+ifdef::slides[:leveloffset: 0]
+
+[[reqs]]
+== Les exigences
+
+L'ingénierie des exigences est d'une importance capitale, surtout en {is}.
+En général les exigences sont exprimées par des ingénieurs dédiés à cette activité.
+La complexité des systèmes modernes (embarqués, communicants, critiques, ...) rendent
+cruciale cette analyse.
+
+:mycaption: 300 corps de métiers sont parfois présents sur un même chantier
+ifndef::slides[.{mycaption}]
+image::ingenierie-des-exigences.jpg[alt="Joke",link="http://www.inria.fr/centre/rennes/actualites/vers-un-cahier-des-charges-mieux-formule",width=50%]
+ifdef::slides[[detail]#{mycaption}#]
+
+ifdef::slides[== Les exigences (suite)]
+
+.Besoins, exigences : question de vocabulaire
+[TIP]
+====
+La difficulté de l'emploi massif de l'anglais fait qu'il existe souvent une confusion entre
+les termes anglais et leurs traduction française. Nous précisons donc ici notre utilisation des termes.
+====
+
+ifdef::slides[== Exigences]
+
+ifndef::slides[_Requirements_::]
+Exigences, c'est à dire une fonction ou une propriété que doit satisfaire le système considéré.
+Par nature une exigence doit pouvoir être *vérifiable*.
+En génie logiciel on parle plus classiquement des spécifications ("spec") pour parler des contraintes à respecter pour un système. Les ingénieurs systèmes ont depuis longtemps intégré le terme d'exigences comme traduction directe de _requirement_.
+
+ifdef::slides[== Besoin]
+
+ifndef::slides[Besoins::]
+Il s'agit des exigences du client. En {UML} on va plus les retrouver dans les cas d'utilisation. Ils sont à l'origine des _requirements_ tels que définis plus haut.
+
+ifdef::slides[== Les exigences (suite)]
+
+Il est important pour une exigence qu'elle ne soit pas ambiguë (contrairement au terme "en" dans la consigne exprimée par la maman dans l'illustration <<fig:eggs,ci-dessous>> : "_Ramène moi 1 bouteille de lait. S'il y a des oeufs, ramène m'en 6._").
+
+[[fig:eggs]]
+:mycaption: Spécification ambiguë
+ifndef::slides[.{mycaption} (taken from https://plus.google.com/100035762233109552669/posts/a8Hafq2hZ74)]
+image::ProgrammerHumor.jpg[alt="Joke",link="https://plus.google.com/100035762233109552669/posts/a8Hafq2hZ74",width=50%]
+ifdef::slides[[detail]#{mycaption}#]
+
+Dans le cadre de la matrice qui nous sert de plan, nous somme ici :
+
+ifndef::book[]
+[cols="h,4*",options="header",width="50%"]
+|======================
+|					| [red]*{Requirements}* 	| {Structure}	| {Behavior} 	| {Crosscutting}
+| {organisation}	|					|        		|				|
+| {analysis}		|					|        		|				|
+| {design}			|					|        		|				|
+| {implementation}	|					|        		|				|
+|======================
+endif::book[]
+
+ifdef::slides[:leveloffset: -1]
+
+=== Fondements
+
+On abordera :
+
+- L'organization des _Requirements_
+- Les _Requirements properties_
+- Les _Requirements links_
+- Les _Requirements Diagrams_
+- Les considérations sur la traçabilité
+- Annotations des _Requirements_
+- Les _Use Case Diagrams_
+
+ifdef::slides[=== !]
+
+ifndef::slides[]
+
+[TIP]
+====
+L'ingénierie des exigences est une discipline à part entière et nous n'abordons ici
+que les aspects en lien avec la modélisation. Voir le livre de référence pour
+plus de détails (<<Sommerville1997>>) ou le guide de l'{afis} (<<REQ2012>>).
+====
+endif::slides[]
+
+
+Il n'existe pas de diagramme {uml} pour traiter des exigences en particulier.
+Nous allons donc présenter dans cette partie un diagramme introduit par
+{sysml}.
+
+[{intro}]
+=== SysML
+
+ifdef::slides[:leveloffset: -1]
+
+[{topic}]
+==== Fiche d'identité
+
+include::fiche.txt[]
+
+[{topic}]
+==== SysML, c'est...
+
+Un ensemble de 9 types de diagrammes :
+
+ifdef::slides[==== Diagrammes structuraux]
+
+* Diagrammes structuraux
+** Diagrammes de définition de blocs (`{bdd}`)
+** Diagrammes internes de blocs (`{ibd}`)
+** Diagrammes paramétriques (`{par}`)
+** Diagrammes de packages (`pkg`)
+
+ifdef::slides[==== Diagrammes comportementaux]
+* Diagrammes comportementaux
+** Diagrammes de séquence (`{seq}`)
+** Diagrammes d'activité (`{act}`)
+** Diagrammes de cas d'utilisation (`{uc}`)
+** Diagrammes d'états (`{stm}`)
+
+ifdef::slides[==== Diagrammes d'exigences]
+* Diagramme d'exigence (`{req}`)
+
+ifdef::slides[==== SysML, c'est (suite)]
+
+Un profil {uml}::
+	C'est à dire une *extension* de cette notation, un ensemble de nouveaux concepts et éléments qui sont définis à partir des éléments de base {duml}. Un exemple : le `bloc` {sysml} n'est qu'une redéfinition de la `classe` {uml}.
+Une notation::
+ 	Une notation de plus en plus enseignée et connue et qui servira donc de plus en plus de *référence* à la modélisation des systèmes.
+
+[{topic}]
+==== SysML, ce n'est pas...
+
+Une méthode::
+ 	En effet, contrairement à ce que beaucoup pensent en l'abordant, {sysml} ne propose pas de démarche particulière de développement de système. C'est à la fois sa force (votre méthode existante pourra continuer à être utilisée) comme sa faiblesse car cette absence de guide méthodologique fait souvent défaut à son utilisation.
+
+ifdef::slides[==== SysML, ce n'est pas (suite)]
+Un outil::
+	Nous verrons en effet que {sysml} ne fait que ce qu'on veut bien en faire. Comme tout langage il est limité dans son pouvoir d'expression, mais surtout il reste une simple notation qu'il convient d'utiliser avec des outils et des démarches associées.
+
+Un raton laveur::
+	C'est juste pour voir ceux qui suivent...
+
+ifndef::slides[]
+[NOTE]
+====
+On ne dit pas "le SysML" mais tout simplement "SysML".
+====
+endif::slides[]
+
+ifdef::slides[:leveloffset: +1]
+
+[{topic}]
+=== L'organisation des _Requirements_
+
+Il ne s'agit pas ici de revenir sur les exigences elles-même, mais plutôt de voir comment {sysml} permet
+de les exprimer, de les manipuler et surtout de les lier avec le reste du système.
+
+ifdef::slides[:leveloffset: -1]
+
+[{topic}]
+==== Représentation de base
+
+Un _Requirement_ en {sysml} n'est qu'un bloc particulier.
+
+.Définition : _Requirements_ (OMG SysML v1.3, p. 139)
+[icon="{iconsdir}/sysml.jpeg"]
+[NOTE]
+====
+_A requirement specifies a capability or condition that must (or should) be satisfied...
+A requirement is defined as a stereotype of UML Class..._
+====
+
+ifdef::slides[==== !]
+
+[[corde]]
+:mycaption: Un _Requirement_ en SysML (`P`)
+ifndef::slides[.{mycaption}]
+image::corde.png[width=100%]
+ifdef::slides[[detail]#{mycaption}#]
+
+[{topic}]
+==== Différents types d'organisation
+
+ifndef::slides[]
+
+L'ingénierie des exigences aboutit généralement à une liste organisée d'exigences, que ce soit en terme
+de fonctionnelles/non fonctionnelles, de prioritaires/secondaires, etc.
+Le principal support de {sysml} à cette organisation, outre la possibilité de les annoter (cf. section <<reqStereotypes,Stéréotyper les exigences>>), consiste à utiliser les  _packages_.
+
+endif::slides[]
+
+
+Plusieurs types d'organisations sont possibles :
+
+- Par niveau d'abstraction
+* Besoins généraux (en lien avec les  _use cases_ par exemple)
+* Besoins techniques (en lien avec les éléments de conception)
+
+ifdef::slides[==== !]
+- Par point de vue
+* Besoins principaux (en lien avec les _use cases_)
+* Besoins spécifiques :
+** Fonctionnels
+** Marketing
+** Environnementaux
+** _Business_
+** ...
+- etc.
+
+==== Tableaux de _Requirements_
+
+ifndef::slides[]
+
+Les _requirements_ sont habituellement stockés dans des tableaux (feuilles excel le plus souvent!).
+Il est donc recommandé par le norme et possible dans de nombreux outils de représenter les exigences
+sous forme tabulaire.
+
+.Définition : _Requirements Table_ (OMG SysML v1.3, p. 145)
+[icon="sysml.jpeg"]
+[NOTE]
+====
+_The tabular format is used to represent the requirements, their properties and relationships..._
+====
+
+endif::slides[]
+
+:mycaption: Exemples tableau d'exigences (OMG SysML v1.3, p. 145)
+ifndef::slides[.{mycaption}]
+image::req-table.png[width=100%]
+ifdef::slides[[detail]#{mycaption}#]
+
+ifdef::slides[==== !]
+
+La plupart des outils modernes permettent le passage entre outils classiques de gestion des exigences (comme {doors})
+et outils de modélisation {sysml} (comme {Modelio}, illustré ci-dessous).
+
+:mycaption: Import Modelio de tableau d'exigences (tiré de <<Modelio2012>>)
+ifndef::slides[.{mycaption}]
+image::req-modelio.png[width=100%]
+ifdef::slides[[detail]#{mycaption}#]
+
+ifdef::slides[:leveloffset: +1]
+
+=== Les _Requirements properties_
+
+Il est possible d'indiquer un certain nombre de propriétés sur un _requirement_ :
+
+- _priority_ (`high`, `low`, ...)
+- _source_ (`stakeolder`, `law`, `technical`, ...)
+- _risk_ (`high`, `low`, ...)
+- _status_ (`proposed`, `aproved`, ...)
+- _verification method_ (`analysis`, `tests`, ...)
+
+ifdef::slides[=== !]
+
+Dans le cadre du module MPA nous ne retiendrons comme attribut d'un _requirement_
+que son identifiant et le texte le désignnat (les deux attributs obligatoire).
+La priorité sera donné par le client en terme de cycle (on traitera en premier les _requirements_ prioritaires).
+
+ifdef::slides[=== !]
+
+Ainsi en {plantuml}, une exigence ressemblera à ceci (cf. rendu <<corde,ici>>):
+
+[source]
+-----
+class ObtenirHoraires <<requirement>> {
+	Text = "Le logiciel doit fournir les horaires rapidement."
+	Id = "14.2"
+	}
+-----
+
+=== Les _Requirements links_
+
+Les principales relations entre _requirement_ sont :
+
+_Containment_::
+	Pour décrire la décomposition d'une exigence en plusieurs sous-exigences (⊕–). Typiquement dès qu'une exigence est exprimée avec une conjonction "et" ("La voiture doit être rapide et économe.").
+
+ifdef::slides[=== !]
+_Refinement_::
+ 	Pour décrire un ajout de précision (`<<refine>>`), comme par exemple une précision.
+
+ifdef::slides[=== !]
+_Derivation_::
+ 	Pour indiquer une différence de niveau d'abstraction (`<<deriveReqt>>`), par exemple
+	entre un système et un de ses sous-systèmes.
+
+ifdef::slides[=== !]
+
+[TIP]
+====
+Lorsqu'une exigence possède plusieurs cas `<<refine>>` qui pointent vers lui, on considère que ces différents cas sont des options possibles de raffinement (cf. <<conventions>>).
+====
+
+ifdef::slides[=== Les _Requirements links_ (suite)]
+
+:mycaption: Exemples de relations entre exigences (`M`)
+ifndef::slides[.{mycaption}]
+image::req-exp1.png[width=80%]
+ifdef::slides[[detail]#{mycaption}#]
+
+ifdef::slides[=== !]
+
+[TIP]
+====
+Il existe ensuite les relations entre les besoins et les autres éléments de modélisation
+(les _block_ ou les _class_ principalement) comme `<<satisfy>>` ou `<<verify>>`, mais nous les aborderons
+dans la partie <<transvers,transverse>>.
+====
+
+ifdef::slides[=== !]
+
+:mycaption: Relations liées aux _requirements_ dans TOPCASED (`T`)
+ifndef::slides[.{mycaption}]
+image::topcased-req-connections.png[width=50%]
+ifdef::slides[[detail]#{mycaption}#]
+
+=== Les _Requirements Diagrams_
+
+Voici un exemple de `{req}` un peu plus étoffé, tiré de la norme (voir aussi <<rationale>>) :
+
+:mycaption: Exemples de composition d'exigences (tiré de <<SysML>>, `UK`)
+ifndef::slides[.{mycaption}]
+image::hsuv-reqs1.png[width=80%]
+ifdef::slides[[detail]#{mycaption}#]
+
+[[reqStereotypes]]
+=== Stéréotyper les _Requirements_
+
+Tout comme pour n'importe quel bloc, il est possible de stéréotyper les _requirements_.
+Ceci permet de se définir ses propres priorités et classifications.
+Quelques exemples de stéréotypes utiles :
+
+- `<<interfaceRequirement>>`, `<<physicalRequirement>>`, ...
+- `<<FunctionalRequirement>>`, `<<nonFunctionalRequirement>>`
+
+[[reqAnnot]]
+=== Annotations des _Requirements_
+
+Il est possible d'annoter les éléments de modélisation en précisant les raisons
+(_rationale_) ou les éventuels problèmes anticipés (_problem_).
+
+[[rationale]]
+:mycaption: Exemples de _rationale_ et _problem_ (tiré de <<SysML>>)
+ifndef::slides[.{mycaption}]
+image::hsuv-reqs2.png[width=80%]
+ifdef::slides[[detail]#{mycaption}#]
+
+=== Les considérations sur la traçabilité
+
+Une fois que les _requirements_ ont été définis et organisés, il est utile de les lier au moins aux _use cases_
+(en utilisant `<<refine>>` par exemple) et aux éléments structurels (en utilisant `<<satisfy>>` par exemple), mais ceci
+sera abordé dans la partie <<transvers,transverse>>.
+
+[NOTE]
+====
+En général chaque _requirement_ devrait être relié à au moins un _use case_ (et vice-versa!).
+====
+
+
+=== Les _Use Case Diagrams_
+
+Bien que nous traitions les cas d'utilisation dans la partie <<behavior,comportement>>, nous les abordons
+	ici du fait de leur proximité avec les _requirements_.
+
+:mycaption: Exemple de lien entre _use case_ et _requirements_ (`T`)
+ifndef::slides[.{mycaption}]
+image::req-uc-relation.png[width=50%]
+ifdef::slides[[detail]#{mycaption}#]
+
+ifdef::slides[=== Les _Use Case Diagrams_ (suite)]
+
+Ce diagramme est celui que vous avez appris l'an dernier en {uml}.
+
+:mycaption: Exemple de diagramme des cas d'utilisation (`B`)
+ifndef::slides[.{mycaption}]
+image::UCGestionNotes.png[width=80%]
+ifdef::slides[[detail]#{mycaption}#]
+
+ifdef::slides[=== Les _Use Case Diagrams_ (suite)]
+
+ifndef::book[]
+
+:mycaption: Autre exemple de diagrammes des cas d'utilisation (`B`)
+ifndef::slides[.{mycaption}]
+image::uc.png[width=70%]
+ifdef::slides[[detail]#{mycaption}#]
+
+endif::book[]
+
+ifdef::slides[=== !]
+
+[TIP]
+====
+Un acteur représente un *rôle* joué par un utilisateur humain. Il faut donc plutôt raisonner sur les rôles que sur les personnes elles-mêmes pour identifier les acteurs.
+====
+
+[{intro}]
+=== Exigences et tests
+
+ifdef::slides[:leveloffset: -1]
+
+==== Principes
+
+Pour ce qui ce concerne ce module nous allons nous contenter de maintenir des
+matrices croisant les exigences d'un côté et les tests de l'autre.
+
+Par exemple :
+
+:mycaption: Exemple de matrice de traçabilité
+ifndef::slides[.{mycaption}]
+image::matrice.gif[width=70%,link="http://infocenter.sybase.com/archive/index.jsp?topic=/com.sybase.stf.poweramc.docs_12.0.0/html/exgu/exgup38.htm"]
+ifdef::slides[[detail]#{mycaption}#]
+
+ifdef::slides[==== !]
+
+Dans la réalité, les entreprises industrialisent le processus de vérification
+des exigences en utilisant des outils adaptés :
+
+:mycaption: Le cycle de la qualification fonctionnelle en lien avec les besoins métiers
+ifndef::slides[.{mycaption} (tirée de <<TestsIndustriels2009>>)]
+image::testindus.png[width=60%]
+ifdef::slides[[detail]#{mycaption}#]
+
+ifdef::slides[:leveloffset: +1]
+
+=== Exemple complet
+
+En prenant un exemple tiré de l'exemple du http://www.prfc.fr/livres/[Radio Réveil]...
+
+ifdef::slides[:leveloffset: -1]
+
+==== Le texte du cahier des charges
+
+Le texte complet de l'exemple ne précise pas le cahier des charges de l'Autoradio (AR), considérant
+que tout le monde sait ce que c'est!
+
+Rédigeons tout de même quelques extraits (numérotés) de texte possible :
+
+. L'AR est un dispositif qui permet d'écouter la radio de manière confortable et interactive.
+. L'AR doit être capable de mémoriser un certain nombre de station différentes.
+. L'Utilisateur de l'AR doit pouvoir choisir sa station parmis un choix donné.
+. L'Utilisateur de l'AR doit pouvoir régler le niveau sonore.
+. L'Utilisateur de l'AR doit pouvoir chercher une station en "balayant" les ondes FM.
+. ...
+
+==== Expression des exigences
+
+Nous pouvons, en analysant ce cahier des charges, déduire un certain nombre d'exigences.
+Nous les écrivons ici sous forme tabulaire, puis en utilisant le langage {gherkin}.
+
+[NOTE]
+====
+Concernant {gherkin}, pour ceux qui veulent aller plus loin, il est possible d'automatiser la génération des tests
+à partir de ce genre de langage. C'est ce que fait {cucumber} pour {ruby}.
+====
+
+ifdef::slides[==== Expression des exigences (tabulaire)]
+
+*Version tabulaire* :
+
+:mycaption: Exemple de liste d'exigences
+ifndef::slides[.{mycaption} (tirée de <<TestsIndustriels2009>>)]
+image::tabulaire.png[width=100%]
+ifdef::slides[[detail]#{mycaption}#]
+
+ifdef::slides[==== Expression des exigences (Gherkin)]
+
+Exemple de *version textuelle* formattée :
+
+[source]
+----
+#encoding: utf-8
+Feature: Scénario simple d'utilisation de l'AutoRadio (AR)
+  In order to vérifier que le son marche
+  As an utilisateur lambda
+  I should be able to exécuter ces scénarios et constater les effets
+
+  Scenario: Augmenter le son
+    Given un AR avec le son à 0
+    When Je presse le bouton "Volume +"
+    Then Le son passe à 1
+    And Je commence à entendre la radio
+----
+
+==== Plan de test
+
+Créer un plan de test consiste à prévoir l'ensemble des tests à l'avance de manière
+à prévoir la *couverture* de ces tests.
+
+:mycaption: Exemple de plan de test simplifié
+ifndef::slides[.{mycaption} (tirée de <<TestsIndustriels2009>>)]
+image::plantest.png[width=100%]
+ifdef::slides[[detail]#{mycaption}#]
+
+==== Analyse et la conception
+
+Dans un cycle classique ("en V" par exemple), les modèles sont réalisés avant l'implémentation (codage).
+
+ifndef::slides[]
+
+image::AutoRadio-UC.png[width="20%"]
+image::AutoRadio-DC.png[width="20%"]
+image::AutoRadio-DS-Suivante.png[width="20%"]
+
+endif::slides[]
+
+Dans un cycle Agile, chaque cycle possèdera ses modèles, eux aussi versionnés, qui eux aussi évolueront
+en même temps que le code.
+
+==== Lien et traçabilité
+
+Plus encore que dans les méthodes classiques, il conviendra de vérifier que code et modèles sont bien
+cohérents. On pourra donc :
+
+[{incremental}]
+- générer les codes à partir des modèles
+- générer les modèles à partir des codes [detail]#(cf. <<commentaires,commentaires>>)#
+- utiliser des outils intégrés [detail]#comme {eclipse}#
+- avoir un plan systématique de révision code/modèle
+- ...
+
+ifdef::slides[==== Lien et traçabilité (suite)]
+
+[[commentaires]]
+.Exemple de code Java commenté pour la génération automatique de diagrammes plantUML
+[source,java]
+------------
+package demo;
+
+class Controller {}
+class EmbeddedAgent {}
+class PowerManager {}
+
+/**
+ * @extends Controller
+ * @extends EmbeddedAgent
+ * @navassoc - - 1..* PowerManager
+ * @note this is a note
+ */
+class SetTopController implements URLStreamHandler {
+  public String name;
+
+  int authorizationLevel;
+  void startUp() {}
+  void shutDown() {}
+  void connect() {}
+}
+
+/** @depend - friend - SetTopController */
+class ChannelIterator {}
+
+interface URLStreamHandler {
+  void OpenConnection();
+  void parseURL();
+  void setURL();
+  void toExternalForm();
+}
+------------
+
+ifdef::slides[==== Lien et traçabilité (suite)]
+
+:mycaption: Exemple de diagramme généré par javadoc
+ifndef::slides[.{mycaption} (tirée de <<TestsIndustriels2009>>)]
+image::doclet.png[width=90%, link="http://plantuml.sourceforge.net/doclet.html"]
+ifdef::slides[[detail]#{mycaption}#]
+
+ifdef::slides[:leveloffset: +1]
+
+[{topic}]
+=== {resume}
+
+Les *exigences* sont très importantes en ingénierie système,
+du fait de la multiplication des *sous-systèmes* et donc des *intermédiaires* (fournisseurs, sous-traitants, etc.)
+avec qui les aspects contractuels seront souvent basés sur ces exigences.
+
+Il n'est donc pas étonnant qu'un  diagramme
+et des mécanismes *dédiés* aient été prévus en {sysml}.
+
+ifdef::slides[=== !]
+
+.Déclinaison des Exigences
+ifdef::book[[cols="h,4*",options="header"]]
+ifndef::book[[cols="h,2,1,1,1",options="header",width="90%"]]
+|======================
+|					| [red]*{Requirements}* 			| {Structure}	| {Behavior} 	| {Crosscutting}
+| {organisation}	| `⊕–`, `\<<deriveReqt>>`			|        		|				|
+| {analysis}		| `<<satisfy>>`, `<<refine>>`		|  `<<satisfy>>` entre reqs et UC|	`<<refine>>` |
+| {design}			| `\<<allocate>>`					|        		|				|
+| {implementation}	|	`\<<satisfy>>`, `\<<verify>>`	|        		|				|
+|======================
+
+ifdef::slides[=== Les _Use Case Diagrams_ (suite)]
+
+En terme de démarche, il est classique d'avoir de nombreux aller-retour entre la modélisation
+des exigences et la modélisation du système lui-même (cf. <<sysmod>>).
+
+ifdef::slides[=== !]
+
+[[sysmod]]
+:mycaption: Exemple de démarche (_SYSMOD Zigzag pattern_)
+ifndef::slides[.{mycaption} (tirée de <<TestsIndustriels2009>>)]
+image::zigzag.png[width=90%, link="http://model-based-systems-engineering.com/2012/03/26/the-sysmod-zigzag-pattern/"]
+ifdef::slides[[detail]#{mycaption}#]
+
+
+=== {revisions}
+
+[icon="{iconsdir}/tuxteacher.png"]
+[NOTE]
+====
+. Quelles sont les différences entre *besoins* et *exigences* ?
+//. Qui dérive de qui parmis ces deux termes : _Exigences_ et _Besoins_ ?
+. Quelles sont les différences entre un *backlog de produit* et une liste d'*exigences*?
+. En quoi les cas d'utilisation sont-ils complémentaires des exigences?
+====

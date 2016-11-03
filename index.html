@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Asciidoctor 1.5.4">
+<meta name="generator" content="Asciidoctor 1.5.5">
 <meta name="author" content="J.-M. Bruel">
 <title>Initiation à l&#8217;Ingénierie Système</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
@@ -18,7 +18,6 @@ audio:not([controls]){display:none;height:0}
 [hidden],template{display:none}
 script{display:none!important}
 html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}
-body{margin:0}
 a{background:transparent}
 a:focus{outline:thin dotted}
 a:active,a:hover{outline:0}
@@ -53,7 +52,7 @@ textarea{overflow:auto;vertical-align:top}
 table{border-collapse:collapse;border-spacing:0}
 *,*:before,*:after{-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box}
 html,body{font-size:100%}
-body{background:#fff;color:rgba(0,0,0,.8);padding:0;margin:0;font-family:"Noto Serif","DejaVu Serif",serif;font-weight:400;font-style:normal;line-height:1;position:relative;cursor:auto}
+body{background:#fff;color:rgba(0,0,0,.8);padding:0;margin:0;font-family:"Noto Serif","DejaVu Serif",serif;font-weight:400;font-style:normal;line-height:1;position:relative;cursor:auto;tab-size:4;-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased}
 a:hover{cursor:pointer}
 img,object,embed{max-width:100%;height:auto}
 object,embed{height:100%}
@@ -65,7 +64,6 @@ img{-ms-interpolation-mode:bicubic}
 .text-center{text-align:center!important}
 .text-justify{text-align:justify!important}
 .hide{display:none}
-body{-webkit-font-smoothing:antialiased}
 img,object,svg{display:inline-block;vertical-align:middle}
 textarea{height:auto;min-height:50px}
 select{width:100%}
@@ -120,13 +118,16 @@ table thead tr th,table thead tr td,table tfoot tr th,table tfoot tr td{padding:
 table tr th,table tr td{padding:.5625em .625em;font-size:inherit;color:rgba(0,0,0,.8)}
 table tr.even,table tr.alt,table tr:nth-of-type(even){background:#f8f8f7}
 table thead tr th,table tfoot tr th,table tbody tr td,table tr td,table tfoot tr td{display:table-cell;line-height:1.6}
-body{tab-size:4}
 h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6{line-height:1.2;word-spacing:-.05em}
 h1 strong,h2 strong,h3 strong,#toctitle strong,.sidebarblock>.content>.title strong,h4 strong,h5 strong,h6 strong{font-weight:400}
 .clearfix:before,.clearfix:after,.float-group:before,.float-group:after{content:" ";display:table}
 .clearfix:after,.float-group:after{clear:both}
-*:not(pre)>code{font-size:.9375em;font-style:normal!important;letter-spacing:0;padding:.1em .5ex;word-spacing:-.15em;background-color:#f7f7f8;-webkit-border-radius:4px;border-radius:4px;line-height:1.45;text-rendering:optimizeSpeed}
+*:not(pre)>code{font-size:.9375em;font-style:normal!important;letter-spacing:0;padding:.1em .5ex;word-spacing:-.15em;background-color:#f7f7f8;-webkit-border-radius:4px;border-radius:4px;line-height:1.45;text-rendering:optimizeSpeed;word-wrap:break-word}
+*:not(pre)>code.nobreak{word-wrap:normal}
+*:not(pre)>code.nowrap{white-space:nowrap}
 pre,pre>code{line-height:1.45;color:rgba(0,0,0,.9);font-family:"Droid Sans Mono","DejaVu Sans Mono",monospace;font-weight:400;text-rendering:optimizeSpeed}
+em em{font-style:normal}
+strong strong{font-weight:400}
 .keyseq{color:rgba(51,51,51,.8)}
 kbd{font-family:"Droid Sans Mono","DejaVu Sans Mono",monospace;display:inline-block;color:rgba(0,0,0,.8);font-size:.65em;line-height:1.45;background-color:#f7f7f7;border:1px solid #ccc;-webkit-border-radius:3px;border-radius:3px;-webkit-box-shadow:0 1px 0 rgba(0,0,0,.2),0 0 0 .1em white inset;box-shadow:0 1px 0 rgba(0,0,0,.2),0 0 0 .1em #fff inset;margin:0 .15em;padding:.2em .5em;vertical-align:middle;position:relative;top:-.1em;white-space:nowrap}
 .keyseq kbd:first-child{margin-left:0}
@@ -417,10 +418,10 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 .hide-for-print{display:none!important}
 .show-for-print{display:inherit!important}}
 </style>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
 <style>
 .listingblock .pygments .hll { background-color: #ffffcc }
-.listingblock .pygments  { background: #f8f8f8; }
+.listingblock .pygments, .listingblock .pygments code { background: #f8f8f8; }
 .listingblock .pygments .tok-c { color: #408080; font-style: italic } /* Comment */
 .listingblock .pygments .tok-err { border: 1px solid #FF0000 } /* Error */
 .listingblock .pygments .tok-k { color: #008000; font-weight: bold } /* Keyword */
@@ -491,7 +492,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <span id="author" class="author">J.-M. Bruel</span><br>
 <span id="email" class="email"><a href="mailto:jbruel@gmail.com">jbruel@gmail.com</a></span><br>
 <span id="revnumber">version 1.0,</span>
-<span id="revdate">2016-09-23</span>
+<span id="revdate">2016-11-03</span>
 </div>
 <div id="toc" class="toc2">
 <div id="toctitle">Table des matières</div>
@@ -519,14 +520,30 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_les_domaines_d_applications_de_l_is">2.12. Les domaines d’applications de l&#8217;IS</a></li>
 </ul>
 </li>
-<li><a href="#__span_class_icon_i_class_fa_fa_star_o_i_span_liens_utiles">3. <span class="icon"><i class="fa fa-star-o"></i></span> Liens utiles</a></li>
-<li><a href="#__span_class_icon_i_class_fa_fa_star_o_i_span_faq">4. <span class="icon"><i class="fa fa-star-o"></i></span> FAQ</a>
+<li><a href="#Exigences">3. <span class="icon"><i class="fa fa-star-half"></i></span> Les <strong>exigences</strong> et SysML</a>
 <ul class="sectlevel2">
-<li><a href="#_qui_compose_l_afis">4.1. Qui compose l&#8217;AFIS ?</a></li>
+<li><a href="#_introduction">3.1. Introduction</a></li>
+<li><a href="#reqs">3.2. Les exigences</a></li>
 </ul>
 </li>
-<li><a href="#_glossaire_et_définition">5. Glossaire et définition</a></li>
-<li><a href="#__span_class_icon_i_class_fa_fa_cogs_i_span_contributions_welcome"><span class="icon"><i class="fa fa-cogs"></i></span> Contributions welcome!</a></li>
+<li><a href="#_tp_sysml">4. TP SysML</a>
+<ul class="sectlevel2">
+<li><a href="#_contexte">4.1. Contexte</a></li>
+<li><a href="#_outillage">4.2. Outillage</a></li>
+<li><a href="#_contexte_du_système_à_modéliser">4.3. Contexte du système à modéliser</a></li>
+<li><a href="#_exigences">4.4. Exigences</a></li>
+<li><a href="#_evaluation">4.5. Evaluation</a></li>
+<li><a href="#_about">4.6. About&#8230;&#8203;</a></li>
+</ul>
+</li>
+<li><a href="#__span_class_icon_i_class_fa_fa_star_o_title_tp_sysml_i_span_liens_utiles">5. <span class="icon"><i class="fa fa-star-o" title="TP SysML"></i></span> Liens utiles</a></li>
+<li><a href="#__span_class_icon_i_class_fa_fa_star_o_title_tp_sysml_i_span_faq">6. <span class="icon"><i class="fa fa-star-o" title="TP SysML"></i></span> FAQ</a>
+<ul class="sectlevel2">
+<li><a href="#_qui_compose_l_afis">6.1. Qui compose l&#8217;AFIS ?</a></li>
+</ul>
+</li>
+<li><a href="#_glossaire_et_définition">7. Glossaire et définition</a></li>
+<li><a href="#__span_class_icon_i_class_fa_fa_cogs_title_tp_sysml_i_span_contributions_welcome"><span class="icon"><i class="fa fa-cogs" title="TP SysML"></i></span> Contributions welcome!</a></li>
 </ul>
 </div>
 </div>
@@ -571,6 +588,27 @@ Site under construction!!
 <dd>
 <p>Les sections avec l&#8217;icône <span class="icon"><i class="fa fa-graduation-cap"></i></span> sont plus théoriques (définitions, etc.) que ceux avec l&#8217;icône <span class="icon"><i class="fa fa-cogs"></i></span>.</p>
 </dd>
+<dt class="hdlist1">Diagrammes</dt>
+<dd>
+<p>Les figures représentant des modèles <a href="http://www.uml.org/">UML&#8482;</a>/http://www.omgsysml.org/[SysML&#8482;] proviennent de différents outils.
+Pour les identifier j&#8217;essaye de les repérer systématiquement par une indication :</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>P</code> pour <a href="http://plantuml.sourceforge.net/">plantUML</a></p>
+</li>
+<li>
+<p><code>M</code> pour <a href="http://www.modeliosoft.com/">Modelio</a></p>
+</li>
+<li>
+<p><code>T</code> pour <a href="http://www.topcased.org">TOPCASED</a></p>
+</li>
+<li>
+<p><code>B</code> pour <a href="http://www.bouml.fr">BOUML</a></p>
+</li>
+</ul>
+</div>
+</dd>
 </dl>
 </div>
 </div>
@@ -579,7 +617,7 @@ Site under construction!!
 <div class="ulist">
 <ul>
 <li>
-<p><a href="mailto:jbruel@gmail.com">J.-M. Bruel</a> depuis le 21/09/2016</p>
+<p><a href="mailto:bruel@irit.fr">Jean-Michel Bruel</a> depuis le 21/09/2016</p>
 </li>
 </ul>
 </div>
@@ -604,7 +642,7 @@ Site under construction!!
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="mailto:jbruel@gmail.com">J.-M. Bruel</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="mailto:bruel@irit.fr">Jean-Michel Bruel</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#Introduction"><span class="icon"><i class="fa fa-star-half"></i></span> Introduction à l'<strong>IS</strong></a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">2h Cours</p></td>
 </tr>
@@ -619,8 +657,8 @@ Site under construction!!
 <td class="tableblock halign-left valign-top"><p class="tableblock">6h TP</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="mailto:jbruel@gmail.com">J.-M. Bruel</a> &amp; Chaudet</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">SysML</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="mailto:bruel@irit.fr">Jean-Michel Bruel</a> &amp; Chaudet</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_sysml">SysML</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">10h Cours/TD + 6h TP</p></td>
 </tr>
 <tr>
@@ -674,13 +712,26 @@ Liens et coordonnées des intervenants à compléter au fur et à mesure&#8230;&
 <div class="sect2">
 <h3 id="_rendons_à_césar">2.1. Rendons à César&#8230;&#8203;</h3>
 <div class="paragraph">
-<p>Modeste successeur de <a href="mailto:Bernard.Cherbonneau@irit.fr">Bernard Cherbonneau</a> (responsable du module jusqu&#8217;en 2015)</p>
+<p>Je ne suis que le modeste successeur de <a href="mailto:Bernard.Cherbonneau@irit.fr">Bernard Cherbonneau</a> (responsable du module jusqu&#8217;en 2015).</p>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/bernard.jpeg" alt="bernard" width="40%">
 </div>
 <div class="title">Figure 3. Bernard Cherbonneau, le "papa" de ce cours (@bernardcherbonn)</div>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+J&#8217;ai enlevé <code>Ingénierie</code> et <code>Système</code> qui était sur-représentés bien sûr
+(d&#8217;au moins un facteur 4 sur le 3ème mot le plus fréquent).
+</td>
+</tr>
+</table>
 </div>
 </div>
 <div class="sect2">
@@ -1024,7 +1075,1504 @@ Autrement dit : une amélioration de la <strong>compétitivité</strong> des ent
 </div>
 </div>
 <div class="sect1">
-<h2 id="__span_class_icon_i_class_fa_fa_star_o_i_span_liens_utiles">3. <span class="icon"><i class="fa fa-star-o"></i></span> Liens utiles</h2>
+<h2 id="Exigences">3. <span class="icon"><i class="fa fa-star-half"></i></span> Les <strong>exigences</strong> et SysML</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_introduction">3.1. Introduction</h3>
+<div class="paragraph">
+<p>La matrice qui nous servira de "carte de base" pour placer les activités
+ou les modèles, sera celle-ci :</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/mamatrice.png" alt="mamatrice" width="100%">
+</div>
+</div>
+<div class="paragraph">
+<p>Cette matrice permet de situer les différents éléments qui seront vus dans ce cours dans un cadre
+utile pour comparer ces éléments les uns aux autres.
+Je vous conseille de vous faire votre propre matrice.
+L&#8217;essentiel est de toujours bien se représenter les différents éléments qu&#8217;on aborde
+dans une carte mentale précise. Cela permet une meilleure mémorisation.</p>
+</div>
+<div class="sect3">
+<h4 id="_points_de_vue">3.1.1. Points de vue</h4>
+<div class="paragraph">
+<p>Dans un axe horizontal, j&#8217;ai différencié quatre grands points de vue :</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Exigences</dt>
+<dd>
+<p>Les exigences et leur prises en compte sont un éléments critique pour le
+  succès du développement de tout système.
+  Sans explorer l&#8217;ensemble des activités d&#8217;ingénierie système (ce qui
+  nécessiterait tout un volume du type de <a href="#reqs">Les exigences</a>) nous insisterons sur cet aspect.</p>
+</dd>
+<dt class="hdlist1">Structure</dt>
+<dd>
+<p>La description de l&#8217;architecture et des éléments constitutifs du système,
+avec les blocs, leurs relations, organisations internes, etc. constituera un point de vue important.
+C&#8217;est souvent la partie de modélisation qui pose le moins de problème aux débutants.</p>
+</dd>
+<dt class="hdlist1">Comportement</dt>
+<dd>
+<p>Le comportement d&#8217;un système est du point de vue de l&#8217;utilisateur final beaucoup plus important que la structure elle-même. C&#8217;est la partie
+	qu&#8217;il est la plus à même d&#8217;exprimer, de comprendre (vos modèles) et de valider.</p>
+</dd>
+<dt class="hdlist1">Transverse</dt>
+<dd>
+<p>Un certains nombre de concepts sont transverses aux trois points de vue précédents. Il s&#8217;agira principalement de parler de cohérence ou de traçabilité entre
+	les phases de développement ou entre les points de vue.</p>
+</dd>
+</dl>
+</div>
+<div class="paragraph">
+<p>Ces différents points de vue ne doivent pas être confondus avec les différentes phases de développement (cf. paragraphe suivant).
+ Ils sont plutôt à rapprocher de la notion de préoccupation. C&#8217;est ainsi que j&#8217;ai choisi de distinguer trois points de vue
+qui se retrouvent souvent en modélisation : le point de vue des exigences qui permet de se focaliser sur les besoins des clients ;
+le point de vue structurel qui permet de se focaliser sur les différents composants du système ;
+et le point de vue comportemental qui permet de se focaliser sur le comportement du système.
+Ces trois points de vue n&#8217;étant pas indépendants les uns des autres, j&#8217;ai intégré un quatrième point de vue transversal.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_phase_de_développement">3.1.2. Phase de développement</h4>
+<div class="paragraph">
+<p>Dans un axe vertical, j&#8217;ai différencié quatre grandes phases du cycle de vie du développement :</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Organisation</dt>
+<dd>
+<p>Une étape indépendante du type de cycle de développement envisagé (en V, agile, etc.) mais qui concerne la mise en place
+	d&#8217;un cadre de travail qui permette un développement de qualité (outils, éditeurs, gestionnaire de version, de tâches, etc.).</p>
+</dd>
+</dl>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>On pourrait rapprocher cette étape du "cycle 0" de <a href="http://fr.wikipedia.org/wiki/Scrum_(m%C3%A9thode)">Scrum</a>.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Analyse</dt>
+<dd>
+<p>Cette phase vise plutôt à examiner le domaine du problème. Elle se focalise sur les cahiers des charges et les exigences.
+	L&#8217;analyse débouche sur un dossier d&#8217;analyse qui décrit les grandes lignes (cas d&#8217;utilisation, architecture principale) du système.</p>
+</dd>
+<dt class="hdlist1">Conception</dt>
+<dd>
+<p>Cette phase vise plutôt à examiner le domaine de la solution. Elle débouche sur un dossier de conception qui décrit les détails
+	conceptuels de la solution envisagée (structure détaillée, comportement, etc.)</p>
+</dd>
+<dt class="hdlist1">Implémentation</dt>
+<dd>
+<p>Cette phase traite des développements finaux (construction ou approvisionnement en matériel, développement de codes, etc.).</p>
+</dd>
+</dl>
+</div>
+<div class="paragraph">
+<p>Il s&#8217;agit ici classiquement des grandes étapes de développement d&#8217;un système.
+ On pourrait être surpris par l&#8217;étape que j&#8217;ai appelé « organisation ».
+C&#8217;est une étape que je considère importante, particulièrement pour l&#8217;enseignement.
+Avant toute activité de modélisation ou de même de développement, il convient en effet
+de s&#8217;organiser en termes de choix d&#8217;outils, choix d&#8217;environnement, etc.
+Cette étape est souvent négligée par les étudiants.
+C&#8217;est pour cela que j&#8217;ai décidé de faire figurer cette étape de manière explicite.
+Bien sûr dans une organisation existante cette étape sera contrainte par les habitudes
+« maison ».</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_questions_de_révision">3.1.3. Questions de révision</h4>
+<div class="paragraph">
+<p>Associez les diagrammes suivants avec leurs acronymes (sd, dc, uc, pkg, dss&#160;) :</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Diagramme de Paquetages</p>
+</li>
+<li>
+<p>Diagramme des Cas d&#8217;Utilisation</p>
+</li>
+<li>
+<p>Diagramme de Séquences Système</p>
+</li>
+<li>
+<p>Diagramme de Classes</p>
+</li>
+<li>
+<p>Diagramme de Séquences</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Placez dans la matrice ci-dessous les différents diagrammes <a href="http://www.uml.org/">UML&#8482;</a> que vous
+connaissez déjà (sd, dc, uc, pkg, dss&#160;).</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/mamatrice.png" alt="mamatrice" width="100%">
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="reqs">3.2. Les exigences</h3>
+<div class="paragraph">
+<p>L&#8217;ingénierie des exigences est d&#8217;une importance capitale, surtout en Ingénierie Système.
+En général les exigences sont exprimées par des ingénieurs dédiés à cette activité.
+La complexité des systèmes modernes (embarqués, communicants, critiques, &#8230;&#8203;) rendent
+cruciale cette analyse.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<a class="image" href="http://www.inria.fr/centre/rennes/actualites/vers-un-cahier-des-charges-mieux-formule"><img src="images/ingenierie-des-exigences.jpg" alt="Joke" width="50%"></a>
+</div>
+<div class="title">Figure 12. 300 corps de métiers sont parfois présents sur un même chantier</div>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="title">Besoins, exigences : question de vocabulaire</div>
+<div class="paragraph">
+<p>La difficulté de l&#8217;emploi massif de l&#8217;anglais fait qu&#8217;il existe souvent une confusion entre
+les termes anglais et leurs traduction française. Nous précisons donc ici notre utilisation des termes.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><em>Requirements</em></dt>
+<dd>
+<p>Exigences, c&#8217;est à dire une fonction ou une propriété que doit satisfaire le système considéré.
+Par nature une exigence doit pouvoir être <strong>vérifiable</strong>.
+En génie logiciel on parle plus classiquement des spécifications ("spec") pour parler des contraintes à respecter pour un système. Les ingénieurs systèmes ont depuis longtemps intégré le terme d&#8217;exigences comme traduction directe de <em>requirement</em>.</p>
+</dd>
+<dt class="hdlist1">Besoins</dt>
+<dd>
+<p>Il s&#8217;agit des exigences du client. En <a href="http://www.uml.org/">UML&#8482;</a> on va plus les retrouver dans les cas d&#8217;utilisation. Ils sont à l&#8217;origine des <em>requirements</em> tels que définis plus haut.</p>
+</dd>
+</dl>
+</div>
+<div class="paragraph">
+<p>Il est important pour une exigence qu&#8217;elle ne soit pas ambiguë (contrairement au terme "en" dans la consigne exprimée par la maman dans l&#8217;illustration <a href="#fig:eggs">ci-dessous</a> : "<em>Ramène moi 1 bouteille de lait. S&#8217;il y a des oeufs, ramène m&#8217;en 6.</em>").</p>
+</div>
+<div id="fig:eggs" class="imageblock">
+<div class="content">
+<a class="image" href="https://plus.google.com/100035762233109552669/posts/a8Hafq2hZ74"><img src="images/ProgrammerHumor.jpg" alt="Joke" width="50%"></a>
+</div>
+<div class="title">Figure 13. Spécification ambiguë (taken from <a href="https://plus.google.com/100035762233109552669/posts/a8Hafq2hZ74" class="bare">https://plus.google.com/100035762233109552669/posts/a8Hafq2hZ74</a>)</div>
+</div>
+<div class="paragraph">
+<p>Dans le cadre de la matrice qui nous sert de plan, nous somme ici :</p>
+</div>
+<table class="tableblock frame-all grid-all" style="width: 50%;">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"></th>
+<th class="tableblock halign-left valign-top"><strong class="red">Exigences</strong></th>
+<th class="tableblock halign-left valign-top">Structure</th>
+<th class="tableblock halign-left valign-top">Comportement</th>
+<th class="tableblock halign-left valign-top">Transverse</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Organisation</p></th>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Analyse</p></th>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Conception</p></th>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Implémentation</p></th>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
+<div class="sect3">
+<h4 id="_fondements">3.2.1. Fondements</h4>
+<div class="paragraph">
+<p>On abordera :</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>L&#8217;organization des <em>Requirements</em></p>
+</li>
+<li>
+<p>Les <em>Requirements properties</em></p>
+</li>
+<li>
+<p>Les <em>Requirements links</em></p>
+</li>
+<li>
+<p>Les <em>Requirements Diagrams</em></p>
+</li>
+<li>
+<p>Les considérations sur la traçabilité</p>
+</li>
+<li>
+<p>Annotations des <em>Requirements</em></p>
+</li>
+<li>
+<p>Les <em>Use Case Diagrams</em></p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>L&#8217;ingénierie des exigences est une discipline à part entière et nous n&#8217;abordons ici
+que les aspects en lien avec la modélisation. Voir le livre de référence pour
+plus de détails (<a href="#Sommerville1997">[Sommerville1997]</a>) ou le guide de l&#8217;<a href="http://www.afis.fr/">AFIS</a> (<a href="#REQ2012">[REQ2012]</a>).</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Il n&#8217;existe pas de diagramme <a href="http://www.uml.org/">UML&#8482;</a> pour traiter des exigences en particulier.
+Nous allons donc présenter dans cette partie un diagramme introduit par
+<a href="http://www.omgsysml.org/">SysML&#8482;</a>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_sysml">3.2.2. SysML</h4>
+<div class="sect4">
+<h5 id="_fiche_d_identité">Fiche d&#8217;identité</h5>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="title">Carte d&#8217;identité</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Date de naissance non officielle : 2001!</p>
+</li>
+<li>
+<p>Première spécification adoptée à <a href="http://www.omg.org">l&#8217;OMG&#8482;</a> : 19 septembre 2007</p>
+</li>
+<li>
+<p>Version actuelle : <a href="http://www.sysml.org/docs/specs/OMGSysML-v1.3-12-06-02.pdf">1.3</a> (12/06/2012)</p>
+</li>
+<li>
+<p>Paternité : <a href="http://www.omg.org">OMG&#8482;</a> / <a href="http://www.uml.org/">UML&#8482;</a> + <a href="http://www.incose.org/">INCOSE</a></p>
+</li>
+<li>
+<p>Auteurs principaux :</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Conrad Bock</p>
+</li>
+<li>
+<p>Cris Kobryn</p>
+</li>
+<li>
+<p>Sanford Friedenthal</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Logo officiel : <span class="image"><img src="images/sysml.jpeg" alt="sysml"></span></p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_sysml_c_est">SysML, c&#8217;est&#8230;&#8203;</h5>
+<div class="paragraph">
+<p>Un ensemble de 9 types de diagrammes :</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Diagrammes structuraux</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Diagrammes de définition de blocs (<code>bdd</code>)</p>
+</li>
+<li>
+<p>Diagrammes internes de blocs (<code>ibd</code>)</p>
+</li>
+<li>
+<p>Diagrammes paramétriques (<code>par</code>)</p>
+</li>
+<li>
+<p>Diagrammes de packages (<code>pkg</code>)</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Diagrammes comportementaux</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Diagrammes de séquence (<code>sd</code>)</p>
+</li>
+<li>
+<p>Diagrammes d&#8217;activité (<code>act</code>)</p>
+</li>
+<li>
+<p>Diagrammes de cas d&#8217;utilisation (<code>uc</code>)</p>
+</li>
+<li>
+<p>Diagrammes d&#8217;états (<code>stm</code>)</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Diagramme d&#8217;exigence (<code>req</code>)</p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Un profil <a href="http://www.uml.org/">UML&#8482;</a></dt>
+<dd>
+<p>C&#8217;est à dire une <strong>extension</strong> de cette notation, un ensemble de nouveaux concepts et éléments qui sont définis à partir des éléments de base <a href="http://www.uml.org/">d&#8217;UML&#8482;</a>. Un exemple : le <code>bloc</code> <a href="http://www.omgsysml.org/">SysML&#8482;</a> n&#8217;est qu&#8217;une redéfinition de la <code>classe</code> <a href="http://www.uml.org/">UML&#8482;</a>.</p>
+</dd>
+<dt class="hdlist1">Une notation</dt>
+<dd>
+<p>Une notation de plus en plus enseignée et connue et qui servira donc de plus en plus de <strong>référence</strong> à la modélisation des systèmes.</p>
+</dd>
+</dl>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_sysml_ce_n_est_pas">SysML, ce n&#8217;est pas&#8230;&#8203;</h5>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Une méthode</dt>
+<dd>
+<p>En effet, contrairement à ce que beaucoup pensent en l&#8217;abordant, <a href="http://www.omgsysml.org/">SysML&#8482;</a> ne propose pas de démarche particulière de développement de système. C&#8217;est à la fois sa force (votre méthode existante pourra continuer à être utilisée) comme sa faiblesse car cette absence de guide méthodologique fait souvent défaut à son utilisation.</p>
+</dd>
+<dt class="hdlist1">Un outil</dt>
+<dd>
+<p>Nous verrons en effet que <a href="http://www.omgsysml.org/">SysML&#8482;</a> ne fait que ce qu&#8217;on veut bien en faire. Comme tout langage il est limité dans son pouvoir d&#8217;expression, mais surtout il reste une simple notation qu&#8217;il convient d&#8217;utiliser avec des outils et des démarches associées.</p>
+</dd>
+<dt class="hdlist1">Un raton laveur</dt>
+<dd>
+<p>C&#8217;est juste pour voir ceux qui suivent&#8230;&#8203;</p>
+</dd>
+</dl>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>On ne dit pas "le SysML" mais tout simplement "SysML".</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_l_organisation_des_em_requirements_em">3.2.3. L&#8217;organisation des <em>Requirements</em></h4>
+<div class="paragraph">
+<p>Il ne s&#8217;agit pas ici de revenir sur les exigences elles-même, mais plutôt de voir comment <a href="http://www.omgsysml.org/">SysML&#8482;</a> permet
+de les exprimer, de les manipuler et surtout de les lier avec le reste du système.</p>
+</div>
+<div class="sect4">
+<h5 id="_représentation_de_base">Représentation de base</h5>
+<div class="paragraph">
+<p>Un <em>Requirement</em> en <a href="http://www.omgsysml.org/">SysML&#8482;</a> n&#8217;est qu&#8217;un bloc particulier.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="./images/icons/images/icons/sysml.jpeg" alt="Note">
+</td>
+<td class="content">
+<div class="title">Définition : <em>Requirements</em> (OMG SysML v1.3, p. 139)</div>
+<div class="paragraph">
+<p><em>A requirement specifies a capability or condition that must (or should) be satisfied&#8230;&#8203;
+A requirement is defined as a stereotype of UML Class&#8230;&#8203;</em></p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div id="corde" class="imageblock">
+<div class="content">
+<img src="images/corde.png" alt="corde" width="100%">
+</div>
+<div class="title">Figure 14. Un _Requirement_ en SysML (`P`)</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_différents_types_d_organisation">Différents types d&#8217;organisation</h5>
+<div class="paragraph">
+<p>L&#8217;ingénierie des exigences aboutit généralement à une liste organisée d&#8217;exigences, que ce soit en terme
+de fonctionnelles/non fonctionnelles, de prioritaires/secondaires, etc.
+Le principal support de <a href="http://www.omgsysml.org/">SysML&#8482;</a> à cette organisation, outre la possibilité de les annoter (cf. section <a href="#reqStereotypes">Stéréotyper les exigences</a>), consiste à utiliser les  <em>packages</em>.</p>
+</div>
+<div class="paragraph">
+<p>Plusieurs types d&#8217;organisations sont possibles :</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Par niveau d&#8217;abstraction</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Besoins généraux (en lien avec les  <em>use cases</em> par exemple)</p>
+</li>
+<li>
+<p>Besoins techniques (en lien avec les éléments de conception)</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Par point de vue</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Besoins principaux (en lien avec les <em>use cases</em>)</p>
+</li>
+<li>
+<p>Besoins spécifiques :</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Fonctionnels</p>
+</li>
+<li>
+<p>Marketing</p>
+</li>
+<li>
+<p>Environnementaux</p>
+</li>
+<li>
+<p><em>Business</em></p>
+</li>
+<li>
+<p>&#8230;&#8203;</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>etc.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_tableaux_de_em_requirements_em">Tableaux de <em>Requirements</em></h5>
+<div class="paragraph">
+<p>Les <em>requirements</em> sont habituellement stockés dans des tableaux (feuilles excel le plus souvent!).
+Il est donc recommandé par le norme et possible dans de nombreux outils de représenter les exigences
+sous forme tabulaire.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="./images/icons/sysml.jpeg" alt="Note">
+</td>
+<td class="content">
+<div class="title">Définition : <em>Requirements Table</em> (OMG SysML v1.3, p. 145)</div>
+<div class="paragraph">
+<p><em>The tabular format is used to represent the requirements, their properties and relationships&#8230;&#8203;</em></p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/req-table.png" alt="req table" width="100%">
+</div>
+<div class="title">Figure 15. Exemples tableau d'exigences (OMG SysML v1.3, p. 145)</div>
+</div>
+<div class="paragraph">
+<p>La plupart des outils modernes permettent le passage entre outils classiques de gestion des exigences (comme <a href="http://www-03.ibm.com/software/products/fr/fr/ratidoor/">DOORS&#8482;</a>)
+et outils de modélisation <a href="http://www.omgsysml.org/">SysML&#8482;</a> (comme <a href="http://www.modeliosoft.com/">Modelio</a>, illustré ci-dessous).</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/req-modelio.png" alt="req modelio" width="100%">
+</div>
+<div class="title">Figure 16. Import Modelio de tableau d'exigences (tiré de &lt;&lt;Modelio2012&gt;&gt;)</div>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_les_em_requirements_properties_em">3.2.4. Les <em>Requirements properties</em></h4>
+<div class="paragraph">
+<p>Il est possible d&#8217;indiquer un certain nombre de propriétés sur un <em>requirement</em> :</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><em>priority</em> (<code>high</code>, <code>low</code>, &#8230;&#8203;)</p>
+</li>
+<li>
+<p><em>source</em> (<code>stakeolder</code>, <code>law</code>, <code>technical</code>, &#8230;&#8203;)</p>
+</li>
+<li>
+<p><em>risk</em> (<code>high</code>, <code>low</code>, &#8230;&#8203;)</p>
+</li>
+<li>
+<p><em>status</em> (<code>proposed</code>, <code>aproved</code>, &#8230;&#8203;)</p>
+</li>
+<li>
+<p><em>verification method</em> (<code>analysis</code>, <code>tests</code>, &#8230;&#8203;)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Dans le cadre du module MPA nous ne retiendrons comme attribut d&#8217;un <em>requirement</em>
+que son identifiant et le texte le désignnat (les deux attributs obligatoire).
+La priorité sera donné par le client en terme de cycle (on traitera en premier les <em>requirements</em> prioritaires).</p>
+</div>
+<div class="paragraph">
+<p>Ainsi en <a href="http://plantuml.sourceforge.net/">plantUML</a>, une exigence ressemblera à ceci (cf. rendu <a href="#corde">ici</a>):</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code>class ObtenirHoraires &lt;&lt;requirement&gt;&gt; {
+	Text = "Le logiciel doit fournir les horaires rapidement."
+	Id = "14.2"
+	}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_les_em_requirements_links_em">3.2.5. Les <em>Requirements links</em></h4>
+<div class="paragraph">
+<p>Les principales relations entre <em>requirement</em> sont :</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><em>Containment</em></dt>
+<dd>
+<p>Pour décrire la décomposition d&#8217;une exigence en plusieurs sous-exigences (⊕–). Typiquement dès qu&#8217;une exigence est exprimée avec une conjonction "et" ("La voiture doit être rapide et économe.").</p>
+</dd>
+<dt class="hdlist1"><em>Refinement</em></dt>
+<dd>
+<p>Pour décrire un ajout de précision (<code><a href="#refine">[refine]</a></code>), comme par exemple une précision.</p>
+</dd>
+<dt class="hdlist1"><em>Derivation</em></dt>
+<dd>
+<p>	Pour indiquer une différence de niveau d&#8217;abstraction (<code><a href="#deriveReqt">[deriveReqt]</a></code>), par exemple
+entre un système et un de ses sous-systèmes.</p>
+</dd>
+</dl>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Lorsqu&#8217;une exigence possède plusieurs cas <code><a href="#refine">[refine]</a></code> qui pointent vers lui, on considère que ces différents cas sont des options possibles de raffinement (cf. <a href="#conventions">[conventions]</a>).</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/req-exp1.png" alt="req exp1" width="80%">
+</div>
+<div class="title">Figure 17. Exemples de relations entre exigences (`M`)</div>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Il existe ensuite les relations entre les besoins et les autres éléments de modélisation
+(les <em>block</em> ou les <em>class</em> principalement) comme <code><a href="#satisfy">[satisfy]</a></code> ou <code><a href="#verify">[verify]</a></code>, mais nous les aborderons
+dans la partie <a href="#transvers">transverse</a>.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/topcased-req-connections.png" alt="topcased req connections" width="50%">
+</div>
+<div class="title">Figure 18. Relations liées aux _requirements_ dans TOPCASED (`T`)</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_les_em_requirements_diagrams_em">3.2.6. Les <em>Requirements Diagrams</em></h4>
+<div class="paragraph">
+<p>Voici un exemple de <code>req</code> un peu plus étoffé, tiré de la norme (voir aussi <a href="#rationale">Exemples de _rationale_ et _problem_ (tiré de &lt;&lt;SysML&gt;&gt;)</a>) :</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/hsuv-reqs1.png" alt="hsuv reqs1" width="80%">
+</div>
+<div class="title">Figure 19. Exemples de composition d'exigences (tiré de &lt;&lt;SysML&gt;&gt;, `UK`)</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="reqStereotypes">3.2.7. Stéréotyper les <em>Requirements</em></h4>
+<div class="paragraph">
+<p>Tout comme pour n&#8217;importe quel bloc, il est possible de stéréotyper les <em>requirements</em>.
+Ceci permet de se définir ses propres priorités et classifications.
+Quelques exemples de stéréotypes utiles :</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code><a href="#interfaceRequirement">[interfaceRequirement]</a></code>, <code><a href="#physicalRequirement">[physicalRequirement]</a></code>, &#8230;&#8203;</p>
+</li>
+<li>
+<p><code><a href="#FunctionalRequirement">[FunctionalRequirement]</a></code>, <code><a href="#nonFunctionalRequirement">[nonFunctionalRequirement]</a></code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="reqAnnot">3.2.8. Annotations des <em>Requirements</em></h4>
+<div class="paragraph">
+<p>Il est possible d&#8217;annoter les éléments de modélisation en précisant les raisons
+(<em>rationale</em>) ou les éventuels problèmes anticipés (<em>problem</em>).</p>
+</div>
+<div id="rationale" class="imageblock">
+<div class="content">
+<img src="images/hsuv-reqs2.png" alt="hsuv reqs2" width="80%">
+</div>
+<div class="title">Figure 20. Exemples de _rationale_ et _problem_ (tiré de &lt;&lt;SysML&gt;&gt;)</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_les_considérations_sur_la_traçabilité">3.2.9. Les considérations sur la traçabilité</h4>
+<div class="paragraph">
+<p>Une fois que les <em>requirements</em> ont été définis et organisés, il est utile de les lier au moins aux <em>use cases</em>
+(en utilisant <code><a href="#refine">[refine]</a></code> par exemple) et aux éléments structurels (en utilisant <code><a href="#satisfy">[satisfy]</a></code> par exemple), mais ceci
+sera abordé dans la partie <a href="#transvers">transverse</a>.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>En général chaque <em>requirement</em> devrait être relié à au moins un <em>use case</em> (et vice-versa!).</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_les_em_use_case_diagrams_em">3.2.10. Les <em>Use Case Diagrams</em></h4>
+<div class="paragraph">
+<p>Bien que nous traitions les cas d&#8217;utilisation dans la partie <a href="#behavior">comportement</a>, nous les abordons
+	ici du fait de leur proximité avec les <em>requirements</em>.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/req-uc-relation.png" alt="req uc relation" width="50%">
+</div>
+<div class="title">Figure 21. Exemple de lien entre _use case_ et _requirements_ (`T`)</div>
+</div>
+<div class="paragraph">
+<p>Ce diagramme est celui que vous avez appris l&#8217;an dernier en <a href="http://www.uml.org/">UML&#8482;</a>.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/UCGestionNotes.png" alt="UCGestionNotes" width="80%">
+</div>
+<div class="title">Figure 22. Exemple de diagramme des cas d'utilisation (`B`)</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/uc.png" alt="uc" width="70%">
+</div>
+<div class="title">Figure 23. Autre exemple de diagrammes des cas d'utilisation (`B`)</div>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Un acteur représente un <strong>rôle</strong> joué par un utilisateur humain. Il faut donc plutôt raisonner sur les rôles que sur les personnes elles-mêmes pour identifier les acteurs.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_exigences_et_tests">3.2.11. Exigences et tests</h4>
+<div class="sect4">
+<h5 id="_principes">Principes</h5>
+<div class="paragraph">
+<p>Pour ce qui ce concerne ce module nous allons nous contenter de maintenir des
+matrices croisant les exigences d&#8217;un côté et les tests de l&#8217;autre.</p>
+</div>
+<div class="paragraph">
+<p>Par exemple :</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<a class="image" href="http://infocenter.sybase.com/archive/index.jsp?topic=/com.sybase.stf.poweramc.docs_12.0.0/html/exgu/exgup38.htm"><img src="images/matrice.gif" alt="matrice" width="70%"></a>
+</div>
+<div class="title">Figure 24. Exemple de matrice de traçabilité</div>
+</div>
+<div class="paragraph">
+<p>Dans la réalité, les entreprises industrialisent le processus de vérification
+des exigences en utilisant des outils adaptés :</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/testindus.png" alt="testindus" width="60%">
+</div>
+<div class="title">Figure 25. Le cycle de la qualification fonctionnelle en lien avec les besoins métiers (tirée de <a href="#TestsIndustriels2009">[TestsIndustriels2009]</a>)</div>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_exemple_complet">3.2.12. Exemple complet</h4>
+<div class="paragraph">
+<p>En prenant un exemple tiré de l&#8217;exemple du <a href="http://www.prfc.fr/livres/">Radio Réveil</a>&#8230;&#8203;</p>
+</div>
+<div class="sect4">
+<h5 id="_le_texte_du_cahier_des_charges">Le texte du cahier des charges</h5>
+<div class="paragraph">
+<p>Le texte complet de l&#8217;exemple ne précise pas le cahier des charges de l&#8217;Autoradio (AR), considérant
+que tout le monde sait ce que c&#8217;est!</p>
+</div>
+<div class="paragraph">
+<p>Rédigeons tout de même quelques extraits (numérotés) de texte possible :</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>L&#8217;AR est un dispositif qui permet d&#8217;écouter la radio de manière confortable et interactive.</p>
+</li>
+<li>
+<p>L&#8217;AR doit être capable de mémoriser un certain nombre de station différentes.</p>
+</li>
+<li>
+<p>L&#8217;Utilisateur de l&#8217;AR doit pouvoir choisir sa station parmis un choix donné.</p>
+</li>
+<li>
+<p>L&#8217;Utilisateur de l&#8217;AR doit pouvoir régler le niveau sonore.</p>
+</li>
+<li>
+<p>L&#8217;Utilisateur de l&#8217;AR doit pouvoir chercher une station en "balayant" les ondes FM.</p>
+</li>
+<li>
+<p>&#8230;&#8203;</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_expression_des_exigences">Expression des exigences</h5>
+<div class="paragraph">
+<p>Nous pouvons, en analysant ce cahier des charges, déduire un certain nombre d&#8217;exigences.
+Nous les écrivons ici sous forme tabulaire, puis en utilisant le langage <a href="http://cukes.info/gherkin.html">Gherkin</a>.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Concernant <a href="http://cukes.info/gherkin.html">Gherkin</a>, pour ceux qui veulent aller plus loin, il est possible d&#8217;automatiser la génération des tests
+à partir de ce genre de langage. C&#8217;est ce que fait <a href="http://cukes.info/">Cucumber</a> pour <a href="https://www.ruby-lang.org">Ruby</a>.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p><strong>Version tabulaire</strong> :</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/tabulaire.png" alt="tabulaire" width="100%">
+</div>
+<div class="title">Figure 26. Exemple de liste d'exigences (tirée de <a href="#TestsIndustriels2009">[TestsIndustriels2009]</a>)</div>
+</div>
+<div class="paragraph">
+<p>Exemple de <strong>version textuelle</strong> formattée :</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code>#encoding: utf-8
+Feature: Scénario simple d'utilisation de l'AutoRadio (AR)
+  In order to vérifier que le son marche
+  As an utilisateur lambda
+  I should be able to exécuter ces scénarios et constater les effets
+
+  Scenario: Augmenter le son
+    Given un AR avec le son à 0
+    When Je presse le bouton "Volume +"
+    Then Le son passe à 1
+    And Je commence à entendre la radio</code></pre>
+</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_plan_de_test">Plan de test</h5>
+<div class="paragraph">
+<p>Créer un plan de test consiste à prévoir l&#8217;ensemble des tests à l&#8217;avance de manière
+à prévoir la <strong>couverture</strong> de ces tests.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/plantest.png" alt="plantest" width="100%">
+</div>
+<div class="title">Figure 27. Exemple de plan de test simplifié (tirée de <a href="#TestsIndustriels2009">[TestsIndustriels2009]</a>)</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_analyse_et_la_conception">Analyse et la conception</h5>
+<div class="paragraph">
+<p>Dans un cycle classique ("en V" par exemple), les modèles sont réalisés avant l&#8217;implémentation (codage).</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/AutoRadio-UC.png" alt="AutoRadio UC" width="20%">
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/AutoRadio-DC.png" alt="AutoRadio DC" width="20%">
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/AutoRadio-DS-Suivante.png" alt="AutoRadio DS Suivante" width="20%">
+</div>
+</div>
+<div class="paragraph">
+<p>Dans un cycle Agile, chaque cycle possèdera ses modèles, eux aussi versionnés, qui eux aussi évolueront
+en même temps que le code.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_lien_et_traçabilité">Lien et traçabilité</h5>
+<div class="paragraph">
+<p>Plus encore que dans les méthodes classiques, il conviendra de vérifier que code et modèles sont bien
+cohérents. On pourra donc :</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>générer les codes à partir des modèles</p>
+</li>
+<li>
+<p>générer les modèles à partir des codes <span class="detail">(cf. <a href="#commentaires">commentaires</a>)</span></p>
+</li>
+<li>
+<p>utiliser des outils intégrés <span class="detail">comme <a href="http://www.eclipse.org">eclipse</a></span></p>
+</li>
+<li>
+<p>avoir un plan systématique de révision code/modèle</p>
+</li>
+<li>
+<p>&#8230;&#8203;</p>
+</li>
+</ul>
+</div>
+<div id="commentaires" class="listingblock">
+<div class="title">Exemple de code Java commenté pour la génération automatique de diagrammes plantUML</div>
+<div class="content">
+<pre class="pygments highlight"><code data-lang="java"><span class="tok-kn">package</span> <span class="tok-n">demo</span><span class="tok-o">;</span>
+
+<span class="tok-kd">class</span> <span class="tok-nc">Controller</span> <span class="tok-o">{}</span>
+<span class="tok-kd">class</span> <span class="tok-nc">EmbeddedAgent</span> <span class="tok-o">{}</span>
+<span class="tok-kd">class</span> <span class="tok-nc">PowerManager</span> <span class="tok-o">{}</span>
+
+<span class="tok-cm">/**</span>
+<span class="tok-cm"> * @extends Controller</span>
+<span class="tok-cm"> * @extends EmbeddedAgent</span>
+<span class="tok-cm"> * @navassoc - - 1..* PowerManager</span>
+<span class="tok-cm"> * @note this is a note</span>
+<span class="tok-cm"> */</span>
+<span class="tok-kd">class</span> <span class="tok-nc">SetTopController</span> <span class="tok-kd">implements</span> <span class="tok-n">URLStreamHandler</span> <span class="tok-o">{</span>
+  <span class="tok-kd">public</span> <span class="tok-n">String</span> <span class="tok-n">name</span><span class="tok-o">;</span>
+
+  <span class="tok-kt">int</span> <span class="tok-n">authorizationLevel</span><span class="tok-o">;</span>
+  <span class="tok-kt">void</span> <span class="tok-nf">startUp</span><span class="tok-o">()</span> <span class="tok-o">{}</span>
+  <span class="tok-kt">void</span> <span class="tok-nf">shutDown</span><span class="tok-o">()</span> <span class="tok-o">{}</span>
+  <span class="tok-kt">void</span> <span class="tok-nf">connect</span><span class="tok-o">()</span> <span class="tok-o">{}</span>
+<span class="tok-o">}</span>
+
+<span class="tok-cm">/** @depend - friend - SetTopController */</span>
+<span class="tok-kd">class</span> <span class="tok-nc">ChannelIterator</span> <span class="tok-o">{}</span>
+
+<span class="tok-kd">interface</span> <span class="tok-nc">URLStreamHandler</span> <span class="tok-o">{</span>
+  <span class="tok-kt">void</span> <span class="tok-nf">OpenConnection</span><span class="tok-o">();</span>
+  <span class="tok-kt">void</span> <span class="tok-nf">parseURL</span><span class="tok-o">();</span>
+  <span class="tok-kt">void</span> <span class="tok-nf">setURL</span><span class="tok-o">();</span>
+  <span class="tok-kt">void</span> <span class="tok-nf">toExternalForm</span><span class="tok-o">();</span>
+<span class="tok-o">}</span></code></pre>
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<a class="image" href="http://plantuml.sourceforge.net/doclet.html"><img src="images/doclet.png" alt="doclet" width="90%"></a>
+</div>
+<div class="title">Figure 28. Exemple de diagramme généré par javadoc (tirée de <a href="#TestsIndustriels2009">[TestsIndustriels2009]</a>)</div>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_en_résumé">3.2.13. En résumé</h4>
+<div class="paragraph">
+<p>Les <strong>exigences</strong> sont très importantes en ingénierie système,
+du fait de la multiplication des <strong>sous-systèmes</strong> et donc des <strong>intermédiaires</strong> (fournisseurs, sous-traitants, etc.)
+avec qui les aspects contractuels seront souvent basés sur ces exigences.</p>
+</div>
+<div class="paragraph">
+<p>Il n&#8217;est donc pas étonnant qu&#8217;un  diagramme
+et des mécanismes <strong>dédiés</strong> aient été prévus en <a href="http://www.omgsysml.org/">SysML&#8482;</a>.</p>
+</div>
+<table class="tableblock frame-all grid-all" style="width: 90%;">
+<caption class="title">Table 1. Déclinaison des Exigences</caption>
+<colgroup>
+<col style="width: 16.6666%;">
+<col style="width: 33.3333%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6666%;">
+<col style="width: 16.6669%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"></th>
+<th class="tableblock halign-left valign-top"><strong class="red">Exigences</strong></th>
+<th class="tableblock halign-left valign-top">Structure</th>
+<th class="tableblock halign-left valign-top">Comportement</th>
+<th class="tableblock halign-left valign-top">Transverse</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Organisation</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>⊕–</code>, <code>&lt;&lt;deriveReqt&gt;&gt;</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Analyse</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="#satisfy">[satisfy]</a></code>, <code><a href="#refine">[refine]</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="#satisfy">[satisfy]</a></code> entre reqs et UC</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="#refine">[refine]</a></code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Conception</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>&lt;&lt;allocate&gt;&gt;</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Implémentation</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>&lt;&lt;satisfy&gt;&gt;</code>, <code>&lt;&lt;verify&gt;&gt;</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>En terme de démarche, il est classique d&#8217;avoir de nombreux aller-retour entre la modélisation
+des exigences et la modélisation du système lui-même (cf. <a href="#sysmod">Exemple de démarche (_SYSMOD Zigzag pattern_) (tirée de <a href="#TestsIndustriels2009">[TestsIndustriels2009]</a>)</a>).</p>
+</div>
+<div id="sysmod" class="imageblock">
+<div class="content">
+<a class="image" href="http://model-based-systems-engineering.com/2012/03/26/the-sysmod-zigzag-pattern/"><img src="images/zigzag.png" alt="zigzag" width="90%"></a>
+</div>
+<div class="title">Figure 29. Exemple de démarche (_SYSMOD Zigzag pattern_) (tirée de <a href="#TestsIndustriels2009">[TestsIndustriels2009]</a>)</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_questions_de_révision_2">3.2.14. Questions de révision</h4>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="./images/icons/images/icons/tuxteacher.png" alt="Note">
+</td>
+<td class="content">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Quelles sont les différences entre <strong>besoins</strong> et <strong>exigences</strong> ?</p>
+</li>
+<li>
+<p>Quelles sont les différences entre un <strong>backlog de produit</strong> et une liste d'<strong>exigences</strong>?</p>
+</li>
+<li>
+<p>En quoi les cas d&#8217;utilisation sont-ils complémentaires des exigences?</p>
+</li>
+</ol>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_tp_sysml">4. TP SysML</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Nous allons utiliser dans ce TP l&#8217;outil <a href="http://www.eclipse.org/papyrus/">Papyrus</a> version <code>1.1.2</code>.
+Vous allez devoir utiliser cet outil pour écrire les modèles travaillés en cours/TD.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+La version récente de <a href="http://www.eclipse.org/papyrus/">Papyrus</a> est la <code>2.0.1</code>, qui devrait
+parfaitement fonctionner, mais nous indiquons ici la version que nous avons
+utilisé et dont sont issues les éventuelles captures d&#8217;écran et instructions.
+</td>
+</tr>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_contexte">4.1. Contexte</h3>
+<div class="paragraph">
+<p>On souhaite dans ce projet réaliser la modélisation <a href="http://www.omgsysml.org/">SysML&#8482;</a> de la
+<a href="http://mi.iut-blagnac.fr/">MIB</a>.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/mib.png" alt="MIB">
+</div>
+</div>
+<div class="paragraph">
+<p>Les spécifications initiales du système sont ici :</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="http://mi.iut-blagnac.fr/" class="bare">http://mi.iut-blagnac.fr/</a></p>
+</li>
+<li>
+<p><a href="https://docs.google.com/spreadsheets/d/1-yaW8fZHG9i6r7vJ7NOU9-66-hnDYY66Vd9cmZTYs2A/edit?usp=sharing">Fichier excel</a> des exigences initiales</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_outillage">4.2. Outillage</h3>
+<div class="paragraph">
+<p>Vérifiez que vous possédez bien sur votre machine : <a href="http://www.eclipse.org/papyrus/">Papyrus</a> 1.1.2
+(ou une version supérieur).</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/mars1.png" alt="Mars1" width="50%">
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+si ce n&#8217;est pas encore fait, suivez le
+<a href="https://www.eclipse.org/papyrus/updates/index.php">guide d’installation du site de Papyrus</a>.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Vous allez devoir travailler en mode collaboratif. Suivez les instructions qui
+se trouvent sur le dépôt GitHub : <a href="https://github.com/IUT-Blagnac/M2DL2015.git" class="bare">https://github.com/IUT-Blagnac/M2DL2015.git</a>.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Vérifiez la présence de <a href="http://wiki.eclipse.org/EGit">EGit</a> et de <a href="https://www.eclipse.org/emf/compare/">EMFCompare</a> sur votre <a href="https://www.eclipse.org/">Eclipse</a>.
+</td>
+</tr>
+</table>
+</div>
+<div class="sect3">
+<h4 id="_let_s_start">4.2.1. Let&#8217;s start</h4>
+<div class="paragraph">
+<p>Vous travaillerez de préférence en binôme.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Choisissez dans la liste des sous-sytèmes que nous avons listé <a href="https://docs.google.com/spreadsheets/d/1n1Z4d2AWP74DZObQgbV5SWXr0Iu1uMny1quY2AKFbRk/edit?usp=sharing">ici</a> celui qui vous inspire
+(et qui est encore libre). Si vous trouvez une autre idée, n&#8217;hésitez pas à valider auprès de nous.</p>
+</li>
+<li>
+<p>Ouvrez un nouveau projet (en pensant à le définir du type <code>SysML</code>)</p>
+</li>
+<li>
+<p>Ajoutez votre propre organisation (en utilisant les <code>packages</code> comme vu en cours) si besoin (<span class="menuseq"><span class="menu">right</span>&#160;&#9656; <span class="submenu">click</span>&#160;&#9656; <span class="menuitem">add</span></span>)</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<a class="image" href="pkg-organisation.png"><img src="images/pkg-organisation.png" alt="organization" height="300"></a>
+</div>
+<div class="title">Figure 30. Exemple d&#8217;organisation</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_avant_d_aller_trop_loin_dans_les_diagrammes">4.2.2. Avant d&#8217;aller trop loin dans les diagrammes</h4>
+<div class="ulist">
+<ul>
+<li>
+<p>Faites valider votre organisation (par l&#8217;enseignant)</p>
+</li>
+<li>
+<p>Travaillez un document-type pour votre rapport (qui servira d&#8217;évaluation à
+votre projet).</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Vous pouvez tester la génération automatique de documents,
+mais n&#8217;attendez pas le dernier moment si vous vous lancez dans cette aventure!</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_contexte_du_système_à_modéliser">4.3. Contexte du système à modéliser</h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Définition</dt>
+<dd>
+<p>La <a href="http://mi.iut-blagnac.fr/">MIB</a> est un appartement permettant la supervision de patient
+à domicile.</p>
+</dd>
+</dl>
+</div>
+<div class="paragraph">
+<p>Les informations concernant le cahier des charges sont disponibles ici :
+<a href="http://mi.iut-blagnac.fr/" class="bare">http://mi.iut-blagnac.fr/</a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_exigences">4.4. Exigences</h3>
+<div class="paragraph">
+<p>Nous avons travaillé aux exigences en TD. Elles sont <a href="https://docs.google.com/spreadsheets/d/1-yaW8fZHG9i6r7vJ7NOU9-66-hnDYY66Vd9cmZTYs2A/edit?usp=sharing">ici</a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_evaluation">4.5. Evaluation</h3>
+<div class="sect3">
+<h4 id="_questions">4.5.1. Questions</h4>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Organisez vos futurs modèles en paquetages (peut être fait plus tard) et
+trouvez où vous "rattacher" dans le modèle actuel</p>
+</li>
+<li>
+<p>Réalisez si cela s&#8217;y prette un diagramme des exigences (<code>req</code>) du sous-système
+que vous traitez</p>
+</li>
+<li>
+<p>Réalisez le diagramme des cas d&#8217;utilisation (<code>uc</code>) du sous-système</p>
+</li>
+<li>
+<p>Réalisez un ou plusieurs diagrammes de blocks (<code>bdd</code>) de votre sous-système</p>
+</li>
+<li>
+<p>Réalisez un ou plusieurs diagrammes internes de blocks (<code>ibd</code>) correspondants</p>
+</li>
+<li>
+<p>Réalisez un ou plusieurs diagrammes comportementaux :</p>
+<div class="ulist">
+<ul>
+<li>
+<p>d&#8217;états (<code>st</code>) par exemple pour représenter le cycle de vie du sous-système,</p>
+</li>
+<li>
+<p>de séquences par exemple pour le scénario opérationnel nominal du sous-système dans son contexte</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Pensez à tracer les liens entre exigences et comportement ou entre exigences et blocs et
+à bien sûr relier vos élements à l&#8217;ensemble.</p>
+</li>
+</ol>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><strong>Sauvez régulièrement</strong></dt>
+<dd>
+<p>attention à la loi de Murphy!</p>
+</dd>
+<dt class="hdlist1"><strong>Vérifiez régulièrement</strong></dt>
+<dd>
+<p>utilisez les capacités de l&#8217;outils.</p>
+</dd>
+<dt class="hdlist1"><strong>Collaboratif</strong></dt>
+<dd>
+<p>Faites régulièrement des <code>pull</code> de la branche <code>master</code> pour mettre à jour vos
+modèles avec les éléments des autres, au fur et à mesure.</p>
+</dd>
+</dl>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="__em_delivrables_em_attendus">4.5.2. <em>Delivrables</em> attendus</h4>
+<div class="paragraph">
+<p>Vous déposerez avant le 08/01/2016 à minuit sur le dépôt moodle votre rapport
+final au format <code>.pdf</code>.</p>
+</div>
+<div class="paragraph">
+<p>Vous vous assurerez d&#8217;avoir mis à jour (<code>push</code>) votre branche dans le dépôt GitHub.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Votre rapport devra s&#8217;appeler <code>xxx-rapport.pdf</code> où <code>xxx</code> est votre nom
+ou vos noms (par exemple <code>bruel-chaudet-rapport.pdf</code>) en respectant bien
+cette nomenclature.</p>
+</div>
+<div class="paragraph">
+<p>De même vos branches git devront commencer par vos noms (et non vos id) suivis
+d&#8217;un terme permettant de comprendre ce que vous traitez (par exemple
+<code>bruel-chaudet-diagContexte</code>).</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_evaluation_et_critères">4.5.3. Evaluation et critères</h4>
+<div class="paragraph">
+<p>Les principaux critères qui guideront la notation seront :</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>clarté des diagrammes et des choix de conception ou d&#8217;interprétation réalisés</p>
+</li>
+<li>
+<p>cohérence entre les diagrammes</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>L&#8217;évaluation portera principalement sur les critères suivants :</p>
+</div>
+<table id="Criteres" class="tableblock frame-all grid-all" style="width: 90%;">
+<caption class="title">Table 2. Critères</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 33.3333%;">
+<col style="width: 16.6667%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Critère</th>
+<th class="tableblock halign-center valign-top">Type de critère</th>
+<th class="tableblock halign-center valign-top">Poids approximatif</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Sommaire / Introduction</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Présence</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">10%</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Diagramme des Use Cases</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Correction, pertinence</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">10%</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Diagramme des Requirements</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Correction, pertinence</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">10%</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Diagramme Comportementaux</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Correction, pertinence</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">20%</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Diagramme de Définition de Blocks	(au moins un)</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Correction, pertinence</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">10%</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Diagramme de Interne de Blocks	(au moins un)</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Correction, pertinence</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">10%</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cohérence inter-modèles (bdd/seq, bdd/ibd)</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Correction, pertinence</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">10%</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Clarté – Présentation du Dossier</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">subjectif :-)</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">20%</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+En cas de besoin, n&#8217;hésitez pas à nous contacter (<a href="mailto:bruel@irit.fr">bruel@irit.fr</a> ou <a href="mailto:christelle.chaudet@irit.fr">christelle.chaudet@irit.fr</a>).
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_about">4.6. About&#8230;&#8203;</h3>
+<div class="paragraph">
+<p>Document generated with <a href="http://asciidoctor.org/">Asciidoctor</a> <code>1.5.5</code> from <code>Dan Allen</code> by <a href="mailto:{bruel,christelle.chaudet}@irit.fr">Jean-Michel Bruel &amp; Christelle Chaudet</a>.
+<span class="image"><a class="image" href="http://creativecommons.org/licenses/by-sa/3.0/"><img src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" alt="Licence Creative Commons" title="TP SysML"></a></span>
+<a href="http://creativecommons.org/licenses/by-sa/3.0/">licence Creative Commons Paternité - Partage à l&#39;Identique 3.0 non transposé</a>.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="__span_class_icon_i_class_fa_fa_star_o_title_tp_sysml_i_span_liens_utiles">5. <span class="icon"><i class="fa fa-star-o" title="TP SysML"></i></span> Liens utiles</h2>
 <div class="sectionbody">
 <div class="ulist">
 <ul>
@@ -1056,7 +2604,7 @@ Autrement dit : une amélioration de la <strong>compétitivité</strong> des ent
 </div>
 </div>
 <div class="sect1">
-<h2 id="__span_class_icon_i_class_fa_fa_star_o_i_span_faq">4. <span class="icon"><i class="fa fa-star-o"></i></span> FAQ</h2>
+<h2 id="__span_class_icon_i_class_fa_fa_star_o_title_tp_sysml_i_span_faq">6. <span class="icon"><i class="fa fa-star-o" title="TP SysML"></i></span> FAQ</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Dans ce qui suit, les logos qui accompagnent les réponses aux questions signifient :</p>
@@ -1064,18 +2612,18 @@ Autrement dit : une amélioration de la <strong>compétitivité</strong> des ent
 <div class="ulist">
 <ul>
 <li>
-<p><span class="image"><img src="images/icons/appbar.weather.sun.png" alt="appbar.weather.sun"></span> &#8658; réponse validée par le prof</p>
+<p><span class="image"><img src="images/icons/appbar.weather.sun.png" alt="appbar.weather.sun" title="TP SysML"></span> &#8658; réponse validée par le prof</p>
 </li>
 <li>
-<p><span class="image"><img src="images/icons/appbar.weather.overcast.png" alt="appbar.weather.overcast"></span> &#8658; réponse avec référence/citation</p>
+<p><span class="image"><img src="images/icons/appbar.weather.overcast.png" alt="appbar.weather.overcast" title="TP SysML"></span> &#8658; réponse avec référence/citation</p>
 </li>
 <li>
-<p><span class="image"><img src="images/icons/appbar.weather.thunder.png" alt="appbar.weather.thunder"></span> &#8658; réponse non validée</p>
+<p><span class="image"><img src="images/icons/appbar.weather.thunder.png" alt="appbar.weather.thunder" title="TP SysML"></span> &#8658; réponse non validée</p>
 </li>
 </ul>
 </div>
 <div class="sect2">
-<h3 id="_qui_compose_l_afis">4.1. Qui compose l&#8217;AFIS ?</h3>
+<h3 id="_qui_compose_l_afis">6.1. Qui compose l&#8217;AFIS ?</h3>
 <div class="paragraph">
 <p>Qui sont les gens qui adhèrent et pilotent l'<a href="#AFIS">[AFIS]</a>?</p>
 </div>
@@ -1109,7 +2657,7 @@ et des responsables thématiques.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_glossaire_et_définition">5. Glossaire et définition</h2>
+<h2 id="_glossaire_et_définition">7. Glossaire et définition</h2>
 <div class="sectionbody">
 <div class="admonitionblock warning">
 <table>
@@ -1158,17 +2706,17 @@ Ces définitions seront enrichies au fur et à mesure du cours.
 </div>
 </div>
 <div class="sect1">
-<h2 id="__span_class_icon_i_class_fa_fa_cogs_i_span_contributions_welcome"><span class="icon"><i class="fa fa-cogs"></i></span> Contributions welcome!</h2>
+<h2 id="__span_class_icon_i_class_fa_fa_cogs_title_tp_sysml_i_span_contributions_welcome"><span class="icon"><i class="fa fa-cogs" title="TP SysML"></i></span> Contributions welcome!</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>N&#8217;hésitez pas à contribuer au projet <span class="icon"><i class="fa fa-github"></i></span> qui héberge ce site (<a href="https://github.com/jmbruel/masterDL2016" class="bare">https://github.com/jmbruel/masterDL2016</a>) en lisant <a href="https://github.com/jmbruel/masterDL2016/blob/master/CONTRIBUTING.adoc">ces consignes</a>.</p>
+<p>N&#8217;hésitez pas à contribuer au projet <span class="icon"><i class="fa fa-github" title="TP SysML"></i></span> qui héberge ce site (<a href="https://github.com/jmbruel/masterDL2016" class="bare">https://github.com/jmbruel/masterDL2016</a>) en lisant <a href="https://github.com/jmbruel/masterDL2016/blob/master/CONTRIBUTING.adoc">ces consignes</a>.</p>
 </div>
 <div class="sidebarblock">
 <div class="content">
 <div class="paragraph">
-<p>Document réalisé par <a href="mailto:jbruel@gmail.com">J.-M. Bruel</a> via <a href="http://asciidoctor.org/" class="bare">http://asciidoctor.org/</a>
+<p>Document réalisé par <a href="mailto:bruel@irit.fr">Jean-Michel Bruel</a> via <a href="http://asciidoctor.org/" class="bare">http://asciidoctor.org/</a>
 (version <code>1.5.4</code>) from <code>Dan Alen</code>. <code>Licence Creative Commons</code>.
-<span class="image"><a class="image" href="http://creativecommons.org/licenses/by-sa/4.0/"><img src="images/icons/88x31.png" alt="Licence Creative Commons"></a></span>
+<span class="image"><a class="image" href="http://creativecommons.org/licenses/by-sa/4.0/"><img src="images/icons/88x31.png" alt="Licence Creative Commons" title="TP SysML"></a></span>
 <a href="http://creativecommons.org/licenses/by-sa/4.0/">licence Creative Commons Paternité - Partage à l&#39;Identique 4.0 non transposé</a>.</p>
 </div>
 </div>
@@ -1179,7 +2727,7 @@ Ces définitions seront enrichies au fur et à mesure du cours.
 <div id="footer">
 <div id="footer-text">
 Version 1.0<br>
-Last updated 2016-09-23 11:49:24 CEST
+Last updated 2016-11-03 00:37:39 CET
 </div>
 </div>
 </body>

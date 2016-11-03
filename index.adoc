@@ -1,3 +1,7 @@
+//---------------------------------
+// Introduction à l'IS ("chapeau")
+// (c) JMB - 2016
+//---------------------------------
 = Initiation à l'Ingénierie Système
 J.-M. Bruel <jbruel@gmail.com>
 V1.0, {localdate}
@@ -17,7 +21,11 @@ V1.0, {localdate}
 :mdl: {mdlurl}/[Master DL]
 :refmodule: EIINL3AM
 // ajouter ici les variables manquantes
+:icontheory: icon:graduation-cap[]
+:iconpractice: icon:cogs[]
 //------------------------- définitions ---------------------
+
+include::../definitions.txt[]
 
 image::customLogo.gif[width=100%,link={mdlurl}]
 
@@ -36,7 +44,16 @@ Niveau de difficulté::
 Les sections qui suivent sont évaluées de facile/débutant (icon:star-o[]) à avancé (icon:star[])
 
 Théorie/Pratique::
-Les sections avec l'icône icon:graduation-cap[] sont plus théoriques (définitions, etc.) que ceux avec l'icône icon:cogs[].
+Les sections avec l'icône {icontheory} sont plus théoriques (définitions, etc.) que ceux avec l'icône {iconpractice}.
+
+Diagrammes::
+Les figures représentant des modèles {uml}/{sysml} proviennent de différents outils.
+Pour les identifier j'essaye de les repérer systématiquement par une indication :
+
+- `P` pour {plantuml}
+- `M` pour {modelio}
+- `T` pour {topcased}
+- `B` pour {bouml}
 
 === Contributeurs
 
@@ -50,8 +67,15 @@ Les sections avec l'icône icon:graduation-cap[] sont plus théoriques (définit
 //---------------------------- Organisation -------------------------
 include::organisation.adoc[]
 
+
 //---------------------------- Intro by JMB -------------------------
 include::introduction.adoc[leveloffset=+1]
+
+//---------------------------- SysML by JMB -------------------------
+[[SysML]]
+include::exigences.adoc[leveloffset=+1]
+
+include::tp.adoc[leveloffset=+1]
 
 //---------------------------- Liens utiles -------------------------
 == icon:star-o[] Liens utiles

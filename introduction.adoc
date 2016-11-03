@@ -1,6 +1,6 @@
 //---------------------------------
-// Cours sur Git
-// (c) JMB - 2014
+// Introduction à l'IS ("chapeau")
+// (c) JMB - 2016
 //---------------------------------
 [[Introduction]]
 = icon:star-half[] Introduction à l'*IS*
