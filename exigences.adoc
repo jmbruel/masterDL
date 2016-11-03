@@ -497,7 +497,7 @@ Il est possible d'indiquer un certain nombre de propriétés sur un _requirement
 - _priority_ (`high`, `low`, ...)
 - _source_ (`stakeolder`, `law`, `technical`, ...)
 - _risk_ (`high`, `low`, ...)
-- _status_ (`proposed`, `aproved`, ...)
+- _status_ (`proposed`, `approved`, ...)
 - _verification method_ (`analysis`, `tests`, ...)
 
 ifdef::slides[=== !]
