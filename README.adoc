@@ -13,6 +13,7 @@ La version web de ce site est accessible ici : {website}
 == Contributeurs
 
 - {jmb} since 21/09/2016
+- link:https://github.com/tbille[Thomas Bille] since 03/11/2016
 - [add your name here] since [JJ/MM/YYY]
 
 N'hésitez pas à contribuer en lisant les consignes (link:CONTRIBUTING.adoc[]).
