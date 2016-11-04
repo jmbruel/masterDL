@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'asciidoctor'
+gem 'asciidoctor-diagram'
 
 # for "https://github.com/asciidoctor/asciidoctor-pdf"
 # & "https://github.com/asciidoctor/asciidoctor-epub3"
