@@ -10,6 +10,23 @@
 Cours collaboratif du http://www.master-developpement-logiciel.fr/[Master DL].
 La version web de ce site est accessible ici : {website}
 
+Projet développé en link:http://asciidoctor.org/[AsciiDoc].
+
+== Convertir le projet d'AsciiDoc vers HTML
+
+- Installer link:https://rubygems.org/pages/download[gem].
+- Installer link:http://bundler.io/[bundler] :
+
+ gem install bundler
+
+- Installer les packages :
+
+ bundle install
+
+- Convertir le projet en HTML
+
+ make index.html -B
+
 == Contributeurs
 
 - {jmb} since 21/09/2016
