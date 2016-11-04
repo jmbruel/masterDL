@@ -17,7 +17,7 @@
 // raccourcis sites
 :moodle: http://webetud.iut-blagnac.fr[Moodle]
 
-include::/Users/bruel/Dropbox/dev/definitions.txt[]
+include::definitions.txt[]
 
 //---------------- Définitions
 :tool: {papyrus}

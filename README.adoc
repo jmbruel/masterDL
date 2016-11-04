@@ -2,6 +2,8 @@
 :website: https://jmbruel.github.io/masterDL2016/
 :websitegh: https://github.com/jmbruel/masterDL2016
 :numbered:
+:source-higlight: asciidoctor
+
 = Initiation à l'Ingénierie Système
 {jmb}, v.0.8
 
@@ -10,22 +12,34 @@
 Cours collaboratif du http://www.master-developpement-logiciel.fr/[Master DL].
 La version web de ce site est accessible ici : {website}
 
-Projet développé en link:http://asciidoctor.org/[AsciiDoc].
+Le code source des pages et écrit en link:http://www.methods.co.nz/asciidoc/[AsciiDoc]
+et compilé avec link:http://asciidoctor.org/[Asciidoctor].
 
 == Convertir le projet d'AsciiDoc vers HTML
 
 - Installer link:https://rubygems.org/pages/download[gem].
 - Installer link:http://bundler.io/[bundler] :
 
- gem install bundler
+[source,shell]
+----
+$ gem install bundler
+----
 
 - Installer les packages :
 
- bundle install
+[source,shell]
+----
+$ bundle install
+----
 
 - Convertir le projet en HTML
 
- make index.html -B
+[source,shell]
+----
+$ make index.html -B
+----
+
+- Faire une pull request
 
 == Contributeurs
 

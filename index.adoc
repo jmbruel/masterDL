@@ -25,7 +25,7 @@ V1.0, {localdate}
 :iconpractice: icon:cogs[]
 //------------------------- définitions ---------------------
 
-include::../definitions.txt[]
+include::definitions.txt[]
 
 image::customLogo.gif[width=100%,link={mdlurl}]
 
