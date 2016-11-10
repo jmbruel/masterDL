@@ -491,8 +491,8 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="details">
 <span id="author" class="author">J.-M. Bruel</span><br>
 <span id="email" class="email"><a href="mailto:jbruel@gmail.com">jbruel@gmail.com</a></span><br>
-<span id="revnumber">version 1.0,</span>
-<span id="revdate">2016-11-04</span>
+<span id="revnumber">version 1.1,</span>
+<span id="revdate">2016-11-10</span>
 </div>
 <div id="toc" class="toc2">
 <div id="toctitle">Table des matières</div>
@@ -520,10 +520,16 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_les_domaines_d_applications_de_l_is">2.12. Les domaines d’applications de l&#8217;IS</a></li>
 </ul>
 </li>
-<li><a href="#Exigences">3. <span class="icon"><i class="fa fa-star-half"></i></span> Les <strong>exigences</strong> et SysML</a>
+<li><a href="#SysML">3. <span class="icon"><i class="fa fa-star-half"></i></span> La notation <strong>SysML</strong></a>
 <ul class="sectlevel2">
-<li><a href="#_introduction">3.1. Introduction</a></li>
-<li><a href="#reqs">3.2. Les exigences</a></li>
+<li><a href="#Matrice">3.1. Introduction</a></li>
+<li><a href="#Notation">3.2. Pourquoi une nouvelle notation</a></li>
+<li><a href="#_introduction_à_sysml">3.3. Introduction à SysML</a></li>
+<li><a href="#Outils">3.4. Outils SysML</a></li>
+<li><a href="#_cadre_pour_les_diagrammes">3.5. Cadre pour les diagrammes</a></li>
+<li><a href="#org">3.6. Organisation</a></li>
+<li><a href="#Exigences">3.7. Les <strong>exigences</strong> et SysML</a></li>
+<li><a href="#archi">3.8. L&#8217;architecture du système</a></li>
 </ul>
 </li>
 <li><a href="#_tp_sysml">4. TP SysML</a>
@@ -658,7 +664,8 @@ Pour les identifier j&#8217;essaye de les repérer systématiquement par une ind
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="mailto:bruel@irit.fr">Jean-Michel Bruel</a> &amp; Chaudet</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_sysml">SysML</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#Exigences">Les <strong>exigences</strong> et SysML</a>
+</p><p class="tableblock"><a href="#SysML"><span class="icon"><i class="fa fa-star-half"></i></span> La notation <strong>SysML</strong></a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">10h Cours/TD + 6h TP</p></td>
 </tr>
 <tr>
@@ -1075,10 +1082,10 @@ Autrement dit : une amélioration de la <strong>compétitivité</strong> des ent
 </div>
 </div>
 <div class="sect1">
-<h2 id="Exigences">3. <span class="icon"><i class="fa fa-star-half"></i></span> Les <strong>exigences</strong> et SysML</h2>
+<h2 id="SysML">3. <span class="icon"><i class="fa fa-star-half"></i></span> La notation <strong>SysML</strong></h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_introduction">3.1. Introduction</h3>
+<h3 id="Matrice">3.1. Introduction</h3>
 <div class="paragraph">
 <p>La matrice qui nous servira de "carte de base" pour placer les activités
 ou les modèles, sera celle-ci :</p>
@@ -1107,7 +1114,7 @@ dans une carte mentale précise. Cela permet une meilleure mémorisation.</p>
 <p>Les exigences et leur prises en compte sont un éléments critique pour le
   succès du développement de tout système.
   Sans explorer l&#8217;ensemble des activités d&#8217;ingénierie système (ce qui
-  nécessiterait tout un volume du type de <a href="#reqs">Les exigences</a>) nous insisterons sur cet aspect.</p>
+  nécessiterait tout un volume du type de <a href="#reqs">[reqs]</a>) nous insisterons sur cet aspect.</p>
 </dd>
 <dt class="hdlist1">Structure</dt>
 <dd>
@@ -1227,10 +1234,974 @@ connaissez déjà (sd, dc, uc, pkg, dss&#160;).</p>
 <img src="images/mamatrice.png" alt="mamatrice" width="100%">
 </div>
 </div>
+<div class="paragraph">
+<p>Éléments de correction :</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/acronymes-cor.png" alt="acronymes cor" width="100%">
+</div>
+</div>
+<table class="tableblock frame-all grid-all" style="width: 50%;">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"></th>
+<th class="tableblock halign-left valign-top">Exigences</th>
+<th class="tableblock halign-left valign-top">Structure</th>
+<th class="tableblock halign-left valign-top">Comportement</th>
+<th class="tableblock halign-left valign-top">Transverse</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Organisation</p></th>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>pkg</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Analyse</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>uc</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>dc</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>dss</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Conception</p></th>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>dc</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>sd</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Implémentation</p></th>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 <div class="sect2">
-<h3 id="reqs">3.2. Les exigences</h3>
+<h3 id="Notation">3.2. Pourquoi une nouvelle notation</h3>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>A good notation has subtlety and suggestiveness which at times makes
+it almost seem like a live teacher.</p>
+</div>
+</blockquote>
+<div class="attribution">
+&#8212; Bertrand Russell<br>
+<cite>The World of Mathematics (1956)</cite>
+</div>
+</div>
+<div class="paragraph">
+<p>Il existe une notation qui se veut "unifiée" pour les modèles : <a href="http://www.uml.org/">UML&#8482;</a>.
+Néanmoins cette notation est peu adaptée pour l&#8217;Ingénierie Système :</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>UML 1.x était complètement inadaptée :</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Principalement pour les systèmes d&#8217;information</p>
+</li>
+<li>
+<p>Peu de liens entre les diagrammes</p>
+</li>
+<li>
+<p>Peu de liens entre les modèles et les exigences</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>UML 2.x n&#8217;est pas beaucoup mieux si ce n&#8217;est :</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Implication des ingénieurs systèmes pour sa définition</p>
+</li>
+<li>
+<p>Introduction du diagramme de structure composite</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>En conclusion <a href="http://www.uml.org/">UML&#8482;</a> est une bonne base :</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Standard <em>De facto</em> en génie logiciel</p>
+</li>
+<li>
+<p>Fournit beaucoup de concepts utiles pour décrire des systèmes (même complexes)</p>
+</li>
+<li>
+<p>Stable et extensible (grâce notamment au mécanisme de <em>profile</em>)</p>
+</li>
+<li>
+<p>Beaucoup d&#8217;outils disponibles</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Mais&#8230;&#8203;</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Manque de certains concepts clés d&#8217;Ingénierie Système</p>
+</li>
+<li>
+<p>Vocabulaire beaucoup trop « software » pour être utilisé par les ingénieurs systèmes (concept de classe ou d'héritage par exemple)</p>
+</li>
+<li>
+<p>Trop de diagrammes (13 sortes)</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_introduction_à_sysml">3.3. Introduction à SysML</h3>
+<div class="sect3">
+<h4 id="_fiche_d_identité">3.3.1. Fiche d&#8217;identité</h4>
+<div class="paragraph">
+<p>Voici à quoi pourrait ressembler la fiche d&#8217;identité de <a href="http://www.omgsysml.org/">SysML&#8482;</a> :</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="title">Carte d&#8217;identité</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Date de naissance non officielle : 2001!</p>
+</li>
+<li>
+<p>Première spécification adoptée à <a href="http://www.omg.org">l&#8217;OMG&#8482;</a> : 19 septembre 2007</p>
+</li>
+<li>
+<p>Version actuelle : <a href="http://www.omg.org/spec/SysML/1.4/"><code>1.4</code></a> (03/06/2015)</p>
+</li>
+<li>
+<p>Paternité : <a href="http://www.omg.org">OMG&#8482;</a> / <a href="http://www.uml.org/">UML&#8482;</a> + <a href="http://www.incose.org/">INCOSE</a></p>
+</li>
+<li>
+<p>Auteurs principaux :</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Conrad Bock</p>
+</li>
+<li>
+<p>Cris Kobryn</p>
+</li>
+<li>
+<p>Sanford Friedenthal</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Logo officiel : <span class="image"><img src="images/sysml.jpeg" alt="sysml"></span></p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_différence_avec_uml">3.3.2. Différence avec UML</h4>
+<div class="paragraph">
+<p>La figure <a href="#liensdiag">suivante</a>, tirée de la spécification, résume bien les liens entre <a href="http://www.omgsysml.org/">SysML&#8482;</a> et <a href="http://www.uml.org/">UML&#8482;</a>, à savoir que <a href="http://www.omgsysml.org/">SysML&#8482;</a> reprend une partie seulement des concepts d&#8217;<a href="http://www.uml.org/">UML&#8482;</a> (appelée UML4SysML) en y ajoutant des concepts nouveaux.</p>
+</div>
+<div id="liensdiag" class="imageblock">
+<div class="content">
+<img src="images/diff.png" alt="diff" width="60%">
+</div>
+<div class="title">Figure 12. Liens entre UML et SysML</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_qui_est_derrière">3.3.3. Qui est "derrière"?</h4>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Industrie</dt>
+<dd>
+<p>American Systems, BAE Systems, Boeing, Deere &amp; Company, EADS Astrium, Eurostep, Israel Aircraft Industries,  Lockheed Martin, Motorola, NIST, Northrop Grumman, oose.de, Raytheon, Thales, &#8230;&#8203;</p>
+</dd>
+<dt class="hdlist1">Vendeurs d&#8217;outils</dt>
+<dd>
+<p>Artisan, EmbeddedPlus, Gentleware, IBM, Mentor Graphics, PivotPoint Technology, Sparx Systems, Vitech, &#8230;&#8203;</p>
+</dd>
+<dt class="hdlist1">Autres organisations</dt>
+<dd>
+<p>AP-233, INCOSE, Georgia Institute of Technology, AFIS, &#8230;&#8203;</p>
+</dd>
+</dl>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>La liste complète des membres de <a href="http://www.omg.org">l&#8217;OMG&#8482;</a> est accessible à l&#8217;URL : <a href="http://www.omg.org/cgi-bin/apps/membersearch.pl" class="bare">http://www.omg.org/cgi-bin/apps/membersearch.pl</a></p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_organisation_des_différents_diagrammes">3.3.4. Organisation des différents diagrammes</h4>
+<div class="imageblock">
+<div class="content">
+<img src="images/Figure4-1.png" alt="Figure4 1" width="90%">
+</div>
+<div class="title">Figure 13. Les 9 diagrammes SysML et leur lien avec UML</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/Figure4-1-bis.png" alt="Figure4 1 bis" width="90%">
+</div>
+<div class="title">Figure 14. Version abrégée des diagrammes</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="title">Définition : <span class="image"><img src="images/sysml.jpeg" alt="sysml" width="20"></span> Types de diagrammes (OMG SysML v1.3, p. 170)</div>
+<div class="paragraph">
+<p><em>SysML diagram kinds should have the following names or (abbreviations) as part of the heading&#8230;&#8203;</em></p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_différence_entre_modèle_et_dessin">3.3.5. Différence entre modèle et dessin</h4>
+<div class="paragraph">
+<p><a href="http://www.omgsysml.org/">SysML&#8482;</a> n&#8217;est pas une palette de dessins et d&#8217;éléments de base servant à faire
+des diagrammes. Il existe une représentation graphique des éléments modélisés en <a href="http://www.omgsysml.org/">SysML&#8482;</a>. Elle est importante car elle permet de communiquer visuellement sur le système en développement, mais du point de vue du concepteur, c&#8217;est <strong>le modèle</strong> qui importe le plus.</p>
+</div>
+<div class="paragraph">
+<p>C&#8217;est pourquoi nous vous recommandons de ne jamais "dessiner" des diagrammes <a href="http://www.omgsysml.org/">SysML&#8482;</a> <sup class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnote_1" title="View footnote.">1</a>]</sup>, mais d&#8217;utiliser des outils dédiés (cf. <a href="#Outils">Outils SysML</a>).
+Ils respectent en général la norme <a href="http://www.omg.org/spec/SysML/1.3/PDF/">OMG SysML v1.3</a> (bien qu&#8217;il faille se méfier).</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Notez que la norme permet de faire des adaptations graphiques (cf. la discussion <a href="http://www.realtimeatwork.com/2011/08/is-sysml-too-abstract/" class="bare">http://www.realtimeatwork.com/2011/08/is-sysml-too-abstract/</a>).</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Un des intérêts de la modélisation est de faciliter la communication, notamment
+au travers des diagrammes et leur aspect graphique et synthétique.
+Un dessin est donc un plus par rapport à du texte. Néanmoins, il ne faut pas se
+contenter d&#8217;un simple dessin pour au moins deux raisons importantes :</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>un dessin n&#8217;est pas assez formel (comment être sûr d&#8217;avoir correctement utilisé tel ou tel symbole, cf. les deux exemples ci-dessous) ;</p>
+</li>
+<li>
+<p>il est impossible d&#8217;assurer la cohérence globale des modèles dans le cas d&#8217;un dessin.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Un modèle est une sorte de base de donnée qui regroupe des éléments issues de différents points de vue (saisis le plus
+souvent au travers de diagrammes). Un diagramme est une vue partielle du modèle (donc incomplète).
+Le modèle est la vraie plus value car il va permettre de détecter les incohérences sur les exigences, les problèmes de complétude,
+lancer des analyses, faire des transformations vers d&#8217;autres langages ou formats, etc.
+Par exemple dans un outil de modélisation il y a une grande différence entre supprimer un élément d&#8217;un diagramme (on parlera
+alors de "masquer" un élément d&#8217;un diagramme) et supprimer un élément de modèle (ce qui aura pour effet de supprimer cet élément de
+tous les diagrammes où il était présent).</p>
+</div>
+<div class="paragraph">
+<p>Voici deux exemples de non respect de la notation qui illustre le type d&#8217;erreur que l&#8217;on trouve souvent dans les modèles qui circulent
+sur Internet ou même parfois dans certains livres.</p>
+</div>
+<div class="sect4">
+<h5 id="_diagramme_de_bloc">Diagramme de bloc</h5>
+<div class="paragraph">
+<p>Par exemple dans ce diagramme les blocs ne respectent
+pas la syntaxe graphique de <a href="http://www.omgsysml.org/">SysML&#8482;</a> :</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="./images/icons/appbar.weather.thunder.png" alt="Note">
+</td>
+<td class="content">
+<div class="title">Erreur : mauvais symboles graphiques pour les blocs</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/cordeuseContext.png" alt="cordeuseContext" width="90%">
+</div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Pour rappel, la notation <code>jmb : Personne</code> permet de représenter un <strong>objet</strong> (une instance d&#8217;une classe ou d&#8217;un bloc).
+C&#8217;est donc une notation utilisée par exemple dans les participants d&#8217;un diagramme de séquence ou encore les parties
+d&#8217;un diagramme interne de bloc.</p>
+</div>
+<div class="paragraph">
+<p>Donc dans le diagramme ci-dessus, l&#8217;acteur est correct (on peut mettre des acteurs dans un bdd, cf. OMG SysML v1.3 p.32), par contre
+les objets <code>Block : &#8230;&#8203;</code> est une erreur de notation.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="./images/icons/appbar.weather.sun.png" alt="Note">
+</td>
+<td class="content">
+<div class="title">Solution : utiliser un outil (B)</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/cordeuseContextOK.png" alt="cordeuseContextOK" width="90%">
+</div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Attention, il est tout à fait possible de représenter des instances dans un bdd (cf. OMG SysML v1.3 p.34),
+même si c&#8217;est très peu courant.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect4">
+<h5 id="participants">Diagramme de séquence</h5>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="./images/icons/appbar.weather.thunder.png" alt="Note">
+</td>
+<td class="content">
+<div class="title">Erreur : pb avec les participants et la boucle</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/cordeuseSeqBad.png" alt="cordeuseSeqBad" width="90%">
+</div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Plusieurs problèmes de non respect de la notation :</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>il manque le rectangle aux participants</p>
+</li>
+<li>
+<p>les participants semblent être des blocs et non des instances</p>
+</li>
+<li>
+<p>la boucle devrait avoir une condition (même "toujours" pour une boucle infinie)</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Le dernier problème est plus une convention qu&#8217;une véritable erreur. Cf. <a href="#_conventions">Conventions</a>.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="Outils">3.4. Outils SysML</h3>
+<div class="paragraph">
+<p>Il existe un certain nombre d&#8217;outils permettant de réaliser des modèles SysML. Voici une liste non exhaustive :</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="http://www.topcased.org">TOPCASED</a></p>
+</li>
+<li>
+<p><a href="http://www.eclipse.org/papyrus/">Papyrus</a></p>
+</li>
+<li>
+<p><a href="http://www.artisansw.com/">Artisan</a></p>
+</li>
+<li>
+<p><a href="http://www-142.ibm.com/software/products/us/en/ratirhap">Rhapsody</a></p>
+</li>
+<li>
+<p><a href="http://www.modeliosoft.com/">Modelio</a></p>
+</li>
+<li>
+<p><a href="http://www.nomagic.com/">MagicDraw</a></p>
+</li>
+<li>
+<p>&#8230;&#8203;</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Vous trouverez sur Internet des comparatifs et des avis à jour sur les outils.</p>
+</div>
+<div class="paragraph">
+<p>Ce que je voudrai souligner ici c&#8217;est l&#8217;importance du modèle comme "dépôt" (je préfère le terme anglais de <em>repository</em>) d&#8217;éléments de base en relation les uns avec les autres. C&#8217;est toute la différence entre le dessin et le modèle.</p>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Attention toutefois à ne pas confondre ce que vous permet (ou pas) de faire l&#8217;outil et la notation elle-même. Les fabricants ont parfois pris des libertés ou bien n&#8217;ont pas complètement implémenté toutes les subtilités de la notation.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_cadre_pour_les_diagrammes">3.5. Cadre pour les diagrammes</h3>
+<div class="paragraph">
+<p>Abordons quelques principes généraux de <a href="http://www.omgsysml.org/">SysML&#8482;</a>, c&#8217;est à dire des éléments indépendant d&#8217;un diagramme en particulier :</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Chaque diagramme <a href="http://www.omgsysml.org/">SysML&#8482;</a> décrit un élément précis (nommé) de modélisation</p>
+</li>
+<li>
+<p>Chaque diagramme <a href="http://www.omgsysml.org/">SysML&#8482;</a> doit être représenté à l&#8217;intérieur d&#8217;un cadre (<em>Diagram Frame</em>)</p>
+</li>
+<li>
+<p>L&#8217;entête du cadre, appelé aussi <strong>cartouche</strong>, indique les informations sur le diagramme :</p>
+<div class="ulist">
+<ul>
+<li>
+<p>le <strong>type</strong> de diagramme (<code>req</code>, <code>act</code>, <code>bdd</code>, <code>ibd</code>, <code>stm</code>, etc. en gras) qui donne immédiatement une indication sur le point de vue porté à l&#8217;élément de modélisation (comportement, structure, etc.)</p>
+</li>
+<li>
+<p>le type de l&#8217;élément (par exemple <em>package</em>, <em>block</em>, <em>activity</em>, etc.), optionnel</p>
+</li>
+<li>
+<p>le nom de l&#8217;élément (unique)</p>
+</li>
+<li>
+<p>le nom du diagramme ou de la vue, optionnel</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Dans l&#8217;exemple ci-dessous, le diagramme "<em>Context_Overview</em>" est un <em>Block Definition Diagram</em> (type <code>bdd</code>) qui représente un
+<em>package</em>, nommé "Context".</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/pacemaker-context.png" alt="pacemaker context" width="80%">
+</div>
+<div class="title">Figure 15. Exemple de diagramme SysML</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="./images/icons/university.png" alt="Note">
+</td>
+<td class="content">
+<div class="title">Convention : Utilisation systématique des cartouches</div>
+<div class="paragraph">
+<p>Tout diagramme proposé pour décrire un système (dans une documentation par exemple) devrait posséder un entête précis.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Pour ceux qui cherchent à étudier un diagramme en particulier voici un plan de cette section (nous utilisons ici le "plan" vu lors de l&#8217;introduction de la <a href="#Matrice">Introduction</a>) :</p>
+</div>
+<table class="tableblock frame-all grid-all" style="width: 90%;">
+<caption class="title">Table 1. Organisation</caption>
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"></th>
+<th class="tableblock halign-left valign-top"><a href="#reqs">Exigences</a></th>
+<th class="tableblock halign-left valign-top"><a href="#archi">Structure</a></th>
+<th class="tableblock halign-left valign-top"><a href="#behavior">Comportement</a></th>
+<th class="tableblock halign-left valign-top"><a href="#transvers">Transverse</a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Organisation</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>pkg</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>pkg</code>, <code>bdd</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>pkg</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Analyse, Conception, Implémentation <sup class="footnote">[<a id="_footnoteref_2" class="footnote" href="#_footnote_2" title="View footnote.">2</a>]</sup></p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>req</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>bdd</code>, <code>ibd</code>, <code>sd</code>, <code>par</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>uc</code>, <code>sd</code>, <code>stm</code>, <code>act</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>par</code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="org">3.6. Organisation</h3>
+<table class="tableblock frame-all grid-all" style="width: 50%;">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"></th>
+<th class="tableblock halign-left valign-top">Exigences</th>
+<th class="tableblock halign-left valign-top">Structure</th>
+<th class="tableblock halign-left valign-top">Comportement</th>
+<th class="tableblock halign-left valign-top">Transverse</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-map-marker"></i></span> <strong class="red">Organisation</strong></p></th>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Analyse</p></th>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Conception</p></th>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Implémentation</p></th>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
+<div class="sect3">
+<h4 id="_fondements">3.6.1. Fondements</h4>
+<div class="paragraph">
+<p>On abordera :</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Le <em>Package Diagram</em></p>
+</li>
+<li>
+<p>Les différent types de <em>packages</em></p>
+</li>
+<li>
+<p>Les organisations possibles</p>
+</li>
+<li>
+<p>La notion de <em>Namespaces</em></p>
+</li>
+<li>
+<p>Les <em>Dependencies</em></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="package">3.6.2. Le <em>Package Diagram</em></h4>
+<div class="paragraph">
+<p>Le diagramme de paquetage permet de représenter l&#8217;organisation des modèles en paquetages.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Il est identique à <a href="http://www.uml.org/">UML&#8482;</a>, et classique pour les développeurs (java notamment)</p>
+</li>
+<li>
+<p>Il permet d&#8217;organiser les modèles en créant un espace de nommage (cf. <a href="#namespace">La notion de <em>Namespaces</em></a>)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Les modèles peuvent être organisés selon toutes sortes de considération (cf. <a href="#organisation">Les organisations possibles</a>) :</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>hiérarchie "système" (e.g., entreprise, système, composant)</p>
+</li>
+<li>
+<p>types de diagrammes (e.g., besoins, structure, comportements)</p>
+</li>
+<li>
+<p>par points de vue</p>
+</li>
+<li>
+<p>etc.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_les_différent_types_de_em_packages_em">3.6.3. Les différent types de <em>packages</em></h4>
+<div class="paragraph">
+<p>Il existe plusieurs types de <em>package</em> :</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">models</dt>
+<dd>
+<p>un <em>package</em> "top-level" dans une hiérarchie de <em>packages</em></p>
+</dd>
+<dt class="hdlist1">packages</dt>
+<dd>
+<p>le type le plus classique : un ensemble d&#8217;éléments de modèles</p>
+</dd>
+<dt class="hdlist1">model librairies</dt>
+<dd>
+<p>un <em>package</em> prévu pour être réutilisé (importé) par d&#8217;autres éléments</p>
+</dd>
+<dt class="hdlist1">views</dt>
+<dd>
+<p>un <em>package</em> spécial pour représenter les points de vue</p>
+</dd>
+</dl>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Un point de vue (<em>viewpoint</em>) est utilisé pour matérialiser une perspective particulière de modélisation.
+Il possède des propriétés standardisés (<em>concerns</em>, <em>language</em>, <em>purpose</em>, etc.) et permettent d&#8217;indiquer qu&#8217;une
+vue (un <em>packetage</em> particulier, stéréotypé <code>&lt;&lt;view&gt;&gt;</code>) est conforme (dépendance <code>&lt;&lt;conform&gt;&gt;</code>) à un point de vue.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="organisation">3.6.4. Les organisations possibles</h4>
+<div class="paragraph">
+<p>Les modèles peuvent être organisés selon toutes sortes de considération :</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>par hiérarchie "système" (e.g., entreprise, système, composant, &#8230;&#8203;)</p>
+</li>
+<li>
+<p>par types de diagrammes (e.g., besoins, structure, comportements, &#8230;&#8203;)</p>
+</li>
+<li>
+<p>par cycle de vie (e.g., analyse, conception, &#8230;&#8203;)</p>
+</li>
+<li>
+<p>par équipes (e.g., architectes, <a href="#IPT">[IPT]</a>, &#8230;&#8203;)</p>
+</li>
+<li>
+<p>par points de vue (e.g., sécurité, performance, &#8230;&#8203;)</p>
+</li>
+<li>
+<p>etc.</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/pkg-organisation2.png" alt="pkg organisation2" width="50%">
+</div>
+<div class="title">Figure 16. Exemple d&#8217;organisation simple</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/pkg-organisation-modelview.png" alt="pkg organisation modelview" width="30%">
+</div>
+<div class="title">Figure 17. Représentation de cette organisation dans un outil</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/pkg-organisation.png" alt="pkg organisation" width="30%">
+</div>
+<div class="title">Figure 18. Un autre exemple d&#8217;organisation</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/pkg-topcased.png" alt="pkg topcased" width="40%">
+</div>
+<div class="title">Figure 19. Un autre exemple d&#8217;organisation</div>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>L&#8217;outil <a href="http://www.topcased.org">TOPCASED</a> propose, lors de la création d&#8217;un premier modèle, de créer une organisation
+"type" par défaut.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="images/pkg-template.png" alt="pkg template" width="80%"></span>
+<span class="image"><img src="images/pkg-topcased-default.png" alt="pkg topcased default" width="80%"></span></p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="namespace">3.6.5. La notion de <em>Namespaces</em></h4>
+<div class="paragraph">
+<p>Un <em>package</em> permet de créer un espace de nommage pour tous les éléments qu&#8217;il contient.
+Ainsi, dans un <em>package</em>, on n&#8217;a pas à se soucier des noms des éléments. Même si d&#8217;autres utilisent les mêmes noms,
+il n&#8217;y aura pas ambiguité.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="./images/icons/sysml.png" alt="Note">
+</td>
+<td class="content">
+<div class="title">Définition : <em>Namespace</em> (OMG SysML v1.3, p. 23)</div>
+<div class="paragraph">
+<p><em>The package defines a <strong>namespace</strong> for the packageable elements.</em></p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Pour éviter toute ambiguité, on peut utiliser pour les éléments de modèles leur nom complet (<em>Qualified name</em>),
+c&#8217;est à dire le nom de l&#8217;élément préfixé par son (ou ses) <em>package(s)</em>
+(e.g., <code>Structure::Products::Clock</code>).</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Dans les outils <a href="http://www.omgsysml.org/">SysML&#8482;</a>, il faut souvent demander explicitement à voir les noms complets (<em>Qualified names</em>)
+des éléments (la plupart du temps dans les options graphiques).</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_les_dépendances">3.6.6. Les dépendances</h4>
+<div class="paragraph">
+<p>Un certain nombre de dépendances peuvent exister entre des éléments de <em>package</em>
+ou entre les <em>packages</em> eux-mêmes :</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><em>Dependency</em></dt>
+<dd>
+<p>une dépendance "générale", non précisée,<br>
+représentée par une simple flèche pointillée <code>-----&gt;</code></p>
+</dd>
+<dt class="hdlist1"><em>Use</em></dt>
+<dd>
+<p>l&#8217;élément "utilise" celui à l&#8217;autre bout de la flèche (un type par exemple),<br>
+représentée par le stéréotype <code>&lt;&lt;use&gt;&gt;</code></p>
+</dd>
+<dt class="hdlist1"><em>Refine</em></dt>
+<dd>
+<p>l&#8217;élément est un raffinage (plus détaillé) de celui à l&#8217;autre bout de la flèche,<br>
+représentée par le stéréotype <code>&lt;&lt;refine&gt;&gt;</code></p>
+</dd>
+<dt class="hdlist1"><em>Realization</em></dt>
+<dd>
+<p>l&#8217;élément est une "réalisation" (implémentation) de celui à l&#8217;autre bout de la flèche,<br>
+représentée par le stéréotype <code>&lt;&lt;realize&gt;&gt;</code></p>
+</dd>
+<dt class="hdlist1"><em>Allocation</em></dt>
+<dd>
+<p>l&#8217;élément (e.g., une activité ou un <em>requirement</em>) est "alloué" sur celui à l&#8217;autre bout de la flèche (un block la plupart du temps),<br>
+représentée par le stéréotype <code>&lt;&lt;allocate&gt;&gt;</code></p>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_en_résumé">3.6.7. En résumé</h4>
+<div class="paragraph">
+<p><a href="http://www.omgsysml.org/">SysML&#8482;</a> propose un certain nombre de mécanismes pour organiser les différents modèles,
+tirés pour la plupart d&#8217;<a href="http://www.uml.org/">UML&#8482;</a>. Ces mécanismes seront plus faciles à comprendre au travers
+de leur utilisation concrète dans la suite.</p>
+</div>
+<table class="tableblock frame-all grid-all" style="width: 50%;">
+<caption class="title">Table 2. Organisation</caption>
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"></th>
+<th class="tableblock halign-left valign-top">Exigences</th>
+<th class="tableblock halign-left valign-top">Structure</th>
+<th class="tableblock halign-left valign-top">Comportement</th>
+<th class="tableblock halign-left valign-top">Transverse</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock"><strong class="red">Organisation</strong></p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">package</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">package</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">package</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">dependencies</p></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">&#8230;&#8203;</p></th>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="_questions_de_révision_2">3.6.8. Questions de révision</h4>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="./images/icons/tuxteacher.png" alt="Note">
+</td>
+<td class="content">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Quels sont les 5 types de dépendances entre <em>packageable elements</em> ?</p>
+</li>
+<li>
+<p>À quoi cela peut-il servir de définir les dépendances (donnez des exemples concrets) ?</p>
+</li>
+</ol>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="Exigences">3.7. Les <strong>exigences</strong> et SysML</h3>
+<div class="sect3">
+<h4 id="_introduction">3.7.1. Introduction</h4>
 <div class="paragraph">
 <p>L&#8217;ingénierie des exigences est d&#8217;une importance capitale, surtout en Ingénierie Système.
 En général les exigences sont exprimées par des ingénieurs dédiés à cette activité.
@@ -1241,7 +2212,7 @@ cruciale cette analyse.</p>
 <div class="content">
 <a class="image" href="http://www.inria.fr/centre/rennes/actualites/vers-un-cahier-des-charges-mieux-formule"><img src="images/ingenierie-des-exigences.jpg" alt="Joke" width="50%"></a>
 </div>
-<div class="title">Figure 12. 300 corps de métiers sont parfois présents sur un même chantier</div>
+<div class="title">Figure 20. 300 corps de métiers sont parfois présents sur un même chantier</div>
 </div>
 <div class="admonitionblock tip">
 <table>
@@ -1280,7 +2251,7 @@ En génie logiciel on parle plus classiquement des spécifications ("spec") pour
 <div class="content">
 <a class="image" href="https://plus.google.com/100035762233109552669/posts/a8Hafq2hZ74"><img src="images/ProgrammerHumor.jpg" alt="Joke" width="50%"></a>
 </div>
-<div class="title">Figure 13. Spécification ambiguë (taken from <a href="https://plus.google.com/100035762233109552669/posts/a8Hafq2hZ74" class="bare">https://plus.google.com/100035762233109552669/posts/a8Hafq2hZ74</a>)</div>
+<div class="title">Figure 21. Spécification ambiguë (taken from <a href="https://plus.google.com/100035762233109552669/posts/a8Hafq2hZ74" class="bare">https://plus.google.com/100035762233109552669/posts/a8Hafq2hZ74</a>)</div>
 </div>
 <div class="paragraph">
 <p>Dans le cadre de la matrice qui nous sert de plan, nous somme ici :</p>
@@ -1296,45 +2267,46 @@ En génie logiciel on parle plus classiquement des spécifications ("spec") pour
 <thead>
 <tr>
 <th class="tableblock halign-left valign-top"></th>
-<th class="tableblock halign-left valign-top"><strong class="red">Exigences</strong></th>
-<th class="tableblock halign-left valign-top">Structure</th>
-<th class="tableblock halign-left valign-top">Comportement</th>
-<th class="tableblock halign-left valign-top">Transverse</th>
+<th class="tableblock halign-center valign-top"><strong class="red">Exigences</strong></th>
+<th class="tableblock halign-center valign-top">Structure</th>
+<th class="tableblock halign-center valign-top">Comportement</th>
+<th class="tableblock halign-center valign-top">Transverse</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <th class="tableblock halign-left valign-top"><p class="tableblock">Organisation</p></th>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-map-marker"></i></span></p></td>
+<td class="tableblock halign-center valign-top"></td>
+<td class="tableblock halign-center valign-top"></td>
+<td class="tableblock halign-center valign-top"></td>
 </tr>
 <tr>
 <th class="tableblock halign-left valign-top"><p class="tableblock">Analyse</p></th>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-map-marker"></i></span></p></td>
+<td class="tableblock halign-center valign-top"></td>
+<td class="tableblock halign-center valign-top"></td>
+<td class="tableblock halign-center valign-top"></td>
 </tr>
 <tr>
 <th class="tableblock halign-left valign-top"><p class="tableblock">Conception</p></th>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-map-marker"></i></span></p></td>
+<td class="tableblock halign-center valign-top"></td>
+<td class="tableblock halign-center valign-top"></td>
+<td class="tableblock halign-center valign-top"></td>
 </tr>
 <tr>
 <th class="tableblock halign-left valign-top"><p class="tableblock">Implémentation</p></th>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-map-marker"></i></span></p></td>
+<td class="tableblock halign-center valign-top"></td>
+<td class="tableblock halign-center valign-top"></td>
+<td class="tableblock halign-center valign-top"></td>
 </tr>
 </tbody>
 </table>
+</div>
 <div class="sect3">
-<h4 id="_fondements">3.2.1. Fondements</h4>
+<h4 id="_fondements_2">3.7.2. Fondements</h4>
 <div class="paragraph">
 <p>On abordera :</p>
 </div>
@@ -1373,7 +2345,7 @@ En génie logiciel on parle plus classiquement des spécifications ("spec") pour
 <div class="paragraph">
 <p>L&#8217;ingénierie des exigences est une discipline à part entière et nous n&#8217;abordons ici
 que les aspects en lien avec la modélisation. Voir le livre de référence pour
-plus de détails (<a href="#Sommerville1997">[Sommerville1997]</a>) ou le guide de l&#8217;<a href="http://www.afis.fr/">AFIS</a> (<a href="#REQ2012">[REQ2012]</a>).</p>
+plus de détails (<a href="#Sommerville1997">[Sommerville1997]</a>) ou le guide de l&#8217;<a href="https://www.afis.fr" class="bare">https://www.afis.fr</a> (<a href="#REQ2012">[REQ2012]</a>).</p>
 </div>
 </td>
 </tr>
@@ -1381,161 +2353,59 @@ plus de détails (<a href="#Sommerville1997">[Sommerville1997]</a>) ou le guide 
 </div>
 <div class="paragraph">
 <p>Il n&#8217;existe pas de diagramme <a href="http://www.uml.org/">UML&#8482;</a> pour traiter des exigences en particulier.
-Nous allons donc présenter dans cette partie un diagramme introduit par
-<a href="http://www.omgsysml.org/">SysML&#8482;</a>.</p>
+C&#8217;est pourquoi ce diagramme a été introduit par <a href="http://www.omgsysml.org/">SysML&#8482;</a>.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_sysml">3.2.2. SysML</h4>
-<div class="sect4">
-<h5 id="_fiche_d_identité">Fiche d&#8217;identité</h5>
-<div class="admonitionblock note">
-<table>
+<h4 id="_l_organisation_des_em_requirements_em">3.7.3. L&#8217;organisation des <em>Requirements</em></h4>
+<table class="tableblock frame-all grid-all" style="width: 50%;">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+</colgroup>
+<thead>
 <tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-<div class="title">Carte d&#8217;identité</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Date de naissance non officielle : 2001!</p>
-</li>
-<li>
-<p>Première spécification adoptée à <a href="http://www.omg.org">l&#8217;OMG&#8482;</a> : 19 septembre 2007</p>
-</li>
-<li>
-<p>Version actuelle : <a href="http://www.sysml.org/docs/specs/OMGSysML-v1.3-12-06-02.pdf">1.3</a> (12/06/2012)</p>
-</li>
-<li>
-<p>Paternité : <a href="http://www.omg.org">OMG&#8482;</a> / <a href="http://www.uml.org/">UML&#8482;</a> + <a href="http://www.incose.org/">INCOSE</a></p>
-</li>
-<li>
-<p>Auteurs principaux :</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Conrad Bock</p>
-</li>
-<li>
-<p>Cris Kobryn</p>
-</li>
-<li>
-<p>Sanford Friedenthal</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>Logo officiel : <span class="image"><img src="images/sysml.jpeg" alt="sysml"></span></p>
-</li>
-</ul>
-</div>
-</td>
+<th class="tableblock halign-left valign-top"></th>
+<th class="tableblock halign-center valign-top"><strong class="red">Exigences</strong></th>
+<th class="tableblock halign-center valign-top">Structure</th>
+<th class="tableblock halign-center valign-top">Comportement</th>
+<th class="tableblock halign-center valign-top">Transverse</th>
 </tr>
-</table>
-</div>
-</div>
-<div class="sect4">
-<h5 id="_sysml_c_est">SysML, c&#8217;est&#8230;&#8203;</h5>
-<div class="paragraph">
-<p>Un ensemble de 9 types de diagrammes :</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Diagrammes structuraux</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Diagrammes de définition de blocs (<code>bdd</code>)</p>
-</li>
-<li>
-<p>Diagrammes internes de blocs (<code>ibd</code>)</p>
-</li>
-<li>
-<p>Diagrammes paramétriques (<code>par</code>)</p>
-</li>
-<li>
-<p>Diagrammes de packages (<code>pkg</code>)</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>Diagrammes comportementaux</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Diagrammes de séquence (<code>sd</code>)</p>
-</li>
-<li>
-<p>Diagrammes d&#8217;activité (<code>act</code>)</p>
-</li>
-<li>
-<p>Diagrammes de cas d&#8217;utilisation (<code>uc</code>)</p>
-</li>
-<li>
-<p>Diagrammes d&#8217;états (<code>stm</code>)</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>Diagramme d&#8217;exigence (<code>req</code>)</p>
-<div class="dlist">
-<dl>
-<dt class="hdlist1">Un profil <a href="http://www.uml.org/">UML&#8482;</a></dt>
-<dd>
-<p>C&#8217;est à dire une <strong>extension</strong> de cette notation, un ensemble de nouveaux concepts et éléments qui sont définis à partir des éléments de base <a href="http://www.uml.org/">d&#8217;UML&#8482;</a>. Un exemple : le <code>bloc</code> <a href="http://www.omgsysml.org/">SysML&#8482;</a> n&#8217;est qu&#8217;une redéfinition de la <code>classe</code> <a href="http://www.uml.org/">UML&#8482;</a>.</p>
-</dd>
-<dt class="hdlist1">Une notation</dt>
-<dd>
-<p>Une notation de plus en plus enseignée et connue et qui servira donc de plus en plus de <strong>référence</strong> à la modélisation des systèmes.</p>
-</dd>
-</dl>
-</div>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect4">
-<h5 id="_sysml_ce_n_est_pas">SysML, ce n&#8217;est pas&#8230;&#8203;</h5>
-<div class="dlist">
-<dl>
-<dt class="hdlist1">Une méthode</dt>
-<dd>
-<p>En effet, contrairement à ce que beaucoup pensent en l&#8217;abordant, <a href="http://www.omgsysml.org/">SysML&#8482;</a> ne propose pas de démarche particulière de développement de système. C&#8217;est à la fois sa force (votre méthode existante pourra continuer à être utilisée) comme sa faiblesse car cette absence de guide méthodologique fait souvent défaut à son utilisation.</p>
-</dd>
-<dt class="hdlist1">Un outil</dt>
-<dd>
-<p>Nous verrons en effet que <a href="http://www.omgsysml.org/">SysML&#8482;</a> ne fait que ce qu&#8217;on veut bien en faire. Comme tout langage il est limité dans son pouvoir d&#8217;expression, mais surtout il reste une simple notation qu&#8217;il convient d&#8217;utiliser avec des outils et des démarches associées.</p>
-</dd>
-<dt class="hdlist1">Un raton laveur</dt>
-<dd>
-<p>C&#8217;est juste pour voir ceux qui suivent&#8230;&#8203;</p>
-</dd>
-</dl>
-</div>
-<div class="admonitionblock note">
-<table>
+</thead>
+<tbody>
 <tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-<div class="paragraph">
-<p>On ne dit pas "le SysML" mais tout simplement "SysML".</p>
-</div>
-</td>
+<th class="tableblock halign-left valign-top"><p class="tableblock"><strong class="red">Organisation</strong></p></th>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-map-marker"></i></span></p></td>
+<td class="tableblock halign-center valign-top"></td>
+<td class="tableblock halign-center valign-top"></td>
+<td class="tableblock halign-center valign-top"></td>
 </tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Analyse</p></th>
+<td class="tableblock halign-center valign-top"></td>
+<td class="tableblock halign-center valign-top"></td>
+<td class="tableblock halign-center valign-top"></td>
+<td class="tableblock halign-center valign-top"></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Conception</p></th>
+<td class="tableblock halign-center valign-top"></td>
+<td class="tableblock halign-center valign-top"></td>
+<td class="tableblock halign-center valign-top"></td>
+<td class="tableblock halign-center valign-top"></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Implémentation</p></th>
+<td class="tableblock halign-center valign-top"></td>
+<td class="tableblock halign-center valign-top"></td>
+<td class="tableblock halign-center valign-top"></td>
+<td class="tableblock halign-center valign-top"></td>
+</tr>
+</tbody>
 </table>
-</div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_l_organisation_des_em_requirements_em">3.2.3. L&#8217;organisation des <em>Requirements</em></h4>
 <div class="paragraph">
 <p>Il ne s&#8217;agit pas ici de revenir sur les exigences elles-même, mais plutôt de voir comment <a href="http://www.omgsysml.org/">SysML&#8482;</a> permet
 de les exprimer, de les manipuler et surtout de les lier avec le reste du système.</p>
@@ -1545,14 +2415,14 @@ de les exprimer, de les manipuler et surtout de les lier avec le reste du systè
 <div class="paragraph">
 <p>Un <em>Requirement</em> en <a href="http://www.omgsysml.org/">SysML&#8482;</a> n&#8217;est qu&#8217;un bloc particulier.</p>
 </div>
-<div class="admonitionblock note">
+<div class="admonitionblock caution">
 <table>
 <tr>
 <td class="icon">
-<img src="./images/icons/images/icons/sysml.jpeg" alt="Note">
+<i class="fa icon-caution" title="Caution"></i>
 </td>
 <td class="content">
-<div class="title">Définition : <em>Requirements</em> (OMG SysML v1.3, p. 139)</div>
+<div class="title">Définition : <span class="image"><img src="images/sysml.jpeg" alt="sysml" width="20"></span> <em>Requirements</em> (OMG SysML v1.3, p. 139)</div>
 <div class="paragraph">
 <p><em>A requirement specifies a capability or condition that must (or should) be satisfied&#8230;&#8203;
 A requirement is defined as a stereotype of UML Class&#8230;&#8203;</em></p>
@@ -1565,7 +2435,7 @@ A requirement is defined as a stereotype of UML Class&#8230;&#8203;</em></p>
 <div class="content">
 <img src="images/corde.png" alt="corde" width="100%">
 </div>
-<div class="title">Figure 14. Un _Requirement_ en SysML (`P`)</div>
+<div class="title">Figure 22. Un _Requirement_ en SysML (`P`)</div>
 </div>
 </div>
 <div class="sect4">
@@ -1638,14 +2508,14 @@ Le principal support de <a href="http://www.omgsysml.org/">SysML&#8482;</a> à c
 Il est donc recommandé par le norme et possible dans de nombreux outils de représenter les exigences
 sous forme tabulaire.</p>
 </div>
-<div class="admonitionblock note">
+<div class="admonitionblock caution">
 <table>
 <tr>
 <td class="icon">
-<img src="./images/icons/sysml.jpeg" alt="Note">
+<i class="fa icon-caution" title="Caution"></i>
 </td>
 <td class="content">
-<div class="title">Définition : <em>Requirements Table</em> (OMG SysML v1.3, p. 145)</div>
+<div class="title">Définition : <span class="image"><img src="images/sysml.jpeg" alt="sysml" width="20"></span> <em>Requirements Table</em> (OMG SysML v1.3, p. 145)</div>
 <div class="paragraph">
 <p><em>The tabular format is used to represent the requirements, their properties and relationships&#8230;&#8203;</em></p>
 </div>
@@ -1657,7 +2527,7 @@ sous forme tabulaire.</p>
 <div class="content">
 <img src="images/req-table.png" alt="req table" width="100%">
 </div>
-<div class="title">Figure 15. Exemples tableau d'exigences (OMG SysML v1.3, p. 145)</div>
+<div class="title">Figure 23. Exemples tableau d'exigences (OMG SysML v1.3, p. 145)</div>
 </div>
 <div class="paragraph">
 <p>La plupart des outils modernes permettent le passage entre outils classiques de gestion des exigences (comme <a href="http://www-03.ibm.com/software/products/fr/fr/ratidoor/">DOORS&#8482;</a>)
@@ -1667,12 +2537,64 @@ et outils de modélisation <a href="http://www.omgsysml.org/">SysML&#8482;</a> (
 <div class="content">
 <img src="images/req-modelio.png" alt="req modelio" width="100%">
 </div>
-<div class="title">Figure 16. Import Modelio de tableau d'exigences (tiré de &lt;&lt;Modelio2012&gt;&gt;)</div>
+<div class="title">Figure 24. Import Modelio de tableau d'exigences (tiré de &lt;&lt;Modelio2012&gt;&gt;)</div>
 </div>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_les_em_requirements_properties_em">3.2.4. Les <em>Requirements properties</em></h4>
+<h4 id="_les_em_requirements_properties_em">3.7.4. Les <em>Requirements properties</em></h4>
+<div class="paragraph">
+<p>À partir du moment où on commence à définir des propriétés pour les éxigences,
+on peut considérer que l&#8217;on est à la frontière avec la phase d&#8217;analyse des exigences.</p>
+</div>
+<table class="tableblock frame-all grid-all" style="width: 50%;">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"></th>
+<th class="tableblock halign-center valign-top"><strong class="red">Exigences</strong></th>
+<th class="tableblock halign-center valign-top">Structure</th>
+<th class="tableblock halign-center valign-top">Comportement</th>
+<th class="tableblock halign-center valign-top">Transverse</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock"><strong class="red">Organisation</strong></p></th>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-map-marker"></i></span></p></td>
+<td class="tableblock halign-center valign-top"></td>
+<td class="tableblock halign-center valign-top"></td>
+<td class="tableblock halign-center valign-top"></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock"><strong class="red">Analyse</strong></p></th>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-map-marker"></i></span></p></td>
+<td class="tableblock halign-center valign-top"></td>
+<td class="tableblock halign-center valign-top"></td>
+<td class="tableblock halign-center valign-top"></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Conception</p></th>
+<td class="tableblock halign-center valign-top"></td>
+<td class="tableblock halign-center valign-top"></td>
+<td class="tableblock halign-center valign-top"></td>
+<td class="tableblock halign-center valign-top"></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Implémentation</p></th>
+<td class="tableblock halign-center valign-top"></td>
+<td class="tableblock halign-center valign-top"></td>
+<td class="tableblock halign-center valign-top"></td>
+<td class="tableblock halign-center valign-top"></td>
+</tr>
+</tbody>
+</table>
 <div class="paragraph">
 <p>Il est possible d&#8217;indiquer un certain nombre de propriétés sur un <em>requirement</em> :</p>
 </div>
@@ -1713,9 +2635,9 @@ La priorité sera donné par le client en terme de cycle (on traitera en premier
 </div>
 </div>
 <div class="sect3">
-<h4 id="_les_em_requirements_links_em">3.2.5. Les <em>Requirements links</em></h4>
+<h4 id="_les_em_requirements_links_em">3.7.5. Les <em>Requirements links</em></h4>
 <div class="paragraph">
-<p>Les principales relations entre <em>requirement</em> sont :</p>
+<p>Les principales relations entre <em>requirements</em> sont :</p>
 </div>
 <div class="dlist">
 <dl>
@@ -1725,11 +2647,11 @@ La priorité sera donné par le client en terme de cycle (on traitera en premier
 </dd>
 <dt class="hdlist1"><em>Refinement</em></dt>
 <dd>
-<p>Pour décrire un ajout de précision (<code><a href="#refine">[refine]</a></code>), comme par exemple une précision.</p>
+<p>Pour décrire un ajout de précision (<code>&lt;&lt;refine&gt;&gt;</code>), comme par exemple une précision.</p>
 </dd>
 <dt class="hdlist1"><em>Derivation</em></dt>
 <dd>
-<p>	Pour indiquer une différence de niveau d&#8217;abstraction (<code><a href="#deriveReqt">[deriveReqt]</a></code>), par exemple
+<p>	Pour indiquer une différence de niveau d&#8217;abstraction (<code>&lt;&lt;deriveReqt&gt;&gt;</code>), par exemple
 entre un système et un de ses sous-systèmes.</p>
 </dd>
 </dl>
@@ -1742,7 +2664,8 @@ entre un système et un de ses sous-systèmes.</p>
 </td>
 <td class="content">
 <div class="paragraph">
-<p>Lorsqu&#8217;une exigence possède plusieurs cas <code><a href="#refine">[refine]</a></code> qui pointent vers lui, on considère que ces différents cas sont des options possibles de raffinement (cf. <a href="#conventions">[conventions]</a>).</p>
+<p>Lorsqu&#8217;une exigence possède plusieurs cas <code>&lt;&lt;refine&gt;&gt;</code> qui pointent vers lui,
+on considère que ces différents cas sont des options possibles de raffinement (cf. <a href="#conventions">[conventions]</a>).</p>
 </div>
 </td>
 </tr>
@@ -1752,7 +2675,7 @@ entre un système et un de ses sous-systèmes.</p>
 <div class="content">
 <img src="images/req-exp1.png" alt="req exp1" width="80%">
 </div>
-<div class="title">Figure 17. Exemples de relations entre exigences (`M`)</div>
+<div class="title">Figure 25. Exemples de relations entre exigences (`M`)</div>
 </div>
 <div class="admonitionblock tip">
 <table>
@@ -1763,7 +2686,7 @@ entre un système et un de ses sous-systèmes.</p>
 <td class="content">
 <div class="paragraph">
 <p>Il existe ensuite les relations entre les besoins et les autres éléments de modélisation
-(les <em>block</em> ou les <em>class</em> principalement) comme <code><a href="#satisfy">[satisfy]</a></code> ou <code><a href="#verify">[verify]</a></code>, mais nous les aborderons
+(les <em>block</em> ou les <em>class</em> principalement) comme <code>&lt;&lt;satisfy&gt;&gt;</code> ou <code>&lt;&lt;verify&gt;&gt;</code>, mais nous les aborderons
 dans la partie <a href="#transvers">transverse</a>.</p>
 </div>
 </td>
@@ -1774,11 +2697,11 @@ dans la partie <a href="#transvers">transverse</a>.</p>
 <div class="content">
 <img src="images/topcased-req-connections.png" alt="topcased req connections" width="50%">
 </div>
-<div class="title">Figure 18. Relations liées aux _requirements_ dans TOPCASED (`T`)</div>
+<div class="title">Figure 26. Relations liées aux _requirements_ dans TOPCASED (`T`)</div>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_les_em_requirements_diagrams_em">3.2.6. Les <em>Requirements Diagrams</em></h4>
+<h4 id="_les_em_requirements_diagrams_em">3.7.6. Les <em>Requirements Diagrams</em></h4>
 <div class="paragraph">
 <p>Voici un exemple de <code>req</code> un peu plus étoffé, tiré de la norme (voir aussi <a href="#rationale">Exemples de _rationale_ et _problem_ (tiré de &lt;&lt;SysML&gt;&gt;)</a>) :</p>
 </div>
@@ -1786,11 +2709,11 @@ dans la partie <a href="#transvers">transverse</a>.</p>
 <div class="content">
 <img src="images/hsuv-reqs1.png" alt="hsuv reqs1" width="80%">
 </div>
-<div class="title">Figure 19. Exemples de composition d'exigences (tiré de &lt;&lt;SysML&gt;&gt;, `UK`)</div>
+<div class="title">Figure 27. Exemples de composition d'exigences (tiré de &lt;&lt;SysML&gt;&gt;, `UK`)</div>
 </div>
 </div>
 <div class="sect3">
-<h4 id="reqStereotypes">3.2.7. Stéréotyper les <em>Requirements</em></h4>
+<h4 id="reqStereotypes">3.7.7. Stéréotyper les <em>Requirements</em></h4>
 <div class="paragraph">
 <p>Tout comme pour n&#8217;importe quel bloc, il est possible de stéréotyper les <em>requirements</em>.
 Ceci permet de se définir ses propres priorités et classifications.
@@ -1799,16 +2722,16 @@ Quelques exemples de stéréotypes utiles :</p>
 <div class="ulist">
 <ul>
 <li>
-<p><code><a href="#interfaceRequirement">[interfaceRequirement]</a></code>, <code><a href="#physicalRequirement">[physicalRequirement]</a></code>, &#8230;&#8203;</p>
+<p><code>&lt;&lt;interfaceRequirement&gt;&gt;</code>, <code>&lt;&lt;physicalRequirement&gt;&gt;</code>, &#8230;&#8203;</p>
 </li>
 <li>
-<p><code><a href="#FunctionalRequirement">[FunctionalRequirement]</a></code>, <code><a href="#nonFunctionalRequirement">[nonFunctionalRequirement]</a></code></p>
+<p><code>&lt;&lt;FunctionalRequirement&gt;&gt;</code>, <code>&lt;&lt;nonFunctionalRequirement&gt;&gt;</code></p>
 </li>
 </ul>
 </div>
 </div>
 <div class="sect3">
-<h4 id="reqAnnot">3.2.8. Annotations des <em>Requirements</em></h4>
+<h4 id="reqAnnot">3.7.8. Annotations des <em>Requirements</em></h4>
 <div class="paragraph">
 <p>Il est possible d&#8217;annoter les éléments de modélisation en précisant les raisons
 (<em>rationale</em>) ou les éventuels problèmes anticipés (<em>problem</em>).</p>
@@ -1817,14 +2740,14 @@ Quelques exemples de stéréotypes utiles :</p>
 <div class="content">
 <img src="images/hsuv-reqs2.png" alt="hsuv reqs2" width="80%">
 </div>
-<div class="title">Figure 20. Exemples de _rationale_ et _problem_ (tiré de &lt;&lt;SysML&gt;&gt;)</div>
+<div class="title">Figure 28. Exemples de _rationale_ et _problem_ (tiré de &lt;&lt;SysML&gt;&gt;)</div>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_les_considérations_sur_la_traçabilité">3.2.9. Les considérations sur la traçabilité</h4>
+<h4 id="_les_considérations_sur_la_traçabilité">3.7.9. Les considérations sur la traçabilité</h4>
 <div class="paragraph">
 <p>Une fois que les <em>requirements</em> ont été définis et organisés, il est utile de les lier au moins aux <em>use cases</em>
-(en utilisant <code><a href="#refine">[refine]</a></code> par exemple) et aux éléments structurels (en utilisant <code><a href="#satisfy">[satisfy]</a></code> par exemple), mais ceci
+(en utilisant <code>&lt;&lt;refine&gt;&gt;</code> par exemple) et aux éléments structurels (en utilisant <code>&lt;&lt;satisfy&gt;&gt;</code> par exemple), mais ceci
 sera abordé dans la partie <a href="#transvers">transverse</a>.</p>
 </div>
 <div class="admonitionblock note">
@@ -1843,7 +2766,7 @@ sera abordé dans la partie <a href="#transvers">transverse</a>.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_les_em_use_case_diagrams_em">3.2.10. Les <em>Use Case Diagrams</em></h4>
+<h4 id="_les_em_use_case_diagrams_em">3.7.10. Les <em>Use Case Diagrams</em></h4>
 <div class="paragraph">
 <p>Bien que nous traitions les cas d&#8217;utilisation dans la partie <a href="#behavior">comportement</a>, nous les abordons
 	ici du fait de leur proximité avec les <em>requirements</em>.</p>
@@ -1852,7 +2775,7 @@ sera abordé dans la partie <a href="#transvers">transverse</a>.</p>
 <div class="content">
 <img src="images/req-uc-relation.png" alt="req uc relation" width="50%">
 </div>
-<div class="title">Figure 21. Exemple de lien entre _use case_ et _requirements_ (`T`)</div>
+<div class="title">Figure 29. Exemple de lien entre use case et requirements (`T`)</div>
 </div>
 <div class="paragraph">
 <p>Ce diagramme est celui que vous avez appris l&#8217;an dernier en <a href="http://www.uml.org/">UML&#8482;</a>.</p>
@@ -1861,13 +2784,13 @@ sera abordé dans la partie <a href="#transvers">transverse</a>.</p>
 <div class="content">
 <img src="images/UCGestionNotes.png" alt="UCGestionNotes" width="80%">
 </div>
-<div class="title">Figure 22. Exemple de diagramme des cas d'utilisation (`B`)</div>
+<div class="title">Figure 30. Exemple de diagramme des cas d'utilisation (`B`)</div>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/uc.png" alt="uc" width="70%">
 </div>
-<div class="title">Figure 23. Autre exemple de diagrammes des cas d'utilisation (`B`)</div>
+<div class="title">Figure 31. Autre exemple de diagrammes des cas d'utilisation (`B`)</div>
 </div>
 <div class="admonitionblock tip">
 <table>
@@ -1885,7 +2808,7 @@ sera abordé dans la partie <a href="#transvers">transverse</a>.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_exigences_et_tests">3.2.11. Exigences et tests</h4>
+<h4 id="_exigences_et_tests">3.7.11. Exigences et tests</h4>
 <div class="sect4">
 <h5 id="_principes">Principes</h5>
 <div class="paragraph">
@@ -1899,7 +2822,7 @@ matrices croisant les exigences d&#8217;un côté et les tests de l&#8217;autre.
 <div class="content">
 <a class="image" href="http://infocenter.sybase.com/archive/index.jsp?topic=/com.sybase.stf.poweramc.docs_12.0.0/html/exgu/exgup38.htm"><img src="images/matrice.gif" alt="matrice" width="70%"></a>
 </div>
-<div class="title">Figure 24. Exemple de matrice de traçabilité</div>
+<div class="title">Figure 32. Exemple de matrice de traçabilité</div>
 </div>
 <div class="paragraph">
 <p>Dans la réalité, les entreprises industrialisent le processus de vérification
@@ -1909,12 +2832,12 @@ des exigences en utilisant des outils adaptés :</p>
 <div class="content">
 <img src="images/testindus.png" alt="testindus" width="60%">
 </div>
-<div class="title">Figure 25. Le cycle de la qualification fonctionnelle en lien avec les besoins métiers (tirée de <a href="#TestsIndustriels2009">[TestsIndustriels2009]</a>)</div>
+<div class="title">Figure 33. Le cycle de la qualification fonctionnelle en lien avec les besoins métiers (tirée de <a href="#TestsIndustriels2009">[TestsIndustriels2009]</a>)</div>
 </div>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_exemple_complet">3.2.12. Exemple complet</h4>
+<h4 id="_exemple_complet">3.7.12. Exemple complet</h4>
 <div class="paragraph">
 <p>En prenant un exemple tiré de l&#8217;exemple du <a href="http://www.prfc.fr/livres/">Radio Réveil</a>&#8230;&#8203;</p>
 </div>
@@ -1978,7 +2901,7 @@ Nous les écrivons ici sous forme tabulaire, puis en utilisant le langage <a hre
 <div class="content">
 <img src="images/tabulaire.png" alt="tabulaire" width="100%">
 </div>
-<div class="title">Figure 26. Exemple de liste d'exigences (tirée de <a href="#TestsIndustriels2009">[TestsIndustriels2009]</a>)</div>
+<div class="title">Figure 34. Exemple de liste d'exigences (tirée de <a href="#TestsIndustriels2009">[TestsIndustriels2009]</a>)</div>
 </div>
 <div class="paragraph">
 <p>Exemple de <strong>version textuelle</strong> formattée :</p>
@@ -2009,7 +2932,7 @@ Feature: Scénario simple d'utilisation de l'AutoRadio (AR)
 <div class="content">
 <img src="images/plantest.png" alt="plantest" width="100%">
 </div>
-<div class="title">Figure 27. Exemple de plan de test simplifié (tirée de <a href="#TestsIndustriels2009">[TestsIndustriels2009]</a>)</div>
+<div class="title">Figure 35. Exemple de plan de test simplifié (tirée de <a href="#TestsIndustriels2009">[TestsIndustriels2009]</a>)</div>
 </div>
 </div>
 <div class="sect4">
@@ -2019,17 +2942,17 @@ Feature: Scénario simple d'utilisation de l'AutoRadio (AR)
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/AutoRadio-UC.png" alt="AutoRadio UC" width="20%">
+<a class="image" href="images/AutoRadio-UC.png"><img src="images/AutoRadio-UC.png" alt="AutoRadio UC" width="20%"></a>
 </div>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/AutoRadio-DC.png" alt="AutoRadio DC" width="20%">
+<a class="image" href="images/AutoRadio-DC.png"><img src="images/AutoRadio-DC.png" alt="AutoRadio DC" width="20%"></a>
 </div>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/AutoRadio-DS-Suivante.png" alt="AutoRadio DS Suivante" width="20%">
+<a class="image" href="images/AutoRadio-DS-Suivante.png"><img src="images/AutoRadio-DS-Suivante.png" alt="AutoRadio DS Suivante" width="20%"></a>
 </div>
 </div>
 <div class="paragraph">
@@ -2052,7 +2975,7 @@ cohérents. On pourra donc :</p>
 <p>générer les modèles à partir des codes <span class="detail">(cf. <a href="#commentaires">commentaires</a>)</span></p>
 </li>
 <li>
-<p>utiliser des outils intégrés <span class="detail">comme <a href="http://www.eclipse.org">Eclipse</a></span></p>
+<p>utiliser des outils intégrés <span class="detail">comme <a href="http://www.eclipse.org">eclipse</a></span></p>
 </li>
 <li>
 <p>avoir un plan systématique de révision code/modèle</p>
@@ -2101,12 +3024,12 @@ cohérents. On pourra donc :</p>
 <div class="content">
 <a class="image" href="http://plantuml.sourceforge.net/doclet.html"><img src="images/doclet.png" alt="doclet" width="90%"></a>
 </div>
-<div class="title">Figure 28. Exemple de diagramme généré par javadoc (tirée de <a href="#TestsIndustriels2009">[TestsIndustriels2009]</a>)</div>
+<div class="title">Figure 36. Exemple de diagramme généré par javadoc (tirée de <a href="#TestsIndustriels2009">[TestsIndustriels2009]</a>)</div>
 </div>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_en_résumé">3.2.13. En résumé</h4>
+<h4 id="_en_résumé_2">3.7.13. En résumé</h4>
 <div class="paragraph">
 <p>Les <strong>exigences</strong> sont très importantes en ingénierie système,
 du fait de la multiplication des <strong>sous-systèmes</strong> et donc des <strong>intermédiaires</strong> (fournisseurs, sous-traitants, etc.)
@@ -2117,7 +3040,7 @@ avec qui les aspects contractuels seront souvent basés sur ces exigences.</p>
 et des mécanismes <strong>dédiés</strong> aient été prévus en <a href="http://www.omgsysml.org/">SysML&#8482;</a>.</p>
 </div>
 <table class="tableblock frame-all grid-all" style="width: 90%;">
-<caption class="title">Table 1. Déclinaison des Exigences</caption>
+<caption class="title">Table 3. Déclinaison des Exigences</caption>
 <colgroup>
 <col style="width: 16.6666%;">
 <col style="width: 33.3333%;">
@@ -2144,14 +3067,14 @@ et des mécanismes <strong>dédiés</strong> aient été prévus en <a href="htt
 </tr>
 <tr>
 <th class="tableblock halign-left valign-top"><p class="tableblock">Analyse</p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="#satisfy">[satisfy]</a></code>, <code><a href="#refine">[refine]</a></code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="#satisfy">[satisfy]</a></code> entre reqs et UC</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code><a href="#refine">[refine]</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>&lt;&lt;satisfy&gt;&gt;</code>, <code>&lt;&lt;refine&gt;&gt;</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>&lt;&lt;satisfy&gt;&gt;</code> entre reqs et UC</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>&lt;&lt;refine&gt;&gt;</code></p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
 <th class="tableblock halign-left valign-top"><p class="tableblock">Conception</p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>&lt;&lt;allocate&gt;&gt;</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>&lt;&lt;allocate&gt;&gt;+</code></p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"></td>
@@ -2173,18 +3096,19 @@ des exigences et la modélisation du système lui-même (cf. <a href="#sysmod">E
 <div class="content">
 <a class="image" href="http://model-based-systems-engineering.com/2012/03/26/the-sysmod-zigzag-pattern/"><img src="images/zigzag.png" alt="zigzag" width="90%"></a>
 </div>
-<div class="title">Figure 29. Exemple de démarche (_SYSMOD Zigzag pattern_) (tirée de <a href="#TestsIndustriels2009">[TestsIndustriels2009]</a>)</div>
+<div class="title">Figure 37. Exemple de démarche (_SYSMOD Zigzag pattern_) (tirée de <a href="#TestsIndustriels2009">[TestsIndustriels2009]</a>)</div>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_questions_de_révision_2">3.2.14. Questions de révision</h4>
+<h4 id="_questions_de_révision_3">3.7.14. Questions de révision</h4>
 <div class="admonitionblock note">
 <table>
 <tr>
 <td class="icon">
-<img src="./images/icons/images/icons/tuxteacher.png" alt="Note">
+<img src="./images/icons/tuxteacher.png" alt="Note">
 </td>
 <td class="content">
+<div class="title">Questions</div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -2195,6 +3119,855 @@ des exigences et la modélisation du système lui-même (cf. <a href="#sysmod">E
 </li>
 <li>
 <p>En quoi les cas d&#8217;utilisation sont-ils complémentaires des exigences?</p>
+</li>
+</ol>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="archi">3.8. L&#8217;architecture du système</h3>
+<table class="tableblock frame-all grid-all" style="width: 50%;">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"></th>
+<th class="tableblock halign-center valign-top">Exigences</th>
+<th class="tableblock halign-center valign-top"><strong class="red">Structure</strong></th>
+<th class="tableblock halign-center valign-top">Comportement</th>
+<th class="tableblock halign-center valign-top">Transverse</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Organisation</p></th>
+<td class="tableblock halign-center valign-top"></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-map-marker"></i></span></p></td>
+<td class="tableblock halign-center valign-top"></td>
+<td class="tableblock halign-center valign-top"></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Analyse</p></th>
+<td class="tableblock halign-center valign-top"></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-map-marker"></i></span></p></td>
+<td class="tableblock halign-center valign-top"></td>
+<td class="tableblock halign-center valign-top"></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Conception</p></th>
+<td class="tableblock halign-center valign-top"></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-map-marker"></i></span></p></td>
+<td class="tableblock halign-center valign-top"></td>
+<td class="tableblock halign-center valign-top"></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Implémentation</p></th>
+<td class="tableblock halign-center valign-top"></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-map-marker"></i></span></p></td>
+<td class="tableblock halign-center valign-top"></td>
+<td class="tableblock halign-center valign-top"></td>
+</tr>
+</tbody>
+</table>
+<div class="sect3">
+<h4 id="_fondements_3">3.8.1. Fondements</h4>
+<div class="paragraph">
+<p>On abordera :</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>l&#8217;organisation du système et des modèles</p>
+</li>
+<li>
+<p>les <em>Block Definition Diagrams</em></p>
+</li>
+<li>
+<p>les <em>Internal Block Diagrams</em></p>
+</li>
+<li>
+<p>les <em>Parametric Diagrams</em> (pour les contraintes physiques)</p>
+</li>
+<li>
+<p>les <em>Sequence Diagrams</em> (diagramme de séquence système)</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_organisation_du_système_et_des_modèles">3.8.2. Organisation du système et des modèles</h4>
+<table class="tableblock frame-all grid-all" style="width: 50%;">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"></th>
+<th class="tableblock halign-center valign-top">Exigences</th>
+<th class="tableblock halign-center valign-top"><strong class="red">Structure</strong></th>
+<th class="tableblock halign-center valign-top">Comportement</th>
+<th class="tableblock halign-center valign-top">Transverse</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Organisation</p></th>
+<td class="tableblock halign-center valign-top"></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><span class="icon red"><i class="fa fa-map-marker"></i></span></p></td>
+<td class="tableblock halign-center valign-top"></td>
+<td class="tableblock halign-center valign-top"></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Analyse</p></th>
+<td class="tableblock halign-center valign-top"></td>
+<td class="tableblock halign-center valign-top"></td>
+<td class="tableblock halign-center valign-top"></td>
+<td class="tableblock halign-center valign-top"></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Conception</p></th>
+<td class="tableblock halign-center valign-top"></td>
+<td class="tableblock halign-center valign-top"></td>
+<td class="tableblock halign-center valign-top"></td>
+<td class="tableblock halign-center valign-top"></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Implémentation</p></th>
+<td class="tableblock halign-center valign-top"></td>
+<td class="tableblock halign-center valign-top"></td>
+<td class="tableblock halign-center valign-top"></td>
+<td class="tableblock halign-center valign-top"></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>En terme d&#8217;organisation, le mécanisme clef est celui de <em>package</em>.
+Celui-ci va permettre d&#8217;organiser les modèles, pas le système lui-même.
+Nous avons abordé cette organisation (cf. <a href="#package">Le <em>Package Diagram</em></a>).</p>
+</div>
+<div class="paragraph">
+<p>Pour l&#8217;organisation du système, on trouve le plus souvent :</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>un diagramme décrivant le contexte (le système dans son environnement), décrit dans un <em>block definition diagram</em> (cf. <a href="#contextebdd">bdd du système dans son environnement</a>)</p>
+</li>
+<li>
+<p>un diagramme décrivant les éléments internes principaux du système,  décrit dans un <em>internal block diagram</em></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="bddsec">3.8.3. <em>Block Definition Diagrams</em></h4>
+<div class="sect4">
+<h5 id="_principes_de_base">Principes de base</h5>
+<div class="paragraph">
+<p>Un <code>bdd</code> peut représenter :</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>un <em>package</em></p>
+</li>
+<li>
+<p>un bloc</p>
+</li>
+<li>
+<p>un bloc de contrainte (<em>constraint block</em>)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Un diagramme de bloc décrit les relations entre les blocs (compositions, généralisations, &#8230;&#8203;).
+Ce diagramme utilise les mêmes éléments que le diagramme de classe <a href="http://www.uml.org/">UML&#8482;</a>.</p>
+</div>
+<div id="contextebdd" class="imageblock">
+<div class="content">
+<img src="images/pacemaker-context.png" alt="pacemaker context" width="80%">
+</div>
+<div class="title">Figure 38. bdd du système dans son environnement</div>
+</div>
+<div class="paragraph">
+<p>Un bloc est constitué d&#8217;un certain nombre de compartiments (<em>Compartments</em>) :</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><em>Properties</em></dt>
+<dd>
+<p>Equivalent <a href="http://www.uml.org/">UML&#8482;</a> des propriétés (e.g., attributs).</p>
+</dd>
+<dt class="hdlist1"><em>Operations</em></dt>
+<dd>
+<p>Les méthodes supportées par les instances du bloc.</p>
+</dd>
+<dt class="hdlist1"><em>Constraints</em></dt>
+<dd>
+<p>Les contraintes (cf. <a href="#contraintes">Exemple de définition de contraintes</a>)</p>
+</dd>
+<dt class="hdlist1"><em>Allocations</em></dt>
+<dd>
+<p>Les allocations (cf. <a href="#transvers">[transvers]</a>)</p>
+</dd>
+<dt class="hdlist1"><em>Requirements</em></dt>
+<dd>
+<p>Les exigences liées à ce bloc.</p>
+</dd>
+<dt class="hdlist1"><em>User defined</em></dt>
+<dd>
+<p>On peut définir ses propres compartiments.</p>
+</dd>
+</dl>
+</div>
+<div id="contraintes" class="imageblock">
+<div class="content">
+<img src="images/constraints.png" alt="constraints" width="70%">
+</div>
+<div class="title">Figure 39. Exemple de définition de contraintes</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_propriétés">Propriétés</h5>
+<div class="paragraph">
+<p>On peut différencier 4 types de propriétés d&#8217;un bloc :</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><em>value properties</em></dt>
+<dd>
+<p>Des caractéristiques (quantifiables), aussi appelées simplement <em>values</em></p>
+</dd>
+<dt class="hdlist1"><em>parts</em></dt>
+<dd>
+<p>Les éléments qui composent le bloc (cf. <a href="#ibd"><em>Internal Block Diagrams</em></a>)</p>
+</dd>
+<dt class="hdlist1"><em>references</em></dt>
+<dd>
+<p>Les éléments auquel le bloc a accès (via des associations ou des agrégations)</p>
+</dd>
+<dt class="hdlist1"><em>constraint properties</em></dt>
+<dd>
+<p>Les contraintes que doivent respecter les propriétés (nous les verrons plus en détail, cf. <a href="#param"><em>Parametric Diagrams</em></a>).</p>
+</dd>
+</dl>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Les <em>values</em> sont ce qui se rapproche le plus des attributs de classes UML.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect4">
+<h5 id="__em_value_types_em"><em>Value Types</em></h5>
+<div class="paragraph">
+<p>Pour associer un type aux valeurs, <a href="http://www.omgsysml.org/">SysML&#8482;</a> propose de définir des <em>Value Types</em>.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/valueType.png" alt="valueType" width="60%">
+</div>
+<div class="title">Figure 40. Définition de <em>Value Types</em>.</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_associations_entre_blocs">Associations entre blocs</h5>
+<div class="paragraph">
+<p>Il existe deux types de relations entre blocs :</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>l’association (y compris l’agrégation et la composition)</p>
+</li>
+<li>
+<p>la généralisation/spécialisation</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Ces deux types de relations, bien connues en <a href="http://www.uml.org/">UML&#8482;</a>, permettent de matérialiser les liens qui existent entre les éléments du système. Avant d&#8217;aborder les associations, il est important de différencier la description d&#8217;éléments structurels sous la forme d&#8217;un bloc (au travers d&#8217;un <code>bdd</code> par exemple) et ces éléments pris individuellement. Ces derniers sont des <strong>instances</strong> individuelles du même bloc. Cette notion, très présente dans les approches orientées objets est souvent plus ardue à appréhender pour les ingénieurs systèmes. Il faut bien comprendre que la modélisation d&#8217;un bloc consiste à représenter l&#8217;ensemble des éléments qui caractérisent tout une série d&#8217;objets (des moteurs, des pompes, des données, etc.). Il serait fastidieux de les représenter tous (individuellement), et c&#8217;est donc leur "signature" que l&#8217;on représente. C&#8217;est pour cela qu&#8217;un bloc n&#8217;est pas un élément physique, mais simplement sa représentation, tandis qu&#8217;une instance de ce bloc représentera elle cet élément physique. C&#8217;est le cas notamment des participants d&#8217;un diagramme de séquence ou encore des parties d&#8217;un composé, qui sont des instances et non des blocs.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_association">Association</h5>
+<div class="paragraph">
+<p>Une <strong>association</strong> est un ensemble de liens permanents existant entre les instances de deux ou plusieurs blocs.
+On dira qu’une association lie plusieurs blocs ou que les blocs <strong>participent</strong> à l’association.</p>
+</div>
+<div class="paragraph">
+<p>Une association possède plusieurs propriétés :</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Dimension d’une association</dt>
+<dd>
+<p>Nombre de blocs mis en jeu par l’association<br>
+(binaire : 2, ternaire : 3, n-aire : n)<br></p>
+</dd>
+</dl>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="title">Exemple d’association binaire</div>
+<div class="paragraph">
+<p>Soient les bloc <code>Fournisseurs</code> et <code>Produits</code>.
+On veut indiquer quels sont les produits susceptibles d’être fournis par chaque fournisseur et quels sont les fournisseurs susceptibles de fournir chaque produit.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="images/prod-fourn.png" alt="prod fourn" width="40%"></span></p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Nom d’une association</dt>
+<dd>
+<p>Afin de clarifier les informations, il est important de nommer les associations.<br>
+Il existe trois façons de nommer une association :</p>
+<div class="ulist">
+<ul>
+<li>
+<p>un verbe à l’infinitif (e.g., <code>Fournir</code>)</p>
+</li>
+<li>
+<p>un verbe conjugué avec un sens de lecture : <code>Fournit &gt;</code>  ou  <code>&lt; Est fourni par</code></p>
+</li>
+<li>
+<p>un rôle (placé à une extrémité de l’association)</p>
+</li>
+</ul>
+</div>
+</dd>
+<dt class="hdlist1">Cardinalité</dt>
+<dd>
+<p>Indique à combien d’instances minimum et maximum du bloc d’en face est lié toute instance du bloc de départ. Elle est représentée par un couple <code>(M..N)</code>.</p>
+</dd>
+</dl>
+</div>
+<div class="admonitionblock caution">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-caution" title="Caution"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Attention, dans une cardinalité <code>M..N</code>, <code>M</code> doit toujours être inférieur ou égal à <code>N</code>.  Exemple : <code>3..10</code>.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/cardinalite.png" alt="cardinalite" width="50%">
+</div>
+<div class="title">Figure 41. Exemple d&#8217;associtaion</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_vers_le_code_que_signifie_vraiment_une_association">Vers le code : que signifie vraiment une association?</h5>
+<div class="paragraph">
+<p>En terme de logiciel, une <strong>association</strong> représente une contrainte sur la suite du développement : que ce soit un <strong>code</strong> (en langage orienté objet la plupart du temps) ou une <strong>base de donnée</strong>.</p>
+</div>
+<div class="paragraph">
+<p>Pour reprendre l&#8217;exemple précédent, cela signifie concrètement au niveau d&#8217;un code par exemple
+que depuis une variable <code>Produits</code> on doit être capable d&#8217;accéder à une variable (correspondante)
+de type tableau (ou liste, ou &#8230;&#8203;) de <code>Fournisseurs</code>.</p>
+</div>
+<div class="paragraph">
+<p>Ce qui peut donner en java :</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="java"><span class="tok-kd">public</span> <span class="tok-kd">class</span> <span class="tok-nc">Produits</span>
+<span class="tok-o">{</span>
+<span class="tok-c1">//Produits Attributes</span>
+<span class="tok-kd">private</span> <span class="tok-n">String</span> <span class="tok-n">idPro</span><span class="tok-o">;</span>
+<span class="tok-kd">private</span> <span class="tok-n">String</span> <span class="tok-n">designation</span><span class="tok-o">;</span>
+<span class="tok-kd">private</span> <span class="tok-kt">float</span> <span class="tok-n">poids</span><span class="tok-o">;</span>
+
+<span class="tok-c1">//Produits Associations</span>
+<span class="tok-kd">private</span> <span class="tok-n">List</span><span class="tok-o">&lt;</span><span class="tok-n">Fournisseurs</span><span class="tok-o">&gt;</span> <span class="tok-n">fournisseurs</span><span class="tok-o">;</span>
+<span class="tok-o">...</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>En terme d&#8217;ingénierie système, on utilisera plutôt des associations spécifiques (l&#8217;agrégation et la composition).</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<a class="image" href="http://stackoverflow.com/questions/7718035/uml-association-and-dependency"><img src="images/aggreg-comp.png" alt="aggreg comp" width="90%"></a>
+</div>
+<div class="title">Figure 42. Deux façon de représenter une propriété de type <code>B</code></div>
+</div>
+<div class="paragraph">
+<p>En terme d&#8217;Ingénierie Système, une composition indique que l&#8217;élément est une partie intégrante (on parle de <em>part</em>) du tout (un composant, comme le moteur d&#8217;une voiture par exemple) tandis q&#8217;une agrégation indique que l&#8217;élément est une partie "externe" (on parle de <em>reference</em>) comme la batterie d&#8217;un portable.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Un moyen simple en terme logiciel de déterminer si une association <code>A&#8594;B</code> est une association dirigée (navigable dans un sens), une agrégation ou une composition est de raisonner en terme d&#8217;implémentation :</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>c&#8217;est une agrégation si <code>b</code> est initialisé dans le constructeur de <code>A</code></p>
+</li>
+<li>
+<p>c&#8217;est une composition s&#8217;il est aussi détruit dans le destructeur de <code>A</code></p>
+</li>
+<li>
+<p>c&#8217;est une association dirigée simple si aucun des deux cas précédent ne s&#8217;applique.</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/compo.png" alt="compo" width="50%">
+</div>
+<div class="title">Figure 43. Exemple de composition</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_généralisation_spécialisation">Généralisation/Spécialisation</h5>
+<div class="paragraph">
+<p>Lorsque plusieurs blocs ont des caractéristiques en communs (propriétés, associations, comportement), il peut être utile de "factoriser" ces éléments en un bloc dont les autres vont "hériter". Quand on réalise ces liens hiérarchiques (on utilise souvent le terme "est un") en partant des blocs différents pour établir un nouveau bloc contenant les points communs on parle de <strong>généralisation</strong>. À l&#8217;inverse, quand on constate qu&#8217;un bloc possède réellement plusieurs déclinaisons différentes et que l&#8217;on créé alors des blocs spécifiques, on parle alors de <strong>spécialisation</strong>.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/genspec.png" alt="genspec" width="50%">
+</div>
+<div class="title">Figure 44. Exemple de lien de généralisation/spécialisation</div>
+</div>
+<div class="paragraph">
+<p>On retrouve cette association entre blocs, mais aussi entre acteurs, cas d&#8217;utilisation, etc.</p>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="ibd">3.8.4. <em>Internal Block Diagrams</em></h4>
+<div class="paragraph">
+<p>Un <code>ibd</code> décrit la structure interne d’un bloc sous forme de :</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">parts</dt>
+<dd>
+<p>Les parties qui constituent le système (ses sous-systèmes)</p>
+</dd>
+<dt class="hdlist1">ports</dt>
+<dd>
+<p>Elément d&#8217;interaction avec un bloc</p>
+</dd>
+<dt class="hdlist1">connecteurs</dt>
+<dd>
+<p>Liens entre ports</p>
+</dd>
+</dl>
+</div>
+<div class="sect4">
+<h5 id="_parts">Parts</h5>
+<div class="paragraph">
+<p>Les parties sont représentés par les éléments au bout d&#8217;une composition dans un <code>bdd</code>.</p>
+</div>
+<div class="paragraph">
+<p>Elles sont créés à la création du bloc qui les contient et sont détruites avec lui s&#8217;il
+est détruit (dépendance de vie).</p>
+</div>
+<div class="admonitionblock caution">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-caution" title="Caution"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Il ne s&#8217;agit pas de redessiner le BDD. Les <em>parts</em> sont des instances et non des classes (au sens objet).</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>On représente les <em>parts</em> comme des bloc en traits pleins
+et les <em>references</em> comme des blocs en trait pointillés.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/parts.png" alt="parts" width="40%">
+</div>
+<div class="title">Figure 45. Exemple de <em>Parts</em></div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/parts2.png" alt="parts2" width="60%">
+</div>
+<div class="title">Figure 46. Autre exemple de <em>Parts</em></div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_ports_sysml_1_2">Ports (SysML 1.2)</h5>
+<div class="admonitionblock caution">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-caution" title="Caution"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>La version <a href="http://www.omg.org/spec/SysML/1.3/PDF/">OMG SysML v1.3</a> de la spécification préconise l&#8217;abandon des ports tels que définis
+dans la version 1.2. Nous présentons les nouvelles notions dans la <a href="#port13">section qui suit</a>.</p>
+</div>
+<div class="paragraph">
+<p>Néanmoins, de par l&#8217;importance des exemples qui utilisent les notions habituelles de ports,
+et vu que tous les outils ne supportent pas encore les nouveaux ports, nous indiquons ici
+leur définition et recommandons pour l&#8217;instant de les utiliser.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Les ports :</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>préservent l&#8217;encapsulation du bloc</p>
+</li>
+<li>
+<p>matérialise le fait que les interactions avec l&#8217;extérieur (via un port)
+sont transmise à une partie (via un connecteur)</p>
+</li>
+<li>
+<p>les ports connectés doivent correspondre (<em>kind</em>, <em>type</em>, <em>direction</em>, etc.)</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Les ports définissent les points d’interaction offerts (<code>&lt;&lt;provided&gt;&gt;</code>) et requis (<code>&lt;&lt;required&gt;&gt;</code>) entre les blocs.<br>
+Les connecteurs peuvent traverser les "frontières" sans exiger de ports à chaque hiérarchie.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/ports-flots.png" alt="ports flots" width="60%">
+</div>
+<div class="title">Figure 47. Exemples de flots</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="./images/icons/sysml.png" alt="Note">
+</td>
+<td class="content">
+<div class="title">Définition : Ports (OMG SysML v1.3, p. 57)</div>
+<div class="paragraph">
+<p><em>Ports are points at which external entities can connect to and interact with a block in different or more limited ways than connecting directly to the block itself.</em></p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/flots.png" alt="flots" width="90%">
+</div>
+<div class="title">Figure 48. Exemples de flots multi-physique entre ports</div>
+</div>
+<div class="paragraph">
+<p>Les ports peuvent être de nature classique (comme en <a href="http://www.uml.org/">UML&#8482;</a>) et représenter la fourniture ou le besoin de services. On parle alors
+de <em>*standard flows*</em>.</p>
+</div>
+<div class="paragraph">
+<p>Ils peuvent aussi être de nature "flux physique", on parle de <em>*flow ports*</em>.</p>
+</div>
+<div class="paragraph">
+<p>Les <code>Flux</code> peuvent être :</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>atomiques (un seul flux),</p>
+</li>
+<li>
+<p>composites (agrégation de flux de natures différentes).</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Un <em>flow port</em> atomique ne spécifie qu’un seul type de flux en entrée ou en sortie (ou les deux),
+la direction étant simplement indiquée par une flèche à l’intérieur du carré représentant le port. Il peut être typé par un bloc ou un <em>Value Type</em> représentant le type d’élément pouvant circuler en entrée ou en sortie du port.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect4">
+<h5 id="port13">Ports (depuis SysML 1.3)</h5>
+<div class="paragraph">
+<p>La spécification <a href="http://www.omg.org/spec/SysML/1.3/PDF/">OMG SysML v1.3</a> introduit les concepts de:</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><em>proxy port</em></dt>
+<dd>
+<p>Ils doivent remplacer les ports 1.2 (ports de flots et ports standards) en en reprenant les caractéristiques
+et en ajoutant la possibilité d&#8217;imbrication et de spécification renforcée.</p>
+</dd>
+<dt class="hdlist1"><em>full port</em></dt>
+<dd>
+<p>En fait il s&#8217;agit du même concept qu&#8217;une partie qui serait exposée à l&#8217;extérieur.</p>
+</dd>
+</dl>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Pour une discussion sur les différences entre les deux ports : <a href="http://model-based-systems-engineering.com/2013/09/23/sysml-full-ports-versus-proxy-ports/" class="bare">http://model-based-systems-engineering.com/2013/09/23/sysml-full-ports-versus-proxy-ports/</a></p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="param">3.8.5. <em>Parametric Diagrams</em></h4>
+<div class="paragraph">
+<p>Afin de capturer de manière précise les contraintes entre valeurs, ou encore les liens entre les sorties et les entrées d&#8217;un bloc, <a href="http://www.omgsysml.org/">SysML&#8482;</a> utilise trois concepts clefs :</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><em>Constraints</em> (un type de bloc)</p>
+</li>
+<li>
+<p><em>Parametric diagram</em> (un <code>ibd</code> particulier)</p>
+</li>
+<li>
+<p><em>Value binding</em></p>
+</li>
+</ul>
+</div>
+<div class="sect4">
+<h5 id="_contraintes">Contraintes</h5>
+<div class="paragraph">
+<p>C&#8217;est un bloc particulier :</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>avec un stéréotype <code>≪constraint≫</code> (au lieu de bloc)</p>
+</li>
+<li>
+<p>des paramètres en guise d&#8217;attributs</p>
+</li>
+<li>
+<p>des relations liant (contraignant) ces paramètres</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/constraints.png" alt="constraints" width="80%">
+</div>
+<div class="title">Figure 49. Exemple de contraintes</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="./images/icons/sysml.png" alt="Note">
+</td>
+<td class="content">
+<div class="title">Définition : <em>ConstraintBlock</em> (OMG SysML v1.3, p. 86)</div>
+<div class="paragraph">
+<p><em>A constraint block is a block that packages the statement of a constraint so it may be applied in a reusable way to constrain properties of other blocks.</em></p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_diagramme_paramétrique">Diagramme paramétrique</h5>
+<div class="paragraph">
+<p>C&#8217;est une forme particulière de <em>Internal Block Definition</em></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/param.png" alt="param" width="90%">
+</div>
+<div class="title">Figure 50. Exemple de diagramme paramétrique</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="__em_value_binding_em"><em>Value Binding</em></h5>
+<div class="paragraph">
+<p>Une fois les contraintes exprimées, il faut lier les paramètres (formels) à des valeurs (paramètre réel). C&#8217;est l&#8217;objet des <em>Value Binding</em>.</p>
+</div>
+<div class="paragraph">
+<p>Pour assigner des valeurs spécifiques, on utilise des <em>Block Configurations</em>;</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<a class="image" href="http://books.google.fr/books?id=8KY2YZIiXv0C&pg=PA174&lpg=PA174&dq=SYSml+%22block+configuration%22&source=bl&ots=ZdxokRYj6l&sig=PlDHvR8qGZC97W-C_08Yk9Xb1RY&hl=fr&sa=X&ei=1jizUOXKBsXAhAeinYHACg&ved=0CEEQ6AEwAg#v=onepage&q=SYSml%20%22block%20configuration%22&f=false"><img src="images/blockconf.png" alt="blockconf" width="90%"></a>
+</div>
+<div class="title">Figure 51. Exemple de bloc de configuration</div>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_diagrammes_de_séquence_système">3.8.6. Diagrammes de séquence système</h4>
+<div class="paragraph">
+<p>Les diagrammes de séquence système (DSS) sont des <em>Sequence Diagrams</em> <a href="http://www.uml.org/">UML&#8482;</a> classiques où seul le système est représenté comme une boîte noire en interaction avec son environnement (les utilisateurs généralement).</p>
+</div>
+<div class="paragraph">
+<p>Il permet de décrire les scénarios des cas d&#8217;utilisation sans entrer dans les détails. Il convient donc mieux à l&#8217;ingénierie système qu&#8217;un diagramme de séquence classique (cf. section sur les <a href="#seq">[seq]</a>).</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/dss.png" alt="dss" width="70%">
+</div>
+<div class="title">Figure 52. Exemples de DSS</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_en_résumé_3">3.8.7. En résumé</h4>
+<div class="paragraph">
+<p>En résumé, il existe plusieurs diagrammes permettant d&#8217;exprimer la structure du système à concevoir. En fonction du niveau de détail nécessaire on peut voir les sous-systèmes comme des boîtes noires (des blocs) ou comme des boîtes blanches (grâce à l'`ibd` correspondant).</p>
+</div>
+<table class="tableblock frame-all grid-all" style="width: 50%;">
+<caption class="title">Table 4. Place des aspects structurels</caption>
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"></th>
+<th class="tableblock halign-left valign-top">Exigences</th>
+<th class="tableblock halign-left valign-top"><strong class="red">Structure</strong></th>
+<th class="tableblock halign-left valign-top">Comportement</th>
+<th class="tableblock halign-left valign-top">Transverse</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Organisation</p></th>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>pkg</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Analyse</p></th>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>bdd</code> <code>par</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Conception</p></th>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>bdd</code> <code>par</code> <code>ibd</code> <code>dss</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Implémentation</p></th>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>bdd</code> <code>par</code> <code>ibd</code> <code>dss</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="_questions_de_révision_4">3.8.8. Questions de révision</h4>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="./images/icons/tuxteacher.png" alt="Note">
+</td>
+<td class="content">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Quelles sont les différences entre une association dirigée (-&gt;), une composition (losange noir) et l&#8217;agrégation (losange blanc) ?</p>
+</li>
+<li>
+<p>Puisqu&#8217;un <code>bdd</code> me donne souvent la liste des sous-systèmes (liens de composition), pourquoi ai-je besoin d&#8217;un <code>ibd</code> ?</p>
 </li>
 </ol>
 </div>
@@ -2255,12 +4028,12 @@ utilisé et dont sont issues les éventuelles captures d&#8217;écran et instruc
 <div class="sect2">
 <h3 id="_outillage">4.2. Outillage</h3>
 <div class="paragraph">
-<p>Vérifiez que vous possédez bien sur votre machine : <a href="http://www.eclipse.org/papyrus/">Papyrus</a> 1.1.2
-(ou une version supérieur).</p>
+<p>Vérifiez que vous possédez bien sur votre machine : <a href="http://www.eclipse.org/papyrus/">Papyrus</a> <code>1.1.2</code>
+(ou une version supérieure).</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/mars1.png" alt="Mars1" width="50%">
+<img src="images/mars1.png" alt="mars1" width="50%">
 </div>
 </div>
 <div class="admonitionblock note">
@@ -2270,8 +4043,8 @@ utilisé et dont sont issues les éventuelles captures d&#8217;écran et instruc
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-si ce n&#8217;est pas encore fait, suivez le
-<a href="https://www.eclipse.org/papyrus/updates/index.php">guide d’installation du site de Papyrus</a>.
+Si vous souhaitez installer <a href="http://www.eclipse.org/papyrus/">Papyrus</a>, suivez le
+<a href="https://www.eclipse.org/papyrus/download.html">guide d’installation du site de Papyrus</a>.
 </td>
 </tr>
 </table>
@@ -2315,7 +4088,7 @@ Vérifiez la présence de <a href="http://wiki.eclipse.org/EGit">EGit</a> et de 
 <div class="content">
 <a class="image" href="pkg-organisation.png"><img src="images/pkg-organisation.png" alt="organization" height="300"></a>
 </div>
-<div class="title">Figure 30. Exemple d&#8217;organisation</div>
+<div class="title">Figure 53. Exemple d&#8217;organisation</div>
 </div>
 </div>
 <div class="sect3">
@@ -2491,7 +4264,7 @@ d&#8217;un terme permettant de comprendre ce que vous traitez (par exemple
 <p>L&#8217;évaluation portera principalement sur les critères suivants :</p>
 </div>
 <table id="Criteres" class="tableblock frame-all grid-all" style="width: 90%;">
-<caption class="title">Table 2. Critères</caption>
+<caption class="title">Table 5. Critères</caption>
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 33.3333%;">
@@ -2724,10 +4497,19 @@ Ces définitions seront enrichies au fur et à mesure du cours.
 </div>
 </div>
 </div>
+<div id="footnotes">
+<hr>
+<div class="footnote" id="_footnote_1">
+<a href="#_footnoteref_1">1</a>. Sauf bien sûr au brouillon ou sur un tableau, notamment quand on travaille en équipe.
+</div>
+<div class="footnote" id="_footnote_2">
+<a href="#_footnoteref_2">2</a>. En fonction du niveau de détail.
+</div>
+</div>
 <div id="footer">
 <div id="footer-text">
-Version 1.0<br>
-Last updated 2016-11-04 09:17:22 CET
+Version 1.1<br>
+Last updated 2016-11-10 12:19:18 CET
 </div>
 </div>
 </body>

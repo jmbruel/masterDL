@@ -20,7 +20,9 @@
 |6h TP
 
 |{jmb} & Chaudet
-|<<SysML>>
+|<<Exigences>>
+
+<<SysML>>
 |10h Cours/TD + 6h TP
 
 |Bodeveix & Chaudet

@@ -5,6 +5,8 @@
 :standHeight: 250
 :standScreen: 500
 :standWidth: 250
+:mytablewidth: 50%
+:here: icon:map-marker[role=red]
 
 // raccourcis sites
 :aadl: http://www.aadl.info/[AADL]indexterm:[AADL]
@@ -46,6 +48,8 @@
 :marte: http://www.omgmarte.org/[MARTE]indexterm:[MARTE]
 :matlab: http://fr.mathworks.com/[MatLab]
 :mbsepack: http://www.phoenix-int.com/software/mbse-pak.php[MBSE Pack]
+:mdlurl: http://www.master-developpement-logiciel.fr
+:mdl: {mdlurl}/[Master DL]
 :mediawiki: https://www.mediawiki.org[MediaWiki]
 :mercurial: link:http://mercurial.selenic.com/[Mercurial]
 :modelica: https://www.modelica.org/[Modelica(R)]
@@ -109,6 +113,7 @@
 :cabot: http://jordicabot.com/[Jordi Cabot]
 :cb: mailto:cedric.brun@obeo.fr[Cédric Brun]
 :cealist: http://www-list.cea.fr/[CEA Tech List]
+:cherbonneau: mailto:Bernard.Cherbonneau@irit.fr[Bernard Cherbonneau]
 :dl: http://www.dept-info.ups-tlse.fr/index.php?option=com_content&view=article&id=294&Itemid=697&lang=fr[Master DL-SI]
 :dulas: mailto:jcdulas@phoenix-int.com[Jean-Charles Dulas]
 :eia: http://www.eciaonline.org/eiastandards/[EIA](((EIA)))

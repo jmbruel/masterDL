@@ -11,12 +11,12 @@ THEME=riak
 #The valid options are coderay, highlightjs, prettify, and pygments.
 HIGHLIGHT=pygments
 MAIN=TD1
-
+DEP= organisation.adoc introduction.adoc glossaire.adoc exigences.adoc SysML.adoc
 #-----------------------------------------------------
 
 all: $(OUTPUT)/$(MAIN).html $(OUTPUT)/$(MAIN).dzslides.html $(OUTPUT)/$(MAIN).teacher.html
 
-$(OUTPUT)/%.html: %.$(EXT)
+$(OUTPUT)/%.html: %.$(EXT) $(DEP)
 	@echo '==> Compiling asciidoc files to generate HTML'
 	$(ASCIIDOCTOR) -b html5 \
 		-a numbered \
@@ -25,7 +25,7 @@ $(OUTPUT)/%.html: %.$(EXT)
 		-a source-highlighter=$(HIGHLIGHT) \
 		-o $@ $<
 
-$(OUTPUT)/%.dzslides.html: %.$(EXT)
+$(OUTPUT)/%.dzslides.html: %.$(EXT) $(DEP)
 	@echo '==> Compiling asciidoc files to generate Dzslides'
 	$(ASCIIDOCTOR) -b dzslides \
 		-T $(DZSLIDES) -E slim \
@@ -37,7 +37,7 @@ $(OUTPUT)/%.dzslides.html: %.$(EXT)
 		-a source-highlighter=$(HIGHLIGHT) \
 		-o $@ $<
 
-$(OUTPUT)/%.teacher.html: %.$(EXT)
+$(OUTPUT)/%.teacher.html: %.$(EXT) $(DEP)
 	@echo '==> Compiling asciidoc files to generate HTML'
 	$(ASCIIDOCTOR) -b html5 \
 		-a prof \
@@ -47,7 +47,7 @@ $(OUTPUT)/%.teacher.html: %.$(EXT)
 		-a source-highlighter=$(HIGHLIGHT) \
 		-o $@ $<
 
-$(OUTPUT)/%.sujet.html: %.$(EXT)
+$(OUTPUT)/%.sujet.html: %.$(EXT) $(DEP)
 	@echo '==> Compiling asciidoc files to generate subject for student'
 	$(ASCIIDOCTOR) -b html5 \
 		-a numbered \

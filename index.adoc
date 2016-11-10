@@ -4,7 +4,7 @@
 //---------------------------------
 = Initiation à l'Ingénierie Système
 J.-M. Bruel <jbruel@gmail.com>
-V1.0, {localdate}
+V1.1, {localdate}
 :toc-title: Table des matières
 :toc: left
 :numbered:
@@ -23,6 +23,10 @@ V1.0, {localdate}
 // ajouter ici les variables manquantes
 :icontheory: icon:graduation-cap[]
 :iconpractice: icon:cogs[]
+:correction:
+// To remove all solutions:
+//:correction!:
+
 //------------------------- définitions ---------------------
 
 include::definitions.txt[]
@@ -73,7 +77,8 @@ include::introduction.adoc[leveloffset=+1]
 
 //---------------------------- SysML by JMB -------------------------
 [[SysML]]
-include::exigences.adoc[leveloffset=+1]
+
+include::SysML.adoc[leveloffset=+1]
 
 include::tp.adoc[leveloffset=+1]
 

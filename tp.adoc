@@ -62,13 +62,13 @@ Les spécifications initiales du système sont ici :
 
 == Outillage
 
-Vérifiez que vous possédez bien sur votre machine : {tool} {toolversion}
-(ou une version supérieur).
+Vérifiez que vous possédez bien sur votre machine : {tool} `{toolversion}`
+(ou une version supérieure).
 
-image::mars1.png[width=50%,alt="Mars1"]
+image::mars1.png[width=50%]
 
-NOTE: si ce n'est pas encore fait, suivez le
-https://www.eclipse.org/papyrus/updates/index.php[guide d’installation du site de Papyrus].
+NOTE: Si vous souhaitez installer {tool}, suivez le
+https://www.eclipse.org/papyrus/download.html[guide d’installation du site de Papyrus].
 
 Vous allez devoir travailler en mode collaboratif. Suivez les instructions qui
 se trouvent sur le dépôt GitHub : {depotgithub}.
@@ -86,7 +86,6 @@ Vous travaillerez de préférence en binôme.
 
 .Exemple d'organisation
 image::pkg-organisation.png["organization",height="300",link="pkg-organisation.png"]
-
 
 === Avant d'aller trop loin dans les diagrammes
 

@@ -1,0 +1,672 @@
+//---------------------------------
+// Introduction à l'IS ("3ème cours => la notation")
+// (c) JMB - 2016
+//---------------------------------
+= icon:star-half[] La notation *SysML*
+ifndef::jmbtopic[]
+J.-M. Bruel -- 10/11/2016
+//------------------------------------ variables de configuration
+:jmbtopic:
+:correction:
+:linkcss:
+:icons: font
+:experimental:
+:toc-title: Table des matières
+:toc: left
+:numbered:
+:status:
+:imagesdir: images
+:siteurl: https://jmbruel.github.io/masterDL2016/
+//------------------------------------ Slides uniquement
+ifdef::slides[]
+//--------------------- dzslides slides
+ifdef::dzslides[]
+:dzslides-style: tomorrow
+//:dzslides-style: stormy, watermelon, tomorrow, truffle, statement, default
+:dzslides-transition: fade
+:dzslides-fonts: family=Yanone+Kaffeesatz:400,700,200,300&family=Cedarville+Cursive
+//:dzslides-highlight: asciidoctor
+:dzslides-highlight: asciidoctor
+:source-highlighter: asciidoctor
+:dzslides-status:
+:topic: .topic
+:intro: .topic.intro
+:statement: .topic.statement
+:incremental: .incremental
+:source: .topic.source
+endif::dzslides[]
+//----------- deck.js --------------
+ifdef::deckjs-slides[]
+:viewport: width=1024, user-scalable=no
+//:backend: deckjs # Should be used in the asciidoctor command (asciidoctor -b deckjs)
+// swiss, neon, beamer, web-2.0
+:deckjs_theme: swiss
+//fade, horizontal-slide, vertical-slide
+//:deckjs_transition: fade
+:goto:
+:menu:
+//:navigation:
+:status:
+:sectids!:
+endif::deckjs-slides[]
+endif::slides[]
+//------------------------------------ HTML uniquement
+ifndef::slides[]
+:topic:
+:intro:
+:statement:
+:incremental: %step
+:source:
+endif::slides[]
+
+//------------------------- définitions ---------------------
+include::definitions.txt[]
+// ajouter ici les variables manquantes
+//------------------------- définitions ---------------------
+endif::jmbtopic[]
+
+:Requirements: Exigences
+
+//---------------------------------------------------------------------------------
+[[Matrice]]
+== Introduction
+
+La matrice qui nous servira de "carte de base" pour placer les activités
+ou les modèles, sera celle-ci :
+
+image::mamatrice.png[width=100%]
+
+ifndef::slides[]
+
+Cette matrice permet de situer les différents éléments qui seront vus dans ce cours dans un cadre
+utile pour comparer ces éléments les uns aux autres.
+Je vous conseille de vous faire votre propre matrice.
+L'essentiel est de toujours bien se représenter les différents éléments qu'on aborde
+dans une carte mentale précise. Cela permet une meilleure mémorisation.
+
+endif::slides[]
+
+
+ifdef::slides[:leveloffset: -1]
+
+=== Points de vue
+
+Dans un axe horizontal, j'ai différencié quatre grands points de vue :
+
+ifdef::slides[]
+
+- {Requirements}
+- {Structure}
+- {Behavior}
+- {Crosscutting}
+
+endif::slides[]
+
+ifdef::slides[=== Points de vue ({Requirements})]
+
+ifndef::slides[{Requirements}::]
+Les exigences et leur prises en compte sont un éléments critique pour le
+  succès du développement de tout système.
+  Sans explorer l'ensemble des activités d'ingénierie système (ce qui
+  nécessiterait tout un volume du type de <<reqs>>) nous insisterons sur cet aspect.
+
+
+ifdef::slides[=== Points de vue ({Structure})]
+
+ifndef::slides[{Structure}::]
+La description de l'architecture et des éléments constitutifs du système,
+avec les blocs, leurs relations, organisations internes, etc. constituera un point de vue important.
+C'est souvent la partie de modélisation qui pose le moins de problème aux débutants.
+
+ifdef::slides[=== Points de vue ({Behavior})]
+
+ifndef::slides[{Behavior}::]
+Le comportement d'un système est du point de vue de l'utilisateur final beaucoup plus important que la structure elle-même. C'est la partie
+	qu'il est la plus à même d'exprimer, de comprendre (vos modèles) et de valider.
+
+ifdef::slides[=== Points de vue ({Crosscutting})]
+
+ifndef::slides[{Crosscutting}::]
+Un certains nombre de concepts sont transverses aux trois points de vue précédents. Il s'agira principalement de parler de cohérence ou de traçabilité entre
+	les phases de développement ou entre les points de vue.
+
+ifndef::slides[]
+
+Ces différents points de vue ne doivent pas être confondus avec les différentes phases de développement (cf. paragraphe suivant).
+ Ils sont plutôt à rapprocher de la notion de préoccupation. C'est ainsi que j'ai choisi de distinguer trois points de vue
+qui se retrouvent souvent en modélisation : le point de vue des exigences qui permet de se focaliser sur les besoins des clients ;
+le point de vue structurel qui permet de se focaliser sur les différents composants du système ;
+et le point de vue comportemental qui permet de se focaliser sur le comportement du système.
+Ces trois points de vue n'étant pas indépendants les uns des autres, j'ai intégré un quatrième point de vue transversal.
+
+endif::slides[]
+
+=== Phase de développement
+
+Dans un axe vertical, j'ai différencié quatre grandes phases du cycle de vie du développement :
+
+ifdef::slides[]
+
+- {organisation}
+- {analysis}
+- {design}
+- {implementation}
+
+endif::slides[]
+
+ifdef::slides[=== Phase de développement ({organisation})]
+
+
+ifndef::slides[{organisation}::]
+Une étape indépendante du type de cycle de développement envisagé (en V, agile, etc.) mais qui concerne la mise en place
+	d'un cadre de travail qui permette un développement de qualité (outils, éditeurs, gestionnaire de version, de tâches, etc.).
+
+[NOTE]
+====
+On pourrait rapprocher cette étape du "cycle 0" de {scrum}.
+====
+
+ifdef::slides[=== Phase de développement ({analysis})]
+
+ifndef::slides[{analysis}::]
+Cette phase vise plutôt à examiner le domaine du problème. Elle se focalise sur les cahiers des charges et les exigences.
+	L'analyse débouche sur un dossier d'analyse qui décrit les grandes lignes (cas d'utilisation, architecture principale) du système.
+
+ifdef::slides[=== Phase de développement ({design})]
+
+ifndef::slides[{design}::]
+Cette phase vise plutôt à examiner le domaine de la solution. Elle débouche sur un dossier de conception qui décrit les détails
+	conceptuels de la solution envisagée (structure détaillée, comportement, etc.)
+
+ifdef::slides[=== Phase de développement ({implementation})]
+
+ifndef::slides[{implementation}::]
+Cette phase traite des développements finaux (construction ou approvisionnement en matériel, développement de codes, etc.).
+
+ifndef::slides[]
+
+Il s'agit ici classiquement des grandes étapes de développement d'un système.
+ On pourrait être surpris par l'étape que j'ai appelé « organisation ».
+C'est une étape que je considère importante, particulièrement pour l'enseignement.
+Avant toute activité de modélisation ou de même de développement, il convient en effet
+de s'organiser en termes de choix d'outils, choix d'environnement, etc.
+Cette étape est souvent négligée par les étudiants.
+C'est pour cela que j'ai décidé de faire figurer cette étape de manière explicite.
+Bien sûr dans une organisation existante cette étape sera contrainte par les habitudes
+« maison ».
+
+endif::slides[]
+
+
+=== {revisions}
+
+Associez les diagrammes suivants avec leurs acronymes ({sd}, {dc}, {uc}, {pkg}, {dss}{nbsp}) :
+
+- Diagramme de Paquetages
+- Diagramme des Cas d'Utilisation
+- Diagramme de Séquences Système
+- Diagramme de Classes
+- Diagramme de Séquences
+
+
+ifdef::slides[=== Révisions (suite)]
+
+Placez dans la matrice ci-dessous les différents diagrammes {uml} que vous
+connaissez déjà ({sd}, {dc}, {uc}, {pkg}, {dss}{nbsp}).
+
+image::mamatrice.png[width=100%]
+
+ifdef::slides[=== Révisions (suite)]
+
+ifdef::correction[]
+
+Éléments de correction :
+
+image::acronymes-cor.png[width=100%]
+
+ifndef::slides[]
+
+ifdef::book[[align="center",cols="h,4*",options="header"]]
+ifndef::book[[align="center",cols="h,4*",options="header",width="50%"]]
+|======================
+|					| {Requirements} 	| {Structure}	| {Behavior} 	| {Crosscutting}
+| {organisation}	|					|        `{pkg}`	|				|
+| {analysis}		|		`{uc}`		|       `{dc}`	|	`{dss}`		|
+| {design}			|					|       `{dc}`	|	`{sd}`		|
+| {implementation}	|					|        		|				|
+|======================
+
+endif::slides[]
+
+endif::correction[]
+
+//------------ Fin de la partie corrigée
+:correction!:
+
+ifdef::slides[:leveloffset: 0]
+
+//---------------------------------------------------------------------------------
+[[Notation]]
+[{topic}]
+== Pourquoi une nouvelle notation
+//---------------------------------------------------------------------------------
+
+ifndef::slides[]
+
+[quote, Bertrand Russell, The World of Mathematics (1956)]
+____________________________________________________________________
+A good notation has subtlety and suggestiveness which at times makes
+it almost seem like a live teacher.
+____________________________________________________________________
+
+endif::slides[]
+
+Il existe une notation qui se veut "unifiée" pour les modèles : {uml}.
+Néanmoins cette notation est peu adaptée pour l'{is} :
+
+* UML 1.x était complètement inadaptée :
+** Principalement pour les systèmes d'information
+** Peu de liens entre les diagrammes
+** Peu de liens entre les modèles et les exigences
+* UML 2.x n'est pas beaucoup mieux si ce n'est :
+** Implication des ingénieurs systèmes pour sa définition
+** Introduction du diagramme de structure composite
+
+ifdef::slides[== Pourquoi une nouvelle notation (suite)]
+
+En conclusion {UML} est une bonne base :
+
+* Standard _De facto_ en génie logiciel
+* Fournit beaucoup de concepts utiles pour décrire des systèmes (même complexes)
+* Stable et extensible (grâce notamment au mécanisme de _profile_)
+* Beaucoup d'outils disponibles
+
+Mais...
+
+* Manque de certains concepts clés d'{is}
+* Vocabulaire beaucoup trop « software » pour être utilisé par les ingénieurs systèmes (concept de +classe+ ou d'+héritage+ par exemple)
+* Trop de diagrammes (13 sortes)
+
+ifndef::slides[]
+
+//---------------------------------------------------------------------------------
+== Introduction à SysML
+//---------------------------------------------------------------------------------
+
+endif::slides[]
+
+ifdef::slides[:leveloffset: -1]
+
+=== Fiche d'identité
+
+Voici à quoi pourrait ressembler la fiche d'identité de {sysml} :
+
+include::fiche.txt[]
+
+=== Différence avec UML
+
+La figure <<liensdiag,suivante>>, tirée de la spécification, résume bien les liens entre {sysml} et {uml}, à savoir que {sysml} reprend une partie seulement des concepts d'{uml} (appelée +UML4SysML+) en y ajoutant des concepts nouveaux.
+
+[[liensdiag]]
+.Liens entre UML et SysML
+ifdef::book[image::diff.png[scale=60]]
+ifndef::book[image::diff.png[width="60%"]]
+
+=== Qui est "derrière"?
+
+Industrie::
+American Systems, BAE Systems, Boeing, Deere & Company, EADS Astrium, Eurostep, Israel Aircraft Industries,  Lockheed Martin, Motorola, NIST, Northrop Grumman, oose.de, Raytheon, Thales, ...
+
+Vendeurs d'outils::
+Artisan, EmbeddedPlus, Gentleware, IBM, Mentor Graphics, PivotPoint Technology, Sparx Systems, Vitech, ...
+
+Autres organisations::
+AP-233, INCOSE, Georgia Institute of Technology, AFIS, ...
+
+[TIP]
+====
+La liste complète des membres de {Lomg} est accessible à l'URL : http://www.omg.org/cgi-bin/apps/membersearch.pl
+====
+
+=== Organisation des différents diagrammes
+
+ifdef::book[]
+{sysml} propose de couvrir la modélisation d'un système en 9 diagrammes. Ces diagrammes couvrent
+	les aspects structurels et comportementaux du système ainsi que les exigences. Le diagramme suivant
+	présente cette organisation en faisant au passage le lien avec ceux d'{uml} :
+endif::book[]
+
+.Les 9 diagrammes SysML et leur lien avec UML
+ifdef::book[image::Figure4-1.png[scale=40]]
+ifndef::book[image::Figure4-1.png[width="90%"]]
+
+ifdef::slides[=== Organisation (raccourcis)]
+
+ifdef::book[]
+Le nom de ces diagrammes revenant souvent dans ce document, nous utiliserons souvent leur version abrégée
+(`{uc}` pour "diagramme des UC" par exemple). Ces abréviations, sont définies dans la spécification (cf. note suivante).
+
+endif::book[]
+
+.Version abrégée des diagrammes
+ifdef::book[image::Figure4-1-bis.png[scale=50]]
+ifndef::book[image::Figure4-1-bis.png[width="90%"]]
+
+ifndef::slides[]
+
+.Définition : image:sysml.jpeg[width=20] Types de diagrammes (OMG SysML v1.3, p. 170)
+[NOTE]
+====
+_SysML diagram kinds should have the following names or (abbreviations) as part of the heading..._
+====
+
+endif::slides[]
+
+=== Différence entre modèle et dessin
+
+{SysML} n'est pas une palette de dessins et d'éléments de base servant à faire
+des diagrammes. Il existe une représentation graphique des éléments modélisés en {SysML}. Elle est importante car elle permet de communiquer visuellement sur le système en développement, mais du point de vue du concepteur, c'est *le modèle* qui importe le plus.
+
+C'est pourquoi nous vous recommandons de ne jamais "dessiner" des diagrammes {SysML} footnote:[Sauf bien sûr au brouillon ou sur un tableau, notamment quand on travaille en équipe.], mais d'utiliser des outils dédiés (cf. <<Outils>>).
+Ils respectent en général la norme {norme} (bien qu'il faille se méfier).
+
+[NOTE]
+====
+Notez que la norme permet de faire des adaptations graphiques (cf. la discussion http://www.realtimeatwork.com/2011/08/is-sysml-too-abstract/).
+====
+
+// Merci à Raphaël Faudou pour cette partie
+
+Un des intérêts de la modélisation est de faciliter la communication, notamment
+au travers des diagrammes et leur aspect graphique et synthétique.
+Un dessin est donc un plus par rapport à du texte. Néanmoins, il ne faut pas se
+contenter d'un simple dessin pour au moins deux raisons importantes :
+
+- un dessin n'est pas assez formel (comment être sûr d'avoir correctement utilisé tel ou tel symbole, cf. les deux exemples ci-dessous) ;
+- il est impossible d'assurer la cohérence globale des modèles dans le cas d'un dessin.
+
+Un modèle est une sorte de base de donnée qui regroupe des éléments issues de différents points de vue (saisis le plus
+souvent au travers de diagrammes). Un diagramme est une vue partielle du modèle (donc incomplète).
+Le modèle est la vraie plus value car il va permettre de détecter les incohérences sur les exigences, les problèmes de complétude,
+lancer des analyses, faire des transformations vers d'autres langages ou formats, etc.
+Par exemple dans un outil de modélisation il y a une grande différence entre supprimer un élément d'un diagramme (on parlera
+alors de "masquer" un élément d'un diagramme) et supprimer un élément de modèle (ce qui aura pour effet de supprimer cet élément de
+tous les diagrammes où il était présent).
+
+Voici deux exemples de non respect de la notation qui illustre le type d'erreur que l'on trouve souvent dans les modèles qui circulent
+sur Internet ou même parfois dans certains livres.
+
+include::bdd.asc[leveloffset=+1]
+
+include::seq.asc[leveloffset=+1]
+
+//---------------------------------------------------------------------------------
+[[Outils]]
+== 	Outils SysML
+//---------------------------------------------------------------------------------
+
+Il existe un certain nombre d'outils permettant de réaliser des modèles SysML. Voici une liste non exhaustive :
+
+include::outils.txt[]
+
+ifndef::slides[]
+
+Vous trouverez sur Internet des comparatifs et des avis à jour sur les outils.
+
+Ce que je voudrai souligner ici c'est l'importance du modèle comme "dépôt" (je préfère le terme anglais de _repository_) d'éléments de base en relation les uns avec les autres. C'est toute la différence entre le dessin et le modèle.
+
+[WARNING]
+====
+Attention toutefois à ne pas confondre ce que vous permet (ou pas) de faire l'outil et la notation elle-même. Les fabricants ont parfois pris des libertés ou bien n'ont pas complètement implémenté toutes les subtilités de la notation.
+====
+endif::slides[]
+
+ifdef::book[]
+Dans le cadre de notre exemple fil rouge, nous utilisons l'outil {topcased}.
+endif::book[]
+
+//---------------------------------------------------------------------------------
+== Cadre pour les diagrammes
+//---------------------------------------------------------------------------------
+
+Abordons quelques principes généraux de {sysml}, c'est à dire des éléments indépendant d'un diagramme en particulier :
+
+- Chaque diagramme {SysML} décrit un élément précis (nommé) de modélisation
+- Chaque diagramme {SysML} doit être représenté à l'intérieur d'un cadre (_Diagram Frame_)
+- L'entête du cadre, appelé aussi *cartouche*, indique les informations sur le diagramme :
+ifndef::book[]
+* le *type* de diagramme (`{req}`, `{act}`, `{bdd}`, `{ibd}`, `{stm}`, etc. en gras) qui donne immédiatement une indication sur le point de vue porté à l'élément de modélisation (comportement, structure, etc.)
+* le type de l'élément (par exemple _package_, _block_, _activity_, etc.), optionnel
+* le nom de l'élément (unique)
+* le nom du diagramme ou de la vue, optionnel
+endif::book[]
+ifdef::book[]
+le type de diagramme (`{req}`, `{act}`, `{bdd}`, `{ibd}`, `{stm}`, etc.); le type d'élément (_package_, _block_, _activity_, etc.); le nom de l'élément et le nom du diagramme ou de la vue.
+endif::book[]
+
+ifdef::slides[== Cadre (suite)]
+
+Dans l'exemple ci-dessous, le diagramme "_Context_Overview_" est un _Block Definition Diagram_ (type `{bdd}`) qui représente un
+_package_, nommé "Context".
+
+.Exemple de diagramme SysML
+ifdef::book[image::pacemaker-context.png[scale=45]]
+ifndef::book[image::pacemaker-context.png[width="80%"]]
+
+.Convention : Utilisation systématique des cartouches
+[NOTE,icon=university]
+====
+Tout diagramme proposé pour décrire un système (dans une documentation par exemple) devrait posséder un entête précis.
+====
+
+ifdef::slides[=== Carte des concepts]
+
+Pour ceux qui cherchent à étudier un diagramme en particulier voici un plan de cette section (nous utilisons ici le "plan" vu lors de l'introduction de la <<Matrice>>) :
+
+.Organisation
+ifdef::book[[cols="h,4*",options="header"]]
+ifndef::book[[cols="h,4*",options="header",width="90%"]]
+|======================
+|				| <<reqs,{Requirements}>> 	| <<archi,{Structure}>>	| <<behavior,{Behavior}>> 	| <<transvers,{Crosscutting}>>
+| {organisation}	|		`{pkg}`			|     `{pkg}`, `{bdd}`   		|		`{pkg}`		|
+| {analysis}, {design}, {implementation} footnote:[En fonction du niveau de détail.]
+				|		`{req}`			|     `{bdd}`, `{ibd}`, `{seq}`, `{par}`   		| `{uc}`, `{seq}`, `{stm}`, `{act}`				| `{par}`
+|======================
+
+//---------------------------------------------------------------------------------
+[[org]]
+== Organisation
+//---------------------------------------------------------------------------------
+
+ifndef::book[]
+[cols="h,4*",options="header",width="50%"]
+|======================
+|					| {Requirements} 	| {Structure}	| {Behavior} 	| {Crosscutting}
+| {here} [red]*{organisation}*	|					|        		|				|
+| {analysis}		|					|        		|				|
+| {design}			|					|        		|				|
+| {implementation}	|					|        		|				|
+|======================
+endif::book[]
+
+ifdef::slides[]
+:leveloffset: -1
+endif::slides[]
+
+=== Fondements
+
+On abordera :
+
+- Le _Package Diagram_
+- Les différent types de _packages_
+- Les organisations possibles
+- La notion de _Namespaces_
+- Les _Dependencies_
+
+[[package]]
+=== Le _Package Diagram_
+
+Le diagramme de paquetage permet de représenter l'organisation des modèles en paquetages.
+
+ifndef::book[]
+* Il est identique à {uml}, et classique pour les développeurs (java notamment)
+* Il permet d'organiser les modèles en créant un espace de nommage (cf. <<namespace>>)
+endif::book[]
+ifdef::book[]
+Ce diagramme est identique à celui d'{uml}, et le concept de paquetage (_package_) est classique pour les développeurs (java notamment).
+Il permet d'organiser les modèles en créant un espace de nommage (cf. <<namespace>>).
+endif::book[]
+
+Les modèles peuvent être organisés selon toutes sortes de considération (cf. <<organisation>>) :
+
+- hiérarchie "système" (e.g., entreprise, système, composant)
+- types de diagrammes (e.g., besoins, structure, comportements)
+- par points de vue
+- etc.
+
+=== Les différent types de _packages_
+
+Il existe plusieurs types de _package_ :
+
+models::
+	un _package_ "top-level" dans une hiérarchie de _packages_
+packages::
+	le type le plus classique : un ensemble d'éléments de modèles
+model librairies::
+	un _package_ prévu pour être réutilisé (importé) par d'autres éléments
+views::
+	un _package_ spécial pour représenter les points de vue
+
+[TIP]
+====
+Un point de vue (_viewpoint_) est utilisé pour matérialiser une perspective particulière de modélisation.
+Il possède des propriétés standardisés (_concerns_, _language_, _purpose_, etc.) et permettent d'indiquer qu'une
+vue (un _packetage_ particulier, stéréotypé `+<<view>>+`) est conforme (dépendance `+<<conform>>+`) à un point de vue.
+====
+
+[[organisation]]
+=== Les organisations possibles
+
+Les modèles peuvent être organisés selon toutes sortes de considération :
+
+- par hiérarchie "système" (e.g., entreprise, système, composant, ...)
+- par types de diagrammes (e.g., besoins, structure, comportements, ...)
+- par cycle de vie (e.g., analyse, conception, ...)
+- par équipes (e.g., architectes, <<IPT>>, ...)
+- par points de vue (e.g., sécurité, performance, ...)
+- etc.
+
+ifdef::slides[<<<]
+
+.Exemple d'organisation simple
+ifdef::book[image::pkg-organisation2.png[scale=40]]
+ifndef::book[image::pkg-organisation2.png[width="50%"]]
+
+ifdef::slides[<<<]
+
+.Représentation de cette organisation dans un outil
+ifdef::book[image::pkg-organisation-modelview.png[scale=50]]
+ifndef::book[image::pkg-organisation-modelview.png[width="30%"]]
+
+ifdef::slides[<<<]
+
+ifndef::book[]
+.Un autre exemple d'organisation
+image::pkg-organisation.png[width="30%"]
+endif::book[]
+
+ifdef::slides[<<<]
+
+.Un autre exemple d'organisation
+ifdef::book[image::pkg-topcased.png[scale=40]]
+ifndef::book[image::pkg-topcased.png[width="40%"]]
+
+ifdef::slides[<<<]
+
+[TIP]
+====
+L'outil {topcased} propose, lors de la création d'un premier modèle, de créer une organisation
+"type" par défaut.
+
+ifdef::book[image:pkg-template.png[scale=30]]
+ifndef::book[image:pkg-template.png[width="80%"]]
+ifndef::book[image:pkg-topcased-default.png[width="80%"]]
+
+====
+
+[[namespace]]
+=== La notion de _Namespaces_
+
+Un _package_ permet de créer un espace de nommage pour tous les éléments qu'il contient.
+Ainsi, dans un _package_, on n'a pas à se soucier des noms des éléments. Même si d'autres utilisent les mêmes noms,
+il n'y aura pas ambiguité.
+
+.Définition : _Namespace_ (OMG SysML v1.3, p. 23)
+[NOTE,icon=sysml.png]
+====
+_The package defines a *namespace* for the packageable elements._
+====
+
+Pour éviter toute ambiguité, on peut utiliser pour les éléments de modèles leur nom complet (_Qualified name_),
+c'est à dire le nom de l'élément préfixé par son (ou ses) _package(s)_
+(e.g., `Structure::Products::Clock`).
+
+[TIP]
+====
+Dans les outils {sysml}, il faut souvent demander explicitement à voir les noms complets (_Qualified names_)
+des éléments (la plupart du temps dans les options graphiques).
+====
+
+=== Les dépendances
+
+Un certain nombre de dépendances peuvent exister entre des éléments de _package_
+ou entre les _packages_ eux-mêmes :
+
+_Dependency_::
+	une dépendance "générale", non précisée, +
+	représentée par une simple flèche pointillée `+----->+`
+_Use_::
+	l'élément "utilise" celui à l'autre bout de la flèche (un type par exemple), +
+	représentée par le stéréotype `+<<use>>+`
+_Refine_::
+	l'élément est un raffinage (plus détaillé) de celui à l'autre bout de la flèche, +
+	représentée par le stéréotype `+<<refine>>+`
+_Realization_::
+	l'élément est une "réalisation" (implémentation) de celui à l'autre bout de la flèche, +
+	représentée par le stéréotype `+<<realize>>+`
+_Allocation_::
+	l'élément (e.g., une activité ou un _requirement_) est "alloué" sur celui à l'autre bout de la flèche (un +block+ la plupart du temps), +
+	représentée par le stéréotype `+<<allocate>>+`
+
+=== {resume}
+{sysml} propose un certain nombre de mécanismes pour organiser les différents modèles,
+tirés pour la plupart d'{uml}. Ces mécanismes seront plus faciles à comprendre au travers
+de leur utilisation concrète dans la suite.
+
+.Organisation
+ifdef::book[[cols="h,4*",options="header"]]
+ifndef::book[[cols="h,4*",options="header",width="50%"]]
+|======================
+|						| {Requirements} 	| {Structure}	| {Behavior} 	| {Crosscutting}
+| [red]*{organisation}*	| +package+			| +package+		| +package+		| +dependencies+
+| ...					|					|        		|				|
+|======================
+
+=== {revisions}
+
+[NOTE,icon=tuxteacher.png]
+====
+. Quels sont les 5 types de dépendances entre _packageable elements_ ?
+. À quoi cela peut-il servir de définir les dépendances (donnez des exemples concrets) ?
+====
+
+ifdef::slides[]
+:leveloffset: 0
+endif::slides[]
+
+//----------------------------------- Exigences ------------------------------
+include::exigences.adoc[leveloffset=+1]
+
+include::architecture.asc[]
+
+//include::comportement.asc[]
