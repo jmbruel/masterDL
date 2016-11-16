@@ -69,6 +69,7 @@ endif::slides[]
 :sosym: http://www.sosym.org/[SoSyM]
 :sysmlfrance: http://www.sysml-france.fr[SysML-France]indexterm:[SysML-France]
 // ajouter ici les variables manquantes
+:is: <<IS>>
 //------------------------- définitions ---------------------
 
 ifdef::slides[]
@@ -202,7 +203,7 @@ et les parties prenantes qu'elle représente :
 naviguant, ...)
 * exploitantes
 
-L'<<IS>> a pour objectif d'assurer l'adéquation de la solution aux besoins sous
+L'{IS} a pour objectif d'assurer l'adéquation de la solution aux besoins sous
 tous les aspects (fonctionnalité, performances, économie, sécurité) pour
 toutes les situations d'exploitation (routine, retard, panne).
 
@@ -211,7 +212,7 @@ toutes les situations d'exploitation (routine, retard, panne).
 
 et les parties prenantes réalisatrices qu'elle représente :
 
-L'IS a pour objectif de conduire à un bon compromis entre :
+L'{IS} a donc pour objectif de conduire à un bon compromis entre :
 
 - les enjeux
 - les contraintes
@@ -244,7 +245,7 @@ ifdef::slides[== Approche *systémique*]
 [quote,Aristote]
 Le tout est plus que la somme de ses parties.
 
-=> en IS, un système sera décrit comme un *ensemble d'éléments en interaction* entre eux.
+=> en {IS}, un système sera décrit comme un *ensemble d'éléments en interaction* entre eux.
 
 ifdef::slides[== Vue *boîte noire*]
 
@@ -262,7 +263,7 @@ ifdef::slides[NOTE: [detail]#{thisref}#]
 
 ifdef::slides[== Vue *boîte noire*]
 
-En IS, la définition du système comporte :
+En {IS}, la définition du système comporte :
 
 [{incremental}]
 - celle de ses *sous-systèmes* et constituants [detail]#(matériels, logiciels, organisations et compétences humaines) et de leurs interfaces (sièges des interactions recherchées)#
@@ -272,12 +273,12 @@ ifdef::slides[== !]
 
 :thisref: https://fr.wikipedia.org/wiki/Airbus_A380
 ifndef::slides[.C'est bien de concevoir un système... ({thisref})]
-image::A380.jpg[width=40%,link="{thisref}"]
+image::A380.jpg[width=100%,link="{thisref}"]
 ifdef::slides[NOTE: [detail]#{thisref}#]
 
 :thisref: https://fr.wikipedia.org/wiki/Airbus_A380
 ifndef::slides[.Mais il faut aussi prévoir toutes les étapes! ({thisref})]
-image::A380-pont.jpg[width=40%,link="{thisref}"]
+image::A380-pont.jpg[width=100%,link="{thisref}"]
 ifdef::slides[NOTE: [detail]#{thisref}#]
 
 ifndef::slides[]
@@ -290,7 +291,7 @@ ifdef::slides[== !]
 
 :thisref: {afis}
 ifndef::slides[.Décomposition d'un système vu de l'IS ({thisref})]
-image::ingsys.png[width=90%,link="{thisref}"]
+image::ingsys.png[width=100%,link="{thisref}"]
 ifdef::slides[NOTE: [detail]#{thisref}#]
 
 ifndef::slides[]
