@@ -10,5 +10,7 @@ ifndef::slides[.Carte d'identité]
 * Conrad Bock
 * Cris Kobryn
 * Sanford Friedenthal
-- Logo officiel : image:sysml.jpeg[scale=60]
+- Logo officiel :
++
+image::sysml.jpeg[scale=60]
 ====

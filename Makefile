@@ -55,6 +55,15 @@ $(OUTPUT)/%.sujet.html: %.$(EXT) $(DEP)
 		-a source-highlighter=$(HIGHLIGHT) \
 		-o $@ $<
 
+$(OUTPUT)/%.pdf: %.$(EXT) $(DEP)
+	@echo '==> Compiling asciidoc files to generate PDF'
+	$(ASCIIDOCTOR) -b html5 \
+		-b pdf \
+		-r asciidoctor-pdf \
+		-a source-highlighter=$(HIGHLIGHT) \
+		-a book \
+		-o $@ $<
+
 deploy:
 	cp $(MAIN).html $(SITE)/MobileModeling.html
 	cd $(SITE)

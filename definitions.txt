@@ -1,5 +1,4 @@
 :definitions:
-:slidesurl: http://jmbhome.herokuapp.com/talks
 
 //Layouts
 :standHeight: 250
@@ -52,6 +51,8 @@
 :mdl: {mdlurl}/[Master DL]
 :mediawiki: https://www.mediawiki.org[MediaWiki]
 :mercurial: link:http://mercurial.selenic.com/[Mercurial]
+:miburl: http://mi.iut-blagnac.fr/
+:mib: {miburl}[MIB]
 :modelica: https://www.modelica.org/[Modelica(R)]
 :modelio: http://www.modeliosoft.com/[Modelio]
 :models: http://www.modelsconference.org/[MODELS]
@@ -184,10 +185,10 @@
 // data divers
 :eggstitle: Humour
 :STI2D: STI2D(((STI2D)))
-:Requirements: Requirements
-:Structure: Structure
-:Behavior: Comportement
-:Crosscutting: Transverse
+:Requirements: <<reqs,Exigences>>
+:Structure: <<archi,Structure>>
+:Behavior: <<behavior,Comportement>>
+:Crosscutting: <<transvers,Transverse>>
 :organisation: Organisation
 :analysis: Analyse
 :design: Conception

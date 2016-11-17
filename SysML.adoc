@@ -65,16 +65,14 @@ include::definitions.txt[]
 //------------------------- définitions ---------------------
 endif::jmbtopic[]
 
-:Requirements: Exigences
-
+:defs: defs
 //---------------------------------------------------------------------------------
-[[Matrice]]
 == Introduction
 
-La matrice qui nous servira de "carte de base" pour placer les activités
+La [[Matrice]]matrice qui nous servira de "carte de base" pour placer les activités
 ou les modèles, sera celle-ci :
 
-image::mamatrice.png[width=100%]
+include::matrice-base.asc[]
 
 ifndef::slides[]
 
@@ -85,7 +83,6 @@ L'essentiel est de toujours bien se représenter les différents éléments qu'o
 dans une carte mentale précise. Cela permet une meilleure mémorisation.
 
 endif::slides[]
-
 
 ifdef::slides[:leveloffset: -1]
 
@@ -127,13 +124,13 @@ Le comportement d'un système est du point de vue de l'utilisateur final beaucou
 ifdef::slides[=== Points de vue ({Crosscutting})]
 
 ifndef::slides[{Crosscutting}::]
-Un certains nombre de concepts sont transverses aux trois points de vue précédents. Il s'agira principalement de parler de cohérence ou de traçabilité entre
-	les phases de développement ou entre les points de vue.
+Un certains nombre de concepts sont transverses aux trois points de vue précédents.
+Il s'agira principalement de parler de cohérence ou de traçabilité entre les phases de développement ou entre les points de vue.
 
 ifndef::slides[]
 
-Ces différents points de vue ne doivent pas être confondus avec les différentes phases de développement (cf. paragraphe suivant).
- Ils sont plutôt à rapprocher de la notion de préoccupation. C'est ainsi que j'ai choisi de distinguer trois points de vue
+Ces différents points de vue ne doivent pas être confondus avec les différentes phases de développement (cf. <<paragraphe suivant,devphase>>).
+Ils sont plutôt à rapprocher de la notion de préoccupation. C'est ainsi que j'ai choisi de distinguer trois points de vue
 qui se retrouvent souvent en modélisation : le point de vue des exigences qui permet de se focaliser sur les besoins des clients ;
 le point de vue structurel qui permet de se focaliser sur les différents composants du système ;
 et le point de vue comportemental qui permet de se focaliser sur le comportement du système.
@@ -141,6 +138,7 @@ Ces trois points de vue n'étant pas indépendants les uns des autres, j'ai int�
 
 endif::slides[]
 
+[[devphase]]
 === Phase de développement
 
 Dans un axe vertical, j'ai différencié quatre grandes phases du cycle de vie du développement :
@@ -156,10 +154,9 @@ endif::slides[]
 
 ifdef::slides[=== Phase de développement ({organisation})]
 
-
 ifndef::slides[{organisation}::]
 Une étape indépendante du type de cycle de développement envisagé (en V, agile, etc.) mais qui concerne la mise en place
-	d'un cadre de travail qui permette un développement de qualité (outils, éditeurs, gestionnaire de version, de tâches, etc.).
+d'un cadre de travail qui permette un développement de qualité (outils, éditeurs, gestionnaire de version, de tâches, etc.).
 
 [NOTE]
 ====
@@ -186,57 +183,56 @@ Cette phase traite des développements finaux (construction ou approvisionnement
 ifndef::slides[]
 
 Il s'agit ici classiquement des grandes étapes de développement d'un système.
- On pourrait être surpris par l'étape que j'ai appelé « organisation ».
+ On pourrait être surpris par l'étape que j'ai appelé "{organisation}".
 C'est une étape que je considère importante, particulièrement pour l'enseignement.
-Avant toute activité de modélisation ou de même de développement, il convient en effet
-de s'organiser en termes de choix d'outils, choix d'environnement, etc.
+Avant toute activité de modélisation ou de même de développement, il convient en effet de s'organiser en termes de choix d'outils, choix d'environnement, etc.
 Cette étape est souvent négligée par les étudiants.
 C'est pour cela que j'ai décidé de faire figurer cette étape de manière explicite.
-Bien sûr dans une organisation existante cette étape sera contrainte par les habitudes
-« maison ».
+Bien sûr dans une organisation existante cette étape sera contrainte par les habitudes "maison".
 
 endif::slides[]
 
 
 === {revisions}
 
-Associez les diagrammes suivants avec leurs acronymes ({sd}, {dc}, {uc}, {pkg}, {dss}{nbsp}) :
-
+[qanda]
+Associez les diagrammes suivants avec leurs acronymes (`{sd}`, `{dc}`, `{uc}`, `{pkg}`, `{dss}`)::
 - Diagramme de Paquetages
 - Diagramme des Cas d'Utilisation
 - Diagramme de Séquences Système
 - Diagramme de Classes
 - Diagramme de Séquences
 
-
 ifdef::slides[=== Révisions (suite)]
 
-Placez dans la matrice ci-dessous les différents diagrammes {uml} que vous
-connaissez déjà ({sd}, {dc}, {uc}, {pkg}, {dss}{nbsp}).
-
-image::mamatrice.png[width=100%]
+Placez dans la matrice ci-dessous les différents diagrammes {uml} que vous connaissez déjà (`{sd}`, `{dc}`, `{uc}`, `{pkg}`, `{dss}`)::
++
+include::matrice-base.asc[]
 
 ifdef::slides[=== Révisions (suite)]
 
 ifdef::correction[]
 
-Éléments de correction :
+.Éléments de correction
+[CAUTION,icon=tuxteacher]
+====
 
-image::acronymes-cor.png[width=100%]
+image::acronymes-cor.png[width=70%,scaledwidth=70%]
 
 ifndef::slides[]
 
-ifdef::book[[align="center",cols="h,4*",options="header"]]
-ifndef::book[[align="center",cols="h,4*",options="header",width="50%"]]
+[align="center",cols="h,3*^,1",options="header",width=100]
 |======================
-|					| {Requirements} 	| {Structure}	| {Behavior} 	| {Crosscutting}
-| {organisation}	|					|        `{pkg}`	|				|
-| {analysis}		|		`{uc}`		|       `{dc}`	|	`{dss}`		|
-| {design}			|					|       `{dc}`	|	`{sd}`		|
-| {implementation}	|					|        		|				|
+|					| {Requirements} 	| {Structure}	| {Behavior} | ...
+| {organisation}	|					|        `{pkg}`	| |
+| {analysis}		|		`{uc}`		|       `{dc}`	|	`{dss}` |
+| {design}			|					|       `{dc}`	|	`{sd}` |
+| ... | | | |
 |======================
 
 endif::slides[]
+
+====
 
 endif::correction[]
 
@@ -245,11 +241,12 @@ endif::correction[]
 
 ifdef::slides[:leveloffset: 0]
 
-//---------------------------------------------------------------------------------
+//------------------------------------------------------ PDF Page break
+<<<
 [[Notation]]
 [{topic}]
 == Pourquoi une nouvelle notation
-//---------------------------------------------------------------------------------
+//---------------------------------------------------------------------
 
 ifndef::slides[]
 
@@ -287,13 +284,13 @@ Mais...
 * Vocabulaire beaucoup trop « software » pour être utilisé par les ingénieurs systèmes (concept de +classe+ ou d'+héritage+ par exemple)
 * Trop de diagrammes (13 sortes)
 
-ifndef::slides[]
-
-//---------------------------------------------------------------------------------
+//------------------------------------------------------ PDF Page break
+<<<
+[{intro}]
 == Introduction à SysML
 //---------------------------------------------------------------------------------
 
-endif::slides[]
+Si vous ne deviez lire qu'un seul chapitre, voilà ce qu'il faudrait retenir.
 
 ifdef::slides[:leveloffset: -1]
 
@@ -302,6 +299,40 @@ ifdef::slides[:leveloffset: -1]
 Voici à quoi pourrait ressembler la fiche d'identité de {sysml} :
 
 include::fiche.txt[]
+
+=== SysML, c'est...
+
+Un ensemble de 9 types de diagrammes::
+* Diagrammes structuraux
+** Diagrammes de définition de blocs (+{bdd}+)
+** Diagrammes internes de blocs (+{ibd}+)
+** Diagrammes paramétriques (+{par}+)
+** Diagrammes de packages (+pkg+)
+* Diagrammes comportementaux
+** Diagrammes de séquence (+{seq}+)
+** Diagrammes d'activité (+{act}+)
+** Diagrammes de cas d'utilisation (+{uc}+)
+** Diagrammes d'états (+{stm}+)
+* Diagramme d'exigence (+{req}+)
+
+ifdef::slides[=== SysML, c'est (suite) :]
+
+Un profil {uml}::
+	C'est à dire une *extension* de cette notation, un ensemble de nouveaux concepts et éléments qui sont définis à partir des éléments de base {duml}. Un exemple : le +bloc+ {sysml} n'est qu'une redéfinition de la +classe+ {uml}.
+Une notation::
+ 	Une notation de plus en plus enseignée et connue et qui servira donc de plus en plus de *référence* à la modélisation des systèmes.
+
+=== SysML, ce n'est pas...
+
+Une méthode::
+	 	En effet, contrairement à ce que beaucoup pensent en l'abordant, {sysml} ne propose pas de démarche particulière de développement de système. C'est à la fois sa force (votre méthode existante pourra continuer à être utilisée) comme sa faiblesse car cette absence de guide méthodologique fait souvent défaut à son utilisation.
+Un outil::
+		Nous verrons en effet que {sysml} ne fait que ce qu'on veut bien en faire. Comme tout langage il est limité dans son pouvoir d'expression, mais surtout il reste une simple notation qu'il convient d'utiliser avec des outils et des démarches associées.
+
+[NOTE]
+====
+Ne dites pas "le SysML" mais tout simplement "SysML".
+====
 
 === Différence avec UML
 
@@ -330,11 +361,9 @@ La liste complète des membres de {Lomg} est accessible à l'URL : http://www.om
 
 === Organisation des différents diagrammes
 
-ifdef::book[]
 {sysml} propose de couvrir la modélisation d'un système en 9 diagrammes. Ces diagrammes couvrent
 	les aspects structurels et comportementaux du système ainsi que les exigences. Le diagramme suivant
 	présente cette organisation en faisant au passage le lien avec ceux d'{uml} :
-endif::book[]
 
 .Les 9 diagrammes SysML et leur lien avec UML
 ifdef::book[image::Figure4-1.png[scale=40]]
@@ -362,7 +391,11 @@ _SysML diagram kinds should have the following names or (abbreviations) as part 
 
 endif::slides[]
 
-=== Différence entre modèle et dessin
+ifdef::slides[:leveloffset: 0]
+
+//------------------------------------------------------ PDF Page break
+<<<
+== Différence entre modèle et dessin
 
 {SysML} n'est pas une palette de dessins et d'éléments de base servant à faire
 des diagrammes. Il existe une représentation graphique des éléments modélisés en {SysML}. Elle est importante car elle permet de communiquer visuellement sur le système en développement, mais du point de vue du concepteur, c'est *le modèle* qui importe le plus.
@@ -396,11 +429,12 @@ tous les diagrammes où il était présent).
 Voici deux exemples de non respect de la notation qui illustre le type d'erreur que l'on trouve souvent dans les modèles qui circulent
 sur Internet ou même parfois dans certains livres.
 
-include::bdd.asc[leveloffset=+1]
+include::bdd.asc[]
 
-include::seq.asc[leveloffset=+1]
+include::seq.asc[]
 
-//---------------------------------------------------------------------------------
+//------------------------------------------------------ PDF Page break
+<<<
 [[Outils]]
 == 	Outils SysML
 //---------------------------------------------------------------------------------
@@ -421,13 +455,30 @@ Attention toutefois à ne pas confondre ce que vous permet (ou pas) de faire l'o
 ====
 endif::slides[]
 
-ifdef::book[]
-Dans le cadre de notre exemple fil rouge, nous utilisons l'outil {topcased}.
+
+//------------------------------------------------------ PDF Page break
+<<<
+[[org]]
+== Organisation
+//---------------------------------------------------------------------------------
+
+ifndef::book[]
+[cols="h,4*",options="header",width="50%"]
+|======================
+|					| {Requirements} 	| {Structure}	| {Behavior} 	| {Crosscutting}
+| {here} [red]*{organisation}*	|					|        		|				|
+| {analysis}		|					|        		|				|
+| {design}			|					|        		|				|
+| {implementation}	|					|        		|				|
+|======================
 endif::book[]
 
-//---------------------------------------------------------------------------------
-== Cadre pour les diagrammes
-//---------------------------------------------------------------------------------
+ifdef::slides[]
+:leveloffset: -1
+endif::slides[]
+
+=== Cadre pour les diagrammes
+
 
 Abordons quelques principes généraux de {sysml}, c'est à dire des éléments indépendant d'un diagramme en particulier :
 
@@ -464,34 +515,13 @@ ifdef::slides[=== Carte des concepts]
 Pour ceux qui cherchent à étudier un diagramme en particulier voici un plan de cette section (nous utilisons ici le "plan" vu lors de l'introduction de la <<Matrice>>) :
 
 .Organisation
-ifdef::book[[cols="h,4*",options="header"]]
-ifndef::book[[cols="h,4*",options="header",width="90%"]]
+[cols="h,4*^",options="header",width=100]
 |======================
-|				| <<reqs,{Requirements}>> 	| <<archi,{Structure}>>	| <<behavior,{Behavior}>> 	| <<transvers,{Crosscutting}>>
+|				| {Requirements} 	| {Structure}	| {Behavior} 	| {Crosscutting}
 | {organisation}	|		`{pkg}`			|     `{pkg}`, `{bdd}`   		|		`{pkg}`		|
 | {analysis}, {design}, {implementation} footnote:[En fonction du niveau de détail.]
 				|		`{req}`			|     `{bdd}`, `{ibd}`, `{seq}`, `{par}`   		| `{uc}`, `{seq}`, `{stm}`, `{act}`				| `{par}`
 |======================
-
-//---------------------------------------------------------------------------------
-[[org]]
-== Organisation
-//---------------------------------------------------------------------------------
-
-ifndef::book[]
-[cols="h,4*",options="header",width="50%"]
-|======================
-|					| {Requirements} 	| {Structure}	| {Behavior} 	| {Crosscutting}
-| {here} [red]*{organisation}*	|					|        		|				|
-| {analysis}		|					|        		|				|
-| {design}			|					|        		|				|
-| {implementation}	|					|        		|				|
-|======================
-endif::book[]
-
-ifdef::slides[]
-:leveloffset: -1
-endif::slides[]
 
 === Fondements
 
@@ -664,9 +694,18 @@ ifdef::slides[]
 :leveloffset: 0
 endif::slides[]
 
-//----------------------------------- Exigences ------------------------------
+//------------------------------------------------------ PDF Page break
+<<<
 include::exigences.adoc[leveloffset=+1]
 
+//------------------------------------------------------ PDF Page break
+<<<
 include::architecture.asc[]
 
-//include::comportement.asc[]
+//------------------------------------------------------ PDF Page break
+<<<
+include::comportement.asc[]
+
+//------------------------------------------------------ PDF Page break
+<<<
+include::transvers.asc[]

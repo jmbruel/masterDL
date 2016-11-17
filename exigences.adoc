@@ -3,7 +3,6 @@
 // (c) JMB - 2016
 //---------------------------------
 [[reqs]]
-[[Exigences]]
 = Les *exigences* et SysML
 ifndef::jmbtopic[]
 J.-M. Bruel -- 04/11/2016
@@ -67,8 +66,6 @@ include::definitions.txt[]
 
 endif::jmbtopic[]
 
-:Requirements: Exigences
-
 [{topic}]
 == Introduction
 
@@ -79,7 +76,7 @@ cruciale cette analyse.
 
 :mycaption: 300 corps de métiers sont parfois présents sur un même chantier
 ifndef::slides[.{mycaption}]
-image::ingenierie-des-exigences.jpg[alt="Joke",link="http://www.inria.fr/centre/rennes/actualites/vers-un-cahier-des-charges-mieux-formule",width=50%]
+image::ingenierie-des-exigences.jpg[alt="Joke",link="http://www.inria.fr/centre/rennes/actualites/vers-un-cahier-des-charges-mieux-formule",width=100,scaledwidth=40]
 ifdef::slides[[detail]#{mycaption}#]
 
 ifdef::slides[== Les exigences (suite)]
@@ -110,7 +107,7 @@ Il est important pour une exigence qu'elle ne soit pas ambiguë (contrairement a
 [[fig:eggs]]
 :mycaption: Spécification ambiguë
 ifndef::slides[.{mycaption} (taken from https://plus.google.com/100035762233109552669/posts/a8Hafq2hZ74)]
-image::ProgrammerHumor.jpg[alt="Joke",link="https://plus.google.com/100035762233109552669/posts/a8Hafq2hZ74",width=50%]
+image::ProgrammerHumor.jpg[alt="Joke",link="https://plus.google.com/100035762233109552669/posts/a8Hafq2hZ74",width=100,scaledwidth=40]
 ifdef::slides[[detail]#{mycaption}#]
 
 Dans le cadre de la matrice qui nous sert de plan, nous somme ici :
@@ -440,7 +437,7 @@ Par exemple :
 
 :mycaption: Exemple de matrice de traçabilité
 ifndef::slides[.{mycaption}]
-image::matrice.gif[width=70%,link="http://infocenter.sybase.com/archive/index.jsp?topic=/com.sybase.stf.poweramc.docs_12.0.0/html/exgu/exgup38.htm"]
+image::matriceTraca.png[width=70%,link="http://infocenter.sybase.com/archive/index.jsp?topic=/com.sybase.stf.poweramc.docs_12.0.0/html/exgu/exgup38.htm"]
 ifdef::slides[[detail]#{mycaption}#]
 
 ifdef::slides[=== !]

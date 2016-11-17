@@ -83,6 +83,7 @@ include::SysML.adoc[leveloffset=+1]
 include::tp.adoc[leveloffset=+1]
 
 //---------------------------- Liens utiles -------------------------
+[[appendix]]
 == icon:star-o[] Liens utiles
 
 * Généralités
@@ -105,6 +106,8 @@ include::afis.adoc[leveloffset=+1]
 
 //include::myContribution.adoc[leveloffset=+1]
 
+//---------------------------- Biblio -------------------------
+include::biblio.asc[]
 
 //---------------------------- Glossaire -------------------------
 include::glossaire.adoc[]
