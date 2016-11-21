@@ -25,7 +25,7 @@ include::definitions.txt[]
 :toolversion: 1.1.2
 :toolversionlast: 2.0.1
 :daniel: mailto:damyot@uottawa.ca[Daniel Amyiot]
-:depotgithub: https://github.com/IUT-Blagnac/M2DL2015.git
+:depotgithub: https://github.com/M2DL/mib-2016
 :doors: https://fr.wikipedia.org/wiki/DOORS[DOORS]
 :eclipse: https://www.eclipse.org/[Eclipse]
 :egit: http://wiki.eclipse.org/EGit[EGit]
