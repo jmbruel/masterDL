@@ -32,7 +32,6 @@ $(OUTPUT)/%.dzslides.html: %.$(EXT) $(DEP)
 		-a slides -a dzslides \
 		-a correction \
 		-a styledir=. \
-		-a stylesheet=$(STYLE) \
 		-r asciidoctor-diagram \
 		-a source-highlighter=$(HIGHLIGHT) \
 		-o $@ $<

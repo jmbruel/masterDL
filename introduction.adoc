@@ -4,7 +4,7 @@
 //---------------------------------
 [[Introduction]]
 = icon:star-half[] Introduction à l'*IS*
-ifndef::jmbtopic[J.-M. Bruel -- 23/09/2016]
+ifndef::jmbtopic[J.-M. Bruel -- 14/09/2017]
 //------------------------------------ variables de configuration
 :linkcss:
 :git-version: 2.9.2
@@ -24,8 +24,8 @@ ifdef::dzslides[]
 //:dzslides-style: stormy, watermelon, tomorrow, truffle, statement, default
 :dzslides-transition: fade
 :dzslides-fonts: family=Yanone+Kaffeesatz:400,700,200,300&family=Cedarville+Cursive
-//:dzslides-highlight: asciidoctor
-:dzslides-highlight: monokai
+:dzslides-highlight: asciidoctor
+//:dzslides-highlight: monokai
 :source-highlighter: highlightjs
 :dzslides-status:
 :topic: .topic
@@ -117,7 +117,7 @@ image::ineedyou.jpg[width=100%]
 
 {siteurl}
 
-== !
+ifdef::slides[== !]
 
 endif::slides[]
 
@@ -128,11 +128,21 @@ ifndef::slides[.Nuages des mots du support 2015 (@bernardcherbonn)]
 image::canvas.png[width=80%]
 ifdef::slides[NOTE: [detail]#Nuages des mots du support 2015#]
 
+ifdef::slides[== !]
+
 Voici la _mind map_ réalisée par les étudiants de la promo 2016 :
 
 ifndef::slides[.MindMap 2016 (résultat du brainstorming collectif)]
 image::IS.svg[width=80%]
 ifdef::slides[NOTE: [detail]#MindMap 2016 (résultat du brainstorming collectif)#]
+
+ifdef::slides[== !]
+
+Voici la _mind map_ réalisée par les étudiants de la promo 2017 :
+
+ifndef::slides[.MindMap 2017 (résultat du brainstorming collectif)]
+image::IS2017.svg[width=80%]
+ifdef::slides[NOTE: [detail]#MindMap 2017 (résultat du brainstorming collectif)#]
 
 
 [{topic}]
