@@ -3,8 +3,8 @@
 
 [cols="3*", options="header"]
 |===
-|Quoi
 |Qui
+|Quoi
 |Combien
 
 |{jmb}

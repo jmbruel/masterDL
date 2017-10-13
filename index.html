@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Asciidoctor 1.5.5">
+<meta name="generator" content="Asciidoctor 1.5.6.1">
 <meta name="author" content="J.-M. Bruel">
 <title>Initiation à l&#8217;Ingénierie Système</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
@@ -90,13 +90,12 @@ strong,b{font-weight:bold;line-height:inherit}
 small{font-size:60%;line-height:inherit}
 code{font-family:"Droid Sans Mono","DejaVu Sans Mono",monospace;font-weight:400;color:rgba(0,0,0,.9)}
 ul,ol,dl{font-size:1em;line-height:1.6;margin-bottom:1.25em;list-style-position:outside;font-family:inherit}
-ul,ol,ul.no-bullet,ol.no-bullet{margin-left:1.5em}
+ul,ol{margin-left:1.5em}
 ul li ul,ul li ol{margin-left:1.25em;margin-bottom:0;font-size:1em}
 ul.square li ul,ul.circle li ul,ul.disc li ul{list-style:inherit}
 ul.square{list-style-type:square}
 ul.circle{list-style-type:circle}
 ul.disc{list-style-type:disc}
-ul.no-bullet{list-style:none}
 ol li ul,ol li ol{margin-left:1.25em;margin-bottom:0}
 dl dt{margin-bottom:.3125em;font-weight:bold}
 dl dd{margin-bottom:1.25em}
@@ -132,7 +131,11 @@ strong strong{font-weight:400}
 kbd{font-family:"Droid Sans Mono","DejaVu Sans Mono",monospace;display:inline-block;color:rgba(0,0,0,.8);font-size:.65em;line-height:1.45;background-color:#f7f7f7;border:1px solid #ccc;-webkit-border-radius:3px;border-radius:3px;-webkit-box-shadow:0 1px 0 rgba(0,0,0,.2),0 0 0 .1em white inset;box-shadow:0 1px 0 rgba(0,0,0,.2),0 0 0 .1em #fff inset;margin:0 .15em;padding:.2em .5em;vertical-align:middle;position:relative;top:-.1em;white-space:nowrap}
 .keyseq kbd:first-child{margin-left:0}
 .keyseq kbd:last-child{margin-right:0}
-.menuseq,.menu{color:rgba(0,0,0,.8)}
+.menuseq,.menuref{color:#000}
+.menuseq b:not(.caret),.menuref{font-weight:inherit}
+.menuseq{word-spacing:-.02em}
+.menuseq b.caret{font-size:1.25em;line-height:.8}
+.menuseq i.caret{font-weight:bold;text-align:center;width:.45em}
 b.button:before,b.button:after{position:relative;top:-1px;font-weight:400}
 b.button:before{content:"[";padding:0 3px 0 2px}
 b.button:after{content:"]";padding:0 2px 0 3px}
@@ -199,7 +202,7 @@ table.tableblock>caption.title{white-space:nowrap;overflow:visible;max-width:0}
 table.tableblock #preamble>.sectionbody>.paragraph:first-of-type p{font-size:inherit}
 .admonitionblock>table{border-collapse:separate;border:0;background:none;width:100%}
 .admonitionblock>table td.icon{text-align:center;width:80px}
-.admonitionblock>table td.icon img{max-width:none}
+.admonitionblock>table td.icon img{max-width:initial}
 .admonitionblock>table td.icon .title{font-weight:bold;font-family:"Open Sans","DejaVu Sans",sans-serif;text-transform:uppercase}
 .admonitionblock>table td.content{padding-left:1.125em;padding-right:1.25em;border-left:1px solid #ddddd8;color:rgba(0,0,0,.6)}
 .admonitionblock>table td.content>:last-child>:last-child{margin-bottom:0}
@@ -255,13 +258,13 @@ table.pyhltable .linenodiv{background:none!important;padding-right:0!important}
 table.tableblock{max-width:100%;border-collapse:separate}
 table.tableblock td>.paragraph:last-child p>p:last-child,table.tableblock th>p:last-child,table.tableblock td>p:last-child{margin-bottom:0}
 table.tableblock,th.tableblock,td.tableblock{border:0 solid #dedede}
-table.grid-all th.tableblock,table.grid-all td.tableblock{border-width:0 1px 1px 0}
-table.grid-all tfoot>tr>th.tableblock,table.grid-all tfoot>tr>td.tableblock{border-width:1px 1px 0 0}
-table.grid-cols th.tableblock,table.grid-cols td.tableblock{border-width:0 1px 0 0}
-table.grid-all *>tr>.tableblock:last-child,table.grid-cols *>tr>.tableblock:last-child{border-right-width:0}
-table.grid-rows th.tableblock,table.grid-rows td.tableblock{border-width:0 0 1px 0}
-table.grid-all tbody>tr:last-child>th.tableblock,table.grid-all tbody>tr:last-child>td.tableblock,table.grid-all thead:last-child>tr>th.tableblock,table.grid-rows tbody>tr:last-child>th.tableblock,table.grid-rows tbody>tr:last-child>td.tableblock,table.grid-rows thead:last-child>tr>th.tableblock{border-bottom-width:0}
-table.grid-rows tfoot>tr>th.tableblock,table.grid-rows tfoot>tr>td.tableblock{border-width:1px 0 0 0}
+table.grid-all>thead>tr>.tableblock,table.grid-all>tbody>tr>.tableblock{border-width:0 1px 1px 0}
+table.grid-all>tfoot>tr>.tableblock{border-width:1px 1px 0 0}
+table.grid-cols>*>tr>.tableblock{border-width:0 1px 0 0}
+table.grid-rows>thead>tr>.tableblock,table.grid-rows>tbody>tr>.tableblock{border-width:0 0 1px 0}
+table.grid-rows>tfoot>tr>.tableblock{border-width:1px 0 0 0}
+table.grid-all>*>tr>.tableblock:last-child,table.grid-cols>*>tr>.tableblock:last-child{border-right-width:0}
+table.grid-all>tbody>tr:last-child>.tableblock,table.grid-all>thead:last-child>tr>.tableblock,table.grid-rows>tbody>tr:last-child>.tableblock,table.grid-rows>thead:last-child>tr>.tableblock{border-bottom-width:0}
 table.frame-all{border-width:1px}
 table.frame-sides{border-width:0 1px}
 table.frame-topbot{border-width:1px 0}
@@ -282,10 +285,12 @@ ul li ol{margin-left:1.5em}
 dl dd{margin-left:1.125em}
 dl dd:last-child,dl dd:last-child>:last-child{margin-bottom:0}
 ol>li p,ul>li p,ul dd,ol dd,.olist .olist,.ulist .ulist,.ulist .olist,.olist .ulist{margin-bottom:.625em}
-ul.unstyled,ol.unnumbered,ul.checklist,ul.none{list-style-type:none}
-ul.unstyled,ol.unnumbered,ul.checklist{margin-left:.625em}
-ul.checklist li>p:first-child>.fa-square-o:first-child,ul.checklist li>p:first-child>.fa-check-square-o:first-child{width:1em;font-size:.85em}
-ul.checklist li>p:first-child>input[type="checkbox"]:first-child{width:1em;position:relative;top:1px}
+ul.checklist,ul.none,ol.none,ul.no-bullet,ol.no-bullet,ol.unnumbered,ul.unstyled,ol.unstyled{list-style-type:none}
+ul.no-bullet,ol.no-bullet,ol.unnumbered{margin-left:.625em}
+ul.unstyled,ol.unstyled{margin-left:0}
+ul.checklist{margin-left:.625em}
+ul.checklist li>p:first-child>.fa-square-o:first-child,ul.checklist li>p:first-child>.fa-check-square-o:first-child{width:1.25em;font-size:.8em;position:relative;bottom:.125em}
+ul.checklist li>p:first-child>input[type="checkbox"]:first-child{margin-right:.25em}
 ul.inline{margin:0 auto .625em auto;margin-left:-1.375em;margin-right:0;padding:0;list-style:none;overflow:hidden}
 ul.inline>li{list-style:none;float:left;margin-left:1.375em;display:block}
 ul.inline>li>*{display:block}
@@ -302,7 +307,8 @@ ol.lowergreek{list-style-type:lower-greek}
 td.hdlist1,td.hdlist2{vertical-align:top;padding:0 .625em}
 td.hdlist1{font-weight:bold;padding-bottom:1.25em}
 .literalblock+.colist,.listingblock+.colist{margin-top:-.5em}
-.colist>table tr>td:first-of-type{padding:0 .75em;line-height:1}
+.colist>table tr>td:first-of-type{padding:.4em .75em 0 .75em;line-height:1;vertical-align:top}
+.colist>table tr>td:first-of-type img{max-width:initial}
 .colist>table tr>td:last-of-type{padding:.25em 0}
 .thumb,.th{line-height:0;display:inline-block;border:solid 4px #fff;-webkit-box-shadow:0 0 0 1px #ddd;box-shadow:0 0 0 1px #ddd}
 .imageblock.left,.imageblock[style*="float: left"]{margin:.25em .625em 1.25em 0}
@@ -365,6 +371,7 @@ div.unbreakable{page-break-inside:avoid}
 .yellow{color:#bfbf00}
 .yellow-background{background-color:#fafa00}
 span.icon>.fa{cursor:default}
+a span.icon>.fa{cursor:inherit}
 .admonitionblock td.icon [class^="fa icon-"]{font-size:2.5em;text-shadow:1px 1px 2px rgba(0,0,0,.5);cursor:default}
 .admonitionblock td.icon .icon-note:before{content:"\f05a";color:#19407c}
 .admonitionblock td.icon .icon-tip:before{content:"\f0eb";text-shadow:1px 1px 2px rgba(155,155,0,.8);color:#111}
@@ -492,7 +499,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <span id="author" class="author">J.-M. Bruel</span><br>
 <span id="email" class="email"><a href="mailto:jbruel@gmail.com">jbruel@gmail.com</a></span><br>
 <span id="revnumber">version 1.1,</span>
-<span id="revdate">2016-11-21</span>
+<span id="revdate">2017-09-14</span>
 </div>
 <div id="toc" class="toc2">
 <div id="toctitle">Table des matières</div>
@@ -503,7 +510,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_contributeurs">Contributeurs</a></li>
 </ul>
 </li>
-<li><a href="#__span_class_icon_i_class_fa_fa_star_o_i_span_organisation_du_module_eiinl3am">1. <span class="icon"><i class="fa fa-star-o"></i></span> Organisation du module EIINL3AM</a></li>
+<li><a href="#_span_class_icon_i_class_fa_fa_star_o_i_span_organisation_du_module_eiinl3am">1. <span class="icon"><i class="fa fa-star-o"></i></span> Organisation du module EIINL3AM</a></li>
 <li><a href="#Introduction">2. <span class="icon"><i class="fa fa-star-half"></i></span> Introduction à l'<strong>IS</strong></a>
 <ul class="sectlevel2">
 <li><a href="#_rendons_à_césar">2.1. Rendons à César&#8230;&#8203;</a></li>
@@ -545,14 +552,14 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </ul>
 </li>
 <li><a href="#appendix">5. <span class="icon"><i class="fa fa-star-o" title="TP SysML"></i></span> Liens utiles</a></li>
-<li><a href="#__span_class_icon_i_class_fa_fa_star_o_title_tp_sysml_i_span_faq">6. <span class="icon"><i class="fa fa-star-o" title="TP SysML"></i></span> FAQ</a>
+<li><a href="#_span_class_icon_i_class_fa_fa_star_o_title_tp_sysml_i_span_faq">6. <span class="icon"><i class="fa fa-star-o" title="TP SysML"></i></span> FAQ</a>
 <ul class="sectlevel2">
 <li><a href="#_qui_compose_l_afis">6.1. Qui compose l&#8217;AFIS ?</a></li>
 </ul>
 </li>
 <li><a href="#refs">7. Références</a></li>
-<li><a href="#_glossaire_et_définition">8. Glossaire et définition</a></li>
-<li><a href="#__span_class_icon_i_class_fa_fa_cogs_title_tp_sysml_i_span_contributions_welcome"><span class="icon"><i class="fa fa-cogs" title="TP SysML"></i></span> Contributions welcome!</a></li>
+<li><a href="#_glossaire_et_définition">Glossaire et définition</a></li>
+<li><a href="#_span_class_icon_i_class_fa_fa_cogs_title_tp_sysml_i_span_contributions_welcome"><span class="icon"><i class="fa fa-cogs" title="TP SysML"></i></span> Contributions welcome!</a></li>
 </ul>
 </div>
 </div>
@@ -634,7 +641,7 @@ Pour les identifier j&#8217;essaye de les repérer systématiquement par une ind
 </div>
 </div>
 <div class="sect1">
-<h2 id="__span_class_icon_i_class_fa_fa_star_o_i_span_organisation_du_module_eiinl3am">1. <span class="icon"><i class="fa fa-star-o"></i></span> Organisation du module EIINL3AM</h2>
+<h2 id="_span_class_icon_i_class_fa_fa_star_o_i_span_organisation_du_module_eiinl3am">1. <span class="icon"><i class="fa fa-star-o"></i></span> Organisation du module EIINL3AM</h2>
 <div class="sectionbody">
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
@@ -644,8 +651,8 @@ Pour les identifier j&#8217;essaye de les repérer systématiquement par une ind
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-left valign-top">Quoi</th>
 <th class="tableblock halign-left valign-top">Qui</th>
+<th class="tableblock halign-left valign-top">Quoi</th>
 <th class="tableblock halign-left valign-top">Combien</th>
 </tr>
 </thead>
@@ -667,8 +674,8 @@ Pour les identifier j&#8217;essaye de les repérer systématiquement par une ind
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="mailto:bruel@irit.fr">Jean-Michel Bruel</a> &amp; Chaudet</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_exigences">Exigences</a>
-</p><p class="tableblock"><a href="#SysML"><span class="icon"><i class="fa fa-star-half"></i></span> La notation <strong>SysML</strong></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#_exigences">Exigences</a></p>
+<p class="tableblock"><a href="#SysML"><span class="icon"><i class="fa fa-star-half"></i></span> La notation <strong>SysML</strong></a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">10h Cours/TD + 6h TP</p></td>
 </tr>
 <tr>
@@ -719,6 +726,15 @@ Liens et coordonnées des intervenants à compléter au fur et à mesure&#8230;&
 </div>
 <div class="title">Figure 2. MindMap 2016 (résultat du brainstorming collectif)</div>
 </div>
+<div class="paragraph">
+<p>Voici la <em>mind map</em> réalisée par les étudiants de la promo 2017 :</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/IS2017.svg" alt="IS2017" width="80%">
+</div>
+<div class="title">Figure 3. MindMap 2017 (résultat du brainstorming collectif)</div>
+</div>
 <div class="sect2">
 <h3 id="_rendons_à_césar">2.1. Rendons à César&#8230;&#8203;</h3>
 <div class="paragraph">
@@ -728,7 +744,7 @@ Liens et coordonnées des intervenants à compléter au fur et à mesure&#8230;&
 <div class="content">
 <img src="images/bernard.jpeg" alt="bernard" width="40%">
 </div>
-<div class="title">Figure 3. Bernard Cherbonneau, le "papa" de ce cours (@bernardcherbonn)</div>
+<div class="title">Figure 4. Bernard Cherbonneau, le "papa" de ce cours (@bernardcherbonn)</div>
 </div>
 <div class="admonitionblock warning">
 <table>
@@ -925,13 +941,13 @@ Le tout est plus que la somme de ses parties.
 <div class="content">
 <a class="image" href="http://bat-team.e-monsite.com/album/voiture-dessiner-depuis-catia.html"><img src="images/voiture-catia.jpg" alt="voiture catia" width="70%"></a>
 </div>
-<div class="title">Figure 4. Un système en vue "boîte noire" (http://bat-team.e-monsite.com/album/voiture-dessiner-depuis-catia.html)</div>
+<div class="title">Figure 5. Un système en vue "boîte noire" (http://bat-team.e-monsite.com/album/voiture-dessiner-depuis-catia.html)</div>
 </div>
 <div class="imageblock">
 <div class="content">
 <a class="image" href="http://bat-team.e-monsite.com/album/voiture-dessiner-depuis-catia.html"><img src="images/voiture-catia-blanche.jpg" alt="voiture catia blanche" width="70%"></a>
 </div>
-<div class="title">Figure 5. Un système en vue "boîte blanche" (http://bat-team.e-monsite.com/album/voiture-dessiner-depuis-catia.html)</div>
+<div class="title">Figure 6. Un système en vue "boîte blanche" (http://bat-team.e-monsite.com/album/voiture-dessiner-depuis-catia.html)</div>
 </div>
 <div class="paragraph">
 <p>En <a href="#IS">[IS]</a>, la définition du système comporte :</p>
@@ -950,13 +966,13 @@ Le tout est plus que la somme de ses parties.
 <div class="content">
 <a class="image" href="https://fr.wikipedia.org/wiki/Airbus_A380"><img src="images/A380.jpg" alt="A380" width="100%"></a>
 </div>
-<div class="title">Figure 6. C&#8217;est bien de concevoir un système&#8230;&#8203; (https://fr.wikipedia.org/wiki/Airbus_A380)</div>
+<div class="title">Figure 7. C&#8217;est bien de concevoir un système&#8230;&#8203; (https://fr.wikipedia.org/wiki/Airbus_A380)</div>
 </div>
 <div class="imageblock">
 <div class="content">
 <a class="image" href="https://fr.wikipedia.org/wiki/Airbus_A380"><img src="images/A380-pont.jpg" alt="A380 pont" width="100%"></a>
 </div>
-<div class="title">Figure 7. Mais il faut aussi prévoir toutes les étapes! (https://fr.wikipedia.org/wiki/Airbus_A380)</div>
+<div class="title">Figure 8. Mais il faut aussi prévoir toutes les étapes! (https://fr.wikipedia.org/wiki/Airbus_A380)</div>
 </div>
 <div class="paragraph">
 <p>Cette définition induit une démarche descendante d&#8217;ingénierie s&#8217;appuyant sur une
@@ -967,7 +983,7 @@ leurs interfaces ainsi que les produits contributeurs à leur cycle de vie.</p>
 <div class="content">
 <a class="image" href="https://www.afis.fr"><img src="images/ingsys.png" alt="ingsys" width="100%"></a>
 </div>
-<div class="title">Figure 8. Décomposition d&#8217;un système vu de l&#8217;IS (https://www.afis.fr)</div>
+<div class="title">Figure 9. Décomposition d&#8217;un système vu de l&#8217;IS (https://www.afis.fr)</div>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -1005,7 +1021,7 @@ pour mener une opération militaire)</p>
 <div class="content">
 <a class="image" href="https://www.afis.fr"><img src="images/ingsys3.png" alt="ingsys3" width="90%"></a>
 </div>
-<div class="title">Figure 9. Intégrer les disciplines pour converger vers un bon compromis entre enjeux et contraintes des parties prenantes (https://www.afis.fr)</div>
+<div class="title">Figure 10. Intégrer les disciplines pour converger vers un bon compromis entre enjeux et contraintes des parties prenantes (https://www.afis.fr)</div>
 </div>
 </div>
 <div class="sect2">
@@ -1014,7 +1030,7 @@ pour mener une opération militaire)</p>
 <div class="content">
 <a class="image" href="https://www.afis.fr"><img src="images/ingsys4.png" alt="ingsys4" width="90%"></a>
 </div>
-<div class="title">Figure 10. Schématisation de la démarche technique d&#8217;ingénierie (https://www.afis.fr)</div>
+<div class="title">Figure 11. Schématisation de la démarche technique d&#8217;ingénierie (https://www.afis.fr)</div>
 </div>
 </div>
 <div class="sect2">
@@ -1023,7 +1039,7 @@ pour mener une opération militaire)</p>
 <div class="content">
 <a class="image" href="https://www.afis.fr"><img src="images/ingsys5.png" alt="ingsys5" width="90%"></a>
 </div>
-<div class="title">Figure 11. La mise en oeuvre de l&#8217;Ingénierie Système (https://www.afis.fr)</div>
+<div class="title">Figure 12. La mise en oeuvre de l&#8217;Ingénierie Système (https://www.afis.fr)</div>
 </div>
 </div>
 <div class="sect2">
@@ -1644,7 +1660,7 @@ Néanmoins cette notation est peu adaptée pour l'<a href="#IS">[IS]</a> :</p>
 <div class="content">
 <img src="images/diff.png" alt="diff" width="60%">
 </div>
-<div class="title">Figure 12. Liens entre UML et SysML</div>
+<div class="title">Figure 13. Liens entre UML et SysML</div>
 </div>
 </div>
 <div class="sect3">
@@ -1691,13 +1707,13 @@ Néanmoins cette notation est peu adaptée pour l'<a href="#IS">[IS]</a> :</p>
 <div class="content">
 <img src="images/Figure4-1.png" alt="Figure4 1" width="90%">
 </div>
-<div class="title">Figure 13. Les 9 diagrammes SysML et leur lien avec UML</div>
+<div class="title">Figure 14. Les 9 diagrammes SysML et leur lien avec UML</div>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/Figure4-1-bis.png" alt="Figure4 1 bis" width="90%">
 </div>
-<div class="title">Figure 14. Version abrégée des diagrammes</div>
+<div class="title">Figure 15. Version abrégée des diagrammes</div>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -2031,7 +2047,7 @@ même si c&#8217;est très peu courant.</p>
 <div class="content">
 <img src="images/pacemaker-context.png" alt="pacemaker context" width="80%">
 </div>
-<div class="title">Figure 15. Exemple de diagramme SysML</div>
+<div class="title">Figure 16. Exemple de diagramme SysML</div>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -2220,25 +2236,25 @@ vue (un <em>packetage</em> particulier, stéréotypé <code>&lt;&lt;view&gt;&gt;
 <div class="content">
 <img src="images/pkg-organisation2.png" alt="pkg organisation2" width="50%">
 </div>
-<div class="title">Figure 16. Exemple d&#8217;organisation simple</div>
+<div class="title">Figure 17. Exemple d&#8217;organisation simple</div>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/pkg-organisation-modelview.png" alt="pkg organisation modelview" width="30%">
 </div>
-<div class="title">Figure 17. Représentation de cette organisation dans un outil</div>
+<div class="title">Figure 18. Représentation de cette organisation dans un outil</div>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/pkg-organisation.png" alt="pkg organisation" width="30%">
 </div>
-<div class="title">Figure 18. Un autre exemple d&#8217;organisation</div>
+<div class="title">Figure 19. Un autre exemple d&#8217;organisation</div>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/pkg-topcased.png" alt="pkg topcased" width="40%">
 </div>
-<div class="title">Figure 19. Un autre exemple d&#8217;organisation</div>
+<div class="title">Figure 20. Un autre exemple d&#8217;organisation</div>
 </div>
 <div class="admonitionblock tip">
 <table>
@@ -2422,7 +2438,7 @@ cruciale cette analyse.</p>
 <div class="content">
 <a class="image" href="http://www.inria.fr/centre/rennes/actualites/vers-un-cahier-des-charges-mieux-formule"><img src="images/ingenierie-des-exigences.jpg" alt="Joke" width="100"></a>
 </div>
-<div class="title">Figure 20. 300 corps de métiers sont parfois présents sur un même chantier</div>
+<div class="title">Figure 21. 300 corps de métiers sont parfois présents sur un même chantier</div>
 </div>
 <div class="admonitionblock tip">
 <table>
@@ -2461,7 +2477,7 @@ En génie logiciel on parle plus classiquement des spécifications ("spec") pour
 <div class="content">
 <a class="image" href="https://plus.google.com/100035762233109552669/posts/a8Hafq2hZ74"><img src="images/ProgrammerHumor.jpg" alt="Joke" width="100"></a>
 </div>
-<div class="title">Figure 21. Spécification ambiguë (taken from <a href="https://plus.google.com/100035762233109552669/posts/a8Hafq2hZ74" class="bare">https://plus.google.com/100035762233109552669/posts/a8Hafq2hZ74</a>)</div>
+<div class="title">Figure 22. Spécification ambiguë (taken from <a href="https://plus.google.com/100035762233109552669/posts/a8Hafq2hZ74" class="bare">https://plus.google.com/100035762233109552669/posts/a8Hafq2hZ74</a>)</div>
 </div>
 <div class="paragraph">
 <p>Dans le cadre de la matrice qui nous sert de plan, nous somme ici :</p>
@@ -2645,7 +2661,7 @@ A requirement is defined as a stereotype of UML Class&#8230;&#8203;</em></p>
 <div class="content">
 <img src="images/corde.png" alt="corde" width="100%">
 </div>
-<div class="title">Figure 22. Un _Requirement_ en SysML (`P`)</div>
+<div class="title">Figure 23. Un _Requirement_ en SysML (`P`)</div>
 </div>
 </div>
 <div class="sect4">
@@ -2737,7 +2753,7 @@ sous forme tabulaire.</p>
 <div class="content">
 <img src="images/req-table.png" alt="req table" width="100%">
 </div>
-<div class="title">Figure 23. Exemples tableau d'exigences (OMG SysML v1.3, p. 145)</div>
+<div class="title">Figure 24. Exemples tableau d'exigences (OMG SysML v1.3, p. 145)</div>
 </div>
 <div class="paragraph">
 <p>La plupart des outils modernes permettent le passage entre outils classiques de gestion des exigences (comme <a href="http://www-03.ibm.com/software/products/fr/fr/ratidoor/">DOORS&#8482;</a>)
@@ -2747,7 +2763,7 @@ et outils de modélisation <a href="http://www.omgsysml.org/">SysML&#8482;</a> (
 <div class="content">
 <img src="images/req-modelio.png" alt="req modelio" width="100%">
 </div>
-<div class="title">Figure 24. Import Modelio de tableau d'exigences (tiré de &lt;&lt;Modelio2012&gt;&gt;)</div>
+<div class="title">Figure 25. Import Modelio de tableau d'exigences (tiré de &lt;&lt;Modelio2012&gt;&gt;)</div>
 </div>
 </div>
 </div>
@@ -2885,7 +2901,7 @@ on considère que ces différents cas sont des options possibles de raffinement 
 <div class="content">
 <img src="images/req-exp1.png" alt="req exp1" width="80%">
 </div>
-<div class="title">Figure 25. Exemples de relations entre exigences (`M`)</div>
+<div class="title">Figure 26. Exemples de relations entre exigences (`M`)</div>
 </div>
 <div class="admonitionblock tip">
 <table>
@@ -2907,7 +2923,7 @@ dans la partie <a href="#transvers">transverse</a>.</p>
 <div class="content">
 <img src="images/topcased-req-connections.png" alt="topcased req connections" width="50%">
 </div>
-<div class="title">Figure 26. Relations liées aux _requirements_ dans TOPCASED (`T`)</div>
+<div class="title">Figure 27. Relations liées aux _requirements_ dans TOPCASED (`T`)</div>
 </div>
 </div>
 <div class="sect3">
@@ -2919,7 +2935,7 @@ dans la partie <a href="#transvers">transverse</a>.</p>
 <div class="content">
 <img src="images/hsuv-reqs1.png" alt="hsuv reqs1" width="80%">
 </div>
-<div class="title">Figure 27. Exemples de composition d'exigences (tiré de &lt;&lt;SysML&gt;&gt;, `UK`)</div>
+<div class="title">Figure 28. Exemples de composition d'exigences (tiré de &lt;&lt;SysML&gt;&gt;, `UK`)</div>
 </div>
 </div>
 <div class="sect3">
@@ -2950,7 +2966,7 @@ Quelques exemples de stéréotypes utiles :</p>
 <div class="content">
 <img src="images/hsuv-reqs2.png" alt="hsuv reqs2" width="80%">
 </div>
-<div class="title">Figure 28. Exemples de _rationale_ et _problem_ (tiré de &lt;&lt;SysML&gt;&gt;)</div>
+<div class="title">Figure 29. Exemples de _rationale_ et _problem_ (tiré de &lt;&lt;SysML&gt;&gt;)</div>
 </div>
 </div>
 <div class="sect3">
@@ -2985,7 +3001,7 @@ sera abordé dans la partie <a href="#transvers">transverse</a>.</p>
 <div class="content">
 <img src="images/req-uc-relation.png" alt="req uc relation" width="50%">
 </div>
-<div class="title">Figure 29. Exemple de lien entre use case et requirements (`T`)</div>
+<div class="title">Figure 30. Exemple de lien entre use case et requirements (`T`)</div>
 </div>
 <div class="paragraph">
 <p>Ce diagramme est celui que vous avez appris l&#8217;an dernier en <a href="http://www.uml.org/">UML&#8482;</a>.</p>
@@ -2994,13 +3010,13 @@ sera abordé dans la partie <a href="#transvers">transverse</a>.</p>
 <div class="content">
 <img src="images/UCGestionNotes.png" alt="UCGestionNotes" width="80%">
 </div>
-<div class="title">Figure 30. Exemple de diagramme des cas d'utilisation (`B`)</div>
+<div class="title">Figure 31. Exemple de diagramme des cas d'utilisation (`B`)</div>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/uc.png" alt="uc" width="70%">
 </div>
-<div class="title">Figure 31. Autre exemple de diagrammes des cas d'utilisation (`B`)</div>
+<div class="title">Figure 32. Autre exemple de diagrammes des cas d'utilisation (`B`)</div>
 </div>
 <div class="admonitionblock tip">
 <table>
@@ -3032,7 +3048,7 @@ matrices croisant les exigences d&#8217;un côté et les tests de l&#8217;autre.
 <div class="content">
 <a class="image" href="http://infocenter.sybase.com/archive/index.jsp?topic=/com.sybase.stf.poweramc.docs_12.0.0/html/exgu/exgup38.htm"><img src="images/matriceTraca.png" alt="matriceTraca" width="70%"></a>
 </div>
-<div class="title">Figure 32. Exemple de matrice de traçabilité</div>
+<div class="title">Figure 33. Exemple de matrice de traçabilité</div>
 </div>
 <div class="paragraph">
 <p>Dans la réalité, les entreprises industrialisent le processus de vérification
@@ -3042,7 +3058,7 @@ des exigences en utilisant des outils adaptés :</p>
 <div class="content">
 <img src="images/testindus.png" alt="testindus" width="60%">
 </div>
-<div class="title">Figure 33. Le cycle de la qualification fonctionnelle en lien avec les besoins métiers (tirée de <a href="#TestsIndustriels2009">[TestsIndustriels2009]</a>)</div>
+<div class="title">Figure 34. Le cycle de la qualification fonctionnelle en lien avec les besoins métiers (tirée de <a href="#TestsIndustriels2009">[TestsIndustriels2009]</a>)</div>
 </div>
 </div>
 </div>
@@ -3111,7 +3127,7 @@ Nous les écrivons ici sous forme tabulaire, puis en utilisant le langage <a hre
 <div class="content">
 <img src="images/tabulaire.png" alt="tabulaire" width="100%">
 </div>
-<div class="title">Figure 34. Exemple de liste d'exigences (tirée de <a href="#TestsIndustriels2009">[TestsIndustriels2009]</a>)</div>
+<div class="title">Figure 35. Exemple de liste d'exigences (tirée de <a href="#TestsIndustriels2009">[TestsIndustriels2009]</a>)</div>
 </div>
 <div class="paragraph">
 <p>Exemple de <strong>version textuelle</strong> formattée :</p>
@@ -3142,7 +3158,7 @@ Feature: Scénario simple d'utilisation de l'AutoRadio (AR)
 <div class="content">
 <img src="images/plantest.png" alt="plantest" width="100%">
 </div>
-<div class="title">Figure 35. Exemple de plan de test simplifié (tirée de <a href="#TestsIndustriels2009">[TestsIndustriels2009]</a>)</div>
+<div class="title">Figure 36. Exemple de plan de test simplifié (tirée de <a href="#TestsIndustriels2009">[TestsIndustriels2009]</a>)</div>
 </div>
 </div>
 <div class="sect4">
@@ -3234,7 +3250,7 @@ cohérents. On pourra donc :</p>
 <div class="content">
 <a class="image" href="http://plantuml.sourceforge.net/doclet.html"><img src="images/doclet.png" alt="doclet" width="90%"></a>
 </div>
-<div class="title">Figure 36. Exemple de diagramme généré par javadoc (tirée de <a href="#TestsIndustriels2009">[TestsIndustriels2009]</a>)</div>
+<div class="title">Figure 37. Exemple de diagramme généré par javadoc (tirée de <a href="#TestsIndustriels2009">[TestsIndustriels2009]</a>)</div>
 </div>
 </div>
 </div>
@@ -3306,7 +3322,7 @@ des exigences et la modélisation du système lui-même (cf. <a href="#sysmod">E
 <div class="content">
 <a class="image" href="http://model-based-systems-engineering.com/2012/03/26/the-sysmod-zigzag-pattern/"><img src="images/zigzag.png" alt="zigzag" width="90%"></a>
 </div>
-<div class="title">Figure 37. Exemple de démarche (_SYSMOD Zigzag pattern_) (tirée de <a href="#TestsIndustriels2009">[TestsIndustriels2009]</a>)</div>
+<div class="title">Figure 38. Exemple de démarche (_SYSMOD Zigzag pattern_) (tirée de <a href="#TestsIndustriels2009">[TestsIndustriels2009]</a>)</div>
 </div>
 </div>
 <div class="sect3">
@@ -3511,7 +3527,7 @@ Ce diagramme utilise les mêmes éléments que le diagramme de classe <a href="h
 <div class="content">
 <img src="images/pacemaker-context.png" alt="pacemaker context" width="80%">
 </div>
-<div class="title">Figure 38. bdd du système dans son environnement</div>
+<div class="title">Figure 39. bdd du système dans son environnement</div>
 </div>
 <div class="paragraph">
 <p>Un bloc est constitué d&#8217;un certain nombre de compartiments (<em>Compartments</em>) :</p>
@@ -3548,7 +3564,7 @@ Ce diagramme utilise les mêmes éléments que le diagramme de classe <a href="h
 <div class="content">
 <img src="images/constraints.png" alt="constraints" width="70%">
 </div>
-<div class="title">Figure 39. Exemple de définition de contraintes</div>
+<div class="title">Figure 40. Exemple de définition de contraintes</div>
 </div>
 </div>
 <div class="sect4">
@@ -3592,7 +3608,7 @@ Ce diagramme utilise les mêmes éléments que le diagramme de classe <a href="h
 </div>
 </div>
 <div class="sect4">
-<h5 id="__em_value_types_em"><em>Value Types</em></h5>
+<h5 id="_em_value_types_em"><em>Value Types</em></h5>
 <div class="paragraph">
 <p>Pour associer un type aux valeurs, <a href="http://www.omgsysml.org/">SysML&#8482;</a> propose de définir des <em>Value Types</em>.</p>
 </div>
@@ -3600,7 +3616,7 @@ Ce diagramme utilise les mêmes éléments que le diagramme de classe <a href="h
 <div class="content">
 <img src="images/valueType.png" alt="valueType" width="60%">
 </div>
-<div class="title">Figure 40. Définition de <em>Value Types</em>.</div>
+<div class="title">Figure 41. Définition de <em>Value Types</em>.</div>
 </div>
 </div>
 <div class="sect4">
@@ -3703,7 +3719,7 @@ Il existe trois façons de nommer une association :</p>
 <div class="content">
 <img src="images/cardinalite.png" alt="cardinalite" width="50%">
 </div>
-<div class="title">Figure 41. Exemple d&#8217;associtaion</div>
+<div class="title">Figure 42. Exemple d&#8217;associtaion</div>
 </div>
 </div>
 <div class="sect4">
@@ -3740,7 +3756,7 @@ de type tableau (ou liste, ou &#8230;&#8203;) de <code>Fournisseurs</code>.</p>
 <div class="content">
 <a class="image" href="http://stackoverflow.com/questions/7718035/uml-association-and-dependency"><img src="images/aggreg-comp.png" alt="aggreg comp" width="90%"></a>
 </div>
-<div class="title">Figure 42. Deux façon de représenter une propriété de type <code>B</code></div>
+<div class="title">Figure 43. Deux façon de représenter une propriété de type <code>B</code></div>
 </div>
 <div class="paragraph">
 <p>En terme d'<a href="#IS">[IS]</a>, une composition indique que l&#8217;élément est une partie intégrante (on parle de <em>part</em>) du tout (un composant, comme le moteur d&#8217;une voiture par exemple) tandis q&#8217;une agrégation indique que l&#8217;élément est une partie "externe" (on parle de <em>reference</em>) comme la batterie d&#8217;un portable.</p>
@@ -3776,7 +3792,7 @@ de type tableau (ou liste, ou &#8230;&#8203;) de <code>Fournisseurs</code>.</p>
 <div class="content">
 <img src="images/compo.png" alt="compo" width="50%">
 </div>
-<div class="title">Figure 43. Exemple de composition</div>
+<div class="title">Figure 44. Exemple de composition</div>
 </div>
 </div>
 <div class="sect4">
@@ -3788,7 +3804,7 @@ de type tableau (ou liste, ou &#8230;&#8203;) de <code>Fournisseurs</code>.</p>
 <div class="content">
 <img src="images/genspec.png" alt="genspec" width="50%">
 </div>
-<div class="title">Figure 44. Exemple de lien de généralisation/spécialisation</div>
+<div class="title">Figure 45. Exemple de lien de généralisation/spécialisation</div>
 </div>
 <div class="paragraph">
 <p>On retrouve cette association entre blocs, mais aussi entre acteurs, cas d&#8217;utilisation, etc.</p>
@@ -3847,13 +3863,13 @@ et les <em>references</em> comme des blocs en trait pointillés.</p>
 <div class="content">
 <img src="images/parts.png" alt="parts" width="40%">
 </div>
-<div class="title">Figure 45. Exemple de <em>Parts</em></div>
+<div class="title">Figure 46. Exemple de <em>Parts</em></div>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/parts2.png" alt="parts2" width="60%">
 </div>
-<div class="title">Figure 46. Autre exemple de <em>Parts</em></div>
+<div class="title">Figure 47. Autre exemple de <em>Parts</em></div>
 </div>
 </div>
 <div class="sect4">
@@ -3914,7 +3930,7 @@ Les connecteurs peuvent traverser les "frontières" sans exiger de ports à chaq
 <div class="content">
 <img src="images/ports-flots.png" alt="ports flots" width="60%">
 </div>
-<div class="title">Figure 47. Exemples de flots</div>
+<div class="title">Figure 48. Exemples de flots</div>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -3935,7 +3951,7 @@ Les connecteurs peuvent traverser les "frontières" sans exiger de ports à chaq
 <div class="content">
 <img src="images/flots.png" alt="flots" width="90%">
 </div>
-<div class="title">Figure 48. Exemples de flots multi-physique entre ports</div>
+<div class="title">Figure 49. Exemples de flots multi-physique entre ports</div>
 </div>
 <div class="paragraph">
 <p>Les ports peuvent être de nature classique (comme en <a href="http://www.uml.org/">UML&#8482;</a>) et représenter la fourniture ou le besoin de services. On parle alors
@@ -4047,7 +4063,7 @@ et en ajoutant la possibilité d&#8217;imbrication et de spécification renforc�
 <div class="content">
 <img src="images/constraints.png" alt="constraints" width="80%">
 </div>
-<div class="title">Figure 49. Exemple de contraintes</div>
+<div class="title">Figure 50. Exemple de contraintes</div>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -4074,11 +4090,11 @@ et en ajoutant la possibilité d&#8217;imbrication et de spécification renforc�
 <div class="content">
 <img src="images/param.png" alt="param" width="90%">
 </div>
-<div class="title">Figure 50. Exemple de diagramme paramétrique</div>
+<div class="title">Figure 51. Exemple de diagramme paramétrique</div>
 </div>
 </div>
 <div class="sect4">
-<h5 id="__em_value_binding_em"><em>Value Binding</em></h5>
+<h5 id="_em_value_binding_em"><em>Value Binding</em></h5>
 <div class="paragraph">
 <p>Une fois les contraintes exprimées, il faut lier les paramètres (formels) à des valeurs (paramètre réel). C&#8217;est l&#8217;objet des <em>Value Binding</em>.</p>
 </div>
@@ -4089,7 +4105,7 @@ et en ajoutant la possibilité d&#8217;imbrication et de spécification renforc�
 <div class="content">
 <a class="image" href="http://books.google.fr/books?id=8KY2YZIiXv0C&pg=PA174&lpg=PA174&dq=SYSml+%22block+configuration%22&source=bl&ots=ZdxokRYj6l&sig=PlDHvR8qGZC97W-C_08Yk9Xb1RY&hl=fr&sa=X&ei=1jizUOXKBsXAhAeinYHACg&ved=0CEEQ6AEwAg#v=onepage&q=SYSml%20%22block%20configuration%22&f=false"><img src="images/blockconf.png" alt="blockconf" width="90%"></a>
 </div>
-<div class="title">Figure 51. Exemple de bloc de configuration</div>
+<div class="title">Figure 52. Exemple de bloc de configuration</div>
 </div>
 </div>
 </div>
@@ -4105,7 +4121,7 @@ et en ajoutant la possibilité d&#8217;imbrication et de spécification renforc�
 <div class="content">
 <img src="images/dss.png" alt="dss" width="70%">
 </div>
-<div class="title">Figure 52. Exemples de DSS</div>
+<div class="title">Figure 53. Exemples de DSS</div>
 </div>
 </div>
 <div class="sect3">
@@ -4461,7 +4477,7 @@ On peut également orienter ces associations en plaçant une direction (flèche 
 <div class="content">
 <img src="images/ucexp1.png" alt="ucexp1">
 </div>
-<div class="title">Figure 53. Relations orientées</div>
+<div class="title">Figure 54. Relations orientées</div>
 </div>
 </div>
 <div class="sect4">
@@ -4488,9 +4504,9 @@ Plusieurs relations sont possibles :</p>
 </div>
 <div id="ucdiag" class="imageblock">
 <div class="content">
-<img src="images/UC.png" alt="Diagramme d'UC" width="35%">
+<img src="images/UC.png" alt="Diagramme d&#8217;UC" width="35%">
 </div>
-<div class="title">Figure 54. Notation dans le diagramme d&#8217;UC</div>
+<div class="title">Figure 55. Notation dans le diagramme d&#8217;UC</div>
 </div>
 <div class="admonitionblock tip">
 <table>
@@ -4546,9 +4562,9 @@ inclut dans plusieurs UC. Si ce n&#8217;est pas le cas, il est généralement en
 <h5 id="_exemples_complets_uml_gestion_des_notes">Exemples complets (UML) : Gestion des notes</h5>
 <div id="ucexp2" class="imageblock">
 <div class="content">
-<img src="images/uc2.png" alt="Exemple de Diagramme d'UC" width="70%">
+<img src="images/uc2.png" alt="Exemple de Diagramme d&#8217;UC" width="70%">
 </div>
-<div class="title">Figure 55. Autre exemple de diagramme d&#8217;UC</div>
+<div class="title">Figure 56. Autre exemple de diagramme d&#8217;UC</div>
 </div>
 </div>
 </div>
@@ -4640,7 +4656,7 @@ Messages
 <div class="content">
 <img src="images/seq3.png" alt="Exemple de diagramme de séquence" width="60%">
 </div>
-<div class="title">Figure 56. Exemple de diagramme de séquence (3)</div>
+<div class="title">Figure 57. Exemple de diagramme de séquence (3)</div>
 </div>
 </div>
 <div class="sect4">
@@ -4672,13 +4688,13 @@ Messages
 <div class="content">
 <img src="images/fowl1.png" alt="Un algorithme" width="30%">
 </div>
-<div class="title">Figure 57. Exemple d' algorithme&#8230;&#8203;</div>
+<div class="title">Figure 58. Exemple d' algorithme&#8230;&#8203;</div>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/fowl2.png" alt="Sa modélisation" width="60%">
 </div>
-<div class="title">Figure 58. Et le diagramme correpondant</div>
+<div class="title">Figure 59. Et le diagramme correpondant</div>
 </div>
 </div>
 <div class="sect4">
@@ -4695,13 +4711,13 @@ fonctionnalité. On mesure visuellement assez bien la différence entre la versi
 <div class="content">
 <img src="images/fowl3.png" alt="Conception 'centralisée'" width="60%">
 </div>
-<div class="title">Figure 59. Conception "centralisée"</div>
+<div class="title">Figure 60. Conception "centralisée"</div>
 </div>
 <div id="fowler2" class="imageblock">
 <div class="content">
 <img src="images/fowl4.png" alt="Conception 'objet'" width="60%">
 </div>
-<div class="title">Figure 60. Conception "objet"</div>
+<div class="title">Figure 61. Conception "objet"</div>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -4731,21 +4747,21 @@ fonctionnalité. On mesure visuellement assez bien la différence entre la versi
 </div>
 <div id="exp1-uc" class="imageblock">
 <div class="content">
-<img src="images/ucexp1.png" alt="Diagramme d'UC" width="30%">
+<img src="images/ucexp1.png" alt="Diagramme d&#8217;UC" width="30%">
 </div>
-<div class="title">Figure 61. Diagramme d&#8217;UC</div>
+<div class="title">Figure 62. Diagramme d&#8217;UC</div>
 </div>
 <div id="exp1-dss" class="imageblock">
 <div class="content">
 <img src="images/dssexp1.png" alt="Le DSS correspondant" width="50%">
 </div>
-<div class="title">Figure 62. Le DSS correspondant</div>
+<div class="title">Figure 63. Le DSS correspondant</div>
 </div>
 <div id="exp1-ds" class="imageblock">
 <div class="content">
 <img src="images/dsexp1.png" alt="Le DS correspondant" width="70%">
 </div>
-<div class="title">Figure 63. Le DS correspondant</div>
+<div class="title">Figure 64. Le DS correspondant</div>
 </div>
 </div>
 </div>
@@ -4771,9 +4787,9 @@ Cette réaction (nommée <strong>transition</strong>) possède un événement d�
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/stm1.png" alt="Un diagramme d'état" width="70%">
+<img src="images/stm1.png" alt="Un diagramme d&#8217;état" width="70%">
 </div>
-<div class="title">Figure 64. Un exemple de diagramme d&#8217;état (<code>R</code>)</div>
+<div class="title">Figure 65. Un exemple de diagramme d&#8217;état (<code>R</code>)</div>
 </div>
 <div class="paragraph">
 <p>Lorsqu&#8217;un état nécessite lui-même plus de détails, on créé un <strong>état composite</strong> (aussi appelé super-état)
@@ -4797,7 +4813,7 @@ Il est utilisé pour l’expression de la logique de contrôle et d’entrées/s
 <div class="content">
 <img src="images/act-pcmk1.png" alt="act pcmk1" width="70%">
 </div>
-<div class="title">Figure 65. Exemple de diagramme d&#8217;activité (tiré de <a href="#SeeBook2012">[SeeBook2012]</a>)</div>
+<div class="title">Figure 66. Exemple de diagramme d&#8217;activité (tiré de <a href="#SeeBook2012">[SeeBook2012]</a>)</div>
 </div>
 <div class="paragraph">
 <p>Les éléments de base du diagramme d’activité sont :</p>
@@ -4841,7 +4857,7 @@ Les <em>object flow</em>, associés aux broches d&#8217;entrée/sortie (<em>inpu
 <div class="content">
 <img src="images/act-flow-continuous.png" alt="Un flot continu" width="30%">
 </div>
-<div class="title">Figure 66. Un exemple de flot continu (UK)</div>
+<div class="title">Figure 67. Un exemple de flot continu (UK)</div>
 </div>
 <div class="paragraph">
 <p>Pour permettre la modélisation des <strong>flots continus</strong>, <a href="http://www.omgsysml.org/">SysML&#8482;</a> ajoute à <a href="http://www.uml.org/">UML&#8482;</a> la possibilité de caractériser la nature du débit qui circule sur le flot : continu (par exemple, courant électrique, fluide, etc.) ou discret (par exemple, évenements, requêtes, etc.).
@@ -4902,7 +4918,7 @@ Le <em>join</em> ne produit son jeton de sortie que lorsqu’un jeton est dispon
 <div class="content">
 <img src="images/flow-ctrl.png" alt="flow ctrl" width="20%">
 </div>
-<div class="title">Figure 67. Les différents contrôles de flow SysML</div>
+<div class="title">Figure 68. Les différents contrôles de flow SysML</div>
 </div>
 </div>
 <div class="sect3">
@@ -4915,7 +4931,7 @@ L’action d’appel est représentée graphiquement par une fourche à droite d
 <div class="content">
 <img src="images/act-call.png" alt="act call" width="20%">
 </div>
-<div class="title">Figure 68. Exemple de <em>callBehaviorAction</em> (UK)</div>
+<div class="title">Figure 69. Exemple de <em>callBehaviorAction</em> (UK)</div>
 </div>
 </div>
 <div class="sect3">
@@ -5150,7 +5166,7 @@ Parler des <code>&lt;&lt;allocate&gt;&gt;</code>.</p>
 <div class="content">
 <img src="images/param.png" alt="param" width="90%">
 </div>
-<div class="title">Figure 69. Exemple de diagramme paramétrique</div>
+<div class="title">Figure 70. Exemple de diagramme paramétrique</div>
 </div>
 <div class="paragraph">
 <p>Il est regrettable que ce diagramme soit le moins utilisé (cf. <a href="#enquete">[enquete]</a>).</p>
@@ -5283,14 +5299,14 @@ se trouvent sur le dépôt GitHub : <a href="https://github.com/M2DL/mib-2016" c
 </li>
 <li>
 <p>Si vous avez installé directement <a href="https://www.eclipse.org/papyrus/">Papyrus</a> (sans passer par le plugin <a href="https://www.eclipse.org/">Eclipse</a>),
-installez le composant Papyrus complémentaire <span class="menuseq"><span class="menu">Help</span>&#160;&#9656; <span class="submenu">Install Papyrus Additional Components</span>&#160;&#9656; <span class="menuitem">Papyrus UML Compare Feature</span></span>.</p>
+installez le composant Papyrus complémentaire <span class="menuseq"><b class="menu">Help</b>&#160;<i class="fa fa-angle-right caret"></i> <b class="submenu">Install Papyrus Additional Components</b>&#160;<i class="fa fa-angle-right caret"></i> <b class="menuitem">Papyrus UML Compare Feature</b></span>.</p>
 </li>
 <li>
-<p>Installez également le plugin suivant en allant sur <span class="menuseq"><span class="menu">Help</span>&#160;&#9656; <span class="submenu">Install New Software</span>&#160;&#9656; <span class="menuitem">&#8230;&#8203;</span></span> :
+<p>Installez également le plugin suivant en allant sur <span class="menuseq"><b class="menu">Help</b>&#160;<i class="fa fa-angle-right caret"></i> <b class="submenu">Install New Software</b>&#160;<i class="fa fa-angle-right caret"></i> <b class="menuitem">&#8230;&#8203;</b></span> :
 <a href="http://download.eclipse.org/modeling/emf/compare/updates/logical/emf.compare/integration" class="bare">http://download.eclipse.org/modeling/emf/compare/updates/logical/emf.compare/integration</a></p>
 </li>
 <li>
-<p>Allez dans <span class="menuseq"><span class="menu">Préférences</span>&#160;&#9656; <span class="submenu">Team</span>&#160;&#9656; <span class="submenu">Git</span>&#160;&#9656; <span class="menuitem">Synchronize</span></span> et sélectionner <code>Recursive Model Merge Strategy</code> dans <code>Preferred merge strategy</code></p>
+<p>Allez dans <span class="menuseq"><b class="menu">Préférences</b>&#160;<i class="fa fa-angle-right caret"></i> <b class="submenu">Team</b>&#160;<i class="fa fa-angle-right caret"></i> <b class="submenu">Git</b>&#160;<i class="fa fa-angle-right caret"></i> <b class="menuitem">Synchronize</b></span> et sélectionner <code>Recursive Model Merge Strategy</code> dans <code>Preferred merge strategy</code></p>
 <div class="imageblock">
 <div class="content">
 <img src="images/mergestrategy.png" alt="mergestrategy" width="100%">
@@ -5318,7 +5334,7 @@ installez le composant Papyrus complémentaire <span class="menuseq"><span class
 <p>Ouvrez un nouveau projet (en pensant à le définir du type <code>SysML</code>)</p>
 </li>
 <li>
-<p>Ajoutez votre propre organisation (en utilisant les <code>packages</code> comme vu en cours) si besoin (<span class="menuseq"><span class="menu">right</span>&#160;&#9656; <span class="submenu">click</span>&#160;&#9656; <span class="menuitem">add</span></span>)</p>
+<p>Ajoutez votre propre organisation (en utilisant les <code>packages</code> comme vu en cours) si besoin (<span class="menuseq"><b class="menu">right</b>&#160;<i class="fa fa-angle-right caret"></i> <b class="submenu">click</b>&#160;<i class="fa fa-angle-right caret"></i> <b class="menuitem">add</b></span>)</p>
 </li>
 </ul>
 </div>
@@ -5326,7 +5342,7 @@ installez le composant Papyrus complémentaire <span class="menuseq"><span class
 <div class="content">
 <a class="image" href="pkg-organisation.png"><img src="images/pkg-organisation.png" alt="organization" height="300"></a>
 </div>
-<div class="title">Figure 70. Exemple d&#8217;organisation</div>
+<div class="title">Figure 71. Exemple d&#8217;organisation</div>
 </div>
 </div>
 <div class="sect3">
@@ -5453,7 +5469,7 @@ modèles avec les éléments des autres, au fur et à mesure.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="__em_delivrables_em_attendus">4.5.2. <em>Delivrables</em> attendus</h4>
+<h4 id="_em_delivrables_em_attendus">4.5.2. <em>Delivrables</em> attendus</h4>
 <div class="paragraph">
 <p>Vous déposerez avant le 08/01/2016 à minuit sur le dépôt moodle votre rapport
 final au format <code>.pdf</code>.</p>
@@ -5575,7 +5591,7 @@ En cas de besoin, n&#8217;hésitez pas à nous contacter (<a href="mailto:bruel@
 <div class="sect2">
 <h3 id="_about">4.6. About&#8230;&#8203;</h3>
 <div class="paragraph">
-<p>Document generated with <a href="http://asciidoctor.org/">Asciidoctor</a> <code>1.5.5</code> from <code>Dan Allen</code> by <a href="mailto:{bruel,christelle.chaudet}@irit.fr">Jean-Michel Bruel &amp; Christelle Chaudet</a>.
+<p>Document generated with <a href="http://asciidoctor.org/">Asciidoctor</a> <code>1.5.6.1</code> from <code>Dan Allen</code> by <a href="mailto:{bruel,christelle.chaudet}@irit.fr">Jean-Michel Bruel &amp; Christelle Chaudet</a>.
 <span class="image"><a class="image" href="http://creativecommons.org/licenses/by-sa/3.0/"><img src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" alt="Licence Creative Commons" title="TP SysML"></a></span>
 <a href="http://creativecommons.org/licenses/by-sa/3.0/">licence Creative Commons Paternité - Partage à l&#39;Identique 3.0 non transposé</a>.</p>
 </div>
@@ -5615,7 +5631,7 @@ En cas de besoin, n&#8217;hésitez pas à nous contacter (<a href="mailto:bruel@
 </div>
 </div>
 <div class="sect1">
-<h2 id="__span_class_icon_i_class_fa_fa_star_o_title_tp_sysml_i_span_faq">6. <span class="icon"><i class="fa fa-star-o" title="TP SysML"></i></span> FAQ</h2>
+<h2 id="_span_class_icon_i_class_fa_fa_star_o_title_tp_sysml_i_span_faq">6. <span class="icon"><i class="fa fa-star-o" title="TP SysML"></i></span> FAQ</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Dans ce qui suit, les logos qui accompagnent les réponses aux questions signifient :</p>
@@ -5676,58 +5692,58 @@ et des responsables thématiques.</p>
 <div class="ulist">
 <ul>
 <li>
-<p><a id="ENS2013"></a>[ENS2013] L. Gendre et J.-M. Virely, SysML. Tutoriel du 13/06/2013. ENS Cachan.</p>
+<p>[<a id="ENS2013"></a>] L. Gendre et J.-M. Virely, SysML. Tutoriel du 13/06/2013. ENS Cachan.</p>
 </li>
 <li>
-<p><a id="FIO2012"></a>[FIO2012] Fiorèse S., Meinadier J., Découvrir et comprendre l’ingénierie système, AFIS 2012.</p>
+<p>[<a id="FIO2012"></a>] Fiorèse S., Meinadier J., Découvrir et comprendre l’ingénierie système, AFIS 2012.</p>
 </li>
 <li>
-<p><a id="FMS"></a>[FMS] A. Moore, R. Steiner, S. Friedenthal, A Practical Guide to SysML, The MK/OMG Press, MK/OMG Press, 2011 (2nd edition).</p>
+<p>[<a id="FMS"></a>] A. Moore, R. Steiner, S. Friedenthal, A Practical Guide to SysML, The MK/OMG Press, MK/OMG Press, 2011 (2nd edition).</p>
 </li>
 <li>
-<p><a id="HAS2012"></a>[HAS2012] Haskins C., SE Handbook Working Group, INCOSE Systems Engineering Handbook: Version 3.2.2, International Council on Systems Engineering, 2012.</p>
+<p>[<a id="HAS2012"></a>] Haskins C., SE Handbook Working Group, INCOSE Systems Engineering Handbook: Version 3.2.2, International Council on Systems Engineering, 2012.</p>
 </li>
 <li>
-<p><a id="KAP2007"></a>[KAP2007] Kapurch S., NASA Systems Engineering Handbook, 2007 (<a href="http://ntrs.nasa.gov/archive/nasa/casi.ntrs.nasa.gov/20080008301_2008008500.pdf">pdf</a>).</p>
+<p>[<a id="KAP2007"></a>] Kapurch S., NASA Systems Engineering Handbook, 2007 (<a href="http://ntrs.nasa.gov/archive/nasa/casi.ntrs.nasa.gov/20080008301_2008008500.pdf">pdf</a>).</p>
 </li>
 <li>
-<p><a id="MeDICIS"></a>[MeDICIS] ENSI Bourges/PRiSM.</p>
+<p>[<a id="MeDICIS"></a>] ENSI Bourges/PRiSM.</p>
 </li>
 <li>
-<p><a id="REQ2012"></a>[REQ2012] Guide Bonnes Pratiques en Ingénierie des Exigences, AFIS 2012.</p>
+<p>[<a id="REQ2012"></a>] Guide Bonnes Pratiques en Ingénierie des Exigences, AFIS 2012.</p>
 </li>
 <li>
-<p><a id="Roques2010"></a>[Roques2010] <a href="http://www.dotnetguru2.org/proques/index.php">Pascal Roques</a>. SysML par l&#8217;exemple - Un langage de modélisation pour systèmes complexes. Eyrolles. À acheter <a href="http://www.numilog.com/LIVRES/FICHES/62775.Livre">ici</a>.</p>
+<p>[<a id="Roques2010"></a>] <a href="http://www.dotnetguru2.org/proques/index.php">Pascal Roques</a>. SysML par l&#8217;exemple - Un langage de modélisation pour systèmes complexes. Eyrolles. À acheter <a href="http://www.numilog.com/LIVRES/FICHES/62775.Livre">ici</a>.</p>
 </li>
 <li>
-<p><a id="SeeBook2012"></a>[SeeBook2012] Embedded Systems Analysis and Modeling with SysML, UML and AADL, F. Kordon, J. Hugues, A. Canals, A. Dohet, Wiley, 2013.</p>
+<p>[<a id="SeeBook2012"></a>] Embedded Systems Analysis and Modeling with SysML, UML and AADL, F. Kordon, J. Hugues, A. Canals, A. Dohet, Wiley, 2013.</p>
 </li>
 <li>
-<p><a id="Sommerville1997"></a>[Sommerville1997] Ian Sommerville, Pete Sawyer. Requirements Engineering: A Good Practice Guide. Wiley, 1997.</p>
+<p>[<a id="Sommerville1997"></a>] Ian Sommerville, Pete Sawyer. Requirements Engineering: A Good Practice Guide. Wiley, 1997.</p>
 </li>
 <li>
-<p><a id="SysML"></a>[SysML] OMG. Systems modeling language version 1.3. Technical report, 2012.</p>
+<p>[<a id="SysML"></a>] OMG. Systems modeling language version 1.3. Technical report, 2012.</p>
 </li>
 <li>
-<p><a id="taoup"></a>[taoup] Eric Steven Raymond. 'The Art of Unix Programming'. Addison-Wesley. ISBN 0-13-142901-9.</p>
+<p>[<a id="taoup"></a>] Eric Steven Raymond. 'The Art of Unix Programming'. Addison-Wesley. ISBN 0-13-142901-9.</p>
 </li>
 <li>
-<p><a id="Walsh1999"></a>[Walsh1999] Norman Walsh &amp; Leonard Muellner. DocBook - The Definitive Guide. O&#8217;Reilly &amp; Associates. 1999. ISBN 1-56592-580-7.</p>
+<p>[<a id="Walsh1999"></a>] Norman Walsh &amp; Leonard Muellner. DocBook - The Definitive Guide. O&#8217;Reilly &amp; Associates. 1999. ISBN 1-56592-580-7.</p>
 </li>
 <li>
-<p><a id="Harmony"></a>[Harmony] Bruce Powel Douglass. Real-Time Agility: The Harmony/ESW Method for Real-Time and Embedded Systems Development. Addison-Wesley Professional, 2009. ISBN-10: 0-321-54549-4</p>
+<p>[<a id="Harmony"></a>] Bruce Powel Douglass. Real-Time Agility: The Harmony/ESW Method for Real-Time and Embedded Systems Development. Addison-Wesley Professional, 2009. ISBN-10: 0-321-54549-4</p>
 </li>
 <li>
-<p><a id="Styles"></a>[Styles] Scott W. Ambler. The Elements of UML 2.0 Style. Cambridge University Press, 2005. ISBN: 0-521-61678-6</p>
+<p>[<a id="Styles"></a>] Scott W. Ambler. The Elements of UML 2.0 Style. Cambridge University Press, 2005. ISBN: 0-521-61678-6</p>
 </li>
 <li>
-<p><a id="Fowler2004"></a>[Fowler2004] Martin Fowler. UML 2.0 INFORMATIQUE PROFESSIONNELLE, 2004.</p>
+<p>[<a id="Fowler2004"></a>] Martin Fowler. UML 2.0 INFORMATIQUE PROFESSIONNELLE, 2004.</p>
 </li>
 <li>
-<p><a id="Fejoz2013"></a>[Fejoz2013] Loïc Fejoz. <a id="SysML4STI2D"></a>SysML4STI2D, présentation de SysML en STI2D, 2004. Disponible <a href="http://fr.slideshare.net/REALTIMEATWORK/sysml4sti2d">ici</a>.</p>
+<p>[<a id="Fejoz2013"></a>] Loïc Fejoz. <a id="SysML4STI2D"></a>SysML4STI2D, présentation de SysML en STI2D, 2004. Disponible <a href="http://fr.slideshare.net/REALTIMEATWORK/sysml4sti2d">ici</a>.</p>
 </li>
 <li>
-<p><a id="OMG2009"></a>[OMG2009] The Current State of Model Based Systems Engineering: Results from the OMG SysML Request for Information.
+<p>[<a id="OMG2009"></a>] The Current State of Model Based Systems Engineering: Results from the OMG SysML Request for Information.
 Mary Bone and Robert Cloutier, 2009. Disponible <a href="http://www.omgsysml.org/SysML_2009_RFI_Response_Summary-bone-cloutier.pdf">ici</a>.</p>
 </li>
 </ul>
@@ -5735,7 +5751,7 @@ Mary Bone and Robert Cloutier, 2009. Disponible <a href="http://www.omgsysml.org
 </div>
 </div>
 <div class="sect1">
-<h2 id="_glossaire_et_définition">8. Glossaire et définition</h2>
+<h2 id="_glossaire_et_définition">Glossaire et définition</h2>
 <div class="sectionbody">
 <div class="admonitionblock warning">
 <table>
@@ -5751,31 +5767,31 @@ Ces définitions seront enrichies au fur et à mesure du cours.
 </div>
 <div class="dlist">
 <dl>
-<dt class="hdlist1"><a id="AFIS"></a>[AFIS]</dt>
+<dt class="hdlist1">[<a id="AFIS"></a>]</dt>
 <dd>
 <p><strong>A</strong>ssociation <strong>F</strong>rançaise d'<strong>I</strong>ngénierie <strong>S</strong>ystème (<a href="https://www.afis.fr" class="bare">https://www.afis.fr</a>)</p>
 </dd>
-<dt class="hdlist1"><a id="CMMI"></a>[CMMI]</dt>
+<dt class="hdlist1">[<a id="CMMI"></a>]</dt>
 <dd>
 <p>CMMI</p>
 </dd>
-<dt class="hdlist1"><a id="IEEE"></a>[IEEE]</dt>
+<dt class="hdlist1">[<a id="IEEE"></a>]</dt>
 <dd>
 <p>IEEE</p>
 </dd>
-<dt class="hdlist1"><a id="INCOSE"></a>[INCOSE]</dt>
+<dt class="hdlist1">[<a id="INCOSE"></a>]</dt>
 <dd>
 <p>INCOSE</p>
 </dd>
-<dt class="hdlist1"><a id="IS"></a>[IS]</dt>
+<dt class="hdlist1">[<a id="IS"></a>]</dt>
 <dd>
 <p><strong>I</strong>ngénierie <strong>S</strong>ystème (abbréviation)</p>
 </dd>
-<dt class="hdlist1"><a id="MOA"></a>[MOA]</dt>
+<dt class="hdlist1">[<a id="MOA"></a>]</dt>
 <dd>
 <p>MOA</p>
 </dd>
-<dt class="hdlist1"><a id="MOE"></a>[MOE]</dt>
+<dt class="hdlist1">[<a id="MOE"></a>]</dt>
 <dd>
 <p>MOE</p>
 </dd>
@@ -5784,7 +5800,7 @@ Ces définitions seront enrichies au fur et à mesure du cours.
 </div>
 </div>
 <div class="sect1">
-<h2 id="__span_class_icon_i_class_fa_fa_cogs_title_tp_sysml_i_span_contributions_welcome"><span class="icon"><i class="fa fa-cogs" title="TP SysML"></i></span> Contributions welcome!</h2>
+<h2 id="_span_class_icon_i_class_fa_fa_cogs_title_tp_sysml_i_span_contributions_welcome"><span class="icon"><i class="fa fa-cogs" title="TP SysML"></i></span> Contributions welcome!</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>N&#8217;hésitez pas à contribuer au projet <span class="icon"><i class="fa fa-github" title="TP SysML"></i></span> qui héberge ce site (<a href="https://github.com/jmbruel/masterDL2016" class="bare">https://github.com/jmbruel/masterDL2016</a>) en lisant <a href="https://github.com/jmbruel/masterDL2016/blob/master/CONTRIBUTING.adoc">ces consignes</a>.</p>
@@ -5793,7 +5809,7 @@ Ces définitions seront enrichies au fur et à mesure du cours.
 <div class="content">
 <div class="paragraph">
 <p>Document réalisé par <a href="mailto:bruel@irit.fr">Jean-Michel Bruel</a> via <a href="http://asciidoctor.org/" class="bare">http://asciidoctor.org/</a>
-(version <code>1.5.5</code>) from <code>Dan Alen</code>. <code>Licence Creative Commons</code>.
+(version <code>1.5.6.1</code>) from <code>Dan Alen</code>. <code>Licence Creative Commons</code>.
 <span class="image"><a class="image" href="http://creativecommons.org/licenses/by-sa/4.0/"><img src="images/icons/88x31.png" alt="Licence Creative Commons" title="TP SysML"></a></span>
 <a href="http://creativecommons.org/licenses/by-sa/4.0/">licence Creative Commons Paternité - Partage à l&#39;Identique 4.0 non transposé</a>.</p>
 </div>
@@ -5814,7 +5830,7 @@ Ces définitions seront enrichies au fur et à mesure du cours.
 <div id="footer">
 <div id="footer-text">
 Version 1.1<br>
-Last updated 2016-11-11 16:56:24 CET
+Last updated 2016-12-11 20:53:05 CET
 </div>
 </div>
 </body>

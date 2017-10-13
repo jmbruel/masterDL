@@ -3,9 +3,9 @@
 // (c) JMB - 2016
 //---------------------------------
 [[reqs]]
-= Les *exigences* et SysML
+= Les *exigences* (et SysML)
 ifndef::jmbtopic[]
-J.-M. Bruel -- 04/11/2016
+J.-M. Bruel -- {localdate}
 //------------------------------------ variables de configuration
 :jmbtopic:
 :linkcss:
@@ -91,9 +91,21 @@ les termes anglais et leurs traduction française. Nous précisons donc ici notr
 ifdef::slides[== Exigences]
 
 ifndef::slides[_Requirements_::]
-Exigences, c'est à dire une fonction ou une propriété que doit satisfaire le système considéré.
+Exigences, c'est à dire :
+
+[quote,"OMG SysML v1.5, p. 161"]
+_____
+ une fonction ou une propriété que doit satisfaire le système considéré.
+_____
+
+[{incremental}]
 Par nature une exigence doit pouvoir être *vérifiable*.
-En génie logiciel on parle plus classiquement des spécifications ("spec") pour parler des contraintes à respecter pour un système. Les ingénieurs systèmes ont depuis longtemps intégré le terme d'exigences comme traduction directe de _requirement_.
+
+[{incremental}]
+En génie logiciel on parle plus classiquement des spécifications ("spec") pour parler des contraintes à respecter pour un système.
+
+[{incremental}]
+Les ingénieurs systèmes ont depuis longtemps intégré le terme d'exigences comme traduction directe de _requirement_.
 
 ifdef::slides[== Besoin]
 
@@ -107,12 +119,13 @@ Il est important pour une exigence qu'elle ne soit pas ambiguë (contrairement a
 [[fig:eggs]]
 :mycaption: Spécification ambiguë
 ifndef::slides[.{mycaption} (taken from https://plus.google.com/100035762233109552669/posts/a8Hafq2hZ74)]
-image::ProgrammerHumor.jpg[alt="Joke",link="https://plus.google.com/100035762233109552669/posts/a8Hafq2hZ74",width=100,scaledwidth=40]
+image::ProgrammerHumor.jpg[alt="Joke",link="https://plus.google.com/100035762233109552669/posts/a8Hafq2hZ74",width=40%,scaledwidth=40]
 ifdef::slides[[detail]#{mycaption}#]
+
+ifdef::book[]
 
 Dans le cadre de la matrice qui nous sert de plan, nous somme ici :
 
-ifndef::book[]
 [cols="h,4*^",options="header",width="{mytablewidth}"]
 |======================
 |					| [red]*{Requirements}* 	| {Structure}	| {Behavior} 	| {Crosscutting}
@@ -127,6 +140,7 @@ endif::book[]
 
 On abordera :
 
+[{incremental}]
 - L'organization des _Requirements_
 - Les _Requirements properties_
 - Les _Requirements links_
@@ -151,10 +165,11 @@ endif::slides[]
 Il n'existe pas de diagramme {uml} pour traiter des exigences en particulier.
 C'est pourquoi ce diagramme a été introduit par {sysml}.
 
+
 [{topic}]
 == L'organisation des _Requirements_
 
-ifndef::book[]
+ifdef::book[]
 [cols="h,4*^",options="header",width="{mytablewidth}"]
 |======================
 |					| [red]*{Requirements}* 	| {Structure}	| {Behavior} 	| {Crosscutting}
@@ -175,7 +190,7 @@ ifdef::slides[:leveloffset: -1]
 
 Un _Requirement_ en {sysml} n'est qu'un bloc particulier.
 
-.Définition : image:sysml.jpeg[width=20] _Requirements_ (OMG SysML v1.3, p. 139)
+.Définition : image:sysml.jpeg[width=20] _Requirements_ (OMG SysML v1.5, p. 161)
 [CAUTION]
 ====
 _A requirement specifies a capability or condition that must (or should) be satisfied...
@@ -185,9 +200,9 @@ A requirement is defined as a stereotype of UML Class..._
 ifdef::slides[=== !]
 
 [[corde]]
-:mycaption: Un _Requirement_ en SysML (`P`)
+:mycaption: Un exemple de _Requirement_ en SysML (source <<SysML>>, p. 159)
 ifndef::slides[.{mycaption}]
-image::corde.png[width=100%]
+image::requirement.png[SysML and UML,width=50%,scaledwidth=50%]
 ifdef::slides[[detail]#{mycaption}#]
 
 [{topic}]
@@ -257,7 +272,7 @@ ifdef::slides[:leveloffset: +1]
 À partir du moment où on commence à définir des propriétés pour les éxigences,
 on peut considérer que l'on est à la frontière avec la phase d'analyse des exigences.
 
-ifndef::book[]
+ifdef::book[]
 [cols="h,4*^",options="header",width="{mytablewidth}"]
 |======================
 |					| [red]*{Requirements}* 	| {Structure}	| {Behavior} 	| {Crosscutting}
@@ -322,7 +337,7 @@ on considère que ces différents cas sont des options possibles de raffinement 
 
 ifdef::slides[== Les _Requirements links_ (suite)]
 
-:mycaption: Exemples de relations entre exigences (`M`)
+:mycaption: Exemples de relations entre exigences
 ifndef::slides[.{mycaption}]
 image::req-exp1.png[width=80%]
 ifdef::slides[[detail]#{mycaption}#]
@@ -338,7 +353,7 @@ dans la partie <<transvers,transverse>>.
 
 ifdef::slides[== !]
 
-:mycaption: Relations liées aux _requirements_ dans TOPCASED (`T`)
+:mycaption: Relations liées aux _requirements_ dans TOPCASED
 ifndef::slides[.{mycaption}]
 image::topcased-req-connections.png[width=50%]
 ifdef::slides[[detail]#{mycaption}#]
@@ -347,7 +362,7 @@ ifdef::slides[[detail]#{mycaption}#]
 
 Voici un exemple de `{req}` un peu plus étoffé, tiré de la norme (voir aussi <<rationale>>) :
 
-:mycaption: Exemples de composition d'exigences (tiré de <<SysML>>, `UK`)
+:mycaption: Exemples de composition d'exigences (tiré de <<SysML>>)
 ifndef::slides[.{mycaption}]
 image::hsuv-reqs1.png[width=80%]
 ifdef::slides[[detail]#{mycaption}#]
@@ -391,7 +406,7 @@ En général chaque _requirement_ devrait être relié à au moins un _use case_
 Bien que nous traitions les cas d'utilisation dans la partie <<behavior,comportement>>, nous les abordons
 	ici du fait de leur proximité avec les _requirements_.
 
-:mycaption: Exemple de lien entre use case et requirements (`T`)
+:mycaption: Exemple de lien entre use case et requirements
 ifndef::slides[.{mycaption}]
 image::req-uc-relation.png[width=50%]
 ifdef::slides[[detail]#{mycaption}#]
@@ -631,13 +646,20 @@ ifndef::slides[.{mycaption} (tirée de <<TestsIndustriels2009>>)]
 image::zigzag.png[width=90%, link="http://model-based-systems-engineering.com/2012/03/26/the-sysmod-zigzag-pattern/"]
 ifdef::slides[[detail]#{mycaption}#]
 
+[{topic}]
 == {revisions}
 
+ifndef::slides[]
 .Questions
 [NOTE,icon=tuxteacher.png]
 ====
-. Quelles sont les différences entre *besoins* et *exigences* ?
+endif::slides[]
+Quelles sont les différences entre *besoins* et *exigences* ?
 //. Qui dérive de qui parmis ces deux termes : _Exigences_ et _Besoins_ ?
-. Quelles sont les différences entre un *backlog de produit* et une liste d'*exigences*?
-. En quoi les cas d'utilisation sont-ils complémentaires des exigences?
+
+Quelles sont les différences entre un *backlog de produit* et une liste d'*exigences*?
+
+En quoi les cas d'utilisation sont-ils complémentaires des exigences?
+ifndef::slides[]
 ====
+endif::slides[]
