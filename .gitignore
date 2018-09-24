@@ -3,3 +3,5 @@ dzslides/
 asciidoctor.css
 introduction.dzslides.html
 pygments-default.css
+Gemfile.lock
+

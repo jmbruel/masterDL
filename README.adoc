@@ -1,6 +1,6 @@
 :jmb: mailto:jbruel@gmail.com[J.-M. Bruel]
-:website: https://jmbruel.github.io/masterDL2016/
-:websitegh: https://github.com/jmbruel/masterDL2016
+:website: https://jmbruel.github.io/masterDL/
+:websitegh: https://github.com/jmbruel/masterDL
 :numbered:
 :source-higlight: asciidoctor
 

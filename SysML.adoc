@@ -16,7 +16,7 @@ J.-M. Bruel -- 10/11/2016
 :numbered:
 :status:
 :imagesdir: images
-:siteurl: https://jmbruel.github.io/masterDL2016/
+:siteurl: https://jmbruel.github.io/masterDL/
 //------------------------------------ Slides uniquement
 ifdef::slides[]
 //--------------------- dzslides slides

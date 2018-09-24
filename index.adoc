@@ -10,7 +10,7 @@ V1.1, {localdate}
 :numbered:
 :icons: font
 :imagesdir: images
-:website: https://jmbruel.github.io/masterDL2016/
+:website: https://jmbruel.github.io/masterDL/
 :websitegh: https://github.com/jmbruel/masterDL2016
 :jmbtopic: //for sections integration...
 
@@ -115,7 +115,7 @@ include::glossaire.adoc[]
 :numbered!:
 == icon:cogs[] Contributions welcome!
 
-N'hésitez pas à contribuer au projet icon:github[] qui héberge ce site ({websitegh}) en lisant https://github.com/jmbruel/masterDL2016/blob/master/CONTRIBUTING.adoc[ces consignes].
+N'hésitez pas à contribuer au projet icon:github[] qui héberge ce site ({websitegh}) en lisant https://github.com/jmbruel/masterDL/blob/master/CONTRIBUTING.adoc[ces consignes].
 
 //---------------------------- À propos... -------------------------
 include::about.asc[]

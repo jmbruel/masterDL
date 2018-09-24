@@ -1,6 +1,6 @@
 //---------------------------------
 // Introduction à l'IS ("2ème cours => exigences")
-// (c) JMB - 2016
+// (c) JMB - 2016-2018
 //---------------------------------
 [[reqs]]
 = Les *exigences* (et SysML)
@@ -16,7 +16,7 @@ J.-M. Bruel -- {localdate}
 :numbered:
 :status:
 :imagesdir: images
-:siteurl: https://jmbruel.github.io/masterDL2016/
+:siteurl: https://jmbruel.github.io/masterDL/
 //------------------------------------ Slides uniquement
 ifdef::slides[]
 //--------------------- dzslides slides

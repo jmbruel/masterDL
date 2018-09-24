@@ -15,7 +15,7 @@ ifndef::jmbtopic[J.-M. Bruel -- 14/09/2017]
 :numbered:
 :status:
 :imagesdir: images
-:siteurl: https://jmbruel.github.io/masterDL2016/
+:siteurl: https://jmbruel.github.io/masterDL/
 //------------------------------------ Slides uniquement
 ifdef::slides[]
 //--------------------- dzslides slides
@@ -161,7 +161,7 @@ WARNING: J'ai enlevé `Ingénierie` et `Système` qui était sur-représentés b
 == Discipline _relativement_ nouvelle
 
 [{incremental}]
-- un peu + de dix ans
+- un peu + de 15 ans
 - abordée dans des écoles d'ingénieurs (INSA, ISAE, ...)
 - spécificité du {mdl} à l'UPS
 
@@ -373,4 +373,9 @@ ifdef::slides[]
 - Plan du module
 - Maintient du site (je compte sur vous!)
 
+endif::slides[]
+
+ifdef::slides[]
+[{intro}]
+== *The End* {nbsp}{nbsp}{nbsp}(for now)
 endif::slides[]
