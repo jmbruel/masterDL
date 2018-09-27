@@ -1,10 +1,10 @@
 //---------------------------------
 // Introduction à l'IS ("chapeau")
-// (c) JMB - 2016
+// (c) JMB - 2016-2018
 //---------------------------------
 [[Introduction]]
 = icon:star-half[] Introduction à l'*IS*
-ifndef::jmbtopic[J.-M. Bruel -- 14/09/2017]
+ifndef::jmbtopic[J.-M. Bruel -- {localdate}]
 //------------------------------------ variables de configuration
 :linkcss:
 :git-version: 2.9.2
@@ -144,6 +144,11 @@ ifndef::slides[.MindMap 2017 (résultat du brainstorming collectif)]
 image::IS2017.svg[width=80%]
 ifdef::slides[NOTE: [detail]#MindMap 2017 (résultat du brainstorming collectif)#]
 
+Voici la _mind map_ réalisée par les étudiants de la promo 2018 :
+
+ifndef::slides[.MindMap 2018 (résultat du brainstorming collectif)]
+image::IS2018.png[width=80%]
+ifdef::slides[NOTE: [detail]#MindMap 2018 (résultat du brainstorming collectif)#]
 
 [{topic}]
 == Rendons à César...

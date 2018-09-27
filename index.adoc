@@ -1,6 +1,6 @@
 //---------------------------------
 // Introduction à l'IS ("chapeau")
-// (c) JMB - 2016
+// (c) JMB - 2016-2018
 //---------------------------------
 = Initiation à l'Ingénierie Système
 J.-M. Bruel <jbruel@gmail.com>
