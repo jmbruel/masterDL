@@ -2,7 +2,7 @@
 DZSLIDES=../asciidoctor-backends/slim/dzslides
 STYLE=../asciidoctor-stylesheet-factory/stylesheets/jmb.css
 #ASCIIDOCTOR=asciidoctor  -a icons=font -a linkcss! -a data-uri
-ASCIIDOCTOR=asciidoctor -a icons=font
+ASCIIDOCTOR=asciidoctor
 EXT=adoc
 OUTPUT=.
 SITE=../jmbruel.github.io/teaching
@@ -19,6 +19,7 @@ all: $(OUTPUT)/$(MAIN).html $(OUTPUT)/$(MAIN).dzslides.html $(OUTPUT)/$(MAIN).te
 $(OUTPUT)/%.html: %.$(EXT) $(DEP)
 	@echo '==> Compiling asciidoc files to generate HTML'
 	$(ASCIIDOCTOR) -b html5 \
+		-a icons=font \
 		-a numbered \
 		-a toc2 \
 		-r asciidoctor-diagram \

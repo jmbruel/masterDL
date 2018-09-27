@@ -62,10 +62,9 @@ Les spécifications initiales du système sont ici :
 
 == Outillage
 
-Vérifiez que vous possédez bien sur votre machine : {tool} `{toolversion}`
-(ou une version supérieure).
+Vérifiez que vous possédez bien sur votre machine : {tool} (au moins en version `{toolversion}` mais la dernière version est recommandée).
 
-image::mars1.png[width=50%]
+image::papyrus4.png[width=50%]
 
 NOTE: Si vous souhaitez installer {tool}, suivez le
 https://www.eclipse.org/papyrus/download.html[guide d’installation du site de Papyrus].
@@ -79,7 +78,7 @@ se trouvent sur le dépôt GitHub : {depotgithub}.
 - Si vous avez installé directement {papyrus} (sans passer par le plugin {eclipse}),
 installez le composant Papyrus complémentaire menu:Help[Install Papyrus Additional Components > Papyrus UML Compare Feature].
 - Installez également le plugin suivant en allant sur menu:Help[Install New Software > ...] :
-http://download.eclipse.org/modeling/emf/compare/updates/logical/emf.compare/integration
+http://download.eclipse.org/modeling/mdt/papyrus/components/compare/updates/nightly/
 - Allez dans menu:Préférences[Team > Git > Synchronize] et sélectionner `Recursive Model Merge Strategy` dans `Preferred merge strategy`
 +
 image::mergestrategy.png[width=100%]
