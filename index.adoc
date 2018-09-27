@@ -5,10 +5,10 @@
 = Initiation à l'Ingénierie Système
 J.-M. Bruel <jbruel@gmail.com>
 V1.1, {localdate}
+:icons: font
 :toc-title: Table des matières
 :toc: left
 :numbered:
-:icons: font
 :imagesdir: images
 :website: https://jmbruel.github.io/masterDL/
 :websitegh: https://github.com/jmbruel/masterDL2016

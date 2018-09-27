@@ -18,7 +18,7 @@ all: $(OUTPUT)/$(MAIN).html $(OUTPUT)/$(MAIN).dzslides.html $(OUTPUT)/$(MAIN).te
 
 $(OUTPUT)/%.html: %.$(EXT) $(DEP)
 	@echo '==> Compiling asciidoc files to generate HTML'
-	$(ASCIIDOCTOR) -b html5 \
+	$(ASCIIDOCTOR) \
 		-a icons=font \
 		-a numbered \
 		-a toc2 \

@@ -23,7 +23,7 @@ include::definitions.txt[]
 :tool: {papyrus}
 :toolname: Papyrus
 :toolversion: 1.1.2
-:toolversionlast: 2.0.1
+:toolversionlast: 4.0.0
 :daniel: mailto:damyot@uottawa.ca[Daniel Amyiot]
 :depotgithub: https://github.com/M2DL/mib-2016
 :doors: https://fr.wikipedia.org/wiki/DOORS[DOORS]
