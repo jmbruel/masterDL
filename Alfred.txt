@@ -1,0 +1,54 @@
+L’idée est de créer un système qui viendra rendre les services suivants :
+- Affichage d’un indicateur de santé de la maison
+- Affichage des indicateurs détaillés sur différents domaines (en instantané et avec des graphiques) / en le ramenant à des indicateurs intelligibles pour l’humain 
+- Affichage des prévisions pour la journée / pour la semaine
+- Affichage de conseils / Alertes pour bénéficier au mieux des capacités passives de la maison
+
+L'indicateur de santé doit être capable de combiner les informations provenant de la mesure de plusieurs grandeurs physiques :
+- Température
+- Humidité
+- CO2
+- COV
+- Déplacement d’air (détecter un courant d’air)
+- Consommation électrique de la maison
+- Production électrique
+- Quantité d’eau chaude restante 
+- Charge de la voiture électrique (optionnel en fonction de ce qu’affiche la voiture)
+- Ratio production / consommation
+- etc.
+
+Liste des indicateurs détaillés :
+- Qualité de l’air 
+- Consommation électrique (par rapport à une journée type de la saison ou bien en € ou bien ...)
+- Production électrique (par rapport à une journée type de la saison ou bien en € ou bien ...)
+- Voiture (en capacité de déplacement)
+- Quantité d’eau chaude (en nombre de douche ou autres)
+- Ratio production/consommation électrique
+
+Affichage des prévisions pour la journée / pour la semaine possibles :
+- Qualité de l’air
+- Consommation électrique prévue
+- Production d’énergie prévue
+- La voiture sera chargée pour faire votre trajet quotidien à 16h30…
+- Vous pourrez prendre une douche chaude à 8h10 demain matin …
+- Prévision du ratio production / consommation
+
+Affichage de conseils / alertes possibles
+- Ouvrir la fenêtre pendant 10 minutes
+- Ne pas faire entrer de nouveaux visiteurs
+- Limiter à 5 pendant les 2 prochaines heures le nombre de personnes présentes dans la maison
+- N’oubliez pas de fermer la fenêtre
+- Faire des signaux sonores (~ alarme environnementale)
+
+Pour réaliser ce système vous devrez:
+- Bien identifier le système et ses acteurs
+- Définir l’ensemble des éléments matériels nécessaire pour que le système fonctionne avec une qualité et une précision suffisante
+- Définir l’ensemble des éléments logiciels à implémenter ou réutiliser
+- Pour le système, préciser les différents scénarii d’usage
+- Définir les indicateurs à restituer et leur mode de calcul
+- Définir les interactions entre les éléments matériels
+- Définir les interactions entre le matériel et le logiciel
+- Définir les interactions entre les différents éléments logiciels
+- Définir les interactions entre le système et les utilisateurs/habitants
+- Définir les déploiement des composants logiciels sur les noeuds/plateformes d’exécution
+- Dimensionner le coût d’un tel système ?
