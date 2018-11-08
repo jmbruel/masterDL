@@ -2,7 +2,7 @@
 DZSLIDES=../asciidoctor-backends/slim/dzslides
 STYLE=../asciidoctor-stylesheet-factory/stylesheets/jmb.css
 #ASCIIDOCTOR=asciidoctor  -a icons=font -a linkcss! -a data-uri
-ASCIIDOCTOR=asciidoctor
+ASCIIDOCTOR=asciidoctor -a data-uri
 EXT=adoc
 OUTPUT=.
 SITE=../jmbruel.github.io/teaching

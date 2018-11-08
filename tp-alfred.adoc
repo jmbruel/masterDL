@@ -17,6 +17,15 @@
 // raccourcis sites
 :moodle: http://webetud.iut-blagnac.fr[Moodle]
 
+//----------- GitHub --------------
+ifdef::env-github[]
+:tip-caption: :bulb:
+:note-caption: :information_source:
+:important-caption: :heavy_exclamation_mark:
+:caution-caption: :fire:
+:warning-caption: :warning:
+endif::[]
+
 include::definitions.txt[]
 
 //---------------- Définitions
@@ -34,7 +43,7 @@ include::definitions.txt[]
 :jucmnav: http://jucmnav.softwareengineering.ca/ucm/bin/view/ProjetSEG/WebHome[jUCMNav]
 :masterdl: http://www.master-developpement-logiciel.fr/[Master DL]
 :alfredurl: https://docs.google.com/document/d/1gOKTkq29SlI3dVAIYpyYmNIh06eAz3PeCvyxF93knsg/edit
-:alfredtxt: Alfred.txt
+:alfredtxt: https://gist.github.com/jmbruel/c3c4a610f31c722313d3e3a33bdcf780
 :mib: {miburl}[MIB]
 :papyrus: https://www.eclipse.org/papyrus/[Papyrus]
 :urn: https://www.itu.int/rec/T-REC-Z.151-201210-I/en[URN]
@@ -115,7 +124,7 @@ Définition::
 	*Alfred* est le majordome artificiel de Batman et doit rendre un certain nombre de sercvices.
 
 Les informations concernant le cahier des charges sont disponibles ici :
-{alfretxt}.
+link:{alfredtxt}[spécification de référence].
 
 NOTE: Merci à Benoît Combemale et Johann pour l'idée initiale.
 
