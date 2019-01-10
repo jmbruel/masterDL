@@ -4,7 +4,7 @@
 //---------------------------------
 = icon:star-half[] La notation *SysML*
 ifndef::jmbtopic[]
-J.-M. Bruel -- 10/11/2016
+J.-M. Bruel -- {localdate}
 //------------------------------------ variables de configuration
 :jmbtopic:
 :correction:
@@ -66,7 +66,14 @@ include::definitions.txt[]
 endif::jmbtopic[]
 
 :defs: defs
+
 //---------------------------------------------------------------------------------
+ifdef::slides[]
+[{intro}]
+== Introduction
+endif::[]
+
+[{topic}]
 == Introduction
 
 La [[Matrice]]matrice qui nous servira de "carte de base" pour placer les activités
@@ -86,6 +93,7 @@ endif::slides[]
 
 ifdef::slides[:leveloffset: -1]
 
+[{topic}]
 === Points de vue
 
 Dans un axe horizontal, j'ai différencié quatre grands points de vue :
@@ -139,6 +147,7 @@ Ces trois points de vue n'étant pas indépendants les uns des autres, j'ai int�
 endif::slides[]
 
 [[devphase]]
+[{topic}]
 === Phase de développement
 
 Dans un axe vertical, j'ai différencié quatre grandes phases du cycle de vie du développement :
@@ -193,6 +202,7 @@ Bien sûr dans une organisation existante cette étape sera contrainte par les h
 endif::slides[]
 
 
+[{topic}]
 === {revisions}
 
 [qanda]
@@ -242,7 +252,7 @@ endif::correction[]
 ifdef::slides[:leveloffset: 0]
 
 //------------------------------------------------------ PDF Page break
-<<<
+ifndef::slides[<<<]
 [[Notation]]
 [{topic}]
 == Pourquoi une nouvelle notation
@@ -285,7 +295,7 @@ Mais...
 * Trop de diagrammes (13 sortes)
 
 //------------------------------------------------------ PDF Page break
-<<<
+ifndef::slides[<<<]
 [{intro}]
 == Introduction à SysML
 //---------------------------------------------------------------------------------
@@ -294,26 +304,28 @@ Si vous ne deviez lire qu'un seul chapitre, voilà ce qu'il faudrait retenir.
 
 ifdef::slides[:leveloffset: -1]
 
+[{topic}]
 === Fiche d'identité
 
 Voici à quoi pourrait ressembler la fiche d'identité de {sysml} :
 
 include::fiche.txt[]
 
+[{topic}]
 === SysML, c'est...
 
 Un ensemble de 9 types de diagrammes::
 * Diagrammes structuraux
-** Diagrammes de définition de blocs (+{bdd}+)
-** Diagrammes internes de blocs (+{ibd}+)
-** Diagrammes paramétriques (+{par}+)
-** Diagrammes de packages (+pkg+)
+** Diagrammes de définition de blocs ({bdd})
+** Diagrammes internes de blocs ({ibd})
+** Diagrammes paramétriques ({par})
+** Diagrammes de packages ({pkg})
 * Diagrammes comportementaux
-** Diagrammes de séquence (+{seq}+)
-** Diagrammes d'activité (+{act}+)
-** Diagrammes de cas d'utilisation (+{uc}+)
-** Diagrammes d'états (+{stm}+)
-* Diagramme d'exigence (+{req}+)
+** Diagrammes de séquence ({seq})
+** Diagrammes d'activité ({act})
+** Diagrammes de cas d'utilisation ({uc})
+** Diagrammes d'états ({stm})
+* Diagramme d'exigence ({req})
 
 ifdef::slides[=== SysML, c'est (suite) :]
 
@@ -322,6 +334,7 @@ Un profil {uml}::
 Une notation::
  	Une notation de plus en plus enseignée et connue et qui servira donc de plus en plus de *référence* à la modélisation des systèmes.
 
+[{topic}]
 === SysML, ce n'est pas...
 
 Une méthode::
@@ -334,6 +347,7 @@ Un outil::
 Ne dites pas "le SysML" mais tout simplement "SysML".
 ====
 
+[{topic}]
 === Différence avec UML
 
 La figure <<liensdiag,suivante>>, tirée de la spécification, résume bien les liens entre {sysml} et {uml}, à savoir que {sysml} reprend une partie seulement des concepts d'{uml} (appelée +UML4SysML+) en y ajoutant des concepts nouveaux.
@@ -343,6 +357,7 @@ La figure <<liensdiag,suivante>>, tirée de la spécification, résume bien les 
 ifdef::book[image::diff.png[scale=60]]
 ifndef::book[image::diff.png[width="60%"]]
 
+[{topic}]
 === Qui est "derrière"?
 
 Industrie::
@@ -359,6 +374,7 @@ AP-233, INCOSE, Georgia Institute of Technology, AFIS, ...
 La liste complète des membres de {Lomg} est accessible à l'URL : http://www.omg.org/cgi-bin/apps/membersearch.pl
 ====
 
+[{topic}]
 === Organisation des différents diagrammes
 
 {sysml} propose de couvrir la modélisation d'un système en 9 diagrammes. Ces diagrammes couvrent
@@ -394,7 +410,8 @@ endif::slides[]
 ifdef::slides[:leveloffset: 0]
 
 //------------------------------------------------------ PDF Page break
-<<<
+ifndef::slides[<<<]
+[{topic}]
 == Différence entre modèle et dessin
 
 {SysML} n'est pas une palette de dessins et d'éléments de base servant à faire
@@ -434,8 +451,9 @@ include::bdd.asc[]
 include::seq.asc[]
 
 //------------------------------------------------------ PDF Page break
-<<<
+ifndef::slides[<<<]
 [[Outils]]
+[{topic}]
 == 	Outils SysML
 //---------------------------------------------------------------------------------
 
@@ -457,8 +475,9 @@ endif::slides[]
 
 
 //------------------------------------------------------ PDF Page break
-<<<
+ifndef::slides[<<<]
 [[org]]
+[{topic}]
 == Organisation
 //---------------------------------------------------------------------------------
 
@@ -477,6 +496,7 @@ ifdef::slides[]
 :leveloffset: -1
 endif::slides[]
 
+[{topic}]
 === Cadre pour les diagrammes
 
 
@@ -495,7 +515,7 @@ ifdef::book[]
 le type de diagramme (`{req}`, `{act}`, `{bdd}`, `{ibd}`, `{stm}`, etc.); le type d'élément (_package_, _block_, _activity_, etc.); le nom de l'élément et le nom du diagramme ou de la vue.
 endif::book[]
 
-ifdef::slides[== Cadre (suite)]
+ifdef::slides[=== Cadre (suite)]
 
 Dans l'exemple ci-dessous, le diagramme "_Context_Overview_" est un _Block Definition Diagram_ (type `{bdd}`) qui représente un
 _package_, nommé "Context".
@@ -523,6 +543,7 @@ Pour ceux qui cherchent à étudier un diagramme en particulier voici un plan de
 				|		`{req}`			|     `{bdd}`, `{ibd}`, `{seq}`, `{par}`   		| `{uc}`, `{seq}`, `{stm}`, `{act}`				| `{par}`
 |======================
 
+[{topic}]
 === Fondements
 
 On abordera :
@@ -534,6 +555,7 @@ On abordera :
 - Les _Dependencies_
 
 [[package]]
+[{topic}]
 === Le _Package Diagram_
 
 Le diagramme de paquetage permet de représenter l'organisation des modèles en paquetages.
@@ -554,6 +576,7 @@ Les modèles peuvent être organisés selon toutes sortes de considération (cf.
 - par points de vue
 - etc.
 
+[{topic}]
 === Les différent types de _packages_
 
 Il existe plusieurs types de _package_ :
@@ -575,6 +598,7 @@ vue (un _packetage_ particulier, stéréotypé `+<<view>>+`) est conforme (dépe
 ====
 
 [[organisation]]
+[{topic}]
 === Les organisations possibles
 
 Les modèles peuvent être organisés selon toutes sortes de considération :
@@ -586,45 +610,44 @@ Les modèles peuvent être organisés selon toutes sortes de considération :
 - par points de vue (e.g., sécurité, performance, ...)
 - etc.
 
-ifdef::slides[<<<]
+ifdef::slides[=== Les organisations possibles (suite)]
 
 .Exemple d'organisation simple
 ifdef::book[image::pkg-organisation2.png[scale=40]]
 ifndef::book[image::pkg-organisation2.png[width="50%"]]
 
-ifdef::slides[<<<]
+ifdef::slides[=== Les organisations possibles (suite)]
 
 .Représentation de cette organisation dans un outil
 ifdef::book[image::pkg-organisation-modelview.png[scale=50]]
 ifndef::book[image::pkg-organisation-modelview.png[width="30%"]]
 
-ifdef::slides[<<<]
+ifdef::slides[=== Les organisations possibles (suite)]
 
 ifndef::book[]
 .Un autre exemple d'organisation
 image::pkg-organisation.png[width="30%"]
 endif::book[]
 
-ifdef::slides[<<<]
+ifdef::slides[=== Les organisations possibles (suite)]
 
 .Un autre exemple d'organisation
 ifdef::book[image::pkg-topcased.png[scale=40]]
 ifndef::book[image::pkg-topcased.png[width="40%"]]
 
-ifdef::slides[<<<]
+ifdef::slides[=== Les organisations possibles (suite)]
 
 [TIP]
 ====
-L'outil {topcased} propose, lors de la création d'un premier modèle, de créer une organisation
-"type" par défaut.
+L'outil {modelio} propose, lors de la création d'un premier modèle une organisation "type" par défaut.
 
-ifdef::book[image:pkg-template.png[scale=30]]
-ifndef::book[image:pkg-template.png[width="80%"]]
-ifndef::book[image:pkg-topcased-default.png[width="80%"]]
+ifdef::book[image:modelio3.8SysML/organisation.png[scale=30]]
+ifndef::book[image:modelio3.8SysML/organisation.png[width="60%"]]
 
 ====
 
 [[namespace]]
+[{topic}]
 === La notion de _Namespaces_
 
 Un _package_ permet de créer un espace de nommage pour tous les éléments qu'il contient.
@@ -647,6 +670,7 @@ Dans les outils {sysml}, il faut souvent demander explicitement à voir les noms
 des éléments (la plupart du temps dans les options graphiques).
 ====
 
+[{topic}]
 === Les dépendances
 
 Un certain nombre de dépendances peuvent exister entre des éléments de _package_
@@ -668,6 +692,7 @@ _Allocation_::
 	l'élément (e.g., une activité ou un _requirement_) est "alloué" sur celui à l'autre bout de la flèche (un +block+ la plupart du temps), +
 	représentée par le stéréotype `+<<allocate>>+`
 
+[{topic}]
 === {resume}
 {sysml} propose un certain nombre de mécanismes pour organiser les différents modèles,
 tirés pour la plupart d'{uml}. Ces mécanismes seront plus faciles à comprendre au travers
@@ -682,6 +707,7 @@ ifndef::book[[cols="h,4*",options="header",width="50%"]]
 | ...					|					|        		|				|
 |======================
 
+[{topic}]
 === {revisions}
 
 [NOTE,icon=tuxteacher.png]
@@ -695,17 +721,20 @@ ifdef::slides[]
 endif::slides[]
 
 //------------------------------------------------------ PDF Page break
-<<<
+ifndef::slides[<<<]
 include::exigences.adoc[leveloffset=+1]
 
 //------------------------------------------------------ PDF Page break
-<<<
-include::architecture.asc[]
+ifndef::slides[<<<]
+include::architecture.asc[leveloffset=+1]
 
 //------------------------------------------------------ PDF Page break
-<<<
+ifndef::slides[<<<]
 include::comportement.asc[]
 
 //------------------------------------------------------ PDF Page break
-<<<
+ifndef::slides[<<<]
 include::transvers.asc[]
+
+/////
+/////

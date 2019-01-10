@@ -200,7 +200,7 @@ A requirement is defined as a stereotype of UML Class..._
 ifdef::slides[=== !]
 
 [[corde]]
-:mycaption: Un exemple de _Requirement_ en SysML (source <<SysML>>, p. 159)
+:mycaption: Un exemple d'exigence en SysML (source <<SysML>>, p. 159)
 ifndef::slides[.{mycaption}]
 image::requirement.png[SysML and UML,width=50%,scaledwidth=50%]
 ifdef::slides[[detail]#{mycaption}#]
@@ -353,9 +353,9 @@ dans la partie <<transvers,transverse>>.
 
 ifdef::slides[== !]
 
-:mycaption: Relations liées aux _requirements_ dans TOPCASED
+:mycaption: Relations liées aux exigences dans TOPCASED
 ifndef::slides[.{mycaption}]
-image::topcased-req-connections.png[width=50%]
+image::topcased-req-connections.png[width=30%]
 ifdef::slides[[detail]#{mycaption}#]
 
 == Les _Requirements Diagrams_
