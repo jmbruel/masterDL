@@ -5,4 +5,5 @@ introduction.dzslides.html
 pygments-default.css
 Gemfile.lock
 *.html
+.DS_Store
 

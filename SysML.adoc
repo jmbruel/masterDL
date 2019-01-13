@@ -107,7 +107,7 @@ ifdef::slides[]
 
 endif::slides[]
 
-ifdef::slides[=== Points de vue ({Requirements})]
+ifdef::slides[=== Points de vue (Exigences)]
 
 ifndef::slides[{Requirements}::]
 Les exigences et leur prises en compte sont un éléments critique pour le
@@ -115,25 +115,32 @@ Les exigences et leur prises en compte sont un éléments critique pour le
   Sans explorer l'ensemble des activités d'ingénierie système (ce qui
   nécessiterait tout un volume du type de <<reqs>>) nous insisterons sur cet aspect.
 
+ifdef::slides[image::requirements-slide.jpeg[width=60%]]
 
-ifdef::slides[=== Points de vue ({Structure})]
+ifdef::slides[=== Points de vue (Structure)]
 
 ifndef::slides[{Structure}::]
 La description de l'architecture et des éléments constitutifs du système,
 avec les blocs, leurs relations, organisations internes, etc. constituera un point de vue important.
 C'est souvent la partie de modélisation qui pose le moins de problème aux débutants.
 
-ifdef::slides[=== Points de vue ({Behavior})]
+ifdef::slides[image::structure-slide.jpeg[width=60%]]
+
+ifdef::slides[=== Points de vue (Comportement)]
 
 ifndef::slides[{Behavior}::]
 Le comportement d'un système est du point de vue de l'utilisateur final beaucoup plus important que la structure elle-même. C'est la partie
 	qu'il est la plus à même d'exprimer, de comprendre (vos modèles) et de valider.
 
-ifdef::slides[=== Points de vue ({Crosscutting})]
+ifdef::slides[image::comportement-slide.jpeg[width=60%]]
+
+ifdef::slides[=== Points de vue (Transverse)]
 
 ifndef::slides[{Crosscutting}::]
 Un certains nombre de concepts sont transverses aux trois points de vue précédents.
 Il s'agira principalement de parler de cohérence ou de traçabilité entre les phases de développement ou entre les points de vue.
+		
+ifdef::slides[image::transverse-slide.jpeg[width=60%]]
 
 ifndef::slides[]
 
@@ -172,17 +179,23 @@ d'un cadre de travail qui permette un développement de qualité (outils, édite
 On pourrait rapprocher cette étape du "cycle 0" de {scrum}.
 ====
 
+ifdef::slides[image::organisation-slide.jpeg[width=60%]]
+
 ifdef::slides[=== Phase de développement ({analysis})]
 
 ifndef::slides[{analysis}::]
 Cette phase vise plutôt à examiner le domaine du problème. Elle se focalise sur les cahiers des charges et les exigences.
 	L'analyse débouche sur un dossier d'analyse qui décrit les grandes lignes (cas d'utilisation, architecture principale) du système.
 
+ifdef::slides[image::analysis-slide.jpeg[width=60%]]
+
 ifdef::slides[=== Phase de développement ({design})]
 
 ifndef::slides[{design}::]
 Cette phase vise plutôt à examiner le domaine de la solution. Elle débouche sur un dossier de conception qui décrit les détails
 	conceptuels de la solution envisagée (structure détaillée, comportement, etc.)
+
+ifdef::slides[image::design-slide.jpeg[width=60%]]
 
 ifdef::slides[=== Phase de développement ({implementation})]
 
@@ -201,9 +214,18 @@ Bien sûr dans une organisation existante cette étape sera contrainte par les h
 
 endif::slides[]
 
+ifdef::slides[image::implementation-slide.jpeg[width=80%]]
+
+ifdef::slides[]
+[{intro}]
+=== Quizz break!
+image::icons/tuxteacher.png[width=25%]
+endif::[]
 
 [{topic}]
 === {revisions}
+
+ifndef::slides[]
 
 [qanda]
 Associez les diagrammes suivants avec leurs acronymes (`{sd}`, `{dc}`, `{uc}`, `{pkg}`, `{dss}`)::
@@ -213,11 +235,20 @@ Associez les diagrammes suivants avec leurs acronymes (`{sd}`, `{dc}`, `{uc}`, `
 - Diagramme de Classes
 - Diagramme de Séquences
 
-ifdef::slides[=== Révisions (suite)]
-
 Placez dans la matrice ci-dessous les différents diagrammes {uml} que vous connaissez déjà (`{sd}`, `{dc}`, `{uc}`, `{pkg}`, `{dss}`)::
 +
 include::matrice-base.asc[]
+
+endif::slides[]
+
+ifdef::slides[]
+image::quizz1.png[width=90%]
+endif::slides[]
+
+ifdef::slides[]
+image::quizz2.png[width=90%]
+endif::slides[]
+
 
 ifdef::slides[=== Révisions (suite)]
 
@@ -244,6 +275,14 @@ endif::slides[]
 
 ====
 
+ifdef::slides[]
+
+=== Révisions (suite)
+
+image::quizz3.png[width=90%]
+
+endif::slides[]
+
 endif::correction[]
 
 //------------ Fin de la partie corrigée
@@ -255,7 +294,7 @@ ifdef::slides[:leveloffset: 0]
 ifndef::slides[<<<]
 [[Notation]]
 [{topic}]
-== Pourquoi une nouvelle notation
+== Pourquoi une nouvelle notation ?
 //---------------------------------------------------------------------
 
 ifndef::slides[]
@@ -717,8 +756,18 @@ ifndef::book[[cols="h,4*",options="header",width="50%"]]
 ====
 
 ifdef::slides[]
+[{intro}]
+=== *The End* {nbsp}{nbsp}{nbsp}(for now)
+
+[{topic}]
+=== Credit
+
+[detail,small]#Photo Credit: https://www.pexels.com#
+
 :leveloffset: 0
 endif::slides[]
+
+/////
 
 //------------------------------------------------------ PDF Page break
 ifndef::slides[<<<]
@@ -736,5 +785,4 @@ include::comportement.asc[]
 ifndef::slides[<<<]
 include::transvers.asc[]
 
-/////
 /////
