@@ -649,6 +649,8 @@ ifdef::slides[[detail]#{mycaption}#]
 [{topic}]
 == {revisions}
 
+ifdef::slides[image::icons/tuxteacher.png[width=30%]]
+
 ifndef::slides[]
 .Questions
 [NOTE,icon=tuxteacher.png]

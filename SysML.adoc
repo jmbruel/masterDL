@@ -110,7 +110,7 @@ endif::slides[]
 ifdef::slides[=== Points de vue (Exigences)]
 
 ifndef::slides[{Requirements}::]
-Les exigences et leur prises en compte sont un éléments critique pour le
+Les exigences et leur prises en compte sont un élément critique pour le
   succès du développement de tout système.
   Sans explorer l'ensemble des activités d'ingénierie système (ce qui
   nécessiterait tout un volume du type de <<reqs>>) nous insisterons sur cet aspect.
@@ -346,19 +346,30 @@ ifdef::slides[:leveloffset: -1]
 [{topic}]
 === Fiche d'identité
 
+
+ifndef::slides[]
 Voici à quoi pourrait ressembler la fiche d'identité de {sysml} :
 
 include::fiche.txt[]
+endif::slides[]
+
+ifdef::slides[]
+image::fiche.png[width=80%]
+endif::slides[]
 
 [{topic}]
 === SysML, c'est...
 
-Un ensemble de 9 types de diagrammes::
+Un ensemble de 9 types de diagrammes :
+
 * Diagrammes structuraux
 ** Diagrammes de définition de blocs ({bdd})
 ** Diagrammes internes de blocs ({ibd})
 ** Diagrammes paramétriques ({par})
 ** Diagrammes de packages ({pkg})
+
+ifdef::slides[=== SysML, c'est... (suite)]
+
 * Diagrammes comportementaux
 ** Diagrammes de séquence ({seq})
 ** Diagrammes d'activité ({act})
@@ -368,9 +379,10 @@ Un ensemble de 9 types de diagrammes::
 
 ifdef::slides[=== SysML, c'est (suite) :]
 
-Un profil {uml}::
-	C'est à dire une *extension* de cette notation, un ensemble de nouveaux concepts et éléments qui sont définis à partir des éléments de base {duml}. Un exemple : le +bloc+ {sysml} n'est qu'une redéfinition de la +classe+ {uml}.
-Une notation::
+Un profil {uml} :
+	C'est à dire une *extension* de cette notation, un ensemble de nouveaux concepts et éléments qui sont définis à partir des éléments de base d'{uml}. Un exemple : le +bloc+ {sysml} n'est qu'une redéfinition de la +classe+ {uml}.
+
+Une notation :
  	Une notation de plus en plus enseignée et connue et qui servira donc de plus en plus de *référence* à la modélisation des systèmes.
 
 [{topic}]
@@ -420,9 +432,9 @@ La liste complète des membres de {Lomg} est accessible à l'URL : http://www.om
 	les aspects structurels et comportementaux du système ainsi que les exigences. Le diagramme suivant
 	présente cette organisation en faisant au passage le lien avec ceux d'{uml} :
 
-.Les 9 diagrammes SysML et leur lien avec UML
+ifndef::slides[.Les 9 diagrammes SysML et leur lien avec UML]
 ifdef::book[image::Figure4-1.png[scale=40]]
-ifndef::book[image::Figure4-1.png[width="90%"]]
+ifndef::book[image::Figure4-1.png[width=100%]]
 
 ifdef::slides[=== Organisation (raccourcis)]
 
@@ -432,9 +444,9 @@ Le nom de ces diagrammes revenant souvent dans ce document, nous utiliserons sou
 
 endif::book[]
 
-.Version abrégée des diagrammes
+ifndef::slides[.Version abrégée des diagrammes]
 ifdef::book[image::Figure4-1-bis.png[scale=50]]
-ifndef::book[image::Figure4-1-bis.png[width="90%"]]
+ifndef::book[image::Figure4-1-bis.png[width=100%]]
 
 ifndef::slides[]
 
@@ -453,6 +465,11 @@ ifndef::slides[<<<]
 [{topic}]
 == Différence entre modèle et dessin
 
+ifdef::slides[]
+image::dessin-slide.jpeg[width=100%]
+endif::slides[]
+
+ifndef::slides[]
 {SysML} n'est pas une palette de dessins et d'éléments de base servant à faire
 des diagrammes. Il existe une représentation graphique des éléments modélisés en {SysML}. Elle est importante car elle permet de communiquer visuellement sur le système en développement, mais du point de vue du concepteur, c'est *le modèle* qui importe le plus.
 
@@ -485,9 +502,15 @@ tous les diagrammes où il était présent).
 Voici deux exemples de non respect de la notation qui illustre le type d'erreur que l'on trouve souvent dans les modèles qui circulent
 sur Internet ou même parfois dans certains livres.
 
+endif::slides[]
+
+ifdef::slides[:leveloffset: -1]
+
 include::bdd.asc[]
 
-include::seq.asc[]
+ifndef::slides[include::seq.asc[]]
+
+ifdef::slides[:leveloffset: +1]
 
 //------------------------------------------------------ PDF Page break
 ifndef::slides[<<<]
@@ -543,6 +566,9 @@ Abordons quelques principes généraux de {sysml}, c'est à dire des éléments 
 
 - Chaque diagramme {SysML} décrit un élément précis (nommé) de modélisation
 - Chaque diagramme {SysML} doit être représenté à l'intérieur d'un cadre (_Diagram Frame_)
+
+ifdef::slides[=== Cadre (suite)]
+
 - L'entête du cadre, appelé aussi *cartouche*, indique les informations sur le diagramme :
 ifndef::book[]
 * le *type* de diagramme (`{req}`, `{act}`, `{bdd}`, `{ibd}`, `{stm}`, etc. en gras) qui donne immédiatement une indication sur le point de vue porté à l'élément de modélisation (comportement, structure, etc.)
@@ -559,7 +585,7 @@ ifdef::slides[=== Cadre (suite)]
 Dans l'exemple ci-dessous, le diagramme "_Context_Overview_" est un _Block Definition Diagram_ (type `{bdd}`) qui représente un
 _package_, nommé "Context".
 
-.Exemple de diagramme SysML
+ifndef::slides[.Exemple de diagramme SysML]
 ifdef::book[image::pacemaker-context.png[scale=45]]
 ifndef::book[image::pacemaker-context.png[width="80%"]]
 
@@ -651,28 +677,28 @@ Les modèles peuvent être organisés selon toutes sortes de considération :
 
 ifdef::slides[=== Les organisations possibles (suite)]
 
-.Exemple d'organisation simple
+ifndef::slides[.Exemple d'organisation simple]
 ifdef::book[image::pkg-organisation2.png[scale=40]]
-ifndef::book[image::pkg-organisation2.png[width="50%"]]
+ifndef::book[image::pkg-organisation2.png[width="80%"]]
 
 ifdef::slides[=== Les organisations possibles (suite)]
 
-.Représentation de cette organisation dans un outil
+ifndef::slides[.Représentation de cette organisation dans un outil]
 ifdef::book[image::pkg-organisation-modelview.png[scale=50]]
-ifndef::book[image::pkg-organisation-modelview.png[width="30%"]]
+ifndef::book[image::pkg-organisation-modelview.png[width="60%"]]
 
 ifdef::slides[=== Les organisations possibles (suite)]
 
 ifndef::book[]
-.Un autre exemple d'organisation
-image::pkg-organisation.png[width="30%"]
+ifndef::slides[.Un autre exemple d'organisation]
+image::pkg-organisation.png[width="60%"]
 endif::book[]
 
 ifdef::slides[=== Les organisations possibles (suite)]
 
-.Un autre exemple d'organisation
+ifndef::slides[.Un autre exemple d'organisation]
 ifdef::book[image::pkg-topcased.png[scale=40]]
-ifndef::book[image::pkg-topcased.png[width="40%"]]
+ifndef::book[image::pkg-topcased.png[width="60%"]]
 
 ifdef::slides[=== Les organisations possibles (suite)]
 
@@ -681,7 +707,7 @@ ifdef::slides[=== Les organisations possibles (suite)]
 L'outil {modelio} propose, lors de la création d'un premier modèle une organisation "type" par défaut.
 
 ifdef::book[image:modelio3.8SysML/organisation.png[scale=30]]
-ifndef::book[image:modelio3.8SysML/organisation.png[width="60%"]]
+ifndef::book[image:modelio3.8SysML/organisation.png[width="50%"]]
 
 ====
 
@@ -721,12 +747,19 @@ _Dependency_::
 _Use_::
 	l'élément "utilise" celui à l'autre bout de la flèche (un type par exemple), +
 	représentée par le stéréotype `+<<use>>+`
+
+ifdef::slides[=== Les dépendances (suite)]
+
 _Refine_::
 	l'élément est un raffinage (plus détaillé) de celui à l'autre bout de la flèche, +
 	représentée par le stéréotype `+<<refine>>+`
+
 _Realization_::
 	l'élément est une "réalisation" (implémentation) de celui à l'autre bout de la flèche, +
 	représentée par le stéréotype `+<<realize>>+`
+
+ifdef::slides[=== Les dépendances (suite)]
+
 _Allocation_::
 	l'élément (e.g., une activité ou un _requirement_) est "alloué" sur celui à l'autre bout de la flèche (un +block+ la plupart du temps), +
 	représentée par le stéréotype `+<<allocate>>+`
@@ -756,16 +789,10 @@ ifndef::book[[cols="h,4*",options="header",width="50%"]]
 ====
 
 ifdef::slides[]
-[{intro}]
-=== *The End* {nbsp}{nbsp}{nbsp}(for now)
-
 [{topic}]
-=== Credit
+=== Exigences
 
-[detail,small]#Photo Credit: https://www.pexels.com#
-
-:leveloffset: 0
-endif::slides[]
+=> cf. slides dédiés
 
 /////
 
@@ -773,9 +800,13 @@ endif::slides[]
 ifndef::slides[<<<]
 include::exigences.adoc[leveloffset=+1]
 
+/////
+
+ifdef::slides[:leveloffset: -1]
+
 //------------------------------------------------------ PDF Page break
 ifndef::slides[<<<]
-include::architecture.asc[leveloffset=+1]
+include::architecture.asc[]
 
 //------------------------------------------------------ PDF Page break
 ifndef::slides[<<<]
@@ -785,4 +816,15 @@ include::comportement.asc[]
 ifndef::slides[<<<]
 include::transvers.asc[]
 
-/////
+
+ifdef::slides[]
+
+[{intro}]
+== *The End* {nbsp}{nbsp}{nbsp}(for now)
+
+[{topic}]
+== Credit
+
+[detail,small]#Photo Credit: https://www.pexels.com#
+
+endif::slides[]
