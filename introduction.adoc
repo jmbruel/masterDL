@@ -150,6 +150,12 @@ ifndef::slides[.MindMap 2018 (résultat du brainstorming collectif)]
 image::IS2018.png[width=80%]
 ifdef::slides[NOTE: [detail]#MindMap 2018 (résultat du brainstorming collectif)#]
 
+Voici la _mind map_ réalisée par les étudiants de la promo 2019 :
+
+ifndef::slides[.MindMap 2019 (résultat du brainstorming collectif)]
+image::IS2019.png[width=80%]
+ifdef::slides[NOTE: [detail]#MindMap 2019 (résultat du brainstorming collectif)#]
+
 [{topic}]
 == Rendons à César...
 
